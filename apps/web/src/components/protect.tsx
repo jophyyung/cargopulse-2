@@ -295,7 +295,7 @@ function UtilisationChart({
                   <text x={left - 12} y={y + 18} textAnchor="end" className="viz-label small">
                     {label(r.policy)}
                   </text>
-                  <rect x={left} y={y + 6} width={width} height={16} rx={4} fill="#efede6" />
+                  <rect x={left} y={y + 6} width={width} height={16} rx={4} fill="var(--mist)" />
                   <rect x={left} y={y + 6} width={Math.max(2, v * width)} height={16} rx={4} fill={COLOR[r.policy]} />
                   <text x={left + width + 8} y={y + 19} className="viz-value">
                     {fmt(v * 100, 0)}%

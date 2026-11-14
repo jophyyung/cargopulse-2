@@ -3,25 +3,25 @@ import { useState } from "react";
 import type { Model, Plan, Snapshot } from "@/lib/types";
 import { useLocale } from "./locale";
 
-/* Validated palettes (dataviz validate_palette.js, light surface #fffefb):
+/* Chart colours live in design tokens (globals.css, --viz-*), on the white panel surface:
    policies EF/PF/CP pass all adjacent checks; every bar is also direct-labelled.
    Cargo classes are the reference five (adjacent pass, contrast relief = legend+table). */
 export const POLICY_COLOR: Record<string, string> = {
-  EARLIEST_FEASIBLE: "#7d86d6",
-  PRIORITY_FIRST: "#b07a12",
-  HiGHS: "#007f9f",
+  EARLIEST_FEASIBLE: "var(--viz-policy-earliest)",
+  PRIORITY_FIRST: "var(--viz-policy-priority)",
+  HiGHS: "var(--viz-policy-optimiser)",
 };
 export const CLASS_ORDER = ["GENERAL", "PRIORITY", "PHARMA", "PERISHABLE", "DG"] as const;
 export const CLASS_COLOR: Record<string, string> = {
-  GENERAL: "#2a78d6",
-  PRIORITY: "#eb6834",
-  PHARMA: "#1baf7a",
-  PERISHABLE: "#eda100",
-  DG: "#e87ba4",
+  GENERAL: "var(--viz-class-general)",
+  PRIORITY: "var(--viz-class-priority)",
+  PHARMA: "var(--viz-class-pharma)",
+  PERISHABLE: "var(--viz-class-perishable)",
+  DG: "var(--viz-class-dg)",
 };
 // Sequential single-hue ramp (light -> dark) for "extra weighted hours if you wait".
-const RAMP = ["#d7ecf1", "#a9d3df", "#6db3c7", "#2f8eab", "#0b6784"];
-const ZERO = "#f1efe8";
+const RAMP = ["var(--viz-ramp-1)", "var(--viz-ramp-2)", "var(--viz-ramp-3)", "var(--viz-ramp-4)", "var(--viz-ramp-5)"];
+const ZERO = "var(--viz-zero)";
 
 type Tip = { x: number; y: number; lines: string[] } | null;
 export function useTip() {
@@ -302,8 +302,8 @@ export function UrgencyHeatmap({
         >
           <defs>
             <pattern id="nopath" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <rect width="6" height="6" fill="#fbefec" />
-              <line x1="0" y1="0" x2="0" y2="6" stroke="#973c36" strokeWidth="2" />
+              <rect width="6" height="6" fill="var(--block-tint)" />
+              <line x1="0" y1="0" x2="0" y2="6" stroke="var(--block)" strokeWidth="2" />
             </pattern>
           </defs>
           {ticks.map((h) => (
@@ -371,7 +371,7 @@ export function UrgencyHeatmap({
             );
           })}
           <g transform={`translate(${left}, ${top + shown.length * rowH + 14})`}>
-            <rect width="14" height="10" fill={ZERO} stroke="#d9d6cc" />
+            <rect width="14" height="10" fill={ZERO} stroke="var(--hairline-strong)" />
             <text x="18" y="9" className="chart-label">0</text>
             {RAMP.map((c, i) => (
               <rect key={c} x={34 + i * 22} width="22" height="10" fill={c} />
@@ -485,8 +485,8 @@ export function FlightTimeline({ snapshot, assignments }: { snapshot: Snapshot; 
         >
           <defs>
             <pattern id="cancelled" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <rect width="6" height="6" fill="#f4f2ec" />
-              <line x1="0" y1="0" x2="0" y2="6" stroke="#a6a79b" strokeWidth="1.5" />
+              <rect width="6" height="6" fill="var(--mist)" />
+              <line x1="0" y1="0" x2="0" y2="6" stroke="var(--line-strong)" strokeWidth="1.5" />
             </pattern>
           </defs>
           {ticks.map((h) => (
@@ -542,8 +542,8 @@ export function FlightTimeline({ snapshot, assignments }: { snapshot: Snapshot; 
                   width={blockW}
                   height={bh}
                   rx={3}
-                  fill={cancelled ? "url(#cancelled)" : "#faf8f2"}
-                  stroke={f.is_freighter ? "#252a33" : "#b9b6aa"}
+                  fill={cancelled ? "url(#cancelled)" : "var(--paper)"}
+                  stroke={f.is_freighter ? "var(--pine)" : "var(--line-strong)"}
                   strokeWidth={f.is_freighter ? 2 : 1}
                 />
                 {segments.map((s) => (
