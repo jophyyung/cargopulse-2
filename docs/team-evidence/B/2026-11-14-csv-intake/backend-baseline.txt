@@ -1,0 +1,88 @@
+.............................F.............F............................ [ 49%]
+....................................ssssssssssss........................ [ 98%]
+..                                                                       [100%]
+================================== FAILURES ===================================
+___________ test_controlled_csv_positive_preview_and_private_object ___________
+tests\backend\test_api.py:302: in test_controlled_csv_positive_preview_and_private_object
+    assert artifact.is_file() and artifact.stat().st_mode & 0o777 == 0o600
+E   AssertionError: assert (True and (33206 & 511) == 384)
+E    +  where True = is_file()
+E    +    where is_file = WindowsPath('<temp>/pytest-of-user/pytest-1/test_controlled_csv_positive_p0/objects/10000000-0000-4000-8000-000000000001/imports/7a77ebce8dce7f8f7a64822f60ea69cf40fa79a4e5158903beb07eb6adb1ad0f').is_file
+E    +  and   33206 = os.stat_result(st_mode=33206, st_ino=1970324838215909, st_dev=10672091538770793744, st_nlink=1, st_uid=0, st_gid=0, st_size=84860, st_atime=1794634534, st_mtime=1794634534, st_ctime=1794634534).st_mode
+E    +    where os.stat_result(st_mode=33206, st_ino=1970324838215909, st_dev=10672091538770793744, st_nlink=1, st_uid=0, st_gid=0, st_size=84860, st_atime=1794634534, st_mtime=1794634534, st_ctime=1794634534) = stat()
+E    +      where stat = WindowsPath('<temp>/pytest-of-user/pytest-1/test_controlled_csv_positive_p0/objects/10000000-0000-4000-8000-000000000001/imports/7a77ebce8dce7f8f7a64822f60ea69cf40fa79a4e5158903beb07eb6adb1ad0f').stat
+---------------------------- Captured stderr call -----------------------------
+{"correlation.id": "9b07a044-3150-4655-b211-c3caa9009c2c", "elapsed_ms": 16.0, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "030b559b0d49f818", "trace_id": "b279ce988258d53ca5f2d04d9f3b0127"}
+{"correlation.id": "38b08fe2-bd32-4429-a8d9-32c9ae62a1ed", "elapsed_ms": 31.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "7d64b9493f2cba8e", "trace_id": "8c408a3cf7cc6572085bed0cfb620f58"}
+{"cargo.count": 140, "elapsed_ms": 31.0, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "3a88813163bbf928", "trace_id": "52b6ead63ae8b6f0559736c9ebbc16e4"}
+{"correlation.id": "dd2acc03-190a-4b47-a0ad-a17c250b8244", "elapsed_ms": 62.0, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "bf2d72ce635bb0fb", "trace_id": "52b6ead63ae8b6f0559736c9ebbc16e4"}
+------------------------------ Captured log call ------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "9b07a044-3150-4655-b211-c3caa9009c2c", "elapsed_ms": 16.0, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "030b559b0d49f818", "trace_id": "b279ce988258d53ca5f2d04d9f3b0127"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "38b08fe2-bd32-4429-a8d9-32c9ae62a1ed", "elapsed_ms": 31.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "7d64b9493f2cba8e", "trace_id": "8c408a3cf7cc6572085bed0cfb620f58"}
+INFO     cargopulse.telemetry:observability.py:234 {"cargo.count": 140, "elapsed_ms": 31.0, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "3a88813163bbf928", "trace_id": "52b6ead63ae8b6f0559736c9ebbc16e4"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "dd2acc03-190a-4b47-a0ad-a17c250b8244", "elapsed_ms": 62.0, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "bf2d72ce635bb0fb", "trace_id": "52b6ead63ae8b6f0559736c9ebbc16e4"}
+_______ test_concurrent_csrf_reads_do_not_invalidate_an_existing_token ________
+tests\backend\test_cookie_csrf_security.py:183: in test_concurrent_csrf_reads_do_not_invalidate_an_existing_token
+    tokens = list(pool.map(read, range(12)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<python-runtime>\Lib\concurrent\futures\_base.py:619: in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<python-runtime>\Lib\concurrent\futures\_base.py:317: in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+<python-runtime>\Lib\concurrent\futures\_base.py:449: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+<python-runtime>\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+<python-runtime>\Lib\concurrent\futures\thread.py:59: in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\backend\test_cookie_csrf_security.py:179: in read
+    assert result.status_code == 200, result.text
+E   AssertionError: {"type":"urn:cargopulse:problem:unauthenticated","title":"UNAUTHENTICATED","status":401,"detail":"Session is expired or revoked","code":"UNAUTHENTICATED","correlation_id":"04a941b7-ad3b-445b-8293-b89e15b26685","quality_issues":[]}
+E   assert 401 == 200
+E    +  where 401 = <Response [401 Unauthorized]>.status_code
+---------------------------- Captured stderr call -----------------------------
+{"correlation.id": "2108897a-130b-4ea8-9884-59fd60f5b71b", "elapsed_ms": 16.0, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9a8132daba7cddf4", "trace_id": "c24c75e3287b11d3a19856c7c908092a"}
+{"correlation.id": "27fe6381-c6a0-4f55-9adf-0f7e1e037759", "elapsed_ms": 15.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 500, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "failure", "service": "cargopulse-api", "span_id": "3639341bf88d383a", "trace_id": "7067f60a307dc4f00c3fb9314953a9d3"}
+{"correlation.id": "04a941b7-ad3b-445b-8293-b89e15b26685", "elapsed_ms": 15.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 401, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "a06f1eb42ba649b8", "trace_id": "b5775608faa140f80f8cc28d98607a56"}
+{"correlation.id": "4018b50a-bf1c-4cfa-9c07-cf541bb4d6a2", "elapsed_ms": 15.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9a3a91adcc3adf9c", "trace_id": "36603a0ed9401218b8a80d82614b0531"}
+{"correlation.id": "697cc488-e3b3-41cc-a483-08a4f2064128", "elapsed_ms": 15.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "69bdfa47a53e22ef", "trace_id": "62f880071c3a3e7eb3d542111dd02d0f"}
+{"correlation.id": "5b5d50a9-6183-455d-a924-936c8d8d8f18", "elapsed_ms": 0.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5919621c9173cf9f", "trace_id": "e5ffe50aa32e90b11ca543fad982559e"}
+{"correlation.id": "ce57bb8d-7de0-4ede-b75e-fdc0be44916b", "elapsed_ms": 16.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "c5f6f2642dcec626", "trace_id": "6d0a61fe98c1c2b93e371e7f0615cce4"}
+{"correlation.id": "9b3664c1-edcc-4e84-ad9f-520ada0c5b6e", "elapsed_ms": 0.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "c48d6c7af9f96915", "trace_id": "40d65967bae231ac009330f51fd5c5b9"}
+{"correlation.id": "33770331-49a7-4729-a4da-61cc6cc8f0aa", "elapsed_ms": 0.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "46cc880c70e55a0e", "trace_id": "1eb18ccb3c5fccca28d22b783e4f559b"}
+------------------------------ Captured log call ------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "2108897a-130b-4ea8-9884-59fd60f5b71b", "elapsed_ms": 16.0, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9a8132daba7cddf4", "trace_id": "c24c75e3287b11d3a19856c7c908092a"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "27fe6381-c6a0-4f55-9adf-0f7e1e037759", "elapsed_ms": 15.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 500, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "failure", "service": "cargopulse-api", "span_id": "3639341bf88d383a", "trace_id": "7067f60a307dc4f00c3fb9314953a9d3"}
+ERROR    cargopulse.api:main.py:280 request_failed correlation_id=27fe6381-c6a0-4f55-9adf-0f7e1e037759 exception_type=InterfaceError
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "04a941b7-ad3b-445b-8293-b89e15b26685", "elapsed_ms": 15.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 401, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "a06f1eb42ba649b8", "trace_id": "b5775608faa140f80f8cc28d98607a56"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "4018b50a-bf1c-4cfa-9c07-cf541bb4d6a2", "elapsed_ms": 15.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9a3a91adcc3adf9c", "trace_id": "36603a0ed9401218b8a80d82614b0531"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "697cc488-e3b3-41cc-a483-08a4f2064128", "elapsed_ms": 15.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "69bdfa47a53e22ef", "trace_id": "62f880071c3a3e7eb3d542111dd02d0f"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "5b5d50a9-6183-455d-a924-936c8d8d8f18", "elapsed_ms": 0.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5919621c9173cf9f", "trace_id": "e5ffe50aa32e90b11ca543fad982559e"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "ce57bb8d-7de0-4ede-b75e-fdc0be44916b", "elapsed_ms": 16.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "c5f6f2642dcec626", "trace_id": "6d0a61fe98c1c2b93e371e7f0615cce4"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "9b3664c1-edcc-4e84-ad9f-520ada0c5b6e", "elapsed_ms": 0.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "c48d6c7af9f96915", "trace_id": "40d65967bae231ac009330f51fd5c5b9"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "33770331-49a7-4729-a4da-61cc6cc8f0aa", "elapsed_ms": 0.0, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "46cc880c70e55a0e", "trace_id": "1eb18ccb3c5fccca28d22b783e4f559b"}
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  <checkout>\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] tests\backend\test_postgres.py:68: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:102: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:129: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:171: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:193: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:287: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:314: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres_session_security.py:64: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres_session_security.py:94: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres_session_security.py:126: Real PostgreSQL test database is not configured
+SKIPPED [2] tests\backend\test_postgres_session_security.py:162: Real PostgreSQL test database is not configured
+FAILED tests/backend/test_api.py::test_controlled_csv_positive_preview_and_private_object
+FAILED tests/backend/test_cookie_csrf_security.py::test_concurrent_csrf_reads_do_not_invalidate_an_existing_token
+2 failed, 132 passed, 12 skipped, 1 warning in 25.75s

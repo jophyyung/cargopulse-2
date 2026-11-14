@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-14",
+  "base_commit": "9fd6090acd711d934700c46cbd858e412342e6f7",
+  "phase": "reviewed locally before publication; consult PR for hosted CI results",
+  "local_python": "3.12.14",
+  "python_command": ".venv/Scripts/python.exe -m pytest -q --ignore=tests/release_qa/test_durable_races.py --tb=short --show-capture=no --junitxml=../work/pr-review-python.xml",
+  "passed": 297,
+  "skipped": 20,
+  "excluded_postgres_race_tests": 2,
+  "new_regression_cases": 55,
+  "review_fix": "Reject JSON-escaped control characters after decoding nested CSV JSON cells",
+  "checks": [
+    "Both repository Ruff invocations passed",
+    "New parser/tests pass Ruff formatting",
+    "Runtime OpenAPI exactly matches packages/contracts/openapi.json",
+    "git diff --check passed",
+    "Full staged-file pattern check runs before commit"
+  ],
+  "source_sha256": {
+    ".gitattributes": "a518984b08af21374f684a9ddb8aa18ac6988b721773cc43858252698508b7bd",
+    "packages/contracts/python/cargopulse_contracts/models.py": "1fe062883b988299ea702b1b8c236ac06ac3591543a53496533ed7a16ca88aa9",
+    "services/api/cargopulse_api/controlled_csv.py": "a54bfb33a8e873ed5fcacd7d68dba96746913e8b0c20748bd8697cd475aef26d",
+    "services/api/cargopulse_api/main.py": "8a55a9355b99e8fe7ca60cb704f6b78af756eaa9ad1ad9caed1bd67a0d5d7919",
+    "services/api/README.md": "cb9d2dfb01c4e497ede1704a359d8ab82120ccb869c747e64a1f473eafe5f219",
+    "tests/backend/test_api.py": "9befaac3753b46c4a9f0e25ffec26cf2d8525ad25dfca1f4912bde35c28d9bd3",
+    "tests/backend/test_csv_security.py": "f193a0ac201fbece25975877bbc941782db7a46e63f7ab85be32a7c7114b0fae",
+    "tests/backend/test_numeric_input.py": "66f4d65c3ae2874ccf0a3bdcf2efe33af4c3389ef78e4db931677aaa95f1c939",
+    "tests/observability/test_telemetry.py": "a9f529808ae257f22a9cc3dff596636cea09e838ee2fd8d6e8027963f366b702",
+    "tests/optimizer/test_recover.py": "7fdea31135510aa73cca9495a78c081194e8b33cd7dd27b3389ccc0da836cc74"
+  },
+  "limits": [
+    "Windows/Python 3.12.14 native run; not pinned Linux/Python 3.12.16",
+    "20 skips: database, standalone web and POSIX modes unavailable locally",
+    "Two PostgreSQL durable-race cases excluded locally",
+    "Full Docker, DB/browser, audit and image gates must pass hosted CI",
+    "Enterprise IdP/provider/cloud, malware scanning and release acceptance remain open"
+  ]
+}

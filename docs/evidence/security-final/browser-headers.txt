@@ -1,0 +1,12 @@
+
+> cargopulse@0.1.0 e2e
+> playwright test --config apps/web/playwright.config.ts apps/web/tests/security-headers.spec.ts
+
+
+Running 1 test using 1 worker
+
+(node:67602) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 apps/web/tests/security-headers.spec.ts:3:1 › real browser: CSP blocks same-origin base changes and fetch sends no referrer (281ms)
+
+  1 passed (1.3s)

@@ -1,0 +1,28 @@
+{
+  "started_utc": "2026-11-11T17:28:57.309494+00:00",
+  "assembler_sha256": "afc35320e1c0c0b305620438bc0c2a49e05fdd12baef94d3e2b34e92c337bae1",
+  "images": {},
+  "commands": [
+    {
+      "args": [
+        "image",
+        "inspect",
+        "--format",
+        "{\"Id\":{{json .Id}},\"User\":{{json .Config.User}},\"Os\":{{json .Os}},\"Architecture\":{{json .Architecture}},\"Volumes\":{{json .Config.Volumes}}}",
+        "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34"
+      ],
+      "exit_code": 1,
+      "stdout": "\n",
+      "stderr": "template parsing error: template: :1:128: executing \"\" at <.Config.Volumes>: map has no entry for key \"Volumes\"\n"
+    }
+  ],
+  "failures": [
+    {
+      "exception_type": "RuntimeError",
+      "message": "Docker command failed: image (1)"
+    }
+  ],
+  "cleanup": [],
+  "finished_utc": "2026-11-11T17:28:57.335659+00:00",
+  "passed": false
+}

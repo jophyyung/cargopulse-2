@@ -1,0 +1,8 @@
+[91mTraceback (most recent call last):
+[0m[91m  File "/assemble_runtime.py", line 123, in <module>
+    copy_file("/etc/ssl/certs/ca-certificates.crt")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/assemble_runtime.py", line 43, in copy_file
+    raise RuntimeError(f"Missing runtime dependency: {source}")
+RuntimeError: Missing runtime dependency: /etc/ssl/certs/ca-certificates.crt
+[0mThe command '/bin/sh -c python3 /assemble_runtime.py node /runtime-root     && chroot /runtime-root /usr/local/bin/node --version' returned a non-zero code: 1

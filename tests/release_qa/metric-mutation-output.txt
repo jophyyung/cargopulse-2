@@ -1,0 +1,58 @@
+FFFFFFFF                                                                 [100%]
+=================================== FAILURES ===================================
+_ test_false_computed_metrics_cannot_reach_approvable_export[invented-cohort-counts] _
+tests/release_qa/test_release_attacks.py:182: in test_false_computed_metrics_cannot_reach_approvable_export
+    assert not plan["approvable"] or metric["status"] != "COMPUTED", {
+E   AssertionError: {'validation': 'PASS', 'approvable': True, 'approval_status': 201, 'exported_computed_metric': {'name': 'proposed_departure_48h_eligible_uld_rate', 'value': '0.873', 'unit': 'ratio', 'numerator': '873', ...}}
+E   assert (not True or 'COMPUTED' != 'COMPUTED')
+_ test_false_computed_metrics_cannot_reach_approvable_export[false-ratio-only] _
+tests/release_qa/test_release_attacks.py:182: in test_false_computed_metrics_cannot_reach_approvable_export
+    assert not plan["approvable"] or metric["status"] != "COMPUTED", {
+E   AssertionError: {'validation': 'PASS', 'approvable': True, 'approval_status': 201, 'exported_computed_metric': {'name': 'proposed_departure_48h_eligible_uld_rate', 'value': '0.873', 'unit': 'ratio', 'numerator': '8', ...}}
+E   assert (not True or 'COMPUTED' != 'COMPUTED')
+_ test_false_computed_metrics_cannot_reach_approvable_export[wrong-snapshot-lineage] _
+tests/release_qa/test_release_attacks.py:182: in test_false_computed_metrics_cannot_reach_approvable_export
+    assert not plan["approvable"] or metric["status"] != "COMPUTED", {
+E   AssertionError: {'validation': 'PASS', 'approvable': True, 'approval_status': 201, 'exported_computed_metric': {'name': 'proposed_departure_48h_eligible_uld_rate', 'value': '1.000000', 'unit': 'ratio', 'numerator': '8', ...}}
+E   assert (not True or 'COMPUTED' != 'COMPUTED')
+_ test_false_computed_metrics_cannot_reach_approvable_export[wrong-policy-lineage] _
+tests/release_qa/test_release_attacks.py:182: in test_false_computed_metrics_cannot_reach_approvable_export
+    assert not plan["approvable"] or metric["status"] != "COMPUTED", {
+E   AssertionError: {'validation': 'PASS', 'approvable': True, 'approval_status': 201, 'exported_computed_metric': {'name': 'proposed_departure_48h_eligible_uld_rate', 'value': '1.000000', 'unit': 'ratio', 'numerator': '8', ...}}
+E   assert (not True or 'COMPUTED' != 'COMPUTED')
+_ test_false_computed_metrics_cannot_reach_approvable_export[missing-source-lineage] _
+tests/release_qa/test_release_attacks.py:182: in test_false_computed_metrics_cannot_reach_approvable_export
+    assert not plan["approvable"] or metric["status"] != "COMPUTED", {
+E   AssertionError: {'validation': 'PASS', 'approvable': True, 'approval_status': 201, 'exported_computed_metric': {'name': 'proposed_departure_48h_eligible_uld_rate', 'value': '1.000000', 'unit': 'ratio', 'numerator': '8', ...}}
+E   assert (not True or 'COMPUTED' != 'COMPUTED')
+_ test_false_computed_metrics_cannot_reach_approvable_export[invented-cohort] __
+tests/release_qa/test_release_attacks.py:182: in test_false_computed_metrics_cannot_reach_approvable_export
+    assert not plan["approvable"] or metric["status"] != "COMPUTED", {
+E   AssertionError: {'validation': 'PASS', 'approvable': True, 'approval_status': 201, 'exported_computed_metric': {'name': 'proposed_departure_48h_eligible_uld_rate', 'value': '1.000000', 'unit': 'ratio', 'numerator': '8', ...}}
+E   assert (not True or 'COMPUTED' != 'COMPUTED')
+_ test_false_computed_metrics_cannot_reach_approvable_export[unsupported-computed-claim] _
+tests/release_qa/test_release_attacks.py:182: in test_false_computed_metrics_cannot_reach_approvable_export
+    assert not plan["approvable"] or metric["status"] != "COMPUTED", {
+E   AssertionError: {'validation': 'PASS', 'approvable': True, 'approval_status': 201, 'exported_computed_metric': {'name': 'invented_validated_wins', 'value': '1.000000', 'unit': 'ratio', 'numerator': '8', ...}}
+E   assert (not True or 'COMPUTED' != 'COMPUTED')
+_ test_false_computed_metrics_cannot_reach_approvable_export[wrong-physical-denominator-unit] _
+tests/release_qa/test_release_attacks.py:182: in test_false_computed_metrics_cannot_reach_approvable_export
+    assert not plan["approvable"] or metric["status"] != "COMPUTED", {
+E   AssertionError: {'validation': 'PASS', 'approvable': True, 'approval_status': 201, 'exported_computed_metric': {'name': 'proposed_departure_48h_eligible_uld_rate', 'value': '1.000000', 'unit': 'AWB', 'numerator': '8', ...}}
+E   assert (not True or 'COMPUTED' != 'COMPUTED')
+=============================== warnings summary ===============================
+../../.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/pie/CargoPulse_Production_Build_Package/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/release_qa/test_release_attacks.py::test_false_computed_metrics_cannot_reach_approvable_export[invented-cohort-counts]
+FAILED tests/release_qa/test_release_attacks.py::test_false_computed_metrics_cannot_reach_approvable_export[false-ratio-only]
+FAILED tests/release_qa/test_release_attacks.py::test_false_computed_metrics_cannot_reach_approvable_export[wrong-snapshot-lineage]
+FAILED tests/release_qa/test_release_attacks.py::test_false_computed_metrics_cannot_reach_approvable_export[wrong-policy-lineage]
+FAILED tests/release_qa/test_release_attacks.py::test_false_computed_metrics_cannot_reach_approvable_export[missing-source-lineage]
+FAILED tests/release_qa/test_release_attacks.py::test_false_computed_metrics_cannot_reach_approvable_export[invented-cohort]
+FAILED tests/release_qa/test_release_attacks.py::test_false_computed_metrics_cannot_reach_approvable_export[unsupported-computed-claim]
+FAILED tests/release_qa/test_release_attacks.py::test_false_computed_metrics_cannot_reach_approvable_export[wrong-physical-denominator-unit]
+8 failed, 1 warning in 1.95s

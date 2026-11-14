@@ -1,0 +1,49 @@
+
+> cargopulse@0.1.0 e2e
+> playwright test --config apps/web/playwright.config.ts --grep keyboard skip
+
+
+Running 1 test using 1 worker
+
+(node:25206) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 apps/web/tests/recover.spec.ts:163:1 › real service: keyboard skip link and recovery filters are usable (17.4s)
+
+
+  1) apps/web/tests/recover.spec.ts:163:1 › real service: keyboard skip link and recovery filters are usable 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('main')
+    Expected: focused
+    Received: inactive
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('main') with timeout 15000ms
+      - waiting for getByRole('main')
+        33 × locator resolved to <main id="main">…</main>
+           - unexpected value "inactive"
+
+
+      171 |   await expect(page.getByRole("link", { name: "Skip to content" })).toBeFocused();
+      172 |   await page.keyboard.press("Enter");
+    > 173 |   await expect(page.getByRole("main")).toBeFocused();
+          |                                        ^
+      174 |   await page.keyboard.press("Tab");
+      175 |   await expect(page.getByLabel("Search loaded incidents")).toBeFocused();
+      176 |   await page.keyboard.type("keyboard-filter-no-matching-event");
+        at /Users/pie/CargoPulse_Production_Build_Package/apps/web/tests/recover.spec.ts:173:40
+
+    Error Context: apps/web/test-results/recover-real-service-keybo-f305f-recovery-filters-are-usable/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    apps/web/test-results/recover-real-service-keybo-f305f-recovery-filters-are-usable/trace.zip
+    Usage:
+
+        npx playwright show-trace apps/web/test-results/recover-real-service-keybo-f305f-recovery-filters-are-usable/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    apps/web/tests/recover.spec.ts:163:1 › real service: keyboard skip link and recovery filters are usable 

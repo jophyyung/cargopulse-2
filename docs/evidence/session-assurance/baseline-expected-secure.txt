@@ -1,0 +1,150 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_weak_session_role_promotion_requires_strong_reauthentication[controller] _
+
+client = <starlette.testclient.TestClient object at 0x10b8070e0>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10ba94230>, 'public': {'kty': 'RSA',...MI_-yeJNkZARsEPnEErvDrcNFd-7SVrzsmFVAQ', 'e': 'AQAB', ...}, 'mutations': {'acr': 'password-only'}, 'exchanges': 1, ...}
+role = 'controller'
+
+    @pytest.mark.parametrize("role", PRIVILEGED)
+    def test_weak_session_role_promotion_requires_strong_reauthentication(client, provider, role):
+        set_roles(client, ["load_analyst"])
+        provider["mutations"] = {"acr": "password-only"}
+        old_cookie = sign_in(client, provider)
+        policy = client.get("/api/v1/fixtures/recover").json()["policy"]
+        assert draft(client, policy, "before-promotion").status_code == 403
+    
+        set_roles(client, [role])
+        denied = draft(client, policy, "after-promotion")
+>       assert denied.status_code == 401, denied.text
+E       AssertionError: {"type":"urn:cargopulse:problem:forbidden","title":"FORBIDDEN","status":403,"detail":"This locally provisioned role does not permit the action","code":"FORBIDDEN","correlation_id":"43760351-d0e6-4fa9-b10c-cc354bf994de","quality_issues":[]}
+E       assert 403 == 401
+E        +  where 403 = <Response [403 Forbidden]>.status_code
+
+tests/backend/test_oidc_session_assurance.py:52: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "297e3f9f-e297-4a15-ace5-2f96e069958f", "elapsed_ms": 4.328, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "2c767a0498e03956", "trace_id": "c9fa975ebfba8d9a04ae9c726b3633fa"}
+{"correlation.id": "4542433d-0a94-4f43-bf82-3edbc41a7e8e", "elapsed_ms": 5.662, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "24ac6867e6f89a0b", "trace_id": "35ccb138f5daf6d7b54ca14555fc9489"}
+{"correlation.id": "2ed1b434-9a13-41bd-89cb-e51a3c2cdfd2", "elapsed_ms": 21.711, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "da5d4a0042d11459", "trace_id": "3446c3fbc5ebb90cad2b7f7bbaa3c76e"}
+{"correlation.id": "c873769d-17c5-4b7f-961c-e3948064cf2a", "elapsed_ms": 2.361, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "8ec630993d1c2953", "trace_id": "3f9426e349bd5893257ee8573a664dd4"}
+{"correlation.id": "43760351-d0e6-4fa9-b10c-cc354bf994de", "elapsed_ms": 1.581, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0eecdc663f975b30", "trace_id": "b6c54e6416a3f5edb39502540ed0f7ce"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "297e3f9f-e297-4a15-ace5-2f96e069958f", "elapsed_ms": 4.328, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "2c767a0498e03956", "trace_id": "c9fa975ebfba8d9a04ae9c726b3633fa"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "4542433d-0a94-4f43-bf82-3edbc41a7e8e", "elapsed_ms": 5.662, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "24ac6867e6f89a0b", "trace_id": "35ccb138f5daf6d7b54ca14555fc9489"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "2ed1b434-9a13-41bd-89cb-e51a3c2cdfd2", "elapsed_ms": 21.711, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "da5d4a0042d11459", "trace_id": "3446c3fbc5ebb90cad2b7f7bbaa3c76e"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "c873769d-17c5-4b7f-961c-e3948064cf2a", "elapsed_ms": 2.361, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "8ec630993d1c2953", "trace_id": "3f9426e349bd5893257ee8573a664dd4"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "43760351-d0e6-4fa9-b10c-cc354bf994de", "elapsed_ms": 1.581, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0eecdc663f975b30", "trace_id": "b6c54e6416a3f5edb39502540ed0f7ce"}
+__ test_weak_session_role_promotion_requires_strong_reauthentication[manager] __
+
+client = <starlette.testclient.TestClient object at 0x10ba1a330>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10ba97170>, 'public': {'kty': 'RSA',..._J73_xXGn7tToJQxr2pweE3P4B65MVeJg-3b9Q', 'e': 'AQAB', ...}, 'mutations': {'acr': 'password-only'}, 'exchanges': 1, ...}
+role = 'manager'
+
+    @pytest.mark.parametrize("role", PRIVILEGED)
+    def test_weak_session_role_promotion_requires_strong_reauthentication(client, provider, role):
+        set_roles(client, ["load_analyst"])
+        provider["mutations"] = {"acr": "password-only"}
+        old_cookie = sign_in(client, provider)
+        policy = client.get("/api/v1/fixtures/recover").json()["policy"]
+        assert draft(client, policy, "before-promotion").status_code == 403
+    
+        set_roles(client, [role])
+        denied = draft(client, policy, "after-promotion")
+>       assert denied.status_code == 401, denied.text
+E       AssertionError: {"id":"4c34e552-0d54-4104-90f9-bc0c14a787b7","state":"DRAFT","policy_hash":"9c87031597eae35c6401fb8633e50a5892924f201cc03b25a6ad051f268c93c7","policy":{"id":"synthetic-recover-v1","version":"1.0.0","state":"PUBLISHED","authored_by":"synthetic-policy-author","approved_by":"synthetic-policy-reviewer","published_at":"2026-11-11T12:02:55.596193Z","handling_seconds":900,"max_legs":3,"max_paths_per_unit":20,"unassigned_penalty_weighted_hours":"96","handling_penalty_weighted_hours":"0.1","stability_penalty_weighted_hours":"2","source_max_age_seconds":3600,"model_scope":"SYNTHETIC_CONSERVATIVE_ENVELOPE"},"authored_by":"manager","reviewed_by":null}
+E       assert 201 == 401
+E        +  where 201 = <Response [201 Created]>.status_code
+
+tests/backend/test_oidc_session_assurance.py:52: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "2ddf10ea-199a-4e0f-8009-2316249d1206", "elapsed_ms": 1.127, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "f52aed676ad177ae", "trace_id": "90ec90516ccd916e4365a2d43080e86e"}
+{"correlation.id": "cc752d18-9321-4cd6-ba47-0c7b9f44ac73", "elapsed_ms": 3.66, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "250554280d47aea1", "trace_id": "0e4888541267537b8eba290b2e82e25f"}
+{"correlation.id": "650290bb-6ebc-42d0-af98-64d3c0fee417", "elapsed_ms": 41.263, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "dddd3469fad282f3", "trace_id": "f516a31a1e34f9a7fbe714cc3006e685"}
+{"correlation.id": "697a81ed-3610-4a66-967f-cd801b5fd805", "elapsed_ms": 1.812, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9fd29b38de92802b", "trace_id": "f95de88b4e3fce167feac2dc01b44422"}
+{"correlation.id": "fed48868-c223-449d-8f30-3f618eb68d58", "elapsed_ms": 2.434, "event": "operation", "http.request.method": "POST", "http.response.status_code": 201, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0b23cc76b39b36eb", "trace_id": "a154160765f8b460809779c40ce0b52a"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "2ddf10ea-199a-4e0f-8009-2316249d1206", "elapsed_ms": 1.127, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "f52aed676ad177ae", "trace_id": "90ec90516ccd916e4365a2d43080e86e"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "cc752d18-9321-4cd6-ba47-0c7b9f44ac73", "elapsed_ms": 3.66, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "250554280d47aea1", "trace_id": "0e4888541267537b8eba290b2e82e25f"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "650290bb-6ebc-42d0-af98-64d3c0fee417", "elapsed_ms": 41.263, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "dddd3469fad282f3", "trace_id": "f516a31a1e34f9a7fbe714cc3006e685"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "697a81ed-3610-4a66-967f-cd801b5fd805", "elapsed_ms": 1.812, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9fd29b38de92802b", "trace_id": "f95de88b4e3fce167feac2dc01b44422"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "fed48868-c223-449d-8f30-3f618eb68d58", "elapsed_ms": 2.434, "event": "operation", "http.request.method": "POST", "http.response.status_code": 201, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0b23cc76b39b36eb", "trace_id": "a154160765f8b460809779c40ce0b52a"}
+_ test_weak_session_role_promotion_requires_strong_reauthentication[data_steward] _
+
+client = <starlette.testclient.TestClient object at 0x10c763f50>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10bb3d670>, 'public': {'kty': 'RSA',...bHWLgBbaFDKAUpE0GLYD0h6PIImTdcqzA3SksQ', 'e': 'AQAB', ...}, 'mutations': {'acr': 'password-only'}, 'exchanges': 1, ...}
+role = 'data_steward'
+
+    @pytest.mark.parametrize("role", PRIVILEGED)
+    def test_weak_session_role_promotion_requires_strong_reauthentication(client, provider, role):
+        set_roles(client, ["load_analyst"])
+        provider["mutations"] = {"acr": "password-only"}
+        old_cookie = sign_in(client, provider)
+        policy = client.get("/api/v1/fixtures/recover").json()["policy"]
+        assert draft(client, policy, "before-promotion").status_code == 403
+    
+        set_roles(client, [role])
+        denied = draft(client, policy, "after-promotion")
+>       assert denied.status_code == 401, denied.text
+E       AssertionError: {"type":"urn:cargopulse:problem:forbidden","title":"FORBIDDEN","status":403,"detail":"This locally provisioned role does not permit the action","code":"FORBIDDEN","correlation_id":"7d76495b-77ed-49a0-b1d8-4800826e496e","quality_issues":[]}
+E       assert 403 == 401
+E        +  where 403 = <Response [403 Forbidden]>.status_code
+
+tests/backend/test_oidc_session_assurance.py:52: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "112ed34a-ef22-4d84-9522-65e8a1055af1", "elapsed_ms": 1.176, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3c9df5e10bb26c6c", "trace_id": "aabbd7b070cc88d407d23a876f9e1dda"}
+{"correlation.id": "b7f371f5-6f5c-4e93-a9d9-36b850f0cb44", "elapsed_ms": 3.718, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3cbaabfe25eef654", "trace_id": "d692ee987f2aceedc3c541eb7243a996"}
+{"correlation.id": "abb536b1-6109-42f8-a33a-dbcb630b5179", "elapsed_ms": 20.563, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "aa6d8d5b5660951a", "trace_id": "6242cdc290572f70ca4d8d82947c2403"}
+{"correlation.id": "b5ae797c-8063-4234-af72-934fc0f6bfd9", "elapsed_ms": 2.069, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0f58241b43aa4cd7", "trace_id": "8adc423bbc69016816c0c53340d4f093"}
+{"correlation.id": "7d76495b-77ed-49a0-b1d8-4800826e496e", "elapsed_ms": 1.844, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0242cbdc40dc1a7a", "trace_id": "fb3d0a94a3009f384028edb415d7ac4e"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "112ed34a-ef22-4d84-9522-65e8a1055af1", "elapsed_ms": 1.176, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3c9df5e10bb26c6c", "trace_id": "aabbd7b070cc88d407d23a876f9e1dda"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "b7f371f5-6f5c-4e93-a9d9-36b850f0cb44", "elapsed_ms": 3.718, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3cbaabfe25eef654", "trace_id": "d692ee987f2aceedc3c541eb7243a996"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "abb536b1-6109-42f8-a33a-dbcb630b5179", "elapsed_ms": 20.563, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "aa6d8d5b5660951a", "trace_id": "6242cdc290572f70ca4d8d82947c2403"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "b5ae797c-8063-4234-af72-934fc0f6bfd9", "elapsed_ms": 2.069, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0f58241b43aa4cd7", "trace_id": "8adc423bbc69016816c0c53340d4f093"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "7d76495b-77ed-49a0-b1d8-4800826e496e", "elapsed_ms": 1.844, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0242cbdc40dc1a7a", "trace_id": "fb3d0a94a3009f384028edb415d7ac4e"}
+_ test_weak_session_role_promotion_requires_strong_reauthentication[tenant_admin] _
+
+client = <starlette.testclient.TestClient object at 0x10cb33a70>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10cd0c070>, 'public': {'kty': 'RSA',...JunteTpgvEgTOx72JJqdxN8Mmum-KNkD4GVrLQ', 'e': 'AQAB', ...}, 'mutations': {'acr': 'password-only'}, 'exchanges': 1, ...}
+role = 'tenant_admin'
+
+    @pytest.mark.parametrize("role", PRIVILEGED)
+    def test_weak_session_role_promotion_requires_strong_reauthentication(client, provider, role):
+        set_roles(client, ["load_analyst"])
+        provider["mutations"] = {"acr": "password-only"}
+        old_cookie = sign_in(client, provider)
+        policy = client.get("/api/v1/fixtures/recover").json()["policy"]
+        assert draft(client, policy, "before-promotion").status_code == 403
+    
+        set_roles(client, [role])
+        denied = draft(client, policy, "after-promotion")
+>       assert denied.status_code == 401, denied.text
+E       AssertionError: {"type":"urn:cargopulse:problem:forbidden","title":"FORBIDDEN","status":403,"detail":"This locally provisioned role does not permit the action","code":"FORBIDDEN","correlation_id":"74082968-9a64-4d7b-8d11-2c978b04f5c2","quality_issues":[]}
+E       assert 403 == 401
+E        +  where 403 = <Response [403 Forbidden]>.status_code
+
+tests/backend/test_oidc_session_assurance.py:52: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "c997b16d-37a0-4f67-a5cd-255a6961b5ad", "elapsed_ms": 1.731, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "06cc7ff320cd69b4", "trace_id": "c6583ae93ee5ae5f24dc2afc7e3c6a0d"}
+{"correlation.id": "81feb0cb-c3b4-426b-ba20-5f13099b08ab", "elapsed_ms": 4.681, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "c182f00bea364fe1", "trace_id": "5007102822e586ae83bb28e35320d80c"}
+{"correlation.id": "9dd0407e-51fa-430b-9959-b1fe0bf07fa1", "elapsed_ms": 20.923, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "88070f008efd6478", "trace_id": "19c55233791abaca2613a92eeb65ab25"}
+{"correlation.id": "4de84c50-4842-44a6-bad8-585416132f46", "elapsed_ms": 2.203, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0a35395c2b255ce7", "trace_id": "5c6c36e52e458eb7e8065853de1d9397"}
+{"correlation.id": "74082968-9a64-4d7b-8d11-2c978b04f5c2", "elapsed_ms": 1.54, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "595a3f7d9d6ba91a", "trace_id": "18634554105d07bffa8596c63188a420"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "c997b16d-37a0-4f67-a5cd-255a6961b5ad", "elapsed_ms": 1.731, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "06cc7ff320cd69b4", "trace_id": "c6583ae93ee5ae5f24dc2afc7e3c6a0d"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "81feb0cb-c3b4-426b-ba20-5f13099b08ab", "elapsed_ms": 4.681, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "c182f00bea364fe1", "trace_id": "5007102822e586ae83bb28e35320d80c"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "9dd0407e-51fa-430b-9959-b1fe0bf07fa1", "elapsed_ms": 20.923, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "88070f008efd6478", "trace_id": "19c55233791abaca2613a92eeb65ab25"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "4de84c50-4842-44a6-bad8-585416132f46", "elapsed_ms": 2.203, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0a35395c2b255ce7", "trace_id": "5c6c36e52e458eb7e8065853de1d9397"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "74082968-9a64-4d7b-8d11-2c978b04f5c2", "elapsed_ms": 1.54, "event": "operation", "http.request.method": "POST", "http.response.status_code": 403, "http.route": "/api/v1/policies/drafts", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "595a3f7d9d6ba91a", "trace_id": "18634554105d07bffa8596c63188a420"}
+=============================== warnings summary ===============================
+../../.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/pie/CargoPulse_Production_Build_Package/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/backend/test_oidc_session_assurance.py::test_weak_session_role_promotion_requires_strong_reauthentication[controller]
+FAILED tests/backend/test_oidc_session_assurance.py::test_weak_session_role_promotion_requires_strong_reauthentication[manager]
+FAILED tests/backend/test_oidc_session_assurance.py::test_weak_session_role_promotion_requires_strong_reauthentication[data_steward]
+FAILED tests/backend/test_oidc_session_assurance.py::test_weak_session_role_promotion_requires_strong_reauthentication[tenant_admin]
+4 failed, 1 warning in 1.08s

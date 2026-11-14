@@ -1,0 +1,117 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  2.473MB
+Step 1/23 : FROM node:24.22.2-trixie-slim@sha256:0820eaa85e07d0490446dd01d14707e17e6108a36988cf374899cd057eb3812d AS build
+ ---> 0820eaa85e07
+Step 2/23 : ENV NEXT_TELEMETRY_DISABLED=1
+ ---> Using cache
+ ---> a875bf94442b
+Step 3/23 : WORKDIR /app
+ ---> Using cache
+ ---> 2de1cf25cf78
+Step 4/23 : COPY package.json package-lock.json ./
+ ---> Using cache
+ ---> 53a4498d1011
+Step 5/23 : COPY apps/web/package.json apps/web/package.json
+ ---> Using cache
+ ---> 0ecf3e74da91
+Step 6/23 : RUN npm ci --ignore-scripts --libc=glibc
+ ---> Using cache
+ ---> 406de91cdb4a
+Step 7/23 : COPY apps/web apps/web
+ ---> 160854724853
+Step 8/23 : COPY packages/contracts packages/contracts
+ ---> dc3b78b26564
+Step 9/23 : RUN npm run build
+ ---> Running in 10a4a160eb9a
+
+> cargopulse@0.1.0 build
+> npm run build --workspace apps/web
+
+
+> @cargopulse/web@0.1.0 build
+> next build
+
+▲ Next.js 16.4.6 (Turbopack)
+✓ Running next.config.ts took 52ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.6s
+  Running TypeScript ...
+  Finished TypeScript in 1961ms ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/3) ...
+✓ Generating static pages using 1 worker (3/3) in 38ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ƒ /_not-found
+├ ƒ /api/v1/[...path]
+├ ƒ /audit
+├ ƒ /evidence
+├ ƒ /help
+├ ƒ /integrations
+├ ƒ /login
+├ ƒ /operations
+├ ƒ /operations/[id]
+├ ƒ /plans/[id]
+├ ƒ /policies
+├ ƒ /privacy
+├ ƒ /protect
+└ ƒ /terms
+
+
+ƒ Proxy (Middleware)
+
+ƒ  (Dynamic)  server-rendered on demand
+
+ ---> Removed intermediate container 10a4a160eb9a
+ ---> 71f6c2c1a8d9
+Step 10/23 : FROM node:24.22.2-trixie-slim@sha256:0820eaa85e07d0490446dd01d14707e17e6108a36988cf374899cd057eb3812d AS runtime-build
+ ---> 0820eaa85e07
+Step 11/23 : RUN apt-get update && apt-get upgrade -y     && apt-get install -y --no-install-recommends python3 ca-certificates tzdata     && rm -rf /var/lib/apt/lists/*
+ ---> Using cache
+ ---> e565378dd256
+Step 12/23 : WORKDIR /app
+ ---> Using cache
+ ---> 04475d410d35
+Step 13/23 : COPY --from=build --chown=node:node /app/apps/web/.next/standalone ./
+ ---> 94da03a4bd1f
+Step 14/23 : COPY --from=build --chown=node:node /app/apps/web/.next/static ./apps/web/.next/static
+ ---> f9d26d9c0c5b
+Step 15/23 : COPY infra/assemble_runtime.py /assemble_runtime.py
+ ---> e3131f4c1137
+Step 16/23 : RUN python3 /assemble_runtime.py node /runtime-root     && chroot /runtime-root /usr/local/bin/node --version
+ ---> Running in 7650a75f897c
+Assembled node: 1869 files, 9 original Debian package records
+v24.22.2
+ ---> Removed intermediate container 7650a75f897c
+ ---> 04ea14a6dec2
+Step 17/23 : FROM scratch
+ ---> 
+Step 18/23 : ENV PATH=/usr/local/bin:/usr/bin:/bin HOME=/tmp     NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 HOSTNAME=0.0.0.0 PORT=3000     SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+ ---> Using cache
+ ---> 1aa9f31a3845
+Step 19/23 : COPY --from=runtime-build /runtime-root /
+ ---> 3c7909f62b38
+Step 20/23 : WORKDIR /app
+ ---> Running in 1305772ae938
+ ---> Removed intermediate container 1305772ae938
+ ---> 6a2b3d61272c
+Step 21/23 : USER node
+ ---> Running in a317c82372c1
+ ---> Removed intermediate container a317c82372c1
+ ---> 8929838f31ef
+Step 22/23 : EXPOSE 3000
+ ---> Running in ac3866f11d73
+ ---> Removed intermediate container ac3866f11d73
+ ---> 92d2b92d04e1
+Step 23/23 : CMD ["node", "apps/web/server.js"]
+ ---> Running in 0aaa20a7f663
+ ---> Removed intermediate container 0aaa20a7f663
+ ---> 863d7eced8da
+Successfully built 863d7eced8da
+Successfully tagged cargopulse-web-remediation:final

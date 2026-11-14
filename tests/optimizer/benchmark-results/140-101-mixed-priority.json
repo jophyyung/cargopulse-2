@@ -1,0 +1,2606 @@
+{
+  "run": {
+    "size": 140,
+    "seed": 101,
+    "profile": "mixed",
+    "policy": "priority",
+    "wall_ms": 194.87254100022255,
+    "status": "FEASIBLE",
+    "validation": "PASS",
+    "weighted_delay_hours": "1144.125000",
+    "objective": "5042.525000",
+    "best_bound": "None",
+    "gap": "None",
+    "assigned": 104,
+    "unassigned": 36,
+    "recoverable_uld_denominator": 128,
+    "all_affected_uld_denominator": 140,
+    "candidate_count": 2560,
+    "pruned_paths": 7328,
+    "snapshot_hash": "0d6332f3827864b3466d58925ef17916a24193c4ce33e57f52d51c018a1d7c9c",
+    "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e"
+  },
+  "plan": {
+    "schema_version": "1.0.0",
+    "snapshot_hash": "0d6332f3827864b3466d58925ef17916a24193c4ce33e57f52d51c018a1d7c9c",
+    "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e",
+    "synthetic": true,
+    "evidence_tier": "TEAM_SYNTHETIC_UNVERIFIED",
+    "solver": {
+      "engine": "PRIORITY_FIRST",
+      "version": "reference-v1",
+      "status": "FEASIBLE",
+      "wall_time_ms": "144.202125",
+      "time_limit_seconds": 30,
+      "objective_value": "5042.525000",
+      "best_bound": null,
+      "optimality_gap": null,
+      "variable_count": 0,
+      "candidate_count": 2560,
+      "termination_reason": "GREEDY_REFERENCE_NO_OPTIMALITY_CLAIM"
+    },
+    "assignments": [
+      {
+        "cargo_unit_id": "U-0020",
+        "path_id": "P-38c1a7308509dd9e24b3be91",
+        "legs": [
+          {
+            "flight_id": "F-LAX-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T10:45:00Z",
+        "delay_hours": "1.750000",
+        "weighted_delay_hours": "4.375000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0071",
+        "path_id": "P-20c575dcd579c36c9e033179",
+        "legs": [
+          {
+            "flight_id": "F-BOM-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T14:30:00Z",
+        "delay_hours": "5.500000",
+        "weighted_delay_hours": "13.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0073",
+        "path_id": "P-094e5a519564fee1d54a94ea",
+        "legs": [
+          {
+            "flight_id": "F-FRA-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LHR-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T07:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0012",
+        "path_id": "P-0bf901daec0a8d76e4bd0f44",
+        "legs": [
+          {
+            "flight_id": "F-LAX-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T10:45:00Z",
+        "delay_hours": "0.750000",
+        "weighted_delay_hours": "1.875000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0054",
+        "path_id": "P-0da26903829a558ba098ea86",
+        "legs": [
+          {
+            "flight_id": "F-DXB-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T13:15:00Z",
+        "delay_hours": "2.250000",
+        "weighted_delay_hours": "5.625000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0017",
+        "path_id": "P-0046f8cf61d5180094a6bd2c",
+        "legs": [
+          {
+            "flight_id": "F-FRA-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T07:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0052",
+        "path_id": "P-0f2296c0ee4fd7800129bb66",
+        "legs": [
+          {
+            "flight_id": "F-LAX-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-FRA-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T10:45:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0059",
+        "path_id": "P-379e33e8a2c5c483b3f3f22a",
+        "legs": [
+          {
+            "flight_id": "F-LHR-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T09:30:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0097",
+        "path_id": "P-088c4fd55caeb73ac7f0224a",
+        "legs": [
+          {
+            "flight_id": "F-FRA-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LHR-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T07:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0050",
+        "path_id": "P-25d3e4cdec3818c23f2af79e",
+        "legs": [
+          {
+            "flight_id": "F-AMS-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T08:15:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0111",
+        "path_id": "P-04fbbabebcf19dfca72b696f",
+        "legs": [
+          {
+            "flight_id": "F-BOM-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T14:30:00Z",
+        "delay_hours": "0.500000",
+        "weighted_delay_hours": "1.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0081",
+        "path_id": "P-2c7815c9f6d4d870baee6756",
+        "legs": [
+          {
+            "flight_id": "F-FRA-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T07:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0096",
+        "path_id": "P-2fb691abdceb21e6d5922b28",
+        "legs": [
+          {
+            "flight_id": "F-SIN-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T15:45:00Z",
+        "delay_hours": "0.750000",
+        "weighted_delay_hours": "1.875000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0048",
+        "path_id": "P-2c514b77486b72809d82a041",
+        "legs": [
+          {
+            "flight_id": "F-SIN-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T15:45:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0061",
+        "path_id": "P-435f1ac6c82cd764852e6216",
+        "legs": [
+          {
+            "flight_id": "F-SYD-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T12:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0138",
+        "path_id": "P-170d52f06d64c1d079d9bef3",
+        "legs": [
+          {
+            "flight_id": "F-AMS-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T08:15:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0078",
+        "path_id": "P-27b2713316738d1cea8c25a7",
+        "legs": [
+          {
+            "flight_id": "F-DXB-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T13:15:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0069",
+        "path_id": "P-5944a8e56e1dd2dcf2c915b5",
+        "legs": [
+          {
+            "flight_id": "F-SYD-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T12:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0115",
+        "path_id": "P-24a557cb159bf2f21bfb3077",
+        "legs": [
+          {
+            "flight_id": "F-LHR-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T09:30:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0007",
+        "path_id": "P-1f28e99f66eb3902ed39fb17",
+        "legs": [
+          {
+            "flight_id": "F-BOM-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-FRA-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T14:30:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0092",
+        "path_id": "P-0204ae4baac25f8ffe63505c",
+        "legs": [
+          {
+            "flight_id": "F-LAX-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T10:45:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0035",
+        "path_id": "P-11cffc7c3ea012ee9c74f077",
+        "legs": [
+          {
+            "flight_id": "F-LHR-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-FRA-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T09:30:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0041",
+        "path_id": "P-22f226c14d16fef39f248d3e",
+        "legs": [
+          {
+            "flight_id": "F-FRA-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T07:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0085",
+        "path_id": "P-4b997866d3d2e1da04d710b9",
+        "legs": [
+          {
+            "flight_id": "F-SYD-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T12:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0108",
+        "path_id": "P-0a9705599da297837acc35ed",
+        "legs": [
+          {
+            "flight_id": "F-LAX-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T10:45:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0117",
+        "path_id": "P-078f642f1b18aad6e87550fe",
+        "legs": [
+          {
+            "flight_id": "F-SYD-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T12:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0051",
+        "path_id": "P-3dea31861daf6485b64aed74",
+        "legs": [
+          {
+            "flight_id": "F-LHR-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T09:30:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0093",
+        "path_id": "P-09e44fc881fd4ec645ed4d53",
+        "legs": [
+          {
+            "flight_id": "F-SYD-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-FRA-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T12:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0087",
+        "path_id": "P-0ad4536e736ad1cb29c41997",
+        "legs": [
+          {
+            "flight_id": "F-BOM-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T14:30:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0015",
+        "path_id": "P-1e1799907d849c4238d7f4fb",
+        "legs": [
+          {
+            "flight_id": "F-BOM-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T14:30:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0030",
+        "path_id": "P-967223ca30c9e02bcf0d0d8f",
+        "legs": [
+          {
+            "flight_id": "F-DXB-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LHR-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T13:15:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0036",
+        "path_id": "P-2b745e7c0c9d7bc8624a2b7c",
+        "legs": [
+          {
+            "flight_id": "F-LAX-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T22:45:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0060",
+        "path_id": "P-0d281f9ff2874c3812df311b",
+        "legs": [
+          {
+            "flight_id": "F-LAX-3",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-3"
+          }
+        ],
+        "arrival_at": "2026-11-11T10:45:00Z",
+        "delay_hours": "5.750000",
+        "weighted_delay_hours": "14.375000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0083",
+        "path_id": "P-2130eef0452f2175fe8c08db",
+        "legs": [
+          {
+            "flight_id": "F-LHR-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T21:30:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0091",
+        "path_id": "P-008866dc55e00619d1afc146",
+        "legs": [
+          {
+            "flight_id": "F-LHR-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LHR-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T21:30:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0005",
+        "path_id": "P-3a290bdc0ae1de1783ba4e2a",
+        "legs": [
+          {
+            "flight_id": "F-SYD-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T00:00:00Z",
+        "delay_hours": "16.000000",
+        "weighted_delay_hours": "16.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0118",
+        "path_id": "P-1350b70d3a1590bbfebb5dcf",
+        "legs": [
+          {
+            "flight_id": "F-DXB-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-FRA-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T01:15:00Z",
+        "delay_hours": "17.250000",
+        "weighted_delay_hours": "17.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0122",
+        "path_id": "P-17c837880babcf85c25398ec",
+        "legs": [
+          {
+            "flight_id": "F-AMS-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LHR-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T08:15:00Z",
+        "delay_hours": "0.250000",
+        "weighted_delay_hours": "0.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0038",
+        "path_id": "P-095ba436c922d5baf51b143b",
+        "legs": [
+          {
+            "flight_id": "F-DXB-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T01:15:00Z",
+        "delay_hours": "16.250000",
+        "weighted_delay_hours": "16.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0057",
+        "path_id": "P-2f593b1743740af381a03acc",
+        "legs": [
+          {
+            "flight_id": "F-FRA-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-FRA-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T07:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0063",
+        "path_id": "P-0454d0ac3761d63a06c94256",
+        "legs": [
+          {
+            "flight_id": "F-BOM-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-FRA-1"
+          }
+        ],
+        "arrival_at": "2026-11-11T02:30:00Z",
+        "delay_hours": "17.500000",
+        "weighted_delay_hours": "17.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0082",
+        "path_id": "P-633d650b70108f2842446bd6",
+        "legs": [
+          {
+            "flight_id": "F-AMS-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T08:15:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0101",
+        "path_id": "P-06e2ef7bfe95d6bedc9daf22",
+        "legs": [
+          {
+            "flight_id": "F-SYD-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LHR-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T00:00:00Z",
+        "delay_hours": "15.000000",
+        "weighted_delay_hours": "15.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0031",
+        "path_id": "P-04a40ab307ff208224c6f58e",
+        "legs": [
+          {
+            "flight_id": "F-BOM-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-1"
+          }
+        ],
+        "arrival_at": "2026-11-11T02:30:00Z",
+        "delay_hours": "16.500000",
+        "weighted_delay_hours": "16.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0090",
+        "path_id": "P-8f072089113116601dac01ef",
+        "legs": [
+          {
+            "flight_id": "F-AMS-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T08:15:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0116",
+        "path_id": "P-17bdaa489a7c7fa1f55bc4c7",
+        "legs": [
+          {
+            "flight_id": "F-LAX-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T22:45:00Z",
+        "delay_hours": "12.750000",
+        "weighted_delay_hours": "12.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0126",
+        "path_id": "P-6be2aba830f2c5c0cf3aa34f",
+        "legs": [
+          {
+            "flight_id": "F-DXB-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-FRA-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T01:15:00Z",
+        "delay_hours": "15.250000",
+        "weighted_delay_hours": "15.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0127",
+        "path_id": "P-0da5acf22066aa778c113264",
+        "legs": [
+          {
+            "flight_id": "F-BOM-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T02:30:00Z",
+        "delay_hours": "16.500000",
+        "weighted_delay_hours": "16.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0076",
+        "path_id": "P-1d402131627fc9ab334aebf3",
+        "legs": [
+          {
+            "flight_id": "F-LAX-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-FRA-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T22:45:00Z",
+        "delay_hours": "11.750000",
+        "weighted_delay_hours": "11.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0008",
+        "path_id": "P-146ac29834e709f4ebe4991e",
+        "legs": [
+          {
+            "flight_id": "F-SIN-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T03:45:00Z",
+        "delay_hours": "15.750000",
+        "weighted_delay_hours": "15.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0075",
+        "path_id": "P-2315397179219494d698088e",
+        "legs": [
+          {
+            "flight_id": "F-LHR-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LHR-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T21:30:00Z",
+        "delay_hours": "9.500000",
+        "weighted_delay_hours": "9.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0109",
+        "path_id": "P-04ba12f8258929cc2d130950",
+        "legs": [
+          {
+            "flight_id": "F-SYD-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LHR-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T00:00:00Z",
+        "delay_hours": "12.000000",
+        "weighted_delay_hours": "12.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0112",
+        "path_id": "P-14a3403521dcd4f153935690",
+        "legs": [
+          {
+            "flight_id": "F-SIN-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LHR-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T03:45:00Z",
+        "delay_hours": "15.750000",
+        "weighted_delay_hours": "15.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0134",
+        "path_id": "P-c7d92b653b31b5eab973cabf",
+        "legs": [
+          {
+            "flight_id": "F-DXB-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T01:15:00Z",
+        "delay_hours": "37.250000",
+        "weighted_delay_hours": "37.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0139",
+        "path_id": "P-06fa34305a192122e7d568f4",
+        "legs": [
+          {
+            "flight_id": "F-LHR-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T21:30:00Z",
+        "delay_hours": "9.500000",
+        "weighted_delay_hours": "9.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0024",
+        "path_id": "P-2df2e04fa1abfbe1c10d4739",
+        "legs": [
+          {
+            "flight_id": "F-SIN-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T03:45:00Z",
+        "delay_hours": "14.750000",
+        "weighted_delay_hours": "14.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0072",
+        "path_id": "P-50ad00c68d8905a5bb29b740",
+        "legs": [
+          {
+            "flight_id": "F-SIN-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T03:45:00Z",
+        "delay_hours": "14.750000",
+        "weighted_delay_hours": "14.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0080",
+        "path_id": "P-1354981c16961b25726df5a9",
+        "legs": [
+          {
+            "flight_id": "F-SIN-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T03:45:00Z",
+        "delay_hours": "14.750000",
+        "weighted_delay_hours": "14.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0100",
+        "path_id": "P-01d4bfa43945fea9e4aa0f4d",
+        "legs": [
+          {
+            "flight_id": "F-LAX-3",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-3"
+          }
+        ],
+        "arrival_at": "2026-11-11T10:45:00Z",
+        "delay_hours": "21.750000",
+        "weighted_delay_hours": "21.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0114",
+        "path_id": "P-13c8bf2548bf4e0c3105f00b",
+        "legs": [
+          {
+            "flight_id": "F-AMS-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T20:15:00Z",
+        "delay_hours": "7.250000",
+        "weighted_delay_hours": "7.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0016",
+        "path_id": "P-002ab9bde8db1e4ce85263c4",
+        "legs": [
+          {
+            "flight_id": "F-SIN-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LHR-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T03:45:00Z",
+        "delay_hours": "13.750000",
+        "weighted_delay_hours": "13.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0067",
+        "path_id": "P-0a1347f5e4dc50facb5600dc",
+        "legs": [
+          {
+            "flight_id": "F-LHR-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T21:30:00Z",
+        "delay_hours": "7.500000",
+        "weighted_delay_hours": "7.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0107",
+        "path_id": "P-ea76cbc68a459daa4fef5458",
+        "legs": [
+          {
+            "flight_id": "F-LHR-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T21:30:00Z",
+        "delay_hours": "30.500000",
+        "weighted_delay_hours": "30.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0135",
+        "path_id": "P-c5beced2e6ec80b7da293936",
+        "legs": [
+          {
+            "flight_id": "F-BOM-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T02:30:00Z",
+        "delay_hours": "35.500000",
+        "weighted_delay_hours": "35.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0002",
+        "path_id": "P-2f35f0437738b2f06b6d6f93",
+        "legs": [
+          {
+            "flight_id": "F-AMS-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-FRA-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T20:15:00Z",
+        "delay_hours": "4.250000",
+        "weighted_delay_hours": "4.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0006",
+        "path_id": "P-f61a58ba1d74f8169f305510",
+        "legs": [
+          {
+            "flight_id": "F-DXB-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T01:15:00Z",
+        "delay_hours": "33.250000",
+        "weighted_delay_hours": "33.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0021",
+        "path_id": "P-012f593a8884e36af76db76e",
+        "legs": [
+          {
+            "flight_id": "F-SYD-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T00:00:00Z",
+        "delay_hours": "8.000000",
+        "weighted_delay_hours": "8.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0102",
+        "path_id": "P-f38a4fb1da887178b76753ee",
+        "legs": [
+          {
+            "flight_id": "F-DXB-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T01:15:00Z",
+        "delay_hours": "33.250000",
+        "weighted_delay_hours": "33.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0001",
+        "path_id": "P-4daca79d12d8e35116d71de4",
+        "legs": [
+          {
+            "flight_id": "F-FRA-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T19:00:00Z",
+        "delay_hours": "2.000000",
+        "weighted_delay_hours": "2.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0068",
+        "path_id": "P-056aeff902e1f2f523106eff",
+        "legs": [
+          {
+            "flight_id": "F-LAX-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T22:45:00Z",
+        "delay_hours": "5.750000",
+        "weighted_delay_hours": "5.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0095",
+        "path_id": "P-648e537efdc3202968a25be4",
+        "legs": [
+          {
+            "flight_id": "F-BOM-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T02:30:00Z",
+        "delay_hours": "9.500000",
+        "weighted_delay_hours": "9.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0128",
+        "path_id": "P-6565302a6e94db216ee4b984",
+        "legs": [
+          {
+            "flight_id": "F-SIN-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T03:45:00Z",
+        "delay_hours": "34.750000",
+        "weighted_delay_hours": "34.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0133",
+        "path_id": "P-86e223657bcb652f0b498224",
+        "legs": [
+          {
+            "flight_id": "F-SYD-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T00:00:00Z",
+        "delay_hours": "31.000000",
+        "weighted_delay_hours": "31.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0136",
+        "path_id": "P-f30e83aa7a2129a907e79e14",
+        "legs": [
+          {
+            "flight_id": "F-SIN-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T03:45:00Z",
+        "delay_hours": "34.750000",
+        "weighted_delay_hours": "34.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0018",
+        "path_id": "P-081721c4ca72e00ec5cb0adf",
+        "legs": [
+          {
+            "flight_id": "F-AMS-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T20:15:00Z",
+        "delay_hours": "2.250000",
+        "weighted_delay_hours": "2.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0023",
+        "path_id": "P-e5018a862264aebff3069af2",
+        "legs": [
+          {
+            "flight_id": "F-BOM-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T02:30:00Z",
+        "delay_hours": "32.500000",
+        "weighted_delay_hours": "32.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0026",
+        "path_id": "P-0b595d840a6a0c527cb9dcee",
+        "legs": [
+          {
+            "flight_id": "F-AMS-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T20:15:00Z",
+        "delay_hours": "2.250000",
+        "weighted_delay_hours": "2.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0028",
+        "path_id": "P-5e3d7456e24cdd2a9948d5df",
+        "legs": [
+          {
+            "flight_id": "F-LAX-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T22:45:00Z",
+        "delay_hours": "28.750000",
+        "weighted_delay_hours": "28.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0032",
+        "path_id": "P-2a63c028348627fa27988ece",
+        "legs": [
+          {
+            "flight_id": "F-SIN-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SIN-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T03:45:00Z",
+        "delay_hours": "33.750000",
+        "weighted_delay_hours": "33.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0103",
+        "path_id": "P-a015ee2d33f386e81793a170",
+        "legs": [
+          {
+            "flight_id": "F-BOM-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T02:30:00Z",
+        "delay_hours": "32.500000",
+        "weighted_delay_hours": "32.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0137",
+        "path_id": "P-1fa309804e389fc2ad38fa57",
+        "legs": [
+          {
+            "flight_id": "F-FRA-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T19:00:00Z",
+        "delay_hours": "1.000000",
+        "weighted_delay_hours": "1.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0029",
+        "path_id": "P-f43dfa434770be87c514a50b",
+        "legs": [
+          {
+            "flight_id": "F-SYD-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T00:00:00Z",
+        "delay_hours": "29.000000",
+        "weighted_delay_hours": "29.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0074",
+        "path_id": "P-ea00a4881e045c3dd371396f",
+        "legs": [
+          {
+            "flight_id": "F-AMS-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T20:15:00Z",
+        "delay_hours": "25.250000",
+        "weighted_delay_hours": "25.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0084",
+        "path_id": "P-9f45afc12d16e620792cae59",
+        "legs": [
+          {
+            "flight_id": "F-LAX-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T22:45:00Z",
+        "delay_hours": "3.750000",
+        "weighted_delay_hours": "3.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0089",
+        "path_id": "P-28d4d3bb38d479e1e6ad9385",
+        "legs": [
+          {
+            "flight_id": "F-FRA-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T19:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0119",
+        "path_id": "P-dee422e7e6197d181efa0674",
+        "legs": [
+          {
+            "flight_id": "F-BOM-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T02:30:00Z",
+        "delay_hours": "31.500000",
+        "weighted_delay_hours": "31.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0113",
+        "path_id": "P-2d9c6cd4555af69455fa5868",
+        "legs": [
+          {
+            "flight_id": "F-FRA-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T19:00:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0003",
+        "path_id": "P-15aded22e5aaec01940865ef",
+        "legs": [
+          {
+            "flight_id": "F-LHR-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T21:30:00Z",
+        "delay_hours": "0.500000",
+        "weighted_delay_hours": "0.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0037",
+        "path_id": "P-ef100fe20e0b8033a04db63d",
+        "legs": [
+          {
+            "flight_id": "F-SYD-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T00:00:00Z",
+        "delay_hours": "27.000000",
+        "weighted_delay_hours": "27.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0042",
+        "path_id": "P-35de3f7efde1d3970aab38dd",
+        "legs": [
+          {
+            "flight_id": "F-AMS-3",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-3"
+          }
+        ],
+        "arrival_at": "2026-11-11T08:15:00Z",
+        "delay_hours": "11.250000",
+        "weighted_delay_hours": "11.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0004",
+        "path_id": "P-7c92e8928d729c6f84d89ed1",
+        "legs": [
+          {
+            "flight_id": "F-LAX-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T22:45:00Z",
+        "delay_hours": "0.750000",
+        "weighted_delay_hours": "0.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0124",
+        "path_id": "P-d75c5133b027795bab3b1fd2",
+        "legs": [
+          {
+            "flight_id": "F-LAX-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T22:45:00Z",
+        "delay_hours": "24.750000",
+        "weighted_delay_hours": "24.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0098",
+        "path_id": "P-fac2b24c49ba4646a85e0037",
+        "legs": [
+          {
+            "flight_id": "F-AMS-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T20:15:00Z",
+        "delay_hours": "21.250000",
+        "weighted_delay_hours": "21.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0130",
+        "path_id": "P-c60288d15f44f588e85302b1",
+        "legs": [
+          {
+            "flight_id": "F-AMS-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T20:15:00Z",
+        "delay_hours": "20.250000",
+        "weighted_delay_hours": "20.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0019",
+        "path_id": "P-ffaa76634dc4511f4543e841",
+        "legs": [
+          {
+            "flight_id": "F-LHR-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T21:30:00Z",
+        "delay_hours": "20.500000",
+        "weighted_delay_hours": "20.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0129",
+        "path_id": "P-d00ce8da4a019014b4e6881b",
+        "legs": [
+          {
+            "flight_id": "F-FRA-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T19:00:00Z",
+        "delay_hours": "18.000000",
+        "weighted_delay_hours": "18.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0106",
+        "path_id": "P-fd58d5339632b2ff0764e945",
+        "legs": [
+          {
+            "flight_id": "F-AMS-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T20:15:00Z",
+        "delay_hours": "18.250000",
+        "weighted_delay_hours": "18.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0025",
+        "path_id": "P-faf61b16bb13a0d9941eb7e7",
+        "legs": [
+          {
+            "flight_id": "F-FRA-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T19:00:00Z",
+        "delay_hours": "16.000000",
+        "weighted_delay_hours": "16.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0079",
+        "path_id": "P-1280d18b5f906c35d0c96e88",
+        "legs": [
+          {
+            "flight_id": "F-BOM-3",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-3"
+          }
+        ],
+        "arrival_at": "2026-11-11T14:30:00Z",
+        "delay_hours": "11.500000",
+        "weighted_delay_hours": "11.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0049",
+        "path_id": "P-f02b56b5b760aea524763e46",
+        "legs": [
+          {
+            "flight_id": "F-FRA-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T19:00:00Z",
+        "delay_hours": "15.000000",
+        "weighted_delay_hours": "15.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0120",
+        "path_id": "P-1b50a2a247f5899222b4e252",
+        "legs": [
+          {
+            "flight_id": "F-SIN-3",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-2"
+          }
+        ],
+        "arrival_at": "2026-11-11T15:45:00Z",
+        "delay_hours": "11.750000",
+        "weighted_delay_hours": "11.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0027",
+        "path_id": "P-d0ca219afef114a688136697",
+        "legs": [
+          {
+            "flight_id": "F-LHR-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LHR-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T21:30:00Z",
+        "delay_hours": "16.500000",
+        "weighted_delay_hours": "16.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0013",
+        "path_id": "P-74a1748278640f15629409e4",
+        "legs": [
+          {
+            "flight_id": "F-SYD-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-SYD-4"
+          }
+        ],
+        "arrival_at": "2026-11-12T00:00:00Z",
+        "delay_hours": "18.000000",
+        "weighted_delay_hours": "18.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0131",
+        "path_id": "P-7b97f3d252287b4d436a5d91",
+        "legs": [
+          {
+            "flight_id": "F-LHR-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-4"
+          }
+        ],
+        "arrival_at": "2026-11-11T21:30:00Z",
+        "delay_hours": "15.500000",
+        "weighted_delay_hours": "15.500000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      }
+    ],
+    "unassigned": [
+      {
+        "cargo_unit_id": "U-0009",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0010",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0011",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0014",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0022",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0033",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0034",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0039",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0040",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0043",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0044",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_AIRCRAFT_INCOMPATIBLE",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0045",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0046",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0047",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0053",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0055",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0056",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0058",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0062",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0064",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0065",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0066",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0070",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0077",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0086",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0088",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0094",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0099",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0104",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0105",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0110",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0121",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0123",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0125",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0132",
+        "reason_codes": [
+          "CUSTOMS_NOT_VERIFIED",
+          "DG_PERMISSION_NOT_VERIFIED"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0140",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      }
+    ],
+    "independent_validation": {
+      "status": "PASS",
+      "version": "independent-v1",
+      "checked_gates": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "CONTRACT"
+      ],
+      "violations": [],
+      "snapshot_hash": "0d6332f3827864b3466d58925ef17916a24193c4ce33e57f52d51c018a1d7c9c",
+      "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e"
+    },
+    "metrics": [
+      {
+        "name": "proposed_departure_48h_eligible_uld_rate",
+        "value": "0.812500",
+        "unit": "ratio",
+        "numerator": "104",
+        "denominator": "128",
+        "cohort_id": "synthetic-recover-101-20261110T000000",
+        "window_start_utc": "2026-11-10T00:00:00Z",
+        "window_end_utc": "2026-11-12T00:00:00Z",
+        "event_as_of_utc": "2026-11-10T00:00:00Z",
+        "scenario_type": "RECOVER",
+        "metric_method_version": "metrics-v1",
+        "evidence_tier": "TEAM_SYNTHETIC_UNVERIFIED",
+        "data_source_ids": [
+          "seeded-synthetic-generator-v1"
+        ],
+        "snapshot_hash": "0d6332f3827864b3466d58925ef17916a24193c4ce33e57f52d51c018a1d7c9c",
+        "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e",
+        "baseline_policy_version": "PRIORITY_FIRST-v1; matched candidates and resources",
+        "statistic": "proposed_first_departure_within_48h_not_approved_capacity",
+        "status": "COMPUTED"
+      },
+      {
+        "name": "proposed_departure_48h_all_affected_uld_rate",
+        "value": "0.742857",
+        "unit": "ratio",
+        "numerator": "104",
+        "denominator": "140",
+        "cohort_id": "synthetic-recover-101-20261110T000000",
+        "window_start_utc": "2026-11-10T00:00:00Z",
+        "window_end_utc": "2026-11-12T00:00:00Z",
+        "event_as_of_utc": "2026-11-10T00:00:00Z",
+        "scenario_type": "RECOVER",
+        "metric_method_version": "metrics-v1",
+        "evidence_tier": "TEAM_SYNTHETIC_UNVERIFIED",
+        "data_source_ids": [
+          "seeded-synthetic-generator-v1"
+        ],
+        "snapshot_hash": "0d6332f3827864b3466d58925ef17916a24193c4ce33e57f52d51c018a1d7c9c",
+        "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e",
+        "baseline_policy_version": "PRIORITY_FIRST-v1; matched candidates and resources",
+        "statistic": "proposed_first_departure_within_48h_not_approved_capacity",
+        "status": "COMPUTED"
+      },
+      {
+        "name": "weighted_delay_hours",
+        "value": "1144.125000",
+        "unit": "weighted_hours",
+        "numerator": "1144.125000",
+        "denominator": "1",
+        "cohort_id": "synthetic-recover-101-20261110T000000",
+        "window_start_utc": "2026-11-10T00:00:00Z",
+        "window_end_utc": "2026-11-12T00:00:00Z",
+        "event_as_of_utc": "2026-11-10T00:00:00Z",
+        "scenario_type": "RECOVER",
+        "metric_method_version": "metrics-v1",
+        "evidence_tier": "TEAM_SYNTHETIC_UNVERIFIED",
+        "data_source_ids": [
+          "seeded-synthetic-generator-v1"
+        ],
+        "snapshot_hash": "0d6332f3827864b3466d58925ef17916a24193c4ce33e57f52d51c018a1d7c9c",
+        "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e",
+        "baseline_policy_version": "PRIORITY_FIRST-v1; matched candidates and resources",
+        "statistic": "proposed_assigned_cargo_weighted_hours",
+        "status": "COMPUTED"
+      },
+      {
+        "name": "unassigned_uld_count",
+        "value": "36.000000",
+        "unit": "ULD",
+        "numerator": "36",
+        "denominator": "1",
+        "cohort_id": "synthetic-recover-101-20261110T000000",
+        "window_start_utc": "2026-11-10T00:00:00Z",
+        "window_end_utc": "2026-11-12T00:00:00Z",
+        "event_as_of_utc": "2026-11-10T00:00:00Z",
+        "scenario_type": "RECOVER",
+        "metric_method_version": "metrics-v1",
+        "evidence_tier": "TEAM_SYNTHETIC_UNVERIFIED",
+        "data_source_ids": [
+          "seeded-synthetic-generator-v1"
+        ],
+        "snapshot_hash": "0d6332f3827864b3466d58925ef17916a24193c4ce33e57f52d51c018a1d7c9c",
+        "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e",
+        "baseline_policy_version": "PRIORITY_FIRST-v1; matched candidates and resources",
+        "statistic": "explicit_escalated_whole_uld_count",
+        "status": "COMPUTED"
+      }
+    ],
+    "model_scope": "SYNTHETIC_CONSERVATIVE_ENVELOPE; whole ULD; explicit per-leg handling; no clearance",
+    "has_external_write_permission": false
+  }
+}

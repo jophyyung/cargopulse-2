@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "recorded_utc": "2026-11-12T05:57:09.404495+00:00",
+  "source_commit": "97cc22cfe7f3cd3b2e560b3c02555b0dbce3d2f2",
+  "fresh_worktree_clean_before_and_after": true,
+  "imports_resolved_to_fresh_api_contracts_optimizer": true,
+  "full_python_cases": 263,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "upstream_warnings": 1,
+  "seconds": 91.52,
+  "live_web_boundary": "http://localhost:3000",
+  "native_databases": "three exact isolated loopback fixture databases; no application database reset",
+  "dependencies": "existing locked root Python3.12.16 environment reused; no dependency install or new-host claim",
+  "source_runtime_binding": "source-runtime-binding.json",
+  "hashes": {
+    "status-after.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status-before.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pytest.txt": "61967e1dacbaa1835f59b1e51e2d57985ee2965ffc7633ab9bbe0a4961773727",
+    "pytest.xml": "2c2b4a18f8093d670461a2478b74f23196ef2f157fb6a0df744e4e62576d5938",
+    "source-runtime-binding.json": "76bd9eb75cbc9384913de3f58759603f93bc53d18f65dbfe2d7cdfd6666b6486"
+  },
+  "limits": [
+    "Full Chrome14 previously ran against the same immutable final images; not rerun by this checkout check.",
+    "No hosted CI, enterprise IdP/cloud service or public deployment acceptance."
+  ]
+}

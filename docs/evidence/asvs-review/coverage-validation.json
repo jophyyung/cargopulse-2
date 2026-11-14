@@ -1,0 +1,1077 @@
+{
+  "generated_utc": "2026-11-11T16:12:51.667988+00:00",
+  "application_source_base": "1b003eb22427c784fe1b59fff6bfe650be120909",
+  "passed": true,
+  "source_sha256": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+  "vendor_source_byte_identical": true,
+  "canonical_columns_preserved_cell_by_cell": [
+    "chapter_id",
+    "chapter_name",
+    "section_id",
+    "section_name",
+    "req_id",
+    "req_description",
+    "L"
+  ],
+  "canonical_requirement_order_preserved": true,
+  "row_count": 345,
+  "unique_requirement_ids": 345,
+  "nonempty_unique_reasons": 345,
+  "status_counts_including_zero": {
+    "BOUNDED_LOCAL_EVIDENCE": 117,
+    "NOT_ASSESSED": 68,
+    "EXTERNAL_NOT_VERIFIED": 117,
+    "NOT_APPLICABLE": 43,
+    "DELEGATED_UNVERIFIED": 0
+  },
+  "by_chapter": {
+    "V1": {
+      "BOUNDED_LOCAL_EVIDENCE": 17,
+      "NOT_APPLICABLE": 9,
+      "NOT_ASSESSED": 4
+    },
+    "V2": {
+      "BOUNDED_LOCAL_EVIDENCE": 10,
+      "NOT_ASSESSED": 3
+    },
+    "V3": {
+      "NOT_ASSESSED": 11,
+      "BOUNDED_LOCAL_EVIDENCE": 14,
+      "EXTERNAL_NOT_VERIFIED": 3,
+      "NOT_APPLICABLE": 3
+    },
+    "V4": {
+      "BOUNDED_LOCAL_EVIDENCE": 3,
+      "EXTERNAL_NOT_VERIFIED": 4,
+      "NOT_ASSESSED": 3,
+      "NOT_APPLICABLE": 6
+    },
+    "V5": {
+      "BOUNDED_LOCAL_EVIDENCE": 6,
+      "NOT_ASSESSED": 3,
+      "NOT_APPLICABLE": 4
+    },
+    "V6": {
+      "EXTERNAL_NOT_VERIFIED": 39,
+      "BOUNDED_LOCAL_EVIDENCE": 5,
+      "NOT_ASSESSED": 2,
+      "NOT_APPLICABLE": 1
+    },
+    "V7": {
+      "NOT_ASSESSED": 8,
+      "EXTERNAL_NOT_VERIFIED": 3,
+      "BOUNDED_LOCAL_EVIDENCE": 8
+    },
+    "V8": {
+      "BOUNDED_LOCAL_EVIDENCE": 8,
+      "NOT_ASSESSED": 4,
+      "EXTERNAL_NOT_VERIFIED": 1
+    },
+    "V9": {
+      "BOUNDED_LOCAL_EVIDENCE": 5,
+      "NOT_ASSESSED": 1,
+      "EXTERNAL_NOT_VERIFIED": 1
+    },
+    "V10": {
+      "BOUNDED_LOCAL_EVIDENCE": 8,
+      "NOT_APPLICABLE": 7,
+      "EXTERNAL_NOT_VERIFIED": 21
+    },
+    "V11": {
+      "EXTERNAL_NOT_VERIFIED": 13,
+      "NOT_ASSESSED": 5,
+      "BOUNDED_LOCAL_EVIDENCE": 5,
+      "NOT_APPLICABLE": 1
+    },
+    "V12": {
+      "EXTERNAL_NOT_VERIFIED": 12
+    },
+    "V13": {
+      "BOUNDED_LOCAL_EVIDENCE": 5,
+      "NOT_ASSESSED": 8,
+      "EXTERNAL_NOT_VERIFIED": 8
+    },
+    "V14": {
+      "EXTERNAL_NOT_VERIFIED": 6,
+      "NOT_ASSESSED": 4,
+      "BOUNDED_LOCAL_EVIDENCE": 3
+    },
+    "V15": {
+      "NOT_ASSESSED": 9,
+      "BOUNDED_LOCAL_EVIDENCE": 11,
+      "EXTERNAL_NOT_VERIFIED": 1
+    },
+    "V16": {
+      "EXTERNAL_NOT_VERIFIED": 5,
+      "BOUNDED_LOCAL_EVIDENCE": 9,
+      "NOT_ASSESSED": 3
+    },
+    "V17": {
+      "NOT_APPLICABLE": 12
+    }
+  },
+  "by_level": {
+    "2": {
+      "BOUNDED_LOCAL_EVIDENCE": 66,
+      "NOT_APPLICABLE": 30,
+      "NOT_ASSESSED": 27,
+      "EXTERNAL_NOT_VERIFIED": 60
+    },
+    "1": {
+      "BOUNDED_LOCAL_EVIDENCE": 35,
+      "NOT_APPLICABLE": 3,
+      "NOT_ASSESSED": 9,
+      "EXTERNAL_NOT_VERIFIED": 23
+    },
+    "3": {
+      "NOT_ASSESSED": 32,
+      "BOUNDED_LOCAL_EVIDENCE": 16,
+      "NOT_APPLICABLE": 10,
+      "EXTERNAL_NOT_VERIFIED": 34
+    }
+  },
+  "level1_not_assessed_count": 9,
+  "level1_not_assessed_rows": [
+    {
+      "chapter_id": "V1",
+      "chapter_name": "Encoding and Sanitization",
+      "section_id": "V1.5",
+      "section_name": "Safe Deserialization",
+      "req_id": "V1.5.1",
+      "req_description": "Verify that the application configures XML parsers to use a restrictive configuration and that unsafe features such as resolving external entities are disabled to prevent XML eXternal Entity (XXE) attacks.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "No XML upload is accepted, but STORE's boto3/botocore service responses use XML parsing. Local work: inspect the pinned SDK entity/DTD restrictions and test malicious protocol responses; absent XML uploads do not exempt SDK parsers."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.3",
+      "section_name": "Cookie Setup",
+      "req_id": "V3.3.1",
+      "req_description": "Verify that cookies have the 'Secure' attribute set, and if the '\\__Host-' prefix is not used for the cookie name, the '__Secure-' prefix must be used for the cookie name.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "SEC.session_cookie enables Secure outside development but names cp_session/cp_csrf have neither __Host- nor __Secure- prefix. Local gap: production cookie naming and transition regression; loopback development exceptions must stay explicit."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.5",
+      "section_name": "Browser Origin Separation",
+      "req_id": "V3.5.3",
+      "req_description": "Verify that HTTP requests to sensitive functionality use appropriate HTTP methods such as POST, PUT, PATCH, or DELETE, and not methods defined by the HTTP specification as \"safe\" such as HEAD, OPTIONS, or GET. Alternatively, strict validation of the Sec-Fetch-* request header fields can be used to ensure that the request did not originate from an inappropriate cross-origin call, a navigation request, or a resource load (such as an image source) where this is not expected.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Domain mutations use POST, but GET /auth/csrf rotates stored csrf_hash and sets a cookie. Local work: review whether safe-method token rotation can disrupt another request and add cross-site/race regression."
+    },
+    {
+      "chapter_id": "V5",
+      "chapter_name": "File Handling",
+      "section_id": "V5.2",
+      "section_name": "File Upload and Content",
+      "req_id": "V5.2.2",
+      "req_description": "Verify that when the application accepts a file, either on its own or within an archive such as a zip file, it checks if the file extension matches an expected file extension and validates that the contents correspond to the type represented by the extension. This includes, but is not limited to, checking the initial 'magic bytes', performing image re-writing, and using specialized libraries for file content validation. For L1, this can focus just on files which are used to make specific business or security decisions. For L2 and up, this must apply to all files being accepted.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "API checks CSV Content-Type and parses controlled fields; JSON uses MODEL. Local gap: file extension validation is not explicit; test filename/content mismatches and document accepted extension policy."
+    },
+    {
+      "chapter_id": "V7",
+      "chapter_name": "Session Management",
+      "section_id": "V7.4",
+      "section_name": "Session Termination",
+      "req_id": "V7.4.2",
+      "req_description": "Verify that the application terminates all active sessions when a user account is disabled or deleted (such as an employee leaving the company).",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "CP-ASVS-002 reproduced: disabled account rejects its old cookie with401, then re-enable restores200 without a new login. SEC checks enabled state but does not terminate the session; root notified. Local work: irreversible revocation on disable and re-enable regression."
+    },
+    {
+      "chapter_id": "V14",
+      "chapter_name": "Data Protection",
+      "section_id": "V14.2",
+      "section_name": "General Data Protection",
+      "req_id": "V14.2.1",
+      "req_description": "Verify that sensitive data is only sent to the server in the HTTP message body or header fields, and that the URL and query string do not contain sensitive information, such as an API key or session token.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Session/CSRF secrets use cookies/headers, not resource URLs; OIDC code/state necessarily arrive in callback query. Local work: verify callback URL/referrer/log redaction and prevent other secrets in queries; edge log policy remains external."
+    },
+    {
+      "chapter_id": "V14",
+      "chapter_name": "Data Protection",
+      "section_id": "V14.3",
+      "section_name": "Client-side Data Protection",
+      "req_id": "V14.3.1",
+      "req_description": "Verify that authenticated data is cleared from client storage, such as the browser DOM, after the client or session is terminated. The 'Clear-Site-Data' HTTP response header field may be able to help with this but the client-side should also be able to clear up if the server connection is not available when the session is terminated.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "WEB logout clears server session/cookies then navigates, but failed/offline logout leaves console DOM and no Clear-Site-Data or cross-tab invalidation handler exists. Local work: expiry/logout/offline/back-button sensitive-state clearing tests and implementation."
+    },
+    {
+      "chapter_id": "V15",
+      "chapter_name": "Secure Coding and Architecture",
+      "section_id": "V15.1",
+      "section_name": "Secure Coding and Architecture Documentation",
+      "req_id": "V15.1.1",
+      "req_description": "Verify that application documentation defines risk based remediation time frames for 3rd party component versions with vulnerabilities and for updating libraries in general, to minimize the risk from these components.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "SECURITY_REVIEW blocks HIGH/CRITICAL but no owner-approved remediation timeframes cover each severity/general updates. Local work: define version/scan cadence and risk-based deadlines with an accountable owner."
+    },
+    {
+      "chapter_id": "V15",
+      "chapter_name": "Secure Coding and Architecture",
+      "section_id": "V15.2",
+      "section_name": "Security Architecture and Dependencies",
+      "req_id": "V15.2.1",
+      "req_description": "Verify that the application only contains components which have not breached the documented update and remediation time frames.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Root supplied exact-image HIGH/CRITICAL gate PASS; API/web still have lower-severity advisories. Without documented risk-based deadlines, no claim that all components meet update/remediation timeframes is possible; reconcile current raw scans after integration."
+    }
+  ],
+  "remaining_local_rows": [
+    {
+      "chapter_id": "V1",
+      "chapter_name": "Encoding and Sanitization",
+      "section_id": "V1.2",
+      "section_name": "Injection Prevention",
+      "req_id": "V1.2.10",
+      "req_description": "Verify that the application is protected against CSV and Formula Injection. The application must follow the escaping rules defined in RFC 4180 sections 2.6 and 2.7 when exporting CSV content. Additionally, when exporting to CSV or other spreadsheet formats (such as XLS, XLSX, or ODF), special characters (including '=', '+', '-', '@', '\\t' (tab), and '\\0' (null character)) must be escaped with a single quote if they appear as the first character in a field value.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "API export quotes formula-leading =,+,-,@ after lstrip and csv.writer handles quoting; test_csv_bounded_schema_and_formula covers a subset. Local gap: explicit tab/null-leading export cases and full RFC4180 roundtrip coverage are missing."
+    },
+    {
+      "chapter_id": "V1",
+      "chapter_name": "Encoding and Sanitization",
+      "section_id": "V1.4",
+      "section_name": "Memory, String, and Unmanaged Code",
+      "req_id": "V1.4.1",
+      "req_description": "Verify that the application uses memory-safe string, safer memory copy and pointer arithmetic to detect or prevent stack, buffer, or heap overflows.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Python/TypeScript business code avoids manual pointer arithmetic, but HiGHS/NumPy/crypto/Node contain native code. Local work: native parser/fuzz coverage and vendor memory-safety evidence; Python use alone is insufficient."
+    },
+    {
+      "chapter_id": "V1",
+      "chapter_name": "Encoding and Sanitization",
+      "section_id": "V1.5",
+      "section_name": "Safe Deserialization",
+      "req_id": "V1.5.1",
+      "req_description": "Verify that the application configures XML parsers to use a restrictive configuration and that unsafe features such as resolving external entities are disabled to prevent XML eXternal Entity (XXE) attacks.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "No XML upload is accepted, but STORE's boto3/botocore service responses use XML parsing. Local work: inspect the pinned SDK entity/DTD restrictions and test malicious protocol responses; absent XML uploads do not exempt SDK parsers."
+    },
+    {
+      "chapter_id": "V1",
+      "chapter_name": "Encoding and Sanitization",
+      "section_id": "V1.5",
+      "section_name": "Safe Deserialization",
+      "req_id": "V1.5.3",
+      "req_description": "Verify that different parsers used in the application for the same data type (e.g., JSON parsers, XML parsers, URL parsers), perform parsing in a consistent way and use the same character encoding mechanism to avoid issues such as JSON Interoperability vulnerabilities or different URI or file parsing behavior being exploited in Remote File Inclusion (RFI) or Server-side Request Forgery (SSRF) attacks.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Next request JSON and Python JSON/CSV parsers cross different boundaries. Local gap: duplicate JSON keys, nonstandard numbers and ambiguous Unicode canonicalization have not been compared end to end."
+    },
+    {
+      "chapter_id": "V2",
+      "chapter_name": "Validation and Business Logic",
+      "section_id": "V2.1",
+      "section_name": "Validation and Business Logic Documentation",
+      "req_id": "V2.1.3",
+      "req_description": "Verify that expectations for business logic limits and validations are documented, including both per-user and globally across the application.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "QA08 documents per-tenant pending jobs and solver limits. Local gap: total import/object storage and global admission limits are not documented/enforced; owner must choose tenant/user/global budgets."
+    },
+    {
+      "chapter_id": "V2",
+      "chapter_name": "Validation and Business Logic",
+      "section_id": "V2.4",
+      "section_name": "Anti-automation",
+      "req_id": "V2.4.1",
+      "req_description": "Verify that anti-automation controls are in place to protect against excessive calls to application functions that could lead to data exfiltration, garbage-data creation, quota exhaustion, rate-limit breaches, denial-of-service, or overuse of costly resources.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Tenant pending-solve quota exists, but authenticated imports/exports/login starts have no general frequency or storage admission limit. Local work: abuse tests and explicit ingress/application limits; hosted WAF cannot be assumed present."
+    },
+    {
+      "chapter_id": "V2",
+      "chapter_name": "Validation and Business Logic",
+      "section_id": "V2.4",
+      "section_name": "Anti-automation",
+      "req_id": "V2.4.2",
+      "req_description": "Verify that business logic flows require realistic human timing, preventing excessively rapid transaction submissions.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Idempotency/ETag prevent duplicate decisions but do not enforce human timing. Local work: define a risk-based policy for rapid state-changing sequences; do not add arbitrary delays without product rationale."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.1",
+      "section_name": "Web Frontend Security Documentation",
+      "req_id": "V3.1.1",
+      "req_description": "Verify that application documentation states the expected security features that browsers using the application must support (such as HTTPS, HTTP Strict Transport Security (HSTS), Content Security Policy (CSP), and other relevant HTTP security mechanisms). It must also define how the application must behave when some of these features are not available (such as warning the user or blocking access).",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "PRODUCTION docs require TLS but do not define supported browser security features or fallback behavior. Local work: document CSP/HSTS/cookie capabilities and unsupported-browser response."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.3",
+      "section_name": "Cookie Setup",
+      "req_id": "V3.3.1",
+      "req_description": "Verify that cookies have the 'Secure' attribute set, and if the '\\__Host-' prefix is not used for the cookie name, the '__Secure-' prefix must be used for the cookie name.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "SEC.session_cookie enables Secure outside development but names cp_session/cp_csrf have neither __Host- nor __Secure- prefix. Local gap: production cookie naming and transition regression; loopback development exceptions must stay explicit."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.3",
+      "section_name": "Cookie Setup",
+      "req_id": "V3.3.3",
+      "req_description": "Verify that cookies have the '__Host-' prefix for the cookie name unless they are explicitly designed to be shared with other hosts.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "All application cookie names lack __Host- prefix; OIDC binding also uses a restricted callback Path. Local work: choose host-only prefix/path design and test cookie-tossing/domain/path behavior."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.4",
+      "section_name": "Browser Security Mechanism Headers",
+      "req_id": "V3.4.3",
+      "req_description": "Verify that HTTP responses include a Content-Security-Policy response header field which defines directives to ensure the browser only loads and executes trusted content or resources, in order to limit execution of malicious JavaScript. As a minimum, a global policy must be used which includes the directives object-src 'none' and base-uri 'none' and defines either an allowlist or uses nonces or hashes. For an L3 application, a per-response policy with nonces or hashes must be defined.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "WEB proxy sets nonce CSP but base-uri is 'self', not required 'none', and matcher excludes /api and static/image responses. Local work: reconcile directives/coverage and test actual final HTTP responses."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.4",
+      "section_name": "Browser Security Mechanism Headers",
+      "req_id": "V3.4.6",
+      "req_description": "Verify that the web application uses the frame-ancestors directive of the Content-Security-Policy header field for every HTTP response to ensure that it cannot be embedded by default and that embedding of specific resources is allowed only when necessary. Note that the X-Frame-Options header field, although supported by browsers, is obsolete and may not be relied upon.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "WEB document CSP includes frame-ancestors none but API proxy is excluded from CSP middleware. Local work: determine which responses need framing control and test direct protected-resource framing."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.4",
+      "section_name": "Browser Security Mechanism Headers",
+      "req_id": "V3.4.7",
+      "req_description": "Verify that the Content-Security-Policy header field specifies a location to report violations.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "WEB CSP has no report-uri/report-to destination. Local work: implement bounded violation intake/redaction; delivery, retention and alert ownership require external decisions."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.4",
+      "section_name": "Browser Security Mechanism Headers",
+      "req_id": "V3.4.8",
+      "req_description": "Verify that all HTTP responses that initiate a document rendering (such as responses with Content-Type text/html), include the Cross\u2011Origin\u2011Opener\u2011Policy header field with the same-origin directive or the same-origin-allow-popups directive as required. This prevents attacks that abuse shared access to Window objects, such as tabnabbing and frame counting.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "WEB headers lack Cross-Origin-Opener-Policy. Local work: add/test same-origin or justified same-origin-allow-popups with the actual OIDC navigation."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.5",
+      "section_name": "Browser Origin Separation",
+      "req_id": "V3.5.3",
+      "req_description": "Verify that HTTP requests to sensitive functionality use appropriate HTTP methods such as POST, PUT, PATCH, or DELETE, and not methods defined by the HTTP specification as \"safe\" such as HEAD, OPTIONS, or GET. Alternatively, strict validation of the Sec-Fetch-* request header fields can be used to ensure that the request did not originate from an inappropriate cross-origin call, a navigation request, or a resource load (such as an image source) where this is not expected.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Domain mutations use POST, but GET /auth/csrf rotates stored csrf_hash and sets a cookie. Local work: review whether safe-method token rotation can disrupt another request and add cross-site/race regression."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.5",
+      "section_name": "Browser Origin Separation",
+      "req_id": "V3.5.8",
+      "req_description": "Verify that authenticated resources (such as images, videos, scripts, and other documents) can be loaded or embedded on behalf of the user only when intended. This can be accomplished by strict validation of the Sec-Fetch-* HTTP request header fields to ensure that the request did not originate from an inappropriate cross-origin call, or by setting a restrictive Cross-Origin-Resource-Policy HTTP response header field to instruct the browser to block returned content.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Session cookies are Lax and nosniff is set, but protected-resource CORP/Sec-Fetch policy is not defined. Local work: test cross-site embedding/navigation and choose required resource isolation."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.7",
+      "section_name": "Other Browser Security Considerations",
+      "req_id": "V3.7.3",
+      "req_description": "Verify that the application shows a notification when the user is being redirected to a URL outside of the application's control, with an option to cancel the navigation.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Production OIDC link navigates to the provider without an explicit external-site warning/cancel confirmation. Local work: decide and test the required notification for this user-initiated identity redirect."
+    },
+    {
+      "chapter_id": "V3",
+      "chapter_name": "Web Frontend Security",
+      "section_id": "V3.7",
+      "section_name": "Other Browser Security Considerations",
+      "req_id": "V3.7.5",
+      "req_description": "Verify that the application behaves as documented (such as warning the user or blocking access) if the browser used to access the application does not support the expected security features.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "No supported-browser feature detection/fail-closed behavior is documented or tested. Local work: browser capability policy plus deliberate missing-CSP/cookie/crypto capability tests."
+    },
+    {
+      "chapter_id": "V4",
+      "chapter_name": "API and Web Service",
+      "section_id": "V4.1",
+      "section_name": "Generic Web Service Security",
+      "req_id": "V4.1.5",
+      "req_description": "Verify that per-message digital signatures are used to provide additional assurance on top of transport protections for requests or transactions which are highly sensitive or which traverse a number of systems.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Snapshots/plans use canonical hashes and server sessions, not per-message signatures. Local work: document whether authenticated in-app proposals need signatures at L3; no external signed dispatch is present."
+    },
+    {
+      "chapter_id": "V4",
+      "chapter_name": "API and Web Service",
+      "section_id": "V4.2",
+      "section_name": "HTTP Message Structure Validation",
+      "req_id": "V4.2.2",
+      "req_description": "Verify that when generating HTTP messages, the Content-Length header field does not conflict with the length of the content as determined by the framing of the HTTP protocol, in order to prevent request smuggling attacks.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "WEB constructs responses through standard Fetch/Next APIs and does not set conflicting Content-Length manually. Local work: raw HTTP framing regression for streamed/export/error responses."
+    },
+    {
+      "chapter_id": "V4",
+      "chapter_name": "API and Web Service",
+      "section_id": "V4.2",
+      "section_name": "HTTP Message Structure Validation",
+      "req_id": "V4.2.5",
+      "req_description": "Verify that, if the application (backend or frontend) builds and sends requests, it uses validation, sanitization, or other mechanisms to avoid creating URIs (such as for API calls) or HTTP request header fields (such as Authorization or Cookie), which are too long to be accepted by the receiving component. This could cause a denial of service, such as when sending an overly long request (e.g., a long cookie header field), which results in the server always responding with an error status.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "DOMAIN bounds idempotency keys, but incoming Cookie/query/header lengths lack an application-wide documented budget. Local work: oversized cookie/query/header tests and limits aligned with the real proxy."
+    },
+    {
+      "chapter_id": "V5",
+      "chapter_name": "File Handling",
+      "section_id": "V5.2",
+      "section_name": "File Upload and Content",
+      "req_id": "V5.2.2",
+      "req_description": "Verify that when the application accepts a file, either on its own or within an archive such as a zip file, it checks if the file extension matches an expected file extension and validates that the contents correspond to the type represented by the extension. This includes, but is not limited to, checking the initial 'magic bytes', performing image re-writing, and using specialized libraries for file content validation. For L1, this can focus just on files which are used to make specific business or security decisions. For L2 and up, this must apply to all files being accepted.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "API checks CSV Content-Type and parses controlled fields; JSON uses MODEL. Local gap: file extension validation is not explicit; test filename/content mismatches and document accepted extension policy."
+    },
+    {
+      "chapter_id": "V5",
+      "chapter_name": "File Handling",
+      "section_id": "V5.2",
+      "section_name": "File Upload and Content",
+      "req_id": "V5.2.4",
+      "req_description": "Verify that a file size quota and maximum number of files per user are enforced to ensure that a single user cannot fill up the storage with too many files, or excessively large files.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "8MB per-request and solve-job quota do not limit accumulated object/import storage. Local work: user/tenant byte and file-count quotas, atomic admission and orphan cleanup."
+    },
+    {
+      "chapter_id": "V5",
+      "chapter_name": "File Handling",
+      "section_id": "V5.4",
+      "section_name": "File Download",
+      "req_id": "V5.4.3",
+      "req_description": "Verify that files obtained from untrusted sources are scanned by antivirus scanners to prevent serving of known malicious content.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "No antivirus scanner is configured; accepted JSON/CSV is parsed then stored privately rather than served raw. Local work: document this constrained-format decision and whether exported textual content requires scanning; absence is not automatically N/A."
+    },
+    {
+      "chapter_id": "V6",
+      "chapter_name": "Authentication",
+      "section_id": "V6.3",
+      "section_name": "General Authentication Security",
+      "req_id": "V6.3.8",
+      "req_description": "Verify that valid users cannot be deduced from failed authentication challenges, such as by basing on error messages, HTTP response codes, or different response times. Registration and forgot password functionality must also have this protection.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "SEC returns distinct IDENTITY_NOT_PROVISIONED/MFA_REQUIRED failures after validated OIDC and uniform session401 otherwise. Local work: enumerate observable errors/timing; owner must also test provider registration/recovery enumeration."
+    },
+    {
+      "chapter_id": "V6",
+      "chapter_name": "Authentication",
+      "section_id": "V6.8",
+      "section_name": "Authentication with an Identity Provider",
+      "req_id": "V6.8.4",
+      "req_description": "Verify that, if an application uses a separate Identity Provider (IdP) and expects specific authentication strength, methods, or recentness for specific functions, the application verifies this using the information returned by the IdP. For example, if OIDC is used, this might be achieved by validating ID Token claims such as 'acr', 'amr', and 'auth_time' (if present). If the IdP does not provide this information, the application must have a documented fallback approach that assumes that the minimum strength authentication mechanism was used (for example, single-factor authentication using username and password).",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "CP-ASVS-001 reproduced: password-only OIDC session gains manager write after local role promotion without reauthentication. SEC checks acr only at login and SessionRow stores no strength; root notified. Real IdP assurance acceptance remains external."
+    },
+    {
+      "chapter_id": "V7",
+      "chapter_name": "Session Management",
+      "section_id": "V7.1",
+      "section_name": "Session Management Documentation",
+      "req_id": "V7.1.1",
+      "req_description": "Verify that the user's session inactivity timeout and absolute maximum session lifetime are documented, are appropriate in combination with other controls, and that the documentation includes justification for any deviations from NIST SP 800-63B re-authentication requirements.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "CONFIG sets a 3600-second absolute session lifetime, but no inactivity timeout/risk justification is documented. Local work: session lifetime policy aligned with owner risk assessment and implementation tests."
+    },
+    {
+      "chapter_id": "V7",
+      "chapter_name": "Session Management",
+      "section_id": "V7.1",
+      "section_name": "Session Management Documentation",
+      "req_id": "V7.1.2",
+      "req_description": "Verify that the documentation defines how many concurrent (parallel) sessions are allowed for one account as well as the intended behaviors and actions to be taken when the maximum number of active sessions is reached.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Multiple random sessions can coexist and no concurrent-session ceiling/behavior is documented. Local work: choose intended parallel-session policy and test admission, rotation and revocation semantics."
+    },
+    {
+      "chapter_id": "V7",
+      "chapter_name": "Session Management",
+      "section_id": "V7.3",
+      "section_name": "Session Timeout",
+      "req_id": "V7.3.1",
+      "req_description": "Verify that there is an inactivity timeout such that re-authentication is enforced according to risk analysis and documented security decisions.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "SessionRow has expires_at but no last-activity/idle-expiry field or check. Local gap: implement/test inactivity expiry from an approved policy, including concurrent requests."
+    },
+    {
+      "chapter_id": "V7",
+      "chapter_name": "Session Management",
+      "section_id": "V7.4",
+      "section_name": "Session Termination",
+      "req_id": "V7.4.2",
+      "req_description": "Verify that the application terminates all active sessions when a user account is disabled or deleted (such as an employee leaving the company).",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "CP-ASVS-002 reproduced: disabled account rejects its old cookie with401, then re-enable restores200 without a new login. SEC checks enabled state but does not terminate the session; root notified. Local work: irreversible revocation on disable and re-enable regression."
+    },
+    {
+      "chapter_id": "V7",
+      "chapter_name": "Session Management",
+      "section_id": "V7.4",
+      "section_name": "Session Termination",
+      "req_id": "V7.4.3",
+      "req_description": "Verify that the application gives the option to terminate all other active sessions after a successful change or removal of any authentication factor (including password change via reset or recovery and, if present, an MFA settings update).",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "No provider factor-change notification/back-channel revocation or terminate-other-sessions UI is implemented. Local work: revoke existing RP sessions on trusted factor events; owner must supply event capability."
+    },
+    {
+      "chapter_id": "V7",
+      "chapter_name": "Session Management",
+      "section_id": "V7.4",
+      "section_name": "Session Termination",
+      "req_id": "V7.4.5",
+      "req_description": "Verify that application administrators are able to terminate active sessions for an individual user or for all users.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Sessions can be removed by a privileged database operator, but no approved application admin revocation command/UI is documented or tested. Local work: bounded audited revoke-one/all workflow without owner privileges in the app."
+    },
+    {
+      "chapter_id": "V7",
+      "chapter_name": "Session Management",
+      "section_id": "V7.5",
+      "section_name": "Defenses Against Session Abuse",
+      "req_id": "V7.5.2",
+      "req_description": "Verify that users are able to view and (having authenticated again with at least one factor) terminate any or all currently active sessions.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "No session inventory or self-service terminate-selected/all-session feature exists. This is required security lifecycle work, not an unrelated feature exemption; reauthentication must protect session management."
+    },
+    {
+      "chapter_id": "V7",
+      "chapter_name": "Session Management",
+      "section_id": "V7.5",
+      "section_name": "Defenses Against Session Abuse",
+      "req_id": "V7.5.3",
+      "req_description": "Verify that the application requires further authentication with at least one factor or secondary verification before performing highly sensitive transactions or operations.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "In-app privileged decisions do not require a fresh step-up at action time; CP-ASVS-001 proves low-acr session promotion bypass. Local work: preserve/recheck trusted strength and define fresh-auth requirements for sensitive actions."
+    },
+    {
+      "chapter_id": "V8",
+      "chapter_name": "Authorization",
+      "section_id": "V8.1",
+      "section_name": "Authorization Documentation",
+      "req_id": "V8.1.2",
+      "req_description": "Verify that authorization documentation defines rules for field-level access restrictions (both read and write) based on consumer permissions and resource attributes. Note that these rules might depend on other attribute values of the relevant data object, such as state or status.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "MODEL forbids extra input fields and immutable plan triggers restrict writes, but a complete per-role/per-field read/write rule document is absent. Local work: explicit field-level matrix, particularly policy/audit/plan payload exposure."
+    },
+    {
+      "chapter_id": "V8",
+      "chapter_name": "Authorization",
+      "section_id": "V8.1",
+      "section_name": "Authorization Documentation",
+      "req_id": "V8.1.3",
+      "req_description": "Verify that the application's documentation defines the environmental and contextual attributes (including but not limited to, time of day, user location, IP address, or device) that are used in the application to make security decisions, including those pertaining to authentication and authorization.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Current security decisions use local roles, tenant, session expiry and login acr; no comprehensive contextual-attribute inventory/risk thresholds exists. Local work: document used/unused device/IP/time factors with owner decisions."
+    },
+    {
+      "chapter_id": "V8",
+      "chapter_name": "Authorization",
+      "section_id": "V8.1",
+      "section_name": "Authorization Documentation",
+      "req_id": "V8.1.4",
+      "req_description": "Verify that authentication and authorization documentation defines how environmental and contextual factors are used in decision-making, in addition to function-level, data-specific, and field-level authorization. This should include the attributes evaluated, thresholds for risk, and actions taken (e.g., allow, challenge, deny, step-up authentication).",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "No documented challenge/deny thresholds for contextual authentication or role promotion exist. CP-ASVS-001 exposes the missing strength transition; local design and owner risk decisions are necessary."
+    },
+    {
+      "chapter_id": "V8",
+      "chapter_name": "Authorization",
+      "section_id": "V8.2",
+      "section_name": "General Authorization Design",
+      "req_id": "V8.2.4",
+      "req_description": "Verify that adaptive security controls based on a consumer's environmental and contextual attributes (such as time of day, location, IP address, or device) are implemented for authentication and authorization decisions, as defined in the application's documentation. These controls must be applied when the consumer tries to start a new session and also during an existing session.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "No adaptive device/location controls exist and the base session has no stored authentication strength. CP-ASVS-001 role promotion bypass is reproduced; implement/retest applicable context changes before claiming this control."
+    },
+    {
+      "chapter_id": "V9",
+      "chapter_name": "Self-contained Tokens",
+      "section_id": "V9.2",
+      "section_name": "Token content",
+      "req_id": "V9.2.2",
+      "req_description": "Verify that the service receiving a token validates the token to be the correct type and is meant for the intended purpose before accepting the token's contents. For example, only access tokens can be accepted for authorization decisions and only ID Tokens can be used for proving user authentication.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "SEC extracts id_token from the token response but does not explicitly constrain JWT typ or test cross-token substitution. Local work: provider-specific access/ID token confusion negatives; do not infer purpose validation from signature alone."
+    },
+    {
+      "chapter_id": "V11",
+      "chapter_name": "Cryptography",
+      "section_id": "V11.1",
+      "section_name": "Cryptographic Inventory and Documentation",
+      "req_id": "V11.1.2",
+      "req_description": "Verify that a cryptographic inventory is performed, maintained, regularly updated, and includes all cryptographic keys, algorithms, and certificates used by the application. It must also document where keys can and cannot be used in the system, and the types of data that can and cannot be protected using the keys.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "SEC/STORE/CONFIG reveal SHA256/session/PKCE/JWT/TLS/SSE uses, but there is no maintained algorithm/key/certificate inventory with allowed-use restrictions. Local work: build that inventory; external key identifiers/custodians require owner input."
+    },
+    {
+      "chapter_id": "V11",
+      "chapter_name": "Cryptography",
+      "section_id": "V11.1",
+      "section_name": "Cryptographic Inventory and Documentation",
+      "req_id": "V11.1.3",
+      "req_description": "Verify that cryptographic discovery mechanisms are employed to identify all instances of cryptography in the system, including encryption, hashing, and signing operations.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Selected repository security checks are not a cryptographic-discovery inventory. Local work: enumerate code/library crypto call sites and reconcile them with build/SBOM and configuration surfaces."
+    },
+    {
+      "chapter_id": "V11",
+      "chapter_name": "Cryptography",
+      "section_id": "V11.2",
+      "section_name": "Secure Cryptography Implementation",
+      "req_id": "V11.2.2",
+      "req_description": "Verify that the application is designed with crypto agility such that random number, authenticated encryption, MAC, or hashing algorithms, key lengths, rounds, ciphers and modes can be reconfigured, upgraded, or swapped at any time, to protect against cryptographic breaks. Similarly, it must also be possible to replace keys and passwords and re-encrypt data. This will allow for seamless upgrades to post-quantum cryptography (PQC), once high-assurance implementations of approved PQC schemes or standards are widely available.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Issuer/keys can be reconfigured, but token hash/canonical SHA256 and allowed JWT algorithms are hard-coded without versioned migration machinery. Local work: design compatibility/rehash/rotation paths before claiming full crypto agility."
+    },
+    {
+      "chapter_id": "V11",
+      "chapter_name": "Cryptography",
+      "section_id": "V11.2",
+      "section_name": "Secure Cryptography Implementation",
+      "req_id": "V11.2.4",
+      "req_description": "Verify that all cryptographic operations are constant-time, with no 'short-circuit' operations in comparisons, calculations, or returns, to avoid leaking information.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "SEC uses compare_digest for CSRF/nonce/browser-binding comparisons. No timing analysis of crypto/JWT/library failure paths was performed; local work: scoped side-channel review and constant-time vendor evidence."
+    },
+    {
+      "chapter_id": "V11",
+      "chapter_name": "Cryptography",
+      "section_id": "V11.5",
+      "section_name": "Random Values",
+      "req_id": "V11.5.2",
+      "req_description": "Verify that the random number generation mechanism in use is designed to work securely, even under heavy demand.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Python secrets delegates to OS CSPRNG, but no entropy-failure/heavy-demand test or exhaustion handling review was executed. Local work: scoped RNG failure behavior; host entropy assurance requires deployment input."
+    },
+    {
+      "chapter_id": "V13",
+      "chapter_name": "Configuration",
+      "section_id": "V13.1",
+      "section_name": "Configuration Documentation",
+      "req_id": "V13.1.2",
+      "req_description": "Verify that for each service the application uses, the documentation defines the maximum number of concurrent connections (e.g., connection pool limits) and how the application behaves when that limit is reached, including any fallback or recovery mechanisms, to prevent denial of service conditions.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "CONFIG/STORE/SEC set some timeouts, but no per-service maximum connections/overflow behavior inventory exists. Local work: document and exercise DB pool, HTTP/JWKS, S3 and collector connection budgets."
+    },
+    {
+      "chapter_id": "V13",
+      "chapter_name": "Configuration",
+      "section_id": "V13.1",
+      "section_name": "Configuration Documentation",
+      "req_id": "V13.1.3",
+      "req_description": "Verify that the application documentation defines resource\u2011management strategies for every external system or service it uses (e.g., databases, file handles, threads, HTTP connections). This should include resource\u2011release procedures, timeout settings, failure handling, and where retry logic is implemented, specifying retry limits, delays, and back\u2011off algorithms. For synchronous HTTP request\u2013response operations it should mandate short timeouts and either disable retries or strictly limit retries to prevent cascading delays and resource exhaustion.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "STORE closes reads and uses 3s timeouts/one retry; SEC uses 10s HTTP timeouts and WEB 15s request limits. Local gap: complete retry/backoff/release policy and cancellation tests for all external dependencies."
+    },
+    {
+      "chapter_id": "V13",
+      "chapter_name": "Configuration",
+      "section_id": "V13.2",
+      "section_name": "Backend Communication Configuration",
+      "req_id": "V13.2.6",
+      "req_description": "Verify that where the application connects to separate services, it follows the documented configuration for each connection, such as maximum parallel connections, behavior when maximum allowed connections is reached, connection timeouts, and retry strategies.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Some per-client timeout/retry settings exist in SEC/STORE/WEB, but no complete configured connection-pool compliance evidence. Local work: failure/parallelism tests reconciled with the V13.1 resource policy."
+    },
+    {
+      "chapter_id": "V13",
+      "chapter_name": "Configuration",
+      "section_id": "V13.4",
+      "section_name": "Unintended Information Leakage",
+      "req_id": "V13.4.3",
+      "req_description": "Verify that web servers do not expose directory listings to clients unless explicitly intended.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "No directory-listing route exists in WEB/API source. Local work: actual final-container path/directory requests including static roots and encoded traversal; source absence is not a server-configuration test."
+    },
+    {
+      "chapter_id": "V13",
+      "chapter_name": "Configuration",
+      "section_id": "V13.4",
+      "section_name": "Unintended Information Leakage",
+      "req_id": "V13.4.4",
+      "req_description": "Verify that using the HTTP TRACE method is not supported in production environments, to avoid potential information leakage.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "WEB exposes GET/POST and API no TRACE route. Local work: explicit TRACE/TRACK tests across public and direct API boundaries; an intended edge still needs independent configuration validation."
+    },
+    {
+      "chapter_id": "V13",
+      "chapter_name": "Configuration",
+      "section_id": "V13.4",
+      "section_name": "Unintended Information Leakage",
+      "req_id": "V13.4.5",
+      "req_description": "Verify that documentation (such as for internal APIs) and monitoring endpoints are not exposed unless explicitly intended.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "API FastAPI constructor leaves /docs,/redoc,/openapi.json available on direct API access; readiness/liveness are public. WEB allowlist reduces exposure but does not prove intended production network policy; define and test each endpoint's intended audience."
+    },
+    {
+      "chapter_id": "V13",
+      "chapter_name": "Configuration",
+      "section_id": "V13.4",
+      "section_name": "Unintended Information Leakage",
+      "req_id": "V13.4.6",
+      "req_description": "Verify that the application does not expose detailed version information of backend components.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "WEB disables poweredByHeader, but Uvicorn/server/version response behavior and package detail exposure were not comprehensively tested. Local work: final image header/error/version disclosure matrix."
+    },
+    {
+      "chapter_id": "V13",
+      "chapter_name": "Configuration",
+      "section_id": "V13.4",
+      "section_name": "Unintended Information Leakage",
+      "req_id": "V13.4.7",
+      "req_description": "Verify that the web tier is configured to only serve files with specific file extensions to prevent unintentional information, configuration, and source code leakage.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "WEB serves Next-generated/static assets but no explicit audited extension/resource allowlist is documented. Local work: source-map/config/backups/dotfile probing and review required Next resources before enforcing a policy."
+    },
+    {
+      "chapter_id": "V14",
+      "chapter_name": "Data Protection",
+      "section_id": "V14.2",
+      "section_name": "General Data Protection",
+      "req_id": "V14.2.1",
+      "req_description": "Verify that sensitive data is only sent to the server in the HTTP message body or header fields, and that the URL and query string do not contain sensitive information, such as an API key or session token.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Session/CSRF secrets use cookies/headers, not resource URLs; OIDC code/state necessarily arrive in callback query. Local work: verify callback URL/referrer/log redaction and prevent other secrets in queries; edge log policy remains external."
+    },
+    {
+      "chapter_id": "V14",
+      "chapter_name": "Data Protection",
+      "section_id": "V14.2",
+      "section_name": "General Data Protection",
+      "req_id": "V14.2.5",
+      "req_description": "Verify that caching mechanisms are configured to only cache responses which have the expected content type for that resource and do not contain sensitive, dynamic content. The web server should return a 404 or 302 response when a non-existent file is accessed rather than returning a different, valid file. This should prevent Web Cache Deception attacks.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Protected API/WEB responses set no-store, but cache-deception behavior for nonexistent extensions/path variants is untested. Local work: authenticated/anonymous path confusion and Content-Type/cache-key matrix."
+    },
+    {
+      "chapter_id": "V14",
+      "chapter_name": "Data Protection",
+      "section_id": "V14.2",
+      "section_name": "General Data Protection",
+      "req_id": "V14.2.6",
+      "req_description": "Verify that the application only returns the minimum required sensitive data for the application's functionality. For example, only returning some of the digits of a credit card number and not the full number. If the complete data is required, it should be masked in the user interface unless the user specifically views it.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "API response models are explicit, yet plan/scenario payloads include complete synthetic operational fields. Local work: role/field minimization review and masking decisions for any future personal/commercial fields; no blanket full-object disclosure approval."
+    },
+    {
+      "chapter_id": "V14",
+      "chapter_name": "Data Protection",
+      "section_id": "V14.3",
+      "section_name": "Client-side Data Protection",
+      "req_id": "V14.3.1",
+      "req_description": "Verify that authenticated data is cleared from client storage, such as the browser DOM, after the client or session is terminated. The 'Clear-Site-Data' HTTP response header field may be able to help with this but the client-side should also be able to clear up if the server connection is not available when the session is terminated.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "WEB logout clears server session/cookies then navigates, but failed/offline logout leaves console DOM and no Clear-Site-Data or cross-tab invalidation handler exists. Local work: expiry/logout/offline/back-button sensitive-state clearing tests and implementation."
+    },
+    {
+      "chapter_id": "V15",
+      "chapter_name": "Secure Coding and Architecture",
+      "section_id": "V15.1",
+      "section_name": "Secure Coding and Architecture Documentation",
+      "req_id": "V15.1.1",
+      "req_description": "Verify that application documentation defines risk based remediation time frames for 3rd party component versions with vulnerabilities and for updating libraries in general, to minimize the risk from these components.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "SECURITY_REVIEW blocks HIGH/CRITICAL but no owner-approved remediation timeframes cover each severity/general updates. Local work: define version/scan cadence and risk-based deadlines with an accountable owner."
+    },
+    {
+      "chapter_id": "V15",
+      "chapter_name": "Secure Coding and Architecture",
+      "section_id": "V15.1",
+      "section_name": "Secure Coding and Architecture Documentation",
+      "req_id": "V15.1.4",
+      "req_description": "Verify that application documentation highlights third-party libraries which are considered to be \"risky components\".",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "THREAT_MODEL identifies solver/upload boundaries but lacks a maintained risky-component catalog for native HiGHS, crypto, parsers, database drivers and Next. Local work: component-specific risk and review owners."
+    },
+    {
+      "chapter_id": "V15",
+      "chapter_name": "Secure Coding and Architecture",
+      "section_id": "V15.1",
+      "section_name": "Secure Coding and Architecture Documentation",
+      "req_id": "V15.1.5",
+      "req_description": "Verify that application documentation highlights parts of the application where \"dangerous functionality\" is being used.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "No consolidated dangerous-function inventory maps export parsing, native optimization, OIDC network calls and privileged bootstrap/migrations to restrictions. Local work: document actual call sites and trusted operator-only boundaries."
+    },
+    {
+      "chapter_id": "V15",
+      "chapter_name": "Secure Coding and Architecture",
+      "section_id": "V15.2",
+      "section_name": "Security Architecture and Dependencies",
+      "req_id": "V15.2.1",
+      "req_description": "Verify that the application only contains components which have not breached the documented update and remediation time frames.",
+      "L": "1",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Root supplied exact-image HIGH/CRITICAL gate PASS; API/web still have lower-severity advisories. Without documented risk-based deadlines, no claim that all components meet update/remediation timeframes is possible; reconcile current raw scans after integration."
+    },
+    {
+      "chapter_id": "V15",
+      "chapter_name": "Secure Coding and Architecture",
+      "section_id": "V15.2",
+      "section_name": "Security Architecture and Dependencies",
+      "req_id": "V15.2.3",
+      "req_description": "Verify that the production environment only includes functionality that is required for the application to function, and does not expose extraneous functionality such as test code, sample snippets, and development functionality.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "RUNTIME_REVIEW proves selected maintenance tools absent in final artifacts, but that is not a full required-code inventory. Local work: review authenticated fixtures, benchmark modules and development-only paths for intended production scope."
+    },
+    {
+      "chapter_id": "V15",
+      "chapter_name": "Secure Coding and Architecture",
+      "section_id": "V15.2",
+      "section_name": "Security Architecture and Dependencies",
+      "req_id": "V15.2.4",
+      "req_description": "Verify that third-party components and all of their transitive dependencies are included from the expected repository, whether internally owned or an external source, and that there is no risk of a dependency confusion attack.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Python is hash-locked and npm lockfiles include integrity; DEPENDENCIES records official sources. Local work: verify registry/index allowlists, private-name reservations, lockfile native optional packages and transitive provenance; hashes alone do not prevent dependency confusion."
+    },
+    {
+      "chapter_id": "V15",
+      "chapter_name": "Secure Coding and Architecture",
+      "section_id": "V15.3",
+      "section_name": "Defensive Coding",
+      "req_id": "V15.3.6",
+      "req_description": "Verify that JavaScript code is written in a way that prevents prototype pollution, for example, by using Set() or Map() instead of object literals.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "WEB avoids user-keyed code execution, but ordinary object spreads/maps exist and no prototype-pollution regression was found. Local work: __proto__/constructor/prototype payloads through JSON, forms and model-to-view transformations."
+    },
+    {
+      "chapter_id": "V15",
+      "chapter_name": "Secure Coding and Architecture",
+      "section_id": "V15.3",
+      "section_name": "Defensive Coding",
+      "req_id": "V15.3.7",
+      "req_description": "Verify that the application has defenses against HTTP parameter pollution attacks, particularly if the application framework makes no distinction about the source of request parameters (query string, body parameters, cookies, or header fields).",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Typed endpoint signatures separate body/header/query sources, but duplicate cookies/query/header/form field resolution is not tested end to end. Local work: conflicting parameter-source and duplicate-key matrix across Next/API."
+    },
+    {
+      "chapter_id": "V15",
+      "chapter_name": "Secure Coding and Architecture",
+      "section_id": "V15.4",
+      "section_name": "Safe Concurrency",
+      "req_id": "V15.4.4",
+      "req_description": "Verify that resource allocation policies prevent thread starvation by ensuring fair access to resources, such as by leveraging thread pools, allowing lower-priority threads to proceed within a reasonable timeframe.",
+      "L": "3",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Worker rotates tenant polling with FIFO and has a PostgreSQL regression, but cursor is process-local and no global/thread/connection starvation bound exists. Local work: adversarial mixed-tenant concurrency/fairness and pool-exhaustion tests."
+    },
+    {
+      "chapter_id": "V16",
+      "chapter_name": "Security Logging and Error Handling",
+      "section_id": "V16.3",
+      "section_name": "Security Events",
+      "req_id": "V16.3.1",
+      "req_description": "Verify that all authentication operations are logged, including successful and unsuccessful attempts. Additional metadata, such as the type of authentication or factors used, should also be collected.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Successful OIDC/development login/logout are audited, but failed unauthenticated login has no principal so API.app_error skips audit; HTTP telemetry only has route/status. Local work: complete safe auth-failure/factor/reason event coverage."
+    },
+    {
+      "chapter_id": "V16",
+      "chapter_name": "Security Logging and Error Handling",
+      "section_id": "V16.3",
+      "section_name": "Security Events",
+      "req_id": "V16.3.3",
+      "req_description": "Verify that the application logs the security events that are defined in the documentation and also logs attempts to bypass the security controls, such as input validation, business logic, and anti-automation.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "Authenticated AppError denials are audited and OBS counts operations, but a documented exhaustive event/anti-automation bypass catalog is absent. Local work: event-to-code/test matrix including unauthenticated validation and throttling attempts."
+    },
+    {
+      "chapter_id": "V16",
+      "chapter_name": "Security Logging and Error Handling",
+      "section_id": "V16.3",
+      "section_name": "Security Events",
+      "req_id": "V16.3.4",
+      "req_description": "Verify that the application logs unexpected errors and security control failures such as backend TLS failures.",
+      "L": "2",
+      "assessment_status": "NOT_ASSESSED",
+      "evidence_or_remaining_work": "API unexpected exceptions log correlation/type and OBS records dependency/operation failure status. Local work: malformed provider/JWKS/S3/TLS paths and reason-coded operational logs without raw secrets; no delivered monitoring evidence."
+    }
+  ],
+  "explicit_test_function_references": {
+    "test_body_limit_and_validation_problem": [
+      "tests/backend/test_api.py:204"
+    ],
+    "test_claimed_tenant_roles_and_disabled_local_grants_never_authorize": [
+      "tests/release_qa/test_oidc_attacks.py:18"
+    ],
+    "test_cross_tenant_guards_every_domain_id": [
+      "tests/backend/test_api.py:90"
+    ],
+    "test_csrf_origin_and_rbac_denials_survive_rollback": [
+      "tests/backend/test_api.py:50"
+    ],
+    "test_csv_bounded_schema_and_formula": [
+      "tests/backend/test_api.py:160"
+    ],
+    "test_deleted_source_artifact_blocks_approval": [
+      "tests/release_qa/test_release_attacks.py:44"
+    ],
+    "test_different_manager_review_and_publish": [
+      "tests/backend/test_api.py:218"
+    ],
+    "test_every_console_page_and_rsc_requires_a_session": [
+      "tests/release_qa/test_live_web_boundaries.py:21"
+    ],
+    "test_exact_decimal_scaling_no_float_defaults": [
+      "tests/optimizer/test_recover.py:245"
+    ],
+    "test_fail_closed_contract": [
+      "tests/contracts/test_models.py:37"
+    ],
+    "test_import_rejects_tenant_and_missing_units": [
+      "tests/backend/test_api.py:129"
+    ],
+    "test_live_worker_approval_race_and_exports": [
+      "tests/backend/test_postgres.py:193"
+    ],
+    "test_mutated_source_cannot_be_authorized_by_old_solver_flags": [
+      "tests/validation/test_independent.py:189"
+    ],
+    "test_nonowner_rls_and_immutable_history": [
+      "tests/backend/test_postgres.py:68"
+    ],
+    "test_oidc_bad_signature_and_expired_state": [
+      "tests/backend/test_oidc.py:126"
+    ],
+    "test_oidc_signature_pkce_nonce_locally_provisioned_roles_and_replay": [
+      "tests/backend/test_oidc.py:77"
+    ],
+    "test_pending_solve_quota_is_per_tenant_and_idempotent": [
+      "tests/backend/test_api.py:243"
+    ],
+    "test_policy_self_review_denied": [
+      "tests/backend/test_api.py:190"
+    ],
+    "test_production_fails_closed": [
+      "tests/backend/test_api.py:16"
+    ],
+    "test_proxy_allowlist_and_chunked_body_cap": [
+      "tests/release_qa/test_live_web_boundaries.py:44"
+    ],
+    "test_real_ids_cannot_cross_tenant_read_mutate_or_export": [
+      "tests/release_qa/test_release_attacks.py:95"
+    ],
+    "test_real_spans_redact_errors_attributes_and_baggage": [
+      "tests/observability/test_telemetry.py:47"
+    ],
+    "test_reauthentication_rotates_and_revokes_the_presented_cookie": [
+      "tests/backend/test_api.py:318"
+    ],
+    "test_revocation_and_expiry": [
+      "tests/backend/test_api.py:64"
+    ]
+  },
+  "application_contracts_tests_and_vendor_source_unmodified": true,
+  "hashes": {
+    "docs/security/ASVS-5.0.0-source.csv": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+    "docs/security/ASVS-5.0.0-assessment.csv": "8ff3aa5c60df71ef24b51fe3cea5a2419b954353508a605d7f4d9d81ce449a2f",
+    "docs/evidence/16-asvs-local-review.md": "b03cecaf2e62c542ea49dfd2336cdaa44521458e97178595465cdfd04ccf6e95",
+    ".local/asvs-review/validate-coverage.py": "9c35f3b990f372b9b01c92994a0a05554c6a6a23c61dce79a6b81bd25a430d07",
+    ".local/asvs-review/vendor-tagged.csv": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+    ".local/asvs-review/test_mfa_role_transition.py": "5deb933665dce111f6ed14c28bf134797d453bf696e33cef4a71ee72b689b2be",
+    ".local/asvs-review/mfa-role-transition.txt": "497c9b002d4cf8a10468189ef40eeedeb1f763250c2c4e4ae539bbaed7db8e6c",
+    ".local/asvs-review/disabled-session-revival.txt": "3adda4baad38a4f8f28fdb0a7a8e6126e78de8ab06c2632c3f642ed241690184",
+    ".local/asvs-review/production-cookie-probe.json": "3ae449ad32ec7da3feeda4174e122c1f11d88497ecec59738634cbb1ef12e32c"
+  },
+  "limits": [
+    "Coverage validation is not control acceptance or a penetration test.",
+    "No application or database tests were rerun by this validator.",
+    "Existing base CP-ASVS-001/002 defects remain open pending root fixed-source evidence.",
+    "The requested Luna coverage agent returned Bad Request and delivered no independent checks."
+  ]
+}

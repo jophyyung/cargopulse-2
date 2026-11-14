@@ -1,0 +1,322 @@
+FFFFFFFFFF                                                               [100%]
+=================================== FAILURES ===================================
+_ test_nonstring_acr_cannot_collide_with_configured_string_after_promotion[2] __
+
+client = <starlette.testclient.TestClient object at 0x10b993da0>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10c5ce990>, 'public': {'kty': 'RSA',...C7JeV2ivMP44yWPYkudqRiasqiZNdLDKau3TniiEzcrKjEmtFS6w', 'e': 'AQAB', ...}, 'mutations': {'acr': 2}, 'exchanges': 1, ...}
+acr = 2
+
+    @pytest.mark.parametrize("acr", [2, 2.5, True, ["mfa"], {"method": "mfa"}])
+    def test_nonstring_acr_cannot_collide_with_configured_string_after_promotion(client, provider, acr):
+        set_roles(client, ["load_analyst"])
+        provider["mutations"] = {"acr": acr}
+        sign_in(client, provider)
+        assert client.get("/api/v1/me").status_code == 200
+        object.__setattr__(client.app.state.settings, "oidc_required_acr", str(acr))
+        set_roles(client, ["manager"])
+        denied = client.get("/api/v1/me")
+>       assert denied.status_code == 401, denied.text
+E       AssertionError: {"subject":"manager","tenant_id":"10000000-0000-4000-8000-000000000001","roles":["manager"],"auth_mode":"oidc"}
+E       assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+
+tests/backend/test_oidc_session_assurance.py:192: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "8943d99d-eb24-40b2-8699-2f09ebf377cf", "elapsed_ms": 3.244, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "b5358499a550aadc", "trace_id": "74debd888c63a52c3c9a74b7982cc4aa"}
+{"correlation.id": "3d4d1647-649b-4337-8f01-04d286b1aea6", "elapsed_ms": 5.572, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4abb0ab78313c776", "trace_id": "aed23c5db4de6ced37db6afaf39e0123"}
+{"correlation.id": "756c9824-9651-48a0-9d4c-84e0bd880744", "elapsed_ms": 1.928, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "fea5b97863955db0", "trace_id": "126d1e2f972f1af7383b0d52e0bca434"}
+{"correlation.id": "83ede8fe-d2c0-442d-b679-34000e85c614", "elapsed_ms": 0.926, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "6968a695b956ec4b", "trace_id": "0a644f5cd3b2d8482816006e6677777e"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "8943d99d-eb24-40b2-8699-2f09ebf377cf", "elapsed_ms": 3.244, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "b5358499a550aadc", "trace_id": "74debd888c63a52c3c9a74b7982cc4aa"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "3d4d1647-649b-4337-8f01-04d286b1aea6", "elapsed_ms": 5.572, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4abb0ab78313c776", "trace_id": "aed23c5db4de6ced37db6afaf39e0123"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "756c9824-9651-48a0-9d4c-84e0bd880744", "elapsed_ms": 1.928, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "fea5b97863955db0", "trace_id": "126d1e2f972f1af7383b0d52e0bca434"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "83ede8fe-d2c0-442d-b679-34000e85c614", "elapsed_ms": 0.926, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "6968a695b956ec4b", "trace_id": "0a644f5cd3b2d8482816006e6677777e"}
+_ test_nonstring_acr_cannot_collide_with_configured_string_after_promotion[2.5] _
+
+client = <starlette.testclient.TestClient object at 0x10c516db0>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10c6b1c90>, 'public': {'kty': 'RSA',...EYI0ga8y0zmtSU-vOGmcuUnggxzA6sNpi-MIiNbZNgdrQMPd7Q', 'e': 'AQAB', ...}, 'mutations': {'acr': 2.5}, 'exchanges': 1, ...}
+acr = 2.5
+
+    @pytest.mark.parametrize("acr", [2, 2.5, True, ["mfa"], {"method": "mfa"}])
+    def test_nonstring_acr_cannot_collide_with_configured_string_after_promotion(client, provider, acr):
+        set_roles(client, ["load_analyst"])
+        provider["mutations"] = {"acr": acr}
+        sign_in(client, provider)
+        assert client.get("/api/v1/me").status_code == 200
+        object.__setattr__(client.app.state.settings, "oidc_required_acr", str(acr))
+        set_roles(client, ["manager"])
+        denied = client.get("/api/v1/me")
+>       assert denied.status_code == 401, denied.text
+E       AssertionError: {"subject":"manager","tenant_id":"10000000-0000-4000-8000-000000000001","roles":["manager"],"auth_mode":"oidc"}
+E       assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+
+tests/backend/test_oidc_session_assurance.py:192: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "dd7b8577-00a9-4aa8-975b-134aeb50520f", "elapsed_ms": 1.906, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3f27162d3e4ab49c", "trace_id": "a13fbc1dc48c28b108a64816d6ce6d16"}
+{"correlation.id": "46caf1fc-ff87-4efe-9d34-1e410246d7ef", "elapsed_ms": 30.999, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "ed79107105bbee85", "trace_id": "92e33199141a1b6817f86113e572fd82"}
+{"correlation.id": "ffdf1bef-5eeb-41fe-9b90-f80eb93da3f9", "elapsed_ms": 2.002, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "82871bec89e4df63", "trace_id": "ec384351166277e2b97f50ddeb624e14"}
+{"correlation.id": "ef26eaac-023d-4d23-a0d0-ba9254ffec14", "elapsed_ms": 0.908, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "6796a699961031f0", "trace_id": "17788ad83d13f6d67ee259a58caddf96"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "dd7b8577-00a9-4aa8-975b-134aeb50520f", "elapsed_ms": 1.906, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3f27162d3e4ab49c", "trace_id": "a13fbc1dc48c28b108a64816d6ce6d16"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "46caf1fc-ff87-4efe-9d34-1e410246d7ef", "elapsed_ms": 30.999, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "ed79107105bbee85", "trace_id": "92e33199141a1b6817f86113e572fd82"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "ffdf1bef-5eeb-41fe-9b90-f80eb93da3f9", "elapsed_ms": 2.002, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "82871bec89e4df63", "trace_id": "ec384351166277e2b97f50ddeb624e14"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "ef26eaac-023d-4d23-a0d0-ba9254ffec14", "elapsed_ms": 0.908, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "6796a699961031f0", "trace_id": "17788ad83d13f6d67ee259a58caddf96"}
+_ test_nonstring_acr_cannot_collide_with_configured_string_after_promotion[True] _
+
+client = <starlette.testclient.TestClient object at 0x10c6f9820>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10c6b1670>, 'public': {'kty': 'RSA',...vXsjr4nSTLiKusUAbYo6PlCWwcFlNyag_Erkk_J0owjQ73ANw', 'e': 'AQAB', ...}, 'mutations': {'acr': True}, 'exchanges': 1, ...}
+acr = True
+
+    @pytest.mark.parametrize("acr", [2, 2.5, True, ["mfa"], {"method": "mfa"}])
+    def test_nonstring_acr_cannot_collide_with_configured_string_after_promotion(client, provider, acr):
+        set_roles(client, ["load_analyst"])
+        provider["mutations"] = {"acr": acr}
+        sign_in(client, provider)
+        assert client.get("/api/v1/me").status_code == 200
+        object.__setattr__(client.app.state.settings, "oidc_required_acr", str(acr))
+        set_roles(client, ["manager"])
+        denied = client.get("/api/v1/me")
+>       assert denied.status_code == 401, denied.text
+E       AssertionError: {"subject":"manager","tenant_id":"10000000-0000-4000-8000-000000000001","roles":["manager"],"auth_mode":"oidc"}
+E       assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+
+tests/backend/test_oidc_session_assurance.py:192: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "bf5edec5-5728-4cb8-b28d-c0e9d5a53555", "elapsed_ms": 1.229, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "804cddeb1623bc5e", "trace_id": "417c553e66af5c97096a7bbb9d262a6d"}
+{"correlation.id": "d9b2a2c9-0df8-4141-bc73-90544eb81d19", "elapsed_ms": 3.967, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "fd8f96c6d8b7e3d0", "trace_id": "b18c9fa22157a6b3a8609fce2d6b00cc"}
+{"correlation.id": "ad4ce0be-371d-4000-8512-0d88a9396576", "elapsed_ms": 1.702, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "59acb32c86dd06a8", "trace_id": "b41a8c296a5b4a083a821e4034c680b7"}
+{"correlation.id": "c30ec180-ef44-45e9-9923-c6dbb69f97aa", "elapsed_ms": 0.872, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3f9de0f21c89010f", "trace_id": "ea98fb3fe8abd54dd0b99f5909515cc7"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "bf5edec5-5728-4cb8-b28d-c0e9d5a53555", "elapsed_ms": 1.229, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "804cddeb1623bc5e", "trace_id": "417c553e66af5c97096a7bbb9d262a6d"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "d9b2a2c9-0df8-4141-bc73-90544eb81d19", "elapsed_ms": 3.967, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "fd8f96c6d8b7e3d0", "trace_id": "b18c9fa22157a6b3a8609fce2d6b00cc"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "ad4ce0be-371d-4000-8512-0d88a9396576", "elapsed_ms": 1.702, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "59acb32c86dd06a8", "trace_id": "b41a8c296a5b4a083a821e4034c680b7"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "c30ec180-ef44-45e9-9923-c6dbb69f97aa", "elapsed_ms": 0.872, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3f9de0f21c89010f", "trace_id": "ea98fb3fe8abd54dd0b99f5909515cc7"}
+_ test_nonstring_acr_cannot_collide_with_configured_string_after_promotion[acr3] _
+
+client = <starlette.testclient.TestClient object at 0x10c9d61b0>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10c9ea5d0>, 'public': {'kty': 'RSA',...Cecz0EnXyBirF7ZrWyXOrsVw8faeBUo4UvanrNdZ2LDnTw', 'e': 'AQAB', ...}, 'mutations': {'acr': ['mfa']}, 'exchanges': 1, ...}
+acr = ['mfa']
+
+    @pytest.mark.parametrize("acr", [2, 2.5, True, ["mfa"], {"method": "mfa"}])
+    def test_nonstring_acr_cannot_collide_with_configured_string_after_promotion(client, provider, acr):
+        set_roles(client, ["load_analyst"])
+        provider["mutations"] = {"acr": acr}
+        sign_in(client, provider)
+        assert client.get("/api/v1/me").status_code == 200
+        object.__setattr__(client.app.state.settings, "oidc_required_acr", str(acr))
+        set_roles(client, ["manager"])
+        denied = client.get("/api/v1/me")
+>       assert denied.status_code == 401, denied.text
+E       AssertionError: {"subject":"manager","tenant_id":"10000000-0000-4000-8000-000000000001","roles":["manager"],"auth_mode":"oidc"}
+E       assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+
+tests/backend/test_oidc_session_assurance.py:192: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "f397c034-187e-4812-9a9f-fa586d07fc2b", "elapsed_ms": 1.694, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "61472829810305bf", "trace_id": "0ed0b1691736e86fa9963bfb7ddabbbb"}
+{"correlation.id": "91c04738-20e2-4265-96ce-48c48afec54c", "elapsed_ms": 3.876, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "cd362bf9e77071f5", "trace_id": "479733ce83759bd3b934b622c372933f"}
+{"correlation.id": "7a3ccfb8-0b5e-4557-8229-5ba6ad3383f0", "elapsed_ms": 1.604, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "e292e61e9db47c36", "trace_id": "e1b027069f78bc0de32100c0f2b40c0c"}
+{"correlation.id": "dd7e58aa-64ed-4c89-9878-65ca35886f61", "elapsed_ms": 1.234, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "6823c35cb650dbb5", "trace_id": "7588d6d8de24ce20e559e302a8c477f2"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "f397c034-187e-4812-9a9f-fa586d07fc2b", "elapsed_ms": 1.694, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "61472829810305bf", "trace_id": "0ed0b1691736e86fa9963bfb7ddabbbb"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "91c04738-20e2-4265-96ce-48c48afec54c", "elapsed_ms": 3.876, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "cd362bf9e77071f5", "trace_id": "479733ce83759bd3b934b622c372933f"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "7a3ccfb8-0b5e-4557-8229-5ba6ad3383f0", "elapsed_ms": 1.604, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "e292e61e9db47c36", "trace_id": "e1b027069f78bc0de32100c0f2b40c0c"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "dd7e58aa-64ed-4c89-9878-65ca35886f61", "elapsed_ms": 1.234, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "6823c35cb650dbb5", "trace_id": "7588d6d8de24ce20e559e302a8c477f2"}
+_ test_nonstring_acr_cannot_collide_with_configured_string_after_promotion[acr4] _
+
+client = <starlette.testclient.TestClient object at 0x10cb304d0>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10ccb4650>, 'public': {'kty': 'RSA',...niJchlUOL7IKWfwSgwO6RGxeWuRLYZJUaHuw', 'e': 'AQAB', ...}, 'mutations': {'acr': {'method': 'mfa'}}, 'exchanges': 1, ...}
+acr = {'method': 'mfa'}
+
+    @pytest.mark.parametrize("acr", [2, 2.5, True, ["mfa"], {"method": "mfa"}])
+    def test_nonstring_acr_cannot_collide_with_configured_string_after_promotion(client, provider, acr):
+        set_roles(client, ["load_analyst"])
+        provider["mutations"] = {"acr": acr}
+        sign_in(client, provider)
+        assert client.get("/api/v1/me").status_code == 200
+        object.__setattr__(client.app.state.settings, "oidc_required_acr", str(acr))
+        set_roles(client, ["manager"])
+        denied = client.get("/api/v1/me")
+>       assert denied.status_code == 401, denied.text
+E       AssertionError: {"subject":"manager","tenant_id":"10000000-0000-4000-8000-000000000001","roles":["manager"],"auth_mode":"oidc"}
+E       assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+
+tests/backend/test_oidc_session_assurance.py:192: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "32607884-841c-4d20-862a-5b7e390352f8", "elapsed_ms": 1.22, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "d822e7f024423760", "trace_id": "7f40e17461bd41840980de7702240e8d"}
+{"correlation.id": "b9d61df5-6157-4cb9-9c0c-a3872df43a7d", "elapsed_ms": 4.038, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "387f9a59df6d4d36", "trace_id": "d4f51283f090d7e476bdc9a3df964918"}
+{"correlation.id": "35ad8fa7-9df0-41c6-b65c-14c26ec26ec2", "elapsed_ms": 1.676, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "86b00412585b21b5", "trace_id": "2aba1888772d80e6b0f696c15c53f81e"}
+{"correlation.id": "15803b93-4456-4773-a4c3-ad2a92807f55", "elapsed_ms": 0.969, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "31777416fd70dd11", "trace_id": "040665cc618b28b2bbe4b4491785b6e8"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "32607884-841c-4d20-862a-5b7e390352f8", "elapsed_ms": 1.22, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "d822e7f024423760", "trace_id": "7f40e17461bd41840980de7702240e8d"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "b9d61df5-6157-4cb9-9c0c-a3872df43a7d", "elapsed_ms": 4.038, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "387f9a59df6d4d36", "trace_id": "d4f51283f090d7e476bdc9a3df964918"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "35ad8fa7-9df0-41c6-b65c-14c26ec26ec2", "elapsed_ms": 1.676, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "86b00412585b21b5", "trace_id": "2aba1888772d80e6b0f696c15c53f81e"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "15803b93-4456-4773-a4c3-ad2a92807f55", "elapsed_ms": 0.969, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "31777416fd70dd11", "trace_id": "040665cc618b28b2bbe4b4491785b6e8"}
+___ test_raw_sql_disable_and_reenable_permanently_revokes_old_cookie[False] ____
+
+client = <starlette.testclient.TestClient object at 0x10cc9e630>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10ccb6d50>, 'public': {'kty': 'RSA',...BqYv_8YfajHuBZ7XjKc8wkTYWaRpduPld925Se-nx-q6-_8sQEGpelhI_K-w', 'e': 'AQAB', ...}, 'mutations': {}, 'exchanges': 1, ...}
+request_while_disabled = False
+
+    @pytest.mark.parametrize("request_while_disabled", [False, True])
+    def test_raw_sql_disable_and_reenable_permanently_revokes_old_cookie(
+        client, provider, request_while_disabled
+    ):
+        old_cookie = sign_in(client, provider)
+        with client.app.state.factory.begin() as db:
+            update_enabled(db, False)
+        if request_while_disabled:
+            assert client.get("/api/v1/me").status_code == 401
+        with client.app.state.factory.begin() as db:
+            update_enabled(db, True)
+        assert client.cookies.get("cp_session") == old_cookie
+        denied = client.get("/api/v1/me")
+>       assert denied.status_code == 401, denied.text
+E       AssertionError: {"subject":"manager","tenant_id":"10000000-0000-4000-8000-000000000001","roles":["manager"],"auth_mode":"oidc"}
+E       assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+
+tests/backend/test_oidc_session_assurance.py:224: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "159134e8-0c72-48ee-add0-7101390e57df", "elapsed_ms": 1.777, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "645de6d8051537fe", "trace_id": "bce7c32605b699241ddaaef5c59aad21"}
+{"correlation.id": "970dbe7b-d9f7-40e8-b8b1-2602f8f5328a", "elapsed_ms": 4.286, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "ee6a38ac92736473", "trace_id": "531277353ceec6b728f0f3535dc2dccd"}
+{"correlation.id": "8bf7bc84-81e6-41d6-ac53-6d52264731b3", "elapsed_ms": 1.717, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "93f5afbebde37f94", "trace_id": "63ae7e3b931fc9a26734bd326d3e09be"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "159134e8-0c72-48ee-add0-7101390e57df", "elapsed_ms": 1.777, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "645de6d8051537fe", "trace_id": "bce7c32605b699241ddaaef5c59aad21"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "970dbe7b-d9f7-40e8-b8b1-2602f8f5328a", "elapsed_ms": 4.286, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "ee6a38ac92736473", "trace_id": "531277353ceec6b728f0f3535dc2dccd"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "8bf7bc84-81e6-41d6-ac53-6d52264731b3", "elapsed_ms": 1.717, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "93f5afbebde37f94", "trace_id": "63ae7e3b931fc9a26734bd326d3e09be"}
+____ test_raw_sql_disable_and_reenable_permanently_revokes_old_cookie[True] ____
+
+client = <starlette.testclient.TestClient object at 0x10cc9e8a0>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10cf48e70>, 'public': {'kty': 'RSA',...gdF6MXrn2KhBTiFHli1Fzx4Amebb87U1YfEsjki581v6TSpdJWTJdLb_7V8w', 'e': 'AQAB', ...}, 'mutations': {}, 'exchanges': 1, ...}
+request_while_disabled = True
+
+    @pytest.mark.parametrize("request_while_disabled", [False, True])
+    def test_raw_sql_disable_and_reenable_permanently_revokes_old_cookie(
+        client, provider, request_while_disabled
+    ):
+        old_cookie = sign_in(client, provider)
+        with client.app.state.factory.begin() as db:
+            update_enabled(db, False)
+        if request_while_disabled:
+            assert client.get("/api/v1/me").status_code == 401
+        with client.app.state.factory.begin() as db:
+            update_enabled(db, True)
+        assert client.cookies.get("cp_session") == old_cookie
+        denied = client.get("/api/v1/me")
+>       assert denied.status_code == 401, denied.text
+E       AssertionError: {"subject":"manager","tenant_id":"10000000-0000-4000-8000-000000000001","roles":["manager"],"auth_mode":"oidc"}
+E       assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+
+tests/backend/test_oidc_session_assurance.py:224: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "5c16c485-e27c-421e-9a48-811386968ff8", "elapsed_ms": 1.362, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4ff01737fb6cdaee", "trace_id": "3614d9d6c83b29ff8873eab6240838d1"}
+{"correlation.id": "7b38cb9f-e8d1-42f9-9a5b-5087312affd6", "elapsed_ms": 3.979, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "30fbd9266e4ee9d0", "trace_id": "35f0fad60519e69e7777626c48a225c9"}
+{"correlation.id": "690a71ae-fc35-4233-ba11-642c1283ec43", "elapsed_ms": 1.376, "event": "operation", "http.request.method": "GET", "http.response.status_code": 401, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "bc173c8358fa07a0", "trace_id": "1f8d66ff81c04eeaebf5a9793b9e306e"}
+{"correlation.id": "76526245-9e40-4c6f-8be9-eb8c640683fd", "elapsed_ms": 0.855, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "a766da1145d39ec7", "trace_id": "612c836a1e4456858423550962d07171"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "5c16c485-e27c-421e-9a48-811386968ff8", "elapsed_ms": 1.362, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4ff01737fb6cdaee", "trace_id": "3614d9d6c83b29ff8873eab6240838d1"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "7b38cb9f-e8d1-42f9-9a5b-5087312affd6", "elapsed_ms": 3.979, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "30fbd9266e4ee9d0", "trace_id": "35f0fad60519e69e7777626c48a225c9"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "690a71ae-fc35-4233-ba11-642c1283ec43", "elapsed_ms": 1.376, "event": "operation", "http.request.method": "GET", "http.response.status_code": 401, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "bc173c8358fa07a0", "trace_id": "1f8d66ff81c04eeaebf5a9793b9e306e"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "76526245-9e40-4c6f-8be9-eb8c640683fd", "elapsed_ms": 0.855, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "a766da1145d39ec7", "trace_id": "612c836a1e4456858423550962d07171"}
+_ test_disable_revokes_all_identity_sessions_and_preserves_other_identities_and_tenant _
+
+client = <starlette.testclient.TestClient object at 0x10cfb31d0>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10cf4b6b0>, 'public': {'kty': 'RSA',...RBHVnJ3-DaNKBZgr6kfo3ZguhKCCFX1no6V_XzpJiPoNnOYzat9uj86MZhxQ', 'e': 'AQAB', ...}, 'mutations': {}, 'exchanges': 1, ...}
+
+    def test_disable_revokes_all_identity_sessions_and_preserves_other_identities_and_tenant(
+        client, provider
+    ):
+        from cargopulse_api.security import create_session
+        from fastapi import Response
+    
+        sign_in(client, provider)
+        with client.app.state.factory.begin() as db:
+            for identity_id in ("manager", "manager", "controller", "controller-b"):
+                create_session(
+                    db, db.get(Identity, identity_id), "development", Response(), client.app.state.settings
+                )
+        with client.app.state.factory() as db:
+            rows = list(db.scalars(select(SessionRow)))
+            assert len(rows) == 5
+            expected_survivors = {row.id for row in rows if row.identity_id != "manager"}
+            assert len(expected_survivors) == 2
+        with client.app.state.factory.begin() as db:
+            update_enabled(db, False)
+>           assert {row.id for row in db.scalars(select(SessionRow))} == expected_survivors
+E           AssertionError: assert {'354ecc0f-b0...ceb3a706caa2'} == {'591efccb-e2...0f3baea6f437'}
+E             
+E             Extra items in the left set:
+E             '88062e09-96da-40ca-b572-9077028e6965'
+E             'f6644905-cc38-446c-bac6-ceb3a706caa2'
+E             '354ecc0f-b0b7-4f16-8b35-12a346fc5c2b'
+E             Use -v to get more diff
+
+tests/backend/test_oidc_session_assurance.py:250: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "af6f4139-4574-4d40-83fc-0dc5edb383e8", "elapsed_ms": 1.876, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "91eccabd7322fb13", "trace_id": "98a2902b263d44b907a6454bac6d16bf"}
+{"correlation.id": "8a07b589-9b7f-45b1-ae0d-3205a1799e2e", "elapsed_ms": 3.788, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "76b1b792201bf3aa", "trace_id": "f50fb7dfff7de00c170fbdaa5eb3e5bc"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "af6f4139-4574-4d40-83fc-0dc5edb383e8", "elapsed_ms": 1.876, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "91eccabd7322fb13", "trace_id": "98a2902b263d44b907a6454bac6d16bf"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "8a07b589-9b7f-45b1-ae0d-3205a1799e2e", "elapsed_ms": 3.788, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "76b1b792201bf3aa", "trace_id": "f50fb7dfff7de00c170fbdaa5eb3e5bc"}
+____________ test_disable_session_revocation_rolls_back_atomically _____________
+
+client = <starlette.testclient.TestClient object at 0x10d139850>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10d1a56b0>, 'public': {'kty': 'RSA',...VzHT5S1HNGF8_b--8IVlCCeBXsIL6rS8KzfKYl2jqo2Y6DlqbYSaR3YlcWxQ', 'e': 'AQAB', ...}, 'mutations': {}, 'exchanges': 1, ...}
+
+    def test_disable_session_revocation_rolls_back_atomically(client, provider):
+        sign_in(client, provider)
+        with client.app.state.factory() as db:
+            update_enabled(db, False)
+>           assert db.scalar(select(SessionRow)) is None
+E           assert <cargopulse_api.tables.SessionRow object at 0x10d2f0ef0> is None
+E            +  where <cargopulse_api.tables.SessionRow object at 0x10d2f0ef0> = scalar(<sqlalchemy.sql.selectable.Select object at 0x10d1b5730>)
+E            +    where scalar = <sqlalchemy.orm.session.Session object at 0x10d2cb170>.scalar
+E            +    and   <sqlalchemy.sql.selectable.Select object at 0x10d1b5730> = select(SessionRow)
+
+tests/backend/test_oidc_session_assurance.py:259: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "d52b7f3c-5ad5-45a4-97ba-2378f657fd9f", "elapsed_ms": 1.344, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "fc6632d939c2b89d", "trace_id": "deccab982b45bcd7bd02db15eb26bdda"}
+{"correlation.id": "d8ed796e-398a-4a11-a12c-39bbf979e2a3", "elapsed_ms": 3.287, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "97e2bd76e08e60b2", "trace_id": "f7cc3a80792680c9a430499b308cf6e3"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "d52b7f3c-5ad5-45a4-97ba-2378f657fd9f", "elapsed_ms": 1.344, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "fc6632d939c2b89d", "trace_id": "deccab982b45bcd7bd02db15eb26bdda"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "d8ed796e-398a-4a11-a12c-39bbf979e2a3", "elapsed_ms": 3.287, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "97e2bd76e08e60b2", "trace_id": "f7cc3a80792680c9a430499b308cf6e3"}
+___ test_disabled_identity_cannot_create_a_session_from_a_stale_orm_instance ___
+
+client = <starlette.testclient.TestClient object at 0x10d2c8bc0>
+
+    def test_disabled_identity_cannot_create_a_session_from_a_stale_orm_instance(client):
+        from cargopulse_api.security import AppError, create_session
+        from fastapi import Response
+    
+        with client.app.state.factory.begin() as db:
+            stale_identity = db.get(Identity, "manager")
+            update_enabled(db, False)
+            assert stale_identity.enabled is True
+>           with pytest.raises(AppError) as denied:
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE AppError
+
+tests/backend/test_oidc_session_assurance.py:275: Failed
+=============================== warnings summary ===============================
+../../.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/pie/CargoPulse_Production_Build_Package/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/backend/test_oidc_session_assurance.py::test_nonstring_acr_cannot_collide_with_configured_string_after_promotion[2]
+FAILED tests/backend/test_oidc_session_assurance.py::test_nonstring_acr_cannot_collide_with_configured_string_after_promotion[2.5]
+FAILED tests/backend/test_oidc_session_assurance.py::test_nonstring_acr_cannot_collide_with_configured_string_after_promotion[True]
+FAILED tests/backend/test_oidc_session_assurance.py::test_nonstring_acr_cannot_collide_with_configured_string_after_promotion[acr3]
+FAILED tests/backend/test_oidc_session_assurance.py::test_nonstring_acr_cannot_collide_with_configured_string_after_promotion[acr4]
+FAILED tests/backend/test_oidc_session_assurance.py::test_raw_sql_disable_and_reenable_permanently_revokes_old_cookie[False]
+FAILED tests/backend/test_oidc_session_assurance.py::test_raw_sql_disable_and_reenable_permanently_revokes_old_cookie[True]
+FAILED tests/backend/test_oidc_session_assurance.py::test_disable_revokes_all_identity_sessions_and_preserves_other_identities_and_tenant
+FAILED tests/backend/test_oidc_session_assurance.py::test_disable_session_revocation_rolls_back_atomically
+FAILED tests/backend/test_oidc_session_assurance.py::test_disabled_identity_cannot_create_a_session_from_a_stale_orm_instance
+10 failed, 13 deselected, 1 warning in 1.33s

@@ -1,0 +1,12 @@
+{
+  "base_commit": "1b003eb22427c784fe1b59fff6bfe650be120909",
+  "expected_base_storage_sha256": "d4b7ac1f2fbaec17ea481d9e1028eab81a6e5ae3b7d2570ea4dd6fd69e767b36",
+  "files_sha256": {
+    "services/api/cargopulse_api/storage.py": "5bdd086ef25aabc704c414f0c5812375d3a4d2980e3cd65e5f8c48e9d6e2d1c6",
+    "services/api/cargopulse_api/storage_xml.py": "2ba0031fe7213ee2dd65d5a952d3a61ba70575aa2e3bd41b69a145a068553fd5",
+    "tests/backend/test_storage_xml.py": "17a839970034ba58a5ca631afed966b0e0a6874bc918a14a9a6b51b483f66c7c",
+    "docs/evidence/21-storage-xml-boundary.md": "f319bbc962d34b6577a7902e0632ef1866e86d7ade1e5c9b424f556394d19c60"
+  },
+  "patch_sha256": "dfbf36855d8a4d47dc9a97a2ff45caa756d0b83d50d5e5f2e854667aabfe4737",
+  "verification": "49 passed = 24 storage XML plus 25 existing API; ruff and whitespace passed"
+}

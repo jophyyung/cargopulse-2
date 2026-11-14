@@ -1,0 +1,1154 @@
+EEEEEEEEEEEEEEEEEEEEEE                                                   [100%]
+==================================== ERRORS ====================================
+_ ERROR at setup of test_internal_dtd_is_rejected_on_success_xml_response[probe] _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_internal_dtd_is_rejected_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c594b30>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c594b00>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_internal_dtd_is_rejected_on_success_xml_response[put] _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_internal_dtd_is_rejected_1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c5c2a80>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c5c2c30>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-8-sig] _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_dtd_rejection_is_encoding0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c5c0f50>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c5c0f80>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-16] _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_dtd_rejection_is_encoding1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c60fa40>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c60fcb0>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-16-be] _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_dtd_rejection_is_encoding2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c613b30>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c613b90>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_external_file_entity_canary_is_not_read_and_dtd_is_rejected _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_external_file_entity_cana0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c610d10>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c610d40>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+___________ ERROR at setup of test_external_http_entity_cannot_fetch ___________
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_external_http_entity_cann0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c597560>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c597710>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_internal_entity_amplification_is_rejected_before_expansion _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_internal_entity_amplifica0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c617e30>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c617e90>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+__ ERROR at setup of test_malformed_xml_exception_does_not_echo_protocol_body __
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_malformed_xml_exception_d0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c5c04a0>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c5c08c0>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_________ ERROR at setup of test_protocol_xml_parse_budget_is_enforced _________
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_protocol_xml_parse_budget0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c60f1d0>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c60fbc0>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+___ ERROR at setup of test_normal_head_put_and_raw_get_preserve_sdk_behavior ___
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_normal_head_put_and_raw_g0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c703290>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c701280>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_valid_namespaced_xml_and_builtin_entities_work[utf-8] _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_valid_namespaced_xml_and_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c610290>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c610590>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_valid_namespaced_xml_and_builtin_entities_work[utf-8-sig] _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_valid_namespaced_xml_and_1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c612900>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c612720>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_valid_namespaced_xml_and_builtin_entities_work[utf-16] _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_valid_namespaced_xml_and_2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c60ddf0>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c60de50>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_normal_s3_xml_error_is_retained_and_verify_fails_closed _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_normal_s3_xml_error_is_re0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c596ab0>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c5969c0>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_bad_xml_error_fails_closed_without_raw_body_in_exception[body0] _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_bad_xml_error_fails_close0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b85c620>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10b85c6e0>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_bad_xml_error_fails_closed_without_raw_body_in_exception[<Error>PRIVATE_XML_CANARY<Unclosed>] _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_bad_xml_error_fails_close1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c703e60>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c703b00>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+____ ERROR at setup of test_verify_catches_parser_error_instead_of_escaping ____
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_verify_catches_parser_err0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c5c30b0>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c5c30e0>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_owned_factory_preserves_defaults_json_and_global_parser _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_owned_factory_preserves_d0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b85c7a0>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c7028d0>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_guard_runs_before_unsafe_sdk_embedded_error_detection _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_guard_runs_before_unsafe_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c5c3ad0>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c5c3fe0>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_normal_embedded_200_s3_error_keeps_sdk_retry_semantics _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_normal_embedded_200_s3_er0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c616cc0>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c616d50>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+_ ERROR at setup of test_rejected_protocol_xml_is_not_emitted_by_sdk_debug_logging _
+
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-73/test_rejected_protocol_xml_is_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c5c1b50>
+
+    @pytest.fixture
+    def recorded(tmp_path, monkeypatch):
+        # Explicitly fake credentials; isolated empty config prevents user-secret reads.
+        monkeypatch.setenv("AWS_ACCESS_KEY_ID", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_ACCESS_KEY")
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "CARGOPULSE_TEST_ONLY_NOT_A_REAL_SECRET")
+        monkeypatch.setenv("AWS_DEFAULT_REGION", "us-east-1")
+        monkeypatch.setenv("AWS_EC2_METADATA_DISABLED", "true")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "empty-config"))
+        monkeypatch.setenv("AWS_SHARED_CREDENTIALS_FILE", str(tmp_path / "empty-credentials"))
+        monkeypatch.delenv("AWS_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_DEFAULT_PROFILE", raising=False)
+        monkeypatch.delenv("AWS_SESSION_TOKEN", raising=False)
+        monkeypatch.setattr(boto3, "DEFAULT_SESSION", None)
+    
+        def network_forbidden(*args, **kwargs):
+            raise AssertionError("Unexpected network access in recorded S3 test")
+    
+        monkeypatch.setattr(socket.socket, "connect", network_forbidden)
+        monkeypatch.setattr(socket, "create_connection", network_forbidden)
+        monkeypatch.setattr(urllib.request, "urlopen", network_forbidden)
+        settings = SimpleNamespace(
+            object_root=str(tmp_path / "objects"),
+            object_bucket="synthetic-private-test",
+            object_endpoint="https://recorded-s3.invalid",
+        )
+>       objects = PrivateObjects(settings)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:27: in __init__
+    register_s3_xml_guard(session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+session = <botocore.session.Session object at 0x10c5c1cd0>
+
+    def register_s3_xml_guard(session):
+        # The SDK builtin also parses XML before ResponseParserFactory is consulted.
+        # Appending register_first alone still runs after its existing first handler.
+        # Replace only this owned session's registration with a guarded wrapper.
+        session.unregister("before-parse.s3.*", _handle_200_error)
+>       session.register_first("before-parse.s3.*", _guard_before_s3_parse)
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Session' object has no attribute 'register_first'
+
+services/api/cargopulse_api/storage_xml.py:63: AttributeError
+=============================== warnings summary ===============================
+../../.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/pie/CargoPulse_Production_Build_Package/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR tests/backend/test_storage_xml.py::test_internal_dtd_is_rejected_on_success_xml_response[probe]
+ERROR tests/backend/test_storage_xml.py::test_internal_dtd_is_rejected_on_success_xml_response[put]
+ERROR tests/backend/test_storage_xml.py::test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-8-sig]
+ERROR tests/backend/test_storage_xml.py::test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-16]
+ERROR tests/backend/test_storage_xml.py::test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-16-be]
+ERROR tests/backend/test_storage_xml.py::test_external_file_entity_canary_is_not_read_and_dtd_is_rejected
+ERROR tests/backend/test_storage_xml.py::test_external_http_entity_cannot_fetch
+ERROR tests/backend/test_storage_xml.py::test_internal_entity_amplification_is_rejected_before_expansion
+ERROR tests/backend/test_storage_xml.py::test_malformed_xml_exception_does_not_echo_protocol_body
+ERROR tests/backend/test_storage_xml.py::test_protocol_xml_parse_budget_is_enforced
+ERROR tests/backend/test_storage_xml.py::test_normal_head_put_and_raw_get_preserve_sdk_behavior
+ERROR tests/backend/test_storage_xml.py::test_valid_namespaced_xml_and_builtin_entities_work[utf-8]
+ERROR tests/backend/test_storage_xml.py::test_valid_namespaced_xml_and_builtin_entities_work[utf-8-sig]
+ERROR tests/backend/test_storage_xml.py::test_valid_namespaced_xml_and_builtin_entities_work[utf-16]
+ERROR tests/backend/test_storage_xml.py::test_normal_s3_xml_error_is_retained_and_verify_fails_closed
+ERROR tests/backend/test_storage_xml.py::test_bad_xml_error_fails_closed_without_raw_body_in_exception[body0]
+ERROR tests/backend/test_storage_xml.py::test_bad_xml_error_fails_closed_without_raw_body_in_exception[<Error>PRIVATE_XML_CANARY<Unclosed>]
+ERROR tests/backend/test_storage_xml.py::test_verify_catches_parser_error_instead_of_escaping
+ERROR tests/backend/test_storage_xml.py::test_owned_factory_preserves_defaults_json_and_global_parser
+ERROR tests/backend/test_storage_xml.py::test_guard_runs_before_unsafe_sdk_embedded_error_detection
+ERROR tests/backend/test_storage_xml.py::test_normal_embedded_200_s3_error_keeps_sdk_retry_semantics
+ERROR tests/backend/test_storage_xml.py::test_rejected_protocol_xml_is_not_emitted_by_sdk_debug_logging
+1 warning, 22 errors in 0.84s

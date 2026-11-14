@@ -1,0 +1,938 @@
+{
+  "$defs": {
+    "CargoUnit": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "uld_code": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Uld Code",
+          "type": "string"
+        },
+        "uld_type": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Uld Type",
+          "type": "string"
+        },
+        "contour": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Contour",
+          "type": "string"
+        },
+        "origin": {
+          "pattern": "^[A-Z]{3}$",
+          "title": "Origin",
+          "type": "string"
+        },
+        "destination": {
+          "pattern": "^[A-Z]{3}$",
+          "title": "Destination",
+          "type": "string"
+        },
+        "actual_mass_kg": {
+          "gt": 0,
+          "le": "1000000000",
+          "title": "Actual Mass Kg",
+          "type": "string"
+        },
+        "actual_volume_m3": {
+          "gt": 0,
+          "le": "1000000000",
+          "title": "Actual Volume M3",
+          "type": "string"
+        },
+        "tare_mass_kg": {
+          "ge": 0,
+          "le": "1000000000",
+          "title": "Tare Mass Kg",
+          "type": "string"
+        },
+        "pieces": {
+          "items": {
+            "$ref": "#/$defs/PieceAssociation"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "title": "Pieces",
+          "type": "array"
+        },
+        "service_class": {
+          "enum": [
+            "GENERAL",
+            "PRIORITY",
+            "PHARMA",
+            "PERISHABLE",
+            "DG"
+          ],
+          "title": "Service Class",
+          "type": "string"
+        },
+        "service_weight": {
+          "gt": 0,
+          "le": "1000000000",
+          "title": "Service Weight",
+          "type": "string"
+        },
+        "ready_at": {
+          "format": "date-time",
+          "title": "Ready At",
+          "type": "string"
+        },
+        "commitment_at": {
+          "format": "date-time",
+          "title": "Commitment At",
+          "type": "string"
+        },
+        "requires_cold_chain": {
+          "title": "Requires Cold Chain",
+          "type": "boolean"
+        },
+        "dg_class": {
+          "enum": [
+            "NONE",
+            "DECLARED",
+            "FREIGHTER_ONLY"
+          ],
+          "title": "Dg Class",
+          "type": "string"
+        },
+        "serviceability": {
+          "$ref": "#/$defs/Verification"
+        },
+        "security": {
+          "$ref": "#/$defs/Verification"
+        },
+        "contractual_latest_arrival": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Contractual Latest Arrival"
+        },
+        "previous_path_id": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Previous Path Id"
+        },
+        "frozen_path_id": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frozen Path Id"
+        },
+        "atomic_whole_uld": {
+          "const": true,
+          "default": true,
+          "title": "Atomic Whole Uld",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "uld_code",
+        "uld_type",
+        "contour",
+        "origin",
+        "destination",
+        "actual_mass_kg",
+        "actual_volume_m3",
+        "tare_mass_kg",
+        "pieces",
+        "service_class",
+        "service_weight",
+        "ready_at",
+        "commitment_at",
+        "requires_cold_chain",
+        "dg_class",
+        "serviceability",
+        "security"
+      ],
+      "title": "CargoUnit",
+      "type": "object"
+    },
+    "Connection": {
+      "additionalProperties": false,
+      "properties": {
+        "inbound_flight_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Inbound Flight Id",
+          "type": "string"
+        },
+        "outbound_flight_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Outbound Flight Id",
+          "type": "string"
+        },
+        "min_transfer_seconds": {
+          "maximum": 86400,
+          "minimum": 0,
+          "title": "Min Transfer Seconds",
+          "type": "integer"
+        },
+        "verification": {
+          "$ref": "#/$defs/Verification"
+        }
+      },
+      "required": [
+        "inbound_flight_id",
+        "outbound_flight_id",
+        "min_transfer_seconds",
+        "verification"
+      ],
+      "title": "Connection",
+      "type": "object"
+    },
+    "EvidenceTier": {
+      "enum": [
+        "PUBLIC_VERIFIED",
+        "ORGANISER_SNAPSHOT",
+        "TEAM_SYNTHETIC_UNVERIFIED",
+        "LIVE_AUTHORISED"
+      ],
+      "title": "EvidenceTier",
+      "type": "string"
+    },
+    "FlightCapacity": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "flight_number": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Flight Number",
+          "type": "string"
+        },
+        "origin": {
+          "pattern": "^[A-Z]{3}$",
+          "title": "Origin",
+          "type": "string"
+        },
+        "destination": {
+          "pattern": "^[A-Z]{3}$",
+          "title": "Destination",
+          "type": "string"
+        },
+        "departure_at": {
+          "format": "date-time",
+          "title": "Departure At",
+          "type": "string"
+        },
+        "arrival_at": {
+          "format": "date-time",
+          "title": "Arrival At",
+          "type": "string"
+        },
+        "cutoff_at": {
+          "format": "date-time",
+          "title": "Cutoff At",
+          "type": "string"
+        },
+        "origin_timezone": {
+          "maxLength": 80,
+          "title": "Origin Timezone",
+          "type": "string"
+        },
+        "destination_timezone": {
+          "maxLength": 80,
+          "title": "Destination Timezone",
+          "type": "string"
+        },
+        "aircraft_variant": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Aircraft Variant",
+          "type": "string"
+        },
+        "is_freighter": {
+          "title": "Is Freighter",
+          "type": "boolean"
+        },
+        "status": {
+          "enum": [
+            "SCHEDULED",
+            "CANCELLED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "free_mass_kg": {
+          "anyOf": [
+            {
+              "ge": 0,
+              "le": "1000000000",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Free Mass Kg"
+        },
+        "free_volume_m3": {
+          "anyOf": [
+            {
+              "ge": 0,
+              "le": "1000000000",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Free Volume M3"
+        },
+        "positions": {
+          "items": {
+            "$ref": "#/$defs/FlightPosition"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "title": "Positions",
+          "type": "array"
+        },
+        "capacity_verification": {
+          "$ref": "#/$defs/Verification"
+        }
+      },
+      "required": [
+        "id",
+        "flight_number",
+        "origin",
+        "destination",
+        "departure_at",
+        "arrival_at",
+        "cutoff_at",
+        "origin_timezone",
+        "destination_timezone",
+        "aircraft_variant",
+        "is_freighter",
+        "status",
+        "free_mass_kg",
+        "free_volume_m3",
+        "positions",
+        "capacity_verification"
+      ],
+      "title": "FlightCapacity",
+      "type": "object"
+    },
+    "FlightPosition": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "free_mass_kg": {
+          "anyOf": [
+            {
+              "ge": 0,
+              "le": "1000000000",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Free Mass Kg"
+        },
+        "free_volume_m3": {
+          "anyOf": [
+            {
+              "ge": 0,
+              "le": "1000000000",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Free Volume M3"
+        },
+        "slot_count": {
+          "anyOf": [
+            {
+              "maximum": 5000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Slot Count"
+        },
+        "max_unit_mass_kg": {
+          "gt": 0,
+          "le": "1000000000",
+          "title": "Max Unit Mass Kg",
+          "type": "string"
+        },
+        "max_unit_volume_m3": {
+          "gt": 0,
+          "le": "1000000000",
+          "title": "Max Unit Volume M3",
+          "type": "string"
+        },
+        "allowed_uld_types": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 30,
+          "minItems": 1,
+          "title": "Allowed Uld Types",
+          "type": "array"
+        },
+        "allowed_contours": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 30,
+          "minItems": 1,
+          "title": "Allowed Contours",
+          "type": "array"
+        },
+        "envelope_verification": {
+          "$ref": "#/$defs/Verification"
+        }
+      },
+      "required": [
+        "id",
+        "free_mass_kg",
+        "free_volume_m3",
+        "slot_count",
+        "max_unit_mass_kg",
+        "max_unit_volume_m3",
+        "allowed_uld_types",
+        "allowed_contours",
+        "envelope_verification"
+      ],
+      "title": "FlightPosition",
+      "type": "object"
+    },
+    "GateResult": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ],
+      "title": "GateResult",
+      "type": "string"
+    },
+    "HandlingWindow": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "airport": {
+          "pattern": "^[A-Z]{3}$",
+          "title": "Airport",
+          "type": "string"
+        },
+        "start_at": {
+          "format": "date-time",
+          "title": "Start At",
+          "type": "string"
+        },
+        "end_at": {
+          "format": "date-time",
+          "title": "End At",
+          "type": "string"
+        },
+        "capacity_units": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Capacity Units",
+          "type": "integer"
+        },
+        "equipment_verification": {
+          "$ref": "#/$defs/Verification"
+        }
+      },
+      "required": [
+        "id",
+        "airport",
+        "start_at",
+        "end_at",
+        "capacity_units",
+        "equipment_verification"
+      ],
+      "title": "HandlingWindow",
+      "type": "object"
+    },
+    "PieceAssociation": {
+      "additionalProperties": false,
+      "properties": {
+        "piece_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Piece Id",
+          "type": "string"
+        },
+        "awb_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Awb Id",
+          "type": "string"
+        },
+        "mass_kg": {
+          "ge": 0,
+          "le": "1000000000",
+          "title": "Mass Kg",
+          "type": "string"
+        },
+        "volume_m3": {
+          "ge": 0,
+          "le": "1000000000",
+          "title": "Volume M3",
+          "type": "string"
+        }
+      },
+      "required": [
+        "piece_id",
+        "awb_id",
+        "mass_kg",
+        "volume_m3"
+      ],
+      "title": "PieceAssociation",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_record_ids": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 20000,
+          "minItems": 1,
+          "title": "Source Record Ids",
+          "type": "array"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "effective_at": {
+          "format": "date-time",
+          "title": "Effective At",
+          "type": "string"
+        },
+        "ingested_at": {
+          "format": "date-time",
+          "title": "Ingested At",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "evidence_tier": {
+          "$ref": "#/$defs/EvidenceTier"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_record_ids",
+        "observed_at",
+        "effective_at",
+        "ingested_at",
+        "evidence_tier"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "RoutePermission": {
+      "additionalProperties": false,
+      "properties": {
+        "cargo_unit_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Cargo Unit Id",
+          "type": "string"
+        },
+        "flight_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Flight Id",
+          "type": "string"
+        },
+        "dg": {
+          "$ref": "#/$defs/Verification"
+        },
+        "customs": {
+          "$ref": "#/$defs/Verification"
+        },
+        "cold_chain": {
+          "$ref": "#/$defs/Verification"
+        },
+        "load_control": {
+          "$ref": "#/$defs/Verification"
+        }
+      },
+      "required": [
+        "cargo_unit_id",
+        "flight_id",
+        "dg",
+        "customs",
+        "cold_chain",
+        "load_control"
+      ],
+      "title": "RoutePermission",
+      "type": "object"
+    },
+    "RuleSet": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Version",
+          "type": "string"
+        },
+        "state": {
+          "const": "PUBLISHED",
+          "title": "State",
+          "type": "string"
+        },
+        "authored_by": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Authored By",
+          "type": "string"
+        },
+        "approved_by": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Approved By",
+          "type": "string"
+        },
+        "published_at": {
+          "format": "date-time",
+          "title": "Published At",
+          "type": "string"
+        },
+        "handling_seconds": {
+          "maximum": 86400,
+          "minimum": 1,
+          "title": "Handling Seconds",
+          "type": "integer"
+        },
+        "max_legs": {
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Max Legs",
+          "type": "integer"
+        },
+        "max_paths_per_unit": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Max Paths Per Unit",
+          "type": "integer"
+        },
+        "unassigned_penalty_weighted_hours": {
+          "gt": 0,
+          "le": "1000000000",
+          "title": "Unassigned Penalty Weighted Hours",
+          "type": "string"
+        },
+        "handling_penalty_weighted_hours": {
+          "ge": 0,
+          "le": "1000000000",
+          "title": "Handling Penalty Weighted Hours",
+          "type": "string"
+        },
+        "stability_penalty_weighted_hours": {
+          "ge": 0,
+          "le": "1000000000",
+          "title": "Stability Penalty Weighted Hours",
+          "type": "string"
+        },
+        "source_max_age_seconds": {
+          "maximum": 604800,
+          "minimum": 1,
+          "title": "Source Max Age Seconds",
+          "type": "integer"
+        },
+        "model_scope": {
+          "const": "SYNTHETIC_CONSERVATIVE_ENVELOPE",
+          "title": "Model Scope",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "state",
+        "authored_by",
+        "approved_by",
+        "published_at",
+        "handling_seconds",
+        "max_legs",
+        "max_paths_per_unit",
+        "unassigned_penalty_weighted_hours",
+        "handling_penalty_weighted_hours",
+        "stability_penalty_weighted_hours",
+        "source_max_age_seconds",
+        "model_scope"
+      ],
+      "title": "RuleSet",
+      "type": "object"
+    },
+    "Verification": {
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "$ref": "#/$defs/GateResult"
+        },
+        "source_record_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Source Record Id",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "valid_until": {
+          "format": "date-time",
+          "title": "Valid Until",
+          "type": "string"
+        },
+        "rule_revision": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Rule Revision",
+          "type": "string"
+        }
+      },
+      "required": [
+        "state",
+        "source_record_id",
+        "observed_at",
+        "valid_until",
+        "rule_revision"
+      ],
+      "title": "Verification",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "tenant_id": {
+      "format": "uuid",
+      "title": "Tenant Id",
+      "type": "string"
+    },
+    "event_id": {
+      "maxLength": 100,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_.:-]+$",
+      "title": "Event Id",
+      "type": "string"
+    },
+    "source_version": {
+      "maximum": 1000000,
+      "minimum": 1,
+      "title": "Source Version",
+      "type": "integer"
+    },
+    "title": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "kind": {
+      "const": "RECOVER",
+      "default": "RECOVER",
+      "title": "Kind",
+      "type": "string"
+    },
+    "as_of": {
+      "format": "date-time",
+      "title": "As Of",
+      "type": "string"
+    },
+    "valid_until": {
+      "format": "date-time",
+      "title": "Valid Until",
+      "type": "string"
+    },
+    "synthetic": {
+      "const": true,
+      "default": true,
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "evidence_tier": {
+      "const": "TEAM_SYNTHETIC_UNVERIFIED",
+      "default": "TEAM_SYNTHETIC_UNVERIFIED",
+      "title": "Evidence Tier",
+      "type": "string"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "policy": {
+      "$ref": "#/$defs/RuleSet"
+    },
+    "cargo_units": {
+      "items": {
+        "$ref": "#/$defs/CargoUnit"
+      },
+      "maxItems": 1200,
+      "minItems": 1,
+      "title": "Cargo Units",
+      "type": "array"
+    },
+    "flights": {
+      "items": {
+        "$ref": "#/$defs/FlightCapacity"
+      },
+      "maxItems": 300,
+      "title": "Flights",
+      "type": "array"
+    },
+    "handling_windows": {
+      "items": {
+        "$ref": "#/$defs/HandlingWindow"
+      },
+      "maxItems": 1000,
+      "title": "Handling Windows",
+      "type": "array"
+    },
+    "route_permissions": {
+      "items": {
+        "$ref": "#/$defs/RoutePermission"
+      },
+      "maxItems": 50000,
+      "title": "Route Permissions",
+      "type": "array"
+    },
+    "connections": {
+      "items": {
+        "$ref": "#/$defs/Connection"
+      },
+      "maxItems": 10000,
+      "title": "Connections",
+      "type": "array"
+    }
+  },
+  "required": [
+    "tenant_id",
+    "event_id",
+    "source_version",
+    "title",
+    "as_of",
+    "valid_until",
+    "provenance",
+    "policy",
+    "cargo_units",
+    "flights",
+    "handling_windows",
+    "route_permissions",
+    "connections"
+  ],
+  "title": "ScenarioSnapshot",
+  "type": "object"
+}

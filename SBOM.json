@@ -1,0 +1,2521 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-11T17:30:16.799204+00:00",
+    "component": {
+      "type": "application",
+      "name": "CargoPulse",
+      "version": "0.1.0"
+    },
+    "properties": [
+      {
+        "name": "cargopulse:verification",
+        "value": "dependency inventory; not a built-container SBOM or vulnerability clearance"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "alembic",
+      "version": "1.20.1",
+      "purl": "pkg:pypi/alembic@1.20.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "annotated-doc",
+      "version": "0.0.5",
+      "purl": "pkg:pypi/annotated-doc@0.0.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "purl": "pkg:pypi/annotated-types@0.8.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "anyio",
+      "version": "4.16.0",
+      "purl": "pkg:pypi/anyio@4.16.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "Authlib",
+      "version": "1.9.5",
+      "purl": "pkg:pypi/authlib@1.9.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "boolean.py",
+      "version": "5.0",
+      "purl": "pkg:pypi/boolean.py@5.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "boto3",
+      "version": "1.43.127",
+      "purl": "pkg:pypi/boto3@1.43.127",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "botocore",
+      "version": "1.43.127",
+      "purl": "pkg:pypi/botocore@1.43.127",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "CacheControl",
+      "version": "0.14.4",
+      "purl": "pkg:pypi/cachecontrol@0.14.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "certifi",
+      "version": "2026.10.23",
+      "purl": "pkg:pypi/certifi@2026.10.23",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cffi",
+      "version": "2.1.1",
+      "purl": "pkg:pypi/cffi@2.1.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "purl": "pkg:pypi/charset-normalizer@3.5.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "click",
+      "version": "8.5.1",
+      "purl": "pkg:pypi/click@8.5.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cryptography",
+      "version": "50.0.2",
+      "purl": "pkg:pypi/cryptography@50.0.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cyclonedx-python-lib",
+      "version": "11.12.0",
+      "purl": "pkg:pypi/cyclonedx-python-lib@11.12.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "defusedxml",
+      "version": "0.7.1",
+      "purl": "pkg:pypi/defusedxml@0.7.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fastapi",
+      "version": "0.162.2",
+      "purl": "pkg:pypi/fastapi@0.162.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "filelock",
+      "version": "4.2.10",
+      "purl": "pkg:pypi/filelock@4.2.10",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "googleapis-common-protos",
+      "version": "1.76.0",
+      "purl": "pkg:pypi/googleapis-common-protos@1.76.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "h11",
+      "version": "0.16.0",
+      "purl": "pkg:pypi/h11@0.16.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "highspy",
+      "version": "1.15.1",
+      "purl": "pkg:pypi/highspy@1.15.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "httpcore",
+      "version": "1.0.9",
+      "purl": "pkg:pypi/httpcore@1.0.9",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "httpx",
+      "version": "0.28.1",
+      "purl": "pkg:pypi/httpx@0.28.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "hypothesis",
+      "version": "6.170.15",
+      "purl": "pkg:pypi/hypothesis@6.170.15",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "idna",
+      "version": "3.20",
+      "purl": "pkg:pypi/idna@3.20",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "purl": "pkg:pypi/iniconfig@2.3.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "jmespath",
+      "version": "1.1.0",
+      "purl": "pkg:pypi/jmespath@1.1.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "joserfc",
+      "version": "1.8.0",
+      "purl": "pkg:pypi/joserfc@1.8.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "license-expression",
+      "version": "30.4.4",
+      "purl": "pkg:pypi/license-expression@30.4.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "Mako",
+      "version": "1.4.3",
+      "purl": "pkg:pypi/mako@1.4.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "purl": "pkg:pypi/markdown-it-py@4.2.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "MarkupSafe",
+      "version": "3.0.4",
+      "purl": "pkg:pypi/markupsafe@3.0.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "mdurl",
+      "version": "0.1.2",
+      "purl": "pkg:pypi/mdurl@0.1.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "msgpack",
+      "version": "1.2.4",
+      "purl": "pkg:pypi/msgpack@1.2.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "numpy",
+      "version": "2.5.4",
+      "purl": "pkg:pypi/numpy@2.5.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "opentelemetry-api",
+      "version": "1.45.2",
+      "purl": "pkg:pypi/opentelemetry-api@1.45.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "opentelemetry-exporter-http-transport",
+      "version": "0.66b2",
+      "purl": "pkg:pypi/opentelemetry-exporter-http-transport@0.66b2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "opentelemetry-exporter-otlp-common",
+      "version": "0.66b2",
+      "purl": "pkg:pypi/opentelemetry-exporter-otlp-common@0.66b2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "opentelemetry-exporter-otlp-proto-common",
+      "version": "1.45.2",
+      "purl": "pkg:pypi/opentelemetry-exporter-otlp-proto-common@1.45.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "opentelemetry-exporter-otlp-proto-http",
+      "version": "1.45.2",
+      "purl": "pkg:pypi/opentelemetry-exporter-otlp-proto-http@1.45.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "opentelemetry-proto",
+      "version": "1.45.2",
+      "purl": "pkg:pypi/opentelemetry-proto@1.45.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "opentelemetry-sdk",
+      "version": "1.45.2",
+      "purl": "pkg:pypi/opentelemetry-sdk@1.45.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "opentelemetry-semantic-conventions",
+      "version": "0.66b2",
+      "purl": "pkg:pypi/opentelemetry-semantic-conventions@0.66b2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "packageurl-python",
+      "version": "0.17.6",
+      "purl": "pkg:pypi/packageurl-python@0.17.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "packaging",
+      "version": "26.3",
+      "purl": "pkg:pypi/packaging@26.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pip",
+      "version": "26.3",
+      "purl": "pkg:pypi/pip@26.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pip-requirements-parser",
+      "version": "32.0.1",
+      "purl": "pkg:pypi/pip-requirements-parser@32.0.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pip_api",
+      "version": "0.0.35",
+      "purl": "pkg:pypi/pip-api@0.0.35",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pip_audit",
+      "version": "2.10.1",
+      "purl": "pkg:pypi/pip-audit@2.10.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "platformdirs",
+      "version": "4.14.5",
+      "purl": "pkg:pypi/platformdirs@4.14.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pluggy",
+      "version": "1.7.0",
+      "purl": "pkg:pypi/pluggy@1.7.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "protobuf",
+      "version": "7.36.2",
+      "purl": "pkg:pypi/protobuf@7.36.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "psycopg",
+      "version": "3.3.8",
+      "purl": "pkg:pypi/psycopg@3.3.8",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "psycopg-binary",
+      "version": "3.3.8",
+      "purl": "pkg:pypi/psycopg-binary@3.3.8",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "py-serializable",
+      "version": "2.2.0",
+      "purl": "pkg:pypi/py-serializable@2.2.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pycparser",
+      "version": "3.12",
+      "purl": "pkg:pypi/pycparser@3.12",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pydantic",
+      "version": "2.14.3",
+      "purl": "pkg:pypi/pydantic@2.14.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pydantic_core",
+      "version": "2.50.4",
+      "purl": "pkg:pypi/pydantic-core@2.50.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "Pygments",
+      "version": "2.21.0",
+      "purl": "pkg:pypi/pygments@2.21.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "PyJWT",
+      "version": "2.15.1",
+      "purl": "pkg:pypi/pyjwt@2.15.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "purl": "pkg:pypi/pyparsing@3.3.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pytest",
+      "version": "9.2.0",
+      "purl": "pkg:pypi/pytest@9.2.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "purl": "pkg:pypi/python-dateutil@2.9.0.post0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "python-multipart",
+      "version": "0.0.33",
+      "purl": "pkg:pypi/python-multipart@0.0.33",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "redis",
+      "version": "8.1.0",
+      "purl": "pkg:pypi/redis@8.1.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "requests",
+      "version": "2.34.2",
+      "purl": "pkg:pypi/requests@2.34.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "rich",
+      "version": "15.0.0",
+      "purl": "pkg:pypi/rich@15.0.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ruff",
+      "version": "0.17.4",
+      "purl": "pkg:pypi/ruff@0.17.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "s3transfer",
+      "version": "0.19.3",
+      "purl": "pkg:pypi/s3transfer@0.19.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "six",
+      "version": "1.17.0",
+      "purl": "pkg:pypi/six@1.17.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sortedcontainers",
+      "version": "2.4.0",
+      "purl": "pkg:pypi/sortedcontainers@2.4.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "SQLAlchemy",
+      "version": "2.1.8",
+      "purl": "pkg:pypi/sqlalchemy@2.1.8",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "starlette",
+      "version": "1.10.0",
+      "purl": "pkg:pypi/starlette@1.10.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tomli",
+      "version": "2.5.0",
+      "purl": "pkg:pypi/tomli@2.5.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tomli_w",
+      "version": "1.2.0",
+      "purl": "pkg:pypi/tomli-w@1.2.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "typing-inspection",
+      "version": "0.4.5",
+      "purl": "pkg:pypi/typing-inspection@0.4.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "purl": "pkg:pypi/typing-extensions@4.16.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "urllib3",
+      "version": "2.8.0",
+      "purl": "pkg:pypi/urllib3@2.8.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "uvicorn",
+      "version": "0.54.0",
+      "purl": "pkg:pypi/uvicorn@0.54.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "local-python-environment-including-development"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "typescript",
+      "version": "6.0.3",
+      "purl": "pkg:npm/typescript@6.0.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@axe-core/playwright",
+      "version": "4.14.0",
+      "purl": "pkg:npm/@axe-core/playwright@4.14.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-SGUhG5PIHd2eMdpgBF2PyQLOhX+qyDR2PT4cmoS4Qk2ak+jX/rrSvst9l0PGv5WTHolKpUMvVmoHpr4cZgf1RQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/code-frame",
+      "version": "7.29.7",
+      "purl": "pkg:npm/@babel/code-frame@7.29.7",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/helper-validator-identifier",
+      "version": "7.29.7",
+      "purl": "pkg:npm/@babel/helper-validator-identifier@7.29.7",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@emnapi/runtime",
+      "version": "1.11.3",
+      "purl": "pkg:npm/@emnapi/runtime@1.11.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/colour",
+      "version": "1.1.0",
+      "purl": "pkg:npm/@img/colour@1.1.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-darwin-arm64",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-darwin-arm64@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-QRUlFQ0WxvdWyqqG/WtI3iupfD5rBzmCHXSdPsY91sAtVtTo7Q4cb6zOccZ3gqEqkr0f1As1ehLqmEpDsRf+lg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-darwin-x64",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-darwin-x64@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-+BR255RhDlpygUpOc/Jdt1nT6DQ3XG/ERo5wbcdOf5Q320dKtPCKPLR1LJs9VGXRaMa8l1uUa0tkCNOXiAxZUw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-freebsd-wasm32",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-freebsd-wasm32@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Y/z91nEZ4uIBX5X3nfTovjU9lHNKFYbL2lpHCLVNmXQK03VIZvXBBt0KxbPGp2SdGSF+2mQU4e+hQaWOt86iAw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-darwin-arm64",
+      "version": "1.3.4",
+      "purl": "pkg:npm/@img/sharp-libvips-darwin-arm64@1.3.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-5R89nBYiRdUlSWJxPhO+GVtaXzXSxKnRu/xqMn3KTA3L9EB9Oy/P+Nn2f2vlhPuUdy/Zusb2DarbyTpGCfEDuw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-darwin-x64",
+      "version": "1.3.4",
+      "purl": "pkg:npm/@img/sharp-libvips-darwin-x64@1.3.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-iR2OKH80yi0U+dUplyh3/xdpFvps6YkCwsXenIJxqxR1v9o+xtKTGbS9H7cps+2Vxjc8B1j96p75NmTGjIhtpQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-arm",
+      "version": "1.3.4",
+      "purl": "pkg:npm/@img/sharp-libvips-linux-arm@1.3.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-LmRtTsOHuvM2+wlO2Db37dx5MiZhB0FvSunciw48YjdOkZz9KAiRbm8ujeMOA1INqmei5NapFxYEK1D1ZSidmw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-arm64",
+      "version": "1.3.4",
+      "purl": "pkg:npm/@img/sharp-libvips-linux-arm64@1.3.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Y3dgX/6lE2QhQb+Gxy0WZxfg9MEm/JBjamZpS2IklP7xIQoKN4hzAm7KcMVGtaVDt3neE9OKBC7vAfonA/Lr1A=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-ppc64",
+      "version": "1.3.4",
+      "purl": "pkg:npm/@img/sharp-libvips-linux-ppc64@1.3.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Le6boB8Tai0Nis+gIxIpKx68UDVVIqdR8Tin5Yf1z2LJJQLDJvCDRqRu+jC2qCoD+eIomonmOwB4smBRxfVpYQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-riscv64",
+      "version": "1.3.4",
+      "purl": "pkg:npm/@img/sharp-libvips-linux-riscv64@1.3.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-aHkkIEHPRdQEegJN20MLmGtxYD9R2wQr3Cwpddnu5+YKMt6Uzax7S9h5gpZTo8wyrGuZSlfQ63OevL5mTyOC7Q=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-s390x",
+      "version": "1.3.4",
+      "purl": "pkg:npm/@img/sharp-libvips-linux-s390x@1.3.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-ra/mB6MikESDUO7Yg+Mi95bFBb9GsObURuhnOv3OqknjGe9sZrG8tCe9q0xSIGrtLgvgw0gKnFWcK4blSgQOuQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-x64",
+      "version": "1.3.4",
+      "purl": "pkg:npm/@img/sharp-libvips-linux-x64@1.3.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-GJ//SSXbnwSDes02umB3nDJLFcQzw8a18V8fyhqr6tV515tOEMdImjjxj1AoafMRz56F3PHgftnj1QEKSU1zkw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linuxmusl-arm64",
+      "version": "1.3.4",
+      "purl": "pkg:npm/@img/sharp-libvips-linuxmusl-arm64@1.3.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-hvulFwtjUcagsis6BBxHwGFwWoNZjgYmULGVrZcyfNbjA8hKILbRxGg15/7w5HDyXHXUos/j6baAWqnCyQ2DWA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linuxmusl-x64",
+      "version": "1.3.4",
+      "purl": "pkg:npm/@img/sharp-libvips-linuxmusl-x64@1.3.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-6zXKeE/p39I1AmA3cJG35eyBGNqNddLnUXjhwBnsGjFPWqf5VKkDBEqaEkPDoTEtkxwi2vv8Tcr2mDyP4So7Fg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-arm",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-linux-arm@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-LEaXK2WdXVK5ykcw0buWyPMsmLLL2vpHLD6yrNSW+JGEL3BZPA4tpKN6iaMc4AxTTAoaX/sU1rOL51lcIz48ZQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-arm64",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-linux-arm64@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-LYVx5JTsOM2CBzmxreh+nl64/3H6Xb09iSLknqH47z2T2DFFxDeFLP5y4dJwe6H7uGQlHPyEEtIqyo3DYsRwdQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-ppc64",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-linux-ppc64@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-QVxAAq8evVRI9ia2vqgwrmWucn5Dfv+JdWzj75pD8omHLPSP7f8p20O8jxzjCcuCEQEOtYOZUmX1hkiZ0kdevA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-riscv64",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-linux-riscv64@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-LtdreXguaavKODPIfzJ4kffx7UNt1omwtK0rch4EBbbSTXPnxWmYSayXdLJw0fJzQ97kHt1gL/yh4tvU+nCyRQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-s390x",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-linux-s390x@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-UZasTOFiYzotTsGOCu42BfUzP6Tu6Do/947iRm1RsLKvlllxwGcn4RN27LibGWceix4Y+Pmw3jsnTcCQIgWjqA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-x64",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-linux-x64@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-SxFtLTeJInhAA9Q836kux2vZNeOBQEx658qvbboZScr0wIARym3IcGmW7KpVD5sbVg0Ojy+udFQdayYIZyoNog=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linuxmusl-arm64",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-linuxmusl-arm64@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-9HbMclmI1zlNkFRs3z9/eBtDjfD0sGlrX1z6b1qwmiFY5ElDLh4BC0LPBdVp7z1DXFiKlIcznf+ZlsuZzLxQqg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linuxmusl-x64",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-linuxmusl-x64@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-4KOphqB035HrVdqLZfCgMzzERrQkkzOwRhl4OAkRO1YCldbaFjySXMaK534Mo0V+LndnlJk+sbUyLeU0ULyD1A=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-wasm32",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-wasm32@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Ptsga1su4tQx+LLF1ECS9U6nz5kmrXKo6XVbtR48Ke3ZRxxgaWBu7IDtEe1quo8hiupwm6WFqxVlXaSf7IINGQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-webcontainers-wasm32",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-webcontainers-wasm32@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-hfhF/FmoQyTUkA0bIKFOtw536BQSeBMe6BF6QyWlrPxT754+TFLaZ7sKKTfvvM0yJgKgaYTwnFCIZ/GuDw5SUA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-win32-arm64",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-win32-arm64@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-X4t7g+7ZA5DKblCBEXGjUqqemj4vczING/5viFwAL8h4N3qYeyjwdCvRLHi4EdOUI+2Z7UFlp1VM+p/AuEtm6Q=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-win32-ia32",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-win32-ia32@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-5Zm82LoBc43nhwNybZlG7Y1KO//Zhsn306fQl29ZOuStHLGTo3BWL83q3cznX0poxSAMuYL1On/BHBxkBeKr6A=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-win32-x64",
+      "version": "0.35.5",
+      "purl": "pkg:npm/@img/sharp-win32-x64@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-x76eH0vEiHlcMQu8Y8IenntaACtddpT6W0wmXtWrnKcnKI7ME5DdgqhAD6SEWOEl1v2zDvkZDhFA9KnURwpfqg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@next/env",
+      "version": "16.4.6",
+      "purl": "pkg:npm/@next/env@16.4.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-SunBjJ6t+oBtecS3dTjdVuMhUogP5wD/vrGL5EVuQYM1iS4O5ilL51HkiJ3sPjMzRHiCChvr4dbaSJbR7F3lxA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@next/swc-darwin-arm64",
+      "version": "16.4.6",
+      "purl": "pkg:npm/@next/swc-darwin-arm64@16.4.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-kJ4VVZkley17xKaJx72QN2IBqjrj7zenCQZaUF0l9ShS/1Mt2kW4+Z5KGG6vgr3L/J562xTOizVyM1iA/u5nlg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@next/swc-darwin-x64",
+      "version": "16.4.6",
+      "purl": "pkg:npm/@next/swc-darwin-x64@16.4.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-eIPGZIqC+8JKaeZmvnCANJQF4xWkkHqSnAAajtFxgwDMAOnCgxNvP52SeWZ41PyVwoe+Le/NQuZSaQ8j7YshSA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@next/swc-linux-arm64-gnu",
+      "version": "16.4.6",
+      "purl": "pkg:npm/@next/swc-linux-arm64-gnu@16.4.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-9nI6O8vvczH2D9ZNdMGqb/3NuT15T9ksOZnAmx9/gjF2cOi74+xxyf1Hk96uIMfm14c9y6wHeBq6SH8g6udvcA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@next/swc-linux-arm64-musl",
+      "version": "16.4.6",
+      "purl": "pkg:npm/@next/swc-linux-arm64-musl@16.4.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-7/qPhTxDp2ScluOJOhLuhWmlA17o1yZ0SIgpISBCpBxXgtnK4+KGywBpFkfLPiU1rnSM1faFGzYkH6i7JdTrqA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@next/swc-linux-x64-gnu",
+      "version": "16.4.6",
+      "purl": "pkg:npm/@next/swc-linux-x64-gnu@16.4.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-oOpbNa8XOW1qCGd9VvzC4fbkkRxEls7/WI6tz+YHC0xRA7KpV1U7DrAnCPjzVyOk/karzWEepCOcTIDmwK8FwQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@next/swc-linux-x64-musl",
+      "version": "16.4.6",
+      "purl": "pkg:npm/@next/swc-linux-x64-musl@16.4.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-aM8CZ+OR2EwXaAYw7KGkW2GDmNDsLBIRe1MMRZCJPTdw/xhTD0IMUVO4sf3KqrzuRouGzwwLZn34+gFeVXiUQA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@next/swc-win32-arm64-msvc",
+      "version": "16.4.6",
+      "purl": "pkg:npm/@next/swc-win32-arm64-msvc@16.4.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-U0p7/tEtqvHX2crhd841CDwKtp5CFkKXVjOhmfccR3Pvp64sj8KBwRqsvltqLOwVBbj0NtkxwXSDpEHYGbxeXQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@next/swc-win32-x64-msvc",
+      "version": "16.4.6",
+      "purl": "pkg:npm/@next/swc-win32-x64-msvc@16.4.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-3ZG15/5WIdlTQsIEvc9sPTTSL5XFrlLklIKmfF4fwsDnoAhu6NcBDXsk3mbGxNyo6aVLEGex+fHCv2MahY7a9g=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@playwright/test",
+      "version": "1.65.0",
+      "purl": "pkg:npm/@playwright/test@1.65.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-iGURLGuKDLakSEl7Pgfv8h7f+XLT+V861Wfhz0zlEl5nyFuKUopdkFBPKqTllTUp06aOwPuH8iuUEb3yp3MpbQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@redocly/ajv",
+      "version": "8.11.2",
+      "purl": "pkg:npm/@redocly/ajv@8.11.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-io1JpnwtIcvojV7QKDUSIuMN/ikdOUd1ReEnUnMKGfDVridQZ31J0MmIuqwuRjWDZfmvr+Q0MqCcfHM2gTivOg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@redocly/config",
+      "version": "0.22.0",
+      "purl": "pkg:npm/@redocly/config@0.22.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-gAy93Ddo01Z3bHuVdPWfCwzgfaYgMdaZPcfL7JZ7hWJoK9V0lXDbigTWkhiPFAaLWzbOJ+kbUQG1+XwIm0KRGQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@redocly/openapi-core",
+      "version": "1.34.24",
+      "purl": "pkg:npm/@redocly/openapi-core@1.34.24",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-jDFMu4zirFVOF9nEWCT31s7OzzVhkxZkb4lO3yZhkdPXAOspLo10ED9thVgm6gtI0dJBTLa+mNP0IYeZpVSYGA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swc/helpers",
+      "version": "0.5.23",
+      "purl": "pkg:npm/@swc/helpers@0.5.23",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-5lSsMOTXURePglDfvuAQUqkGek9Hg2kksOYay2m0+XR++b2NWYL/4sWyuvVBIs8oKnJaxkdi9whaL/sqN13afw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/node",
+      "version": "24.12.0",
+      "purl": "pkg:npm/@types/node@24.12.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-GYDxsZi3ChgmckRT9HPU0WEhKLP08ev/Yfcq2AstjrDASOYCSXeyjDsHg4v5t4jOj7cyDX3vmprafKlWIG9MXQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/react",
+      "version": "19.2.14",
+      "purl": "pkg:npm/@types/react@19.2.14",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-ilcTH/UniCkMdtexkoCN0bI7pMcJDvmQFPvuPvmEaYA/NSfFTAgdUSLAoVjaRJm7+6PvcM+q1zYOwS4wTYMF9w=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/react-dom",
+      "version": "19.2.3",
+      "purl": "pkg:npm/@types/react-dom@19.2.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "agent-base",
+      "version": "7.1.4",
+      "purl": "pkg:npm/agent-base@7.1.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ansi-colors",
+      "version": "4.1.3",
+      "purl": "pkg:npm/ansi-colors@4.1.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "argparse",
+      "version": "2.0.1",
+      "purl": "pkg:npm/argparse@2.0.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "axe-core",
+      "version": "4.14.0",
+      "purl": "pkg:npm/axe-core@4.14.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-9WTZxEjsZ7b13TH8JPmbV2z8CHbl80/2hm3XPEG4JgNdQLK81IBRXmSxHfMAOkSqQeRxT/0dwNDz2GOm3zzpcQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "balanced-match",
+      "version": "1.0.2",
+      "purl": "pkg:npm/balanced-match@1.0.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "baseline-browser-mapping",
+      "version": "2.11.35",
+      "purl": "pkg:npm/baseline-browser-mapping@2.11.35",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-GNk8KX52CHqeNKGk8+7tZnQab/2k1t/BgrUHPKNdijzpEhF1saPQZHVKb6m5loSAxB39gyrTYw34Qf9CQ3u1qQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "brace-expansion",
+      "version": "2.1.7",
+      "purl": "pkg:npm/brace-expansion@2.1.7",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-uZbew1NqdmPDTMJ8ah1y+b+9QEJrfkXFk3RcTQw3X0jW/xRUvFKsg1CfQdSYGdTbXZWExtU3J3ccxtnfw1Fi0g=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "caniuse-lite",
+      "version": "1.0.30001823",
+      "purl": "pkg:npm/caniuse-lite@1.0.30001823",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-TQ5s/djDjNk1axreUW+4rULH+BmdCMLiJkhaXnO5wqivG7tITkSUj4ItIdzqdZHKaXcHAV8dhH3JxOM7/7bwqw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "change-case",
+      "version": "5.4.4",
+      "purl": "pkg:npm/change-case@5.4.4",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "client-only",
+      "version": "0.0.1",
+      "purl": "pkg:npm/client-only@0.0.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "colorette",
+      "version": "1.4.0",
+      "purl": "pkg:npm/colorette@1.4.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Y2oEozpomLn7Q3HFP7dpww7AtMJplbM9lGZP6RDfHqmbeRjiwRg4n6VM6j4KLmRke85uWEI7JqF17f3pqdRA0g=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "csstype",
+      "version": "3.2.3",
+      "purl": "pkg:npm/csstype@3.2.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "debug",
+      "version": "4.4.3",
+      "purl": "pkg:npm/debug@4.4.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "purl": "pkg:npm/detect-libc@2.1.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "purl": "pkg:npm/fast-deep-equal@3.1.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "https-proxy-agent",
+      "version": "7.0.6",
+      "purl": "pkg:npm/https-proxy-agent@7.0.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "index-to-position",
+      "version": "1.2.0",
+      "purl": "pkg:npm/index-to-position@1.2.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Yg7+ztRkqslMAS2iFaU+Oa4KTSidr63OsFGlOrJoW981kIYO3CGCS3wA95P1mUi/IVSJkn0D479KTJpVpvFNuw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "js-levenshtein",
+      "version": "1.1.6",
+      "purl": "pkg:npm/js-levenshtein@1.1.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-X2BB11YZtrRqY4EnQcLX5Rh373zbK4alC1FW7D7MBhL2gtcC17cTnr6DmfHZeS0s2rTHjUTMMHfG7gO8SSdw+g=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "js-tokens",
+      "version": "4.0.0",
+      "purl": "pkg:npm/js-tokens@4.0.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "js-yaml",
+      "version": "4.3.2",
+      "purl": "pkg:npm/js-yaml@4.3.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-SFNOvSJ+Dgf/9An904Yx+CgSlIPCkIpao4qo51lpee25TIRejdH3rhR4EZMGoNx3/TP3O+wzWuiTFl4sqbltzA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "json-schema-traverse",
+      "version": "1.0.0",
+      "purl": "pkg:npm/json-schema-traverse@1.0.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "minimatch",
+      "version": "5.1.9",
+      "purl": "pkg:npm/minimatch@5.1.9",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-7o1wEA2RyMP7Iu7GNba9vc0RWWGACJOCZBJX2GJWip0ikV+wcOsgVuY9uE8CPiyQhkGFSlhuSkZPavN7u1c2Fw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ms",
+      "version": "2.1.3",
+      "purl": "pkg:npm/ms@2.1.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "nanoid",
+      "version": "3.3.20",
+      "purl": "pkg:npm/nanoid@3.3.20",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-uKdg2G3GNCKQn9byYOpxbGqrT2fGO5KRt5J/8b3pok8rT6qxGWF6hxMyJiEYtAf+FVyYuD9hRaDqX5uPFYJ4ZQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "next",
+      "version": "16.4.6",
+      "purl": "pkg:npm/next@16.4.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-QZJiYhaZLJMo2KpkQGQIwvmd79WVsAWeYIU554a8d7zArS3si/IRy3lBNV/rtYhE70oLwdLYhPAXLPx8HwcwtA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "openapi-typescript",
+      "version": "7.13.0",
+      "purl": "pkg:npm/openapi-typescript@7.13.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-EFP392gcqXS7ntPvbhBzbF8TyBA+baIYEm791Hy5YkjDYKTnk/Tn5OQeKm5BIZvJihpp8Zzr4hzx0Irde1LNGQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "parse-json",
+      "version": "8.3.0",
+      "purl": "pkg:npm/parse-json@8.3.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-ybiGyvspI+fAoRQbIPRddCcSTV9/LsJbf0e/S85VLowVGzRmokfneg2kwVW/KU5rOXrPSbF1qAKPMgNTqqROQQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "picocolors",
+      "version": "1.1.1",
+      "purl": "pkg:npm/picocolors@1.1.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "playwright",
+      "version": "1.65.0",
+      "purl": "pkg:npm/playwright@1.65.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-F3AMWcR44qMBt4kq+6Kb6mX7bjGXshktKFOPULd7reED6ZJWevjbNRqysP7q+AATE9kdPEZBibex1BYsvpVoeA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "playwright-core",
+      "version": "1.65.0",
+      "purl": "pkg:npm/playwright-core@1.65.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-vNSKgH6YqtN7cdT/L334zo0a+YwkrpicyrHJlWWPIm/Q+Nn2SWInil01oT0mbu96U4GgoRtCYQD9CzJQgju+lA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pluralize",
+      "version": "8.0.0",
+      "purl": "pkg:npm/pluralize@8.0.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "postcss",
+      "version": "8.5.23",
+      "purl": "pkg:npm/postcss@8.5.23",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-g50586zr4bZmwFiTlflMu8E0bDTb5I5gertgwAKmsdUlTQIhZtunzUlD1WSzwcVWPoAVpsrA6vlfCD7oXvRwgg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "react",
+      "version": "19.3.1",
+      "purl": "pkg:npm/react@19.3.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-QNhWdt7nrgVWWQG58QuGsAR3jv3Hbe4mb4vz7w2csnHavciZJgda1CPNaldF6eVxv90ud3jUXpKlHL69gO38yw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "react-dom",
+      "version": "19.3.1",
+      "purl": "pkg:npm/react-dom@19.3.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Y0bARz53lhEC1NMCASs0/j+faB/zqt3R8hpvg1e8+61ZVJ4UL0UdC4cBbXfZMcIuhrfgeILTLe+ZeBCavQPtKQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "purl": "pkg:npm/require-from-string@2.0.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "scheduler",
+      "version": "0.28.0",
+      "purl": "pkg:npm/scheduler@0.28.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-juorfCmIkIw8tT+p5BXSm6PJjQF/ycEYmKyzURCIt/RaZIhL+PulbQ9Yu2z1HdOJDdqDTlxA1+xKBmHXJsczAw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "semver",
+      "version": "7.8.6",
+      "purl": "pkg:npm/semver@7.8.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-9lpSSU4Mly3mrtruwLs1eLK6+gzbzqeBFwRNjIjE+9LuDpWdYctrQlQ3ej1Ilgi7gknpsTRnPoLP8DpCHqHIJw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sharp",
+      "version": "0.35.5",
+      "purl": "pkg:npm/sharp@0.35.5",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Ywn4OnzGukp7CDMrp08RQ50YKmuwG47brZgIVPTvBaaAfQlRlygrRqSrxdCiL9M+LlzLBiJ68IR1QqvzHyjC7g=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "source-map-js",
+      "version": "1.2.2",
+      "purl": "pkg:npm/source-map-js@1.2.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "styled-jsx",
+      "version": "5.1.6",
+      "purl": "pkg:npm/styled-jsx@5.1.6",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-qSVyDTeMotdvQYoHWLNGwRFJHC+i+ZvdBRYosOFgC+Wg1vx4frN2/RG/NA7SYqqvKNLf39P2LSRA2pu6n0XYZA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "supports-color",
+      "version": "10.2.2",
+      "purl": "pkg:npm/supports-color@10.2.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-SS+jx45GF1QjgEXQx4NJZV9ImqmO2NPz5FNsIHrsDjh2YsHnawpan7SNQ1o8NuhrbHZy9AZhIoCUiCeaW/C80g=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tslib",
+      "version": "2.9.1",
+      "purl": "pkg:npm/tslib@2.9.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-a4Ux9VKuIMHsOS7ENbEq6hK2ZGYIT27Rtl0E4eD9KqwxhKiQeMZE/9xb3IdYwWaSOyIBQLExhQgXDTYoiCxnWA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "type-fest",
+      "version": "4.41.0",
+      "purl": "pkg:npm/type-fest@4.41.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "typescript",
+      "version": "5.9.3",
+      "purl": "pkg:npm/typescript@5.9.3",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "undici-types",
+      "version": "7.16.0",
+      "purl": "pkg:npm/undici-types@7.16.0",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "uri-js-replace",
+      "version": "1.0.2",
+      "purl": "pkg:npm/uri-js-replace@1.0.2",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-VeBBt/nMxedczht3KDL2yBBMJqIxpCQLMZp3UJ1otcWwUHdQW4IiyHpJivExzSK+FdxTowRfGL4FmwDqH9+S8Q=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yaml-ast-parser",
+      "version": "0.0.43",
+      "purl": "pkg:npm/yaml-ast-parser@0.0.43",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-2PTINUwsRqSd+s8XxKaJWQlUuEMHJQyEuh2edBbW8KNJz0SJPwUSD2zRWqezFEdN7IzAgeuYHFUCF7o8zRdZ0A=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yargs-parser",
+      "version": "21.1.1",
+      "purl": "pkg:npm/yargs-parser@21.1.1",
+      "properties": [
+        {
+          "name": "cargopulse:scope",
+          "value": "npm-lockfile"
+        },
+        {
+          "name": "npm:integrity",
+          "value": "sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw=="
+        }
+      ]
+    }
+  ]
+}

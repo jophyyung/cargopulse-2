@@ -1,0 +1,38 @@
+.F...F.FF...                                                             [100%]
+=================================== FAILURES ===================================
+___________ test_exhausted_lease_retries_leave_scenario_recoverable ____________
+tests/release_qa/test_durable_races.py:87: in test_exhausted_lease_retries_leave_scenario_recoverable
+    assert response.status_code == 202, {
+E   AssertionError: {'scenario_state': 'SOLVING', 'retry': {'type': 'urn:cargopulse:problem:scenario_not_ready', 'title': 'SCENARIO_NOT_READY', 'status': 409, 'detail': 'Scenario is not current and ready for a new solve', ...}}
+E   assert 409 == 202
+E    +  where 409 = <Response [409 Conflict]>.status_code
+___________ test_single_audience_wrong_authorized_party_is_rejected ____________
+tests/release_qa/test_oidc_attacks.py:14: in test_single_audience_wrong_authorized_party_is_rejected
+    assert response.status_code in (401, 403), response.text
+E   AssertionError:
+E   assert 302 in (401, 403)
+E    +  where 302 = <Response [302 Found]>.status_code
+____________ test_import_cannot_publish_arbitrary_unreviewed_policy ____________
+tests/release_qa/test_release_attacks.py:26: in test_import_cannot_publish_arbitrary_unreviewed_policy
+    assert receipt.status_code in (403, 409, 422) or not published, {
+E   AssertionError: {'commit_status': 201, 'published': [('forged-author', 'forged-reviewer', 1)]}
+E   assert (201 in (403, 409, 422) or not [<cargopulse_api.tables.PolicyRow object at 0x112371700>])
+E    +  where 201 = <Response [201 Created]>.status_code
+_________________ test_deleted_source_artifact_blocks_approval _________________
+tests/release_qa/test_release_attacks.py:42: in test_deleted_source_artifact_blocks_approval
+    assert response.status_code in (409, 422, 503), response.text
+E   AssertionError: {"id":"ed836e33-1e7e-4356-966d-320e75fdd076","plan_id":"77719966-56a7-46d7-9e03-c275585bb22d","action":"APPROVE_IN_APP","actor":"manager","reason_code":"QA_REVIEW","recorded_at":"2026-11-10T08:08:02.251765Z","snapshot_hash":"9217879fd2b80d8284b56a61bcde624c7310811adbc488c1b846957a56411e74","plan_hash":"55f1fd741fb9f328335bb8ec0bf74cf617e8c0312f7c0b7b5d28e7cad71286db","external_write_performed":false}
+E   assert 201 in (409, 422, 503)
+E    +  where 201 = <Response [201 Created]>.status_code
+=============================== warnings summary ===============================
+../../.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/pie/CargoPulse_Production_Build_Package/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/release_qa/test_durable_races.py::test_exhausted_lease_retries_leave_scenario_recoverable
+FAILED tests/release_qa/test_oidc_attacks.py::test_single_audience_wrong_authorized_party_is_rejected
+FAILED tests/release_qa/test_release_attacks.py::test_import_cannot_publish_arbitrary_unreviewed_policy
+FAILED tests/release_qa/test_release_attacks.py::test_deleted_source_artifact_blocks_approval
+4 failed, 8 passed, 1 warning in 17.60s

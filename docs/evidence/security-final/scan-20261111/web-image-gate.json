@@ -1,0 +1,785 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.76.2"
+  },
+  "ReportID": "01a1cba2-bcdd-7509-968d-3784416731ef",
+  "CreatedAt": "2026-11-12T01:23:22.46133+08:00",
+  "ArtifactID": "sha256:e5c64b5032693981739d7a70179cdd12f382560a73423e96cfe14119784fe416",
+  "ArtifactName": "cargopulse-web-remediation:final",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 170464768,
+    "OS": {
+      "Family": "debian",
+      "Name": "13.7"
+    },
+    "ImageID": "sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f",
+    "DiffIDs": [
+      "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+    ],
+    "RepoTags": [
+      "cargopulse-web-remediation:final"
+    ],
+    "RepoDigests": [
+      "cargopulse-web-remediation@sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f"
+    ],
+    "Reference": "cargopulse-web-remediation:final",
+    "ImageConfig": {
+      "architecture": "arm64",
+      "created": "2026-11-12T01:22:24.109004946+08:00",
+      "history": [
+        {
+          "created": "2026-11-11T11:24:10Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PATH=/usr/local/bin:/usr/bin:/bin HOME=/tmp NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 HOSTNAME=0.0.0.0 PORT=3000 SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt",
+          "empty_layer": true
+        },
+        {
+          "created": "2026-11-11T17:22:22Z",
+          "created_by": "/bin/sh -c #(nop) COPY dir:e2f476719e6cd88493112d6b3d2d19e226e513715a73a1cdc6a543563965baad in / "
+        },
+        {
+          "created": "2026-11-11T17:22:23Z",
+          "created_by": "/bin/sh -c #(nop) WORKDIR /app",
+          "empty_layer": true
+        },
+        {
+          "created": "2026-11-11T17:22:23Z",
+          "created_by": "/bin/sh -c #(nop)  USER node",
+          "empty_layer": true
+        },
+        {
+          "created": "2026-11-11T17:22:23Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 3000",
+          "empty_layer": true
+        },
+        {
+          "created": "2026-11-11T17:22:24Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"node\" \"apps/web/server.js\"]",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "node",
+          "apps/web/server.js"
+        ],
+        "Env": [
+          "PATH=/usr/local/bin:/usr/bin:/bin",
+          "HOME=/tmp",
+          "NODE_ENV=production",
+          "NEXT_TELEMETRY_DISABLED=1",
+          "HOSTNAME=0.0.0.0",
+          "PORT=3000",
+          "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+        ],
+        "User": "node",
+        "WorkingDir": "/app",
+        "ExposedPorts": {
+          "3000/tcp": {}
+        }
+      }
+    },
+    "Layers": [
+      {
+        "Size": 170464768,
+        "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+        "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "cargopulse-web-remediation:final (debian 13.7)",
+      "Class": "os-pkgs",
+      "Type": "debian",
+      "Packages": [
+        {
+          "ID": "base-files@13.8+deb13u7",
+          "Name": "base-files",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/base-files@13.8%2Bdeb13u7?arch=arm64\u0026distro=debian-13.7",
+            "UID": "9efcdead37a0f982"
+          },
+          "Version": "13.8+deb13u7",
+          "Arch": "arm64",
+          "SrcName": "base-files",
+          "SrcVersion": "13.8+deb13u7",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL-2.0-only",
+            "verbatim"
+          ],
+          "Maintainer": "Santiago Vila \u003csanvila@debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "ca-certificates@20250419+deb13u1",
+          "Name": "ca-certificates",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/ca-certificates@20250419%2Bdeb13u1?arch=all\u0026distro=debian-13.7",
+            "UID": "ca213054bb4325d8"
+          },
+          "Version": "20250419+deb13u1",
+          "Arch": "all",
+          "SrcName": "ca-certificates",
+          "SrcVersion": "20250419+deb13u1",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL-2.0-only",
+            "MPL-2.0"
+          ],
+          "Maintainer": "Julien Cristau \u003cjcristau@debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "openssl@3.5.7-1~deb13u3"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "gcc-14-base@14.2.0-19",
+          "Name": "gcc-14-base",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/gcc-14-base@14.2.0-19?arch=arm64\u0026distro=debian-13.7",
+            "UID": "97729813f5e96303"
+          },
+          "Version": "14.2.0",
+          "Release": "19",
+          "Arch": "arm64",
+          "SrcName": "gcc-14",
+          "SrcVersion": "14.2.0",
+          "SrcRelease": "19",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GFDL-1.2-only",
+            "Artistic-2.0",
+            "LGPL-2.0-or-later"
+          ],
+          "Maintainer": "Debian GCC Maintainers \u003cdebian-gcc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libc-bin@2.41-12+deb13u4",
+          "Name": "libc-bin",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libc-bin@2.41-12%2Bdeb13u4?arch=arm64\u0026distro=debian-13.7",
+            "UID": "3d43b48e34c16536"
+          },
+          "Version": "2.41",
+          "Release": "12+deb13u4",
+          "Arch": "arm64",
+          "SrcName": "glibc",
+          "SrcVersion": "2.41",
+          "SrcRelease": "12+deb13u4",
+          "Licenses": [
+            "LGPL-2.1-or-later",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1+-with-link-exception",
+            "LGPL-3.0-or-later",
+            "GPL-2.0-or-later",
+            "GPL-2+-with-link-exception",
+            "GPL-2.0-only",
+            "GPL-3.0-or-later",
+            "FSFAP",
+            "Carnegie",
+            "Inner-Net",
+            "MIT-like-Lord",
+            "BSD-like-Spencer",
+            "PCRE",
+            "BSD-3-clause-Carnegie",
+            "Unicode-DFS-2016",
+            "BSL-1.0",
+            "SunPro",
+            "CORE-MATH",
+            "BSD-3-clause-Berkeley",
+            "BSD-3-clause-WIDE",
+            "BSD-2-Clause",
+            "BSD-3-clause-Oracle",
+            "DEC",
+            "IBM",
+            "ISC",
+            "Univ-Coimbra",
+            "public-domain",
+            "GPL-3.0-only",
+            "LGPL-2.0-only",
+            "LGPL-2.1-only",
+            "LGPL-3.0-only"
+          ],
+          "Maintainer": "GNU Libc Maintainers \u003cdebian-glibc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libc6@2.41-12+deb13u4",
+          "Name": "libc6",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=arm64\u0026distro=debian-13.7",
+            "UID": "4a32d71c7466eb51"
+          },
+          "Version": "2.41",
+          "Release": "12+deb13u4",
+          "Arch": "arm64",
+          "SrcName": "glibc",
+          "SrcVersion": "2.41",
+          "SrcRelease": "12+deb13u4",
+          "Licenses": [
+            "LGPL-2.1-or-later",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1+-with-link-exception",
+            "LGPL-3.0-or-later",
+            "GPL-2.0-or-later",
+            "GPL-2+-with-link-exception",
+            "GPL-2.0-only",
+            "GPL-3.0-or-later",
+            "FSFAP",
+            "Carnegie",
+            "Inner-Net",
+            "MIT-like-Lord",
+            "BSD-like-Spencer",
+            "PCRE",
+            "BSD-3-clause-Carnegie",
+            "Unicode-DFS-2016",
+            "BSL-1.0",
+            "SunPro",
+            "CORE-MATH",
+            "BSD-3-clause-Berkeley",
+            "BSD-3-clause-WIDE",
+            "BSD-2-Clause",
+            "BSD-3-clause-Oracle",
+            "DEC",
+            "IBM",
+            "ISC",
+            "Univ-Coimbra",
+            "public-domain",
+            "GPL-3.0-only",
+            "LGPL-2.0-only",
+            "LGPL-2.1-only",
+            "LGPL-3.0-only"
+          ],
+          "Maintainer": "GNU Libc Maintainers \u003cdebian-glibc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libgcc-s1@14.2.0-19"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libgcc-s1@14.2.0-19",
+          "Name": "libgcc-s1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libgcc-s1@14.2.0-19?arch=arm64\u0026distro=debian-13.7",
+            "UID": "2825f15b105adc6d"
+          },
+          "Version": "14.2.0",
+          "Release": "19",
+          "Arch": "arm64",
+          "SrcName": "gcc-14",
+          "SrcVersion": "14.2.0",
+          "SrcRelease": "19",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GFDL-1.2-only",
+            "Artistic-2.0",
+            "LGPL-2.0-or-later"
+          ],
+          "Maintainer": "Debian GCC Maintainers \u003cdebian-gcc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "gcc-14-base@14.2.0-19",
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libstdc++6@14.2.0-19",
+          "Name": "libstdc++6",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libstdc%2B%2B6@14.2.0-19?arch=arm64\u0026distro=debian-13.7",
+            "UID": "e06637e916af2fb8"
+          },
+          "Version": "14.2.0",
+          "Release": "19",
+          "Arch": "arm64",
+          "SrcName": "gcc-14",
+          "SrcVersion": "14.2.0",
+          "SrcRelease": "19",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GFDL-1.2-only",
+            "Artistic-2.0",
+            "LGPL-2.0-or-later"
+          ],
+          "Maintainer": "Debian GCC Maintainers \u003cdebian-gcc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "gcc-14-base@14.2.0-19",
+            "libc6@2.41-12+deb13u4",
+            "libgcc-s1@14.2.0-19"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "openssl@3.5.7-1~deb13u3",
+          "Name": "openssl",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/openssl@3.5.7-1~deb13u3?arch=arm64\u0026distro=debian-13.7",
+            "UID": "f1cd2ab14f452c27"
+          },
+          "Version": "3.5.7",
+          "Release": "1~deb13u3",
+          "Arch": "arm64",
+          "SrcName": "openssl",
+          "SrcVersion": "3.5.7",
+          "SrcRelease": "1~deb13u3",
+          "Licenses": [
+            "Apache-2.0",
+            "Artistic-2.0",
+            "GPL-1.0-or-later",
+            "GPL-1.0-only"
+          ],
+          "Maintainer": "Debian OpenSSL Team \u003cpkg-openssl-devel@alioth-lists.debian.net\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "tzdata@2026f-0+deb13u1",
+          "Name": "tzdata",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/tzdata@2026f-0%2Bdeb13u1?arch=all\u0026distro=debian-13.7",
+            "UID": "9e18df6fa0230099"
+          },
+          "Version": "2026f",
+          "Release": "0+deb13u1",
+          "Arch": "all",
+          "SrcName": "tzdata",
+          "SrcVersion": "2026f",
+          "SrcRelease": "0+deb13u1",
+          "Licenses": [
+            "public-domain"
+          ],
+          "Maintainer": "GNU Libc Maintainers \u003cdebian-glibc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "AnalyzedBy": "dpkg"
+        }
+      ]
+    },
+    {
+      "Target": "Node.js",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Packages": [
+        {
+          "ID": "@cargopulse/web@0.1.0",
+          "Name": "@cargopulse/web",
+          "Identifier": {
+            "PURL": "pkg:npm/%40cargopulse/web@0.1.0",
+            "UID": "6803cd2e98901a49"
+          },
+          "Version": "0.1.0",
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/apps/web/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "@edge-runtime/cookies@6.0.0",
+          "Name": "@edge-runtime/cookies",
+          "Identifier": {
+            "PURL": "pkg:npm/%40edge-runtime/cookies@6.0.0",
+            "UID": "3bd6a072c21f51df"
+          },
+          "Version": "6.0.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/next/dist/compiled/@edge-runtime/cookies/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "@edge-runtime/ponyfill@4.0.0",
+          "Name": "@edge-runtime/ponyfill",
+          "Identifier": {
+            "PURL": "pkg:npm/%40edge-runtime/ponyfill@4.0.0",
+            "UID": "66ddb0c0f92d14a3"
+          },
+          "Version": "4.0.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/next/dist/compiled/@edge-runtime/ponyfill/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "@edge-runtime/primitives@6.0.0",
+          "Name": "@edge-runtime/primitives",
+          "Identifier": {
+            "PURL": "pkg:npm/%40edge-runtime/primitives@6.0.0",
+            "UID": "8dedc9922d84041a"
+          },
+          "Version": "6.0.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/next/dist/compiled/@edge-runtime/primitives/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "@img/colour@1.1.0",
+          "Name": "@img/colour",
+          "Identifier": {
+            "PURL": "pkg:npm/%40img/colour@1.1.0",
+            "UID": "d22a4f590f84adbe"
+          },
+          "Version": "1.1.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/@img/colour/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "@img/sharp-libvips-linux-arm64@1.3.4",
+          "Name": "@img/sharp-libvips-linux-arm64",
+          "Identifier": {
+            "PURL": "pkg:npm/%40img/sharp-libvips-linux-arm64@1.3.4",
+            "UID": "429398f75f399ed3"
+          },
+          "Version": "1.3.4",
+          "Licenses": [
+            "LGPL-3.0-or-later"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/@img/sharp-libvips-linux-arm64/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "@img/sharp-linux-arm64@0.35.5",
+          "Name": "@img/sharp-linux-arm64",
+          "Identifier": {
+            "PURL": "pkg:npm/%40img/sharp-linux-arm64@0.35.5",
+            "UID": "d516a768e66ea3a"
+          },
+          "Version": "0.35.5",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/@img/sharp-linux-arm64/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "@next/env@16.4.6",
+          "Name": "@next/env",
+          "Identifier": {
+            "PURL": "pkg:npm/%40next/env@16.4.6",
+            "UID": "e37824ef19fd5e65"
+          },
+          "Version": "16.4.6",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/@next/env/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "@swc/helpers@0.5.23",
+          "Name": "@swc/helpers",
+          "Identifier": {
+            "PURL": "pkg:npm/%40swc/helpers@0.5.23",
+            "UID": "f45a9f64dc3a2469"
+          },
+          "Version": "0.5.23",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/@swc/helpers/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "client-only@0.0.1",
+          "Name": "client-only",
+          "Identifier": {
+            "PURL": "pkg:npm/client-only@0.0.1",
+            "UID": "5878e3cf522a10c2"
+          },
+          "Version": "0.0.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/client-only/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "detect-libc@2.1.2",
+          "Name": "detect-libc",
+          "Identifier": {
+            "PURL": "pkg:npm/detect-libc@2.1.2",
+            "UID": "ddf1cba2a5b1bd8"
+          },
+          "Version": "2.1.2",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/detect-libc/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "next@16.4.6",
+          "Name": "next",
+          "Identifier": {
+            "PURL": "pkg:npm/next@16.4.6",
+            "UID": "fb7138f46485beff"
+          },
+          "Version": "16.4.6",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/next/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "react@19.3.1",
+          "Name": "react",
+          "Identifier": {
+            "PURL": "pkg:npm/react@19.3.1",
+            "UID": "85adcdb4ccd9d521"
+          },
+          "Version": "19.3.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/react/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "react-dom@19.3.1",
+          "Name": "react-dom",
+          "Identifier": {
+            "PURL": "pkg:npm/react-dom@19.3.1",
+            "UID": "db28b12872654419"
+          },
+          "Version": "19.3.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/react-dom/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "react-is@19.3.0-canary-278794d7-20261002",
+          "Name": "react-is",
+          "Identifier": {
+            "PURL": "pkg:npm/react-is@19.3.0-canary-278794d7-20261002",
+            "UID": "3b1e0f10a7bc4c09"
+          },
+          "Version": "19.3.0-canary-278794d7-20261002",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/next/dist/compiled/react-is/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "regenerator-runtime@0.13.4",
+          "Name": "regenerator-runtime",
+          "Identifier": {
+            "PURL": "pkg:npm/regenerator-runtime@0.13.4",
+            "UID": "ba36186d6b86e698"
+          },
+          "Version": "0.13.4",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/next/dist/compiled/regenerator-runtime/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "semver@7.8.6",
+          "Name": "semver",
+          "Identifier": {
+            "PURL": "pkg:npm/semver@7.8.6",
+            "UID": "744168311c4190cd"
+          },
+          "Version": "7.8.6",
+          "Licenses": [
+            "ISC"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/semver/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "sharp@0.35.5",
+          "Name": "sharp",
+          "Identifier": {
+            "PURL": "pkg:npm/sharp@0.35.5",
+            "UID": "f385e0dcee5076f3"
+          },
+          "Version": "0.35.5",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/sharp/package.json",
+          "AnalyzedBy": "node-pkg"
+        },
+        {
+          "ID": "styled-jsx@5.1.6",
+          "Name": "styled-jsx",
+          "Identifier": {
+            "PURL": "pkg:npm/styled-jsx@5.1.6",
+            "UID": "84f39344c086e847"
+          },
+          "Version": "5.1.6",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a8615ccd594014c45ba964706e87495992cb9d2200f6c04dc8c3eb4f8e63e2f0",
+            "DiffID": "sha256:2d0aa533ea47906e34124fc8603406f2ce10cf78d2ea8d5406bafdc4a931f002"
+          },
+          "FilePath": "app/node_modules/styled-jsx/package.json",
+          "AnalyzedBy": "node-pkg"
+        }
+      ]
+    }
+  ]
+}

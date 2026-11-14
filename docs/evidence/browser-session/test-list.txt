@@ -1,0 +1,10 @@
+Listing tests:
+  session-boundary.spec.ts:22:1 › real service: logout unmounts both tabs and preserves unrelated storage
+  session-boundary.spec.ts:58:1 › real login with injected logout transport failure: DOM clears without claiming revocation
+  session-boundary.spec.ts:81:1 › real service: a received session 401 unmounts the console
+  session-boundary.spec.ts:96:1 › expiry-header injection: foreground DOM clears on its timer without another request
+  session-boundary.spec.ts:130:1 › real service: offline redaction stays closed after reconnect/reload until fresh login
+  session-boundary.spec.ts:152:1 › browser event coverage: persisted pagehide/pageshow redact the restored subtree
+  session-boundary.spec.ts:166:1 › real service: authenticated POST reads JSON CSRF even when a cookie value is wrong
+  session-boundary.spec.ts:185:1 › SSO preflight branch: abandoned flow stays closed; callback-equivalent fresh session can reopen
+Total: 8 tests in 1 file

@@ -1,0 +1,651 @@
+FFFFFFFFFF.....F.FF                                                      [100%]
+=================================== FAILURES ===================================
+_________ test_internal_dtd_is_rejected_on_success_xml_response[probe] _________
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x10a0e8e30>, namespace(status=200, body=b'<!DOCTYPE Result [<!ENTIT...d559573b415051', 'amz-sdk-invocation-id': b'11f28773-8f1c-41ba-9fe5-0fd19e5d649e', 'amz-sdk-request': b'attempt=1'}>]))
+operation = 'probe'
+
+    @pytest.mark.parametrize("operation", ["probe", "put"])
+    def test_internal_dtd_is_rejected_on_success_xml_response(recorded, operation):
+        objects, state = recorded
+        state.body = b'<!DOCTYPE Result [<!ENTITY x "PRIVATE_XML_CANARY">]><Result>&x;</Result>'
+        call = objects.probe if operation == "probe" else lambda: objects.put(TENANT, b"payload")
+>       assert_generic_xml_failure(call)
+
+tests/backend/test_storage_xml.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+call = <bound method PrivateObjects.probe of <cargopulse_api.storage.PrivateObjects object at 0x10a0e8e30>>
+marker = 'PRIVATE_XML_CANARY'
+
+    def assert_generic_xml_failure(call, marker="PRIVATE_XML_CANARY"):
+>       with pytest.raises(ResponseParserError) as rejected:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ResponseParserError
+
+tests/backend/test_storage_xml.py:69: Failed
+__________ test_internal_dtd_is_rejected_on_success_xml_response[put] __________
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x110c2be00>, namespace(status=200, body=b'<!DOCTYPE Result [<!ENTIT...afb477c921f180', 'amz-sdk-invocation-id': b'6c89b364-3c1d-48fe-bd07-1b89d0212885', 'amz-sdk-request': b'attempt=1'}>]))
+operation = 'put'
+
+    @pytest.mark.parametrize("operation", ["probe", "put"])
+    def test_internal_dtd_is_rejected_on_success_xml_response(recorded, operation):
+        objects, state = recorded
+        state.body = b'<!DOCTYPE Result [<!ENTITY x "PRIVATE_XML_CANARY">]><Result>&x;</Result>'
+        call = objects.probe if operation == "probe" else lambda: objects.put(TENANT, b"payload")
+>       assert_generic_xml_failure(call)
+
+tests/backend/test_storage_xml.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+call = <function test_internal_dtd_is_rejected_on_success_xml_response.<locals>.<lambda> at 0x110bf3c40>
+marker = 'PRIVATE_XML_CANARY'
+
+    def assert_generic_xml_failure(call, marker="PRIVATE_XML_CANARY"):
+>       with pytest.raises(ResponseParserError) as rejected:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ResponseParserError
+
+tests/backend/test_storage_xml.py:69: Failed
+_______ test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-8-sig] _______
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x110c14290>, namespace(status=200, body=b'\xef\xbb\xbf<?xml version...d559573b415051', 'amz-sdk-invocation-id': b'00fcd403-3fe3-4427-b97e-e18aaa391ea2', 'amz-sdk-request': b'attempt=1'}>]))
+encoding = 'utf-8-sig'
+
+    @pytest.mark.parametrize("encoding", ["utf-8-sig", "utf-16", "utf-16-be"])
+    def test_dtd_rejection_is_encoding_aware_not_a_byte_regex(recorded, encoding):
+        objects, state = recorded
+        declaration = "utf-8" if encoding == "utf-8-sig" else "utf-16"
+        xml = (
+            f'<?xml version="1.0" encoding="{declaration}"?>'
+            '<!DOCTYPE Result [<!ENTITY x "PRIVATE_XML_CANARY">]><Result>&x;</Result>'
+        )
+        state.body = xml.encode(encoding)
+>       assert_generic_xml_failure(objects.probe)
+
+tests/backend/test_storage_xml.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+call = <bound method PrivateObjects.probe of <cargopulse_api.storage.PrivateObjects object at 0x110c14290>>
+marker = 'PRIVATE_XML_CANARY'
+
+    def assert_generic_xml_failure(call, marker="PRIVATE_XML_CANARY"):
+>       with pytest.raises(ResponseParserError) as rejected:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ResponseParserError
+
+tests/backend/test_storage_xml.py:69: Failed
+________ test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-16] _________
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x112247fb0>, namespace(status=200, body=b'\xff\xfe<\x00?\x00x\x00m\...28e85a2ef32dac', 'amz-sdk-invocation-id': b'77c63e13-5c9b-42d1-9beb-5fae32bcb71a', 'amz-sdk-request': b'attempt=1'}>]))
+encoding = 'utf-16'
+
+    @pytest.mark.parametrize("encoding", ["utf-8-sig", "utf-16", "utf-16-be"])
+    def test_dtd_rejection_is_encoding_aware_not_a_byte_regex(recorded, encoding):
+        objects, state = recorded
+        declaration = "utf-8" if encoding == "utf-8-sig" else "utf-16"
+        xml = (
+            f'<?xml version="1.0" encoding="{declaration}"?>'
+            '<!DOCTYPE Result [<!ENTITY x "PRIVATE_XML_CANARY">]><Result>&x;</Result>'
+        )
+        state.body = xml.encode(encoding)
+>       assert_generic_xml_failure(objects.probe)
+
+tests/backend/test_storage_xml.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+call = <bound method PrivateObjects.probe of <cargopulse_api.storage.PrivateObjects object at 0x112247fb0>>
+marker = 'PRIVATE_XML_CANARY'
+
+    def assert_generic_xml_failure(call, marker="PRIVATE_XML_CANARY"):
+>       with pytest.raises(ResponseParserError) as rejected:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ResponseParserError
+
+tests/backend/test_storage_xml.py:69: Failed
+_______ test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-16-be] _______
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x11208c6b0>, namespace(status=200, body=b'\x00<\x00?\x00x\x00m\x00l...28e85a2ef32dac', 'amz-sdk-invocation-id': b'0349daf1-80bb-4241-8659-dbeae9c697a0', 'amz-sdk-request': b'attempt=1'}>]))
+encoding = 'utf-16-be'
+
+    @pytest.mark.parametrize("encoding", ["utf-8-sig", "utf-16", "utf-16-be"])
+    def test_dtd_rejection_is_encoding_aware_not_a_byte_regex(recorded, encoding):
+        objects, state = recorded
+        declaration = "utf-8" if encoding == "utf-8-sig" else "utf-16"
+        xml = (
+            f'<?xml version="1.0" encoding="{declaration}"?>'
+            '<!DOCTYPE Result [<!ENTITY x "PRIVATE_XML_CANARY">]><Result>&x;</Result>'
+        )
+        state.body = xml.encode(encoding)
+>       assert_generic_xml_failure(objects.probe)
+
+tests/backend/test_storage_xml.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+call = <bound method PrivateObjects.probe of <cargopulse_api.storage.PrivateObjects object at 0x11208c6b0>>
+marker = 'PRIVATE_XML_CANARY'
+
+    def assert_generic_xml_failure(call, marker="PRIVATE_XML_CANARY"):
+>       with pytest.raises(ResponseParserError) as rejected:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ResponseParserError
+
+tests/backend/test_storage_xml.py:69: Failed
+_______ test_external_file_entity_canary_is_not_read_and_dtd_is_rejected _______
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x111e44140>, namespace(status=200, body=b'<!DOCTYPE Result [<!ENTIT...08e017b', 'amz-sdk-invocation-id': b'0f3a7ce3-31f5-4dc2-9642-217f5c9156ab', 'amz-sdk-request': b'attempt=2; max=2'}>]))
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-69/test_external_file_entity_cana0')
+
+    def test_external_file_entity_canary_is_not_read_and_dtd_is_rejected(recorded, tmp_path):
+        objects, state = recorded
+        canary = tmp_path / "synthetic-canary.txt"
+        canary.write_text("SYNTHETIC_FILE_CONTENT_MUST_NOT_APPEAR")
+        state.body = (
+            f'<!DOCTYPE Result [<!ENTITY x SYSTEM "{canary.as_uri()}">]><Result>&x;</Result>'
+        ).encode()
+>       assert_generic_xml_failure(objects.probe, marker=str(canary))
+
+tests/backend/test_storage_xml.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/backend/test_storage_xml.py:70: in assert_generic_xml_failure
+    call()
+services/api/cargopulse_api/storage.py:55: in probe
+    self.s3.head_bucket(Bucket=self.bucket)
+../../.venv/lib/python3.12/site-packages/botocore/client.py:606: in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.venv/lib/python3.12/site-packages/botocore/context.py:123: in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <botocore.client.S3 object at 0x110bfe930>, operation_name = 'HeadBucket'
+api_params = {'Bucket': 'synthetic-private-test'}
+
+    @with_current_context()
+    def _make_api_call(self, operation_name, api_params):
+        operation_model = self._service_model.operation_model(operation_name)
+        service_name = self._service_model.service_name
+        history_recorder.record(
+            'API_CALL',
+            {
+                'service': service_name,
+                'operation': operation_name,
+                'params': api_params,
+            },
+        )
+        if operation_model.deprecated:
+            logger.debug(
+                'Warning: %s.%s() is deprecated', service_name, operation_name
+            )
+        # If the operation has the `auth` property and the client has a
+        # configured auth scheme preference, use both to compute the
+        # auth type. Otherwise, fallback to auth/auth_type resolution.
+        if operation_model.auth and self.meta.config.auth_scheme_preference:
+            preferred_schemes = self.meta.config.auth_scheme_preference.split(
+                ','
+            )
+            auth_type = resolve_auth_scheme_preference(
+                preferred_schemes, operation_model.auth
+            )
+        else:
+            auth_type = operation_model.resolved_auth_type
+        request_context = {
+            'client_region': self.meta.region_name,
+            'client_config': self.meta.config,
+            'has_streaming_input': operation_model.has_streaming_input,
+            'auth_type': auth_type,
+            'unsigned_payload': operation_model.unsigned_payload,
+            'auth_options': self._service_model.metadata.get('auth'),
+        }
+    
+        api_params = self._emit_api_params(
+            api_params=api_params,
+            operation_model=operation_model,
+            context=request_context,
+        )
+        (
+            endpoint_url,
+            additional_headers,
+            properties,
+        ) = self._resolve_endpoint_ruleset(
+            operation_model, api_params, request_context
+        )
+        if properties:
+            # Pass arbitrary endpoint info with the Request
+            # for use during construction.
+            request_context['endpoint_properties'] = properties
+        request_dict = self._convert_to_request_dict(
+            api_params=api_params,
+            operation_model=operation_model,
+            endpoint_url=endpoint_url,
+            context=request_context,
+            headers=additional_headers,
+        )
+        resolve_checksum_context(request_dict, operation_model, api_params)
+    
+        service_id = self._service_model.service_id.hyphenize()
+        handler, event_response = self.meta.events.emit_until_response(
+            f'before-call.{service_id}.{operation_name}',
+            model=operation_model,
+            params=request_dict,
+            request_signer=self._request_signer,
+            context=request_context,
+        )
+    
+        if event_response is not None:
+            http, parsed_response = event_response
+        else:
+            maybe_compress_request(
+                self.meta.config, request_dict, operation_model
+            )
+            apply_request_checksum(request_dict)
+            http, parsed_response = self._make_request(
+                operation_model, request_dict, request_context
+            )
+    
+        self.meta.events.emit(
+            f'after-call.{service_id}.{operation_name}',
+            http_response=http,
+            parsed=parsed_response,
+            model=operation_model,
+            context=request_context,
+        )
+    
+        if http.status_code >= 300:
+            error_info = parsed_response.get("Error", {})
+            error_code = request_context.get(
+                'error_code_override'
+            ) or error_info.get("Code")
+            error_class = self.exceptions.from_code(error_code)
+>           raise error_class(parsed_response, operation_name)
+E           botocore.exceptions.ClientError: An error occurred (500) when calling the HeadBucket operation (reached max retries: 1): Internal Server Error
+
+../../.venv/lib/python3.12/site-packages/botocore/client.py:1094: ClientError
+____________________ test_external_http_entity_cannot_fetch ____________________
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x110c2a2d0>, namespace(status=200, body=b'<!DOCTYPE Result [<!ENTIT...08e017b', 'amz-sdk-invocation-id': b'1c8359f5-b58a-4f7d-8779-7e942c610fce', 'amz-sdk-request': b'attempt=2; max=2'}>]))
+
+    def test_external_http_entity_cannot_fetch(recorded):
+        objects, state = recorded
+        state.body = (
+            b'<!DOCTYPE Result [<!ENTITY x SYSTEM "https://entity-canary.invalid/PRIVATE_XML_CANARY">]>'
+            b"<Result>&x;</Result>"
+        )
+>       assert_generic_xml_failure(objects.probe)
+
+tests/backend/test_storage_xml.py:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/backend/test_storage_xml.py:70: in assert_generic_xml_failure
+    call()
+services/api/cargopulse_api/storage.py:55: in probe
+    self.s3.head_bucket(Bucket=self.bucket)
+../../.venv/lib/python3.12/site-packages/botocore/client.py:606: in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.venv/lib/python3.12/site-packages/botocore/context.py:123: in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <botocore.client.S3 object at 0x10a6d4590>, operation_name = 'HeadBucket'
+api_params = {'Bucket': 'synthetic-private-test'}
+
+    @with_current_context()
+    def _make_api_call(self, operation_name, api_params):
+        operation_model = self._service_model.operation_model(operation_name)
+        service_name = self._service_model.service_name
+        history_recorder.record(
+            'API_CALL',
+            {
+                'service': service_name,
+                'operation': operation_name,
+                'params': api_params,
+            },
+        )
+        if operation_model.deprecated:
+            logger.debug(
+                'Warning: %s.%s() is deprecated', service_name, operation_name
+            )
+        # If the operation has the `auth` property and the client has a
+        # configured auth scheme preference, use both to compute the
+        # auth type. Otherwise, fallback to auth/auth_type resolution.
+        if operation_model.auth and self.meta.config.auth_scheme_preference:
+            preferred_schemes = self.meta.config.auth_scheme_preference.split(
+                ','
+            )
+            auth_type = resolve_auth_scheme_preference(
+                preferred_schemes, operation_model.auth
+            )
+        else:
+            auth_type = operation_model.resolved_auth_type
+        request_context = {
+            'client_region': self.meta.region_name,
+            'client_config': self.meta.config,
+            'has_streaming_input': operation_model.has_streaming_input,
+            'auth_type': auth_type,
+            'unsigned_payload': operation_model.unsigned_payload,
+            'auth_options': self._service_model.metadata.get('auth'),
+        }
+    
+        api_params = self._emit_api_params(
+            api_params=api_params,
+            operation_model=operation_model,
+            context=request_context,
+        )
+        (
+            endpoint_url,
+            additional_headers,
+            properties,
+        ) = self._resolve_endpoint_ruleset(
+            operation_model, api_params, request_context
+        )
+        if properties:
+            # Pass arbitrary endpoint info with the Request
+            # for use during construction.
+            request_context['endpoint_properties'] = properties
+        request_dict = self._convert_to_request_dict(
+            api_params=api_params,
+            operation_model=operation_model,
+            endpoint_url=endpoint_url,
+            context=request_context,
+            headers=additional_headers,
+        )
+        resolve_checksum_context(request_dict, operation_model, api_params)
+    
+        service_id = self._service_model.service_id.hyphenize()
+        handler, event_response = self.meta.events.emit_until_response(
+            f'before-call.{service_id}.{operation_name}',
+            model=operation_model,
+            params=request_dict,
+            request_signer=self._request_signer,
+            context=request_context,
+        )
+    
+        if event_response is not None:
+            http, parsed_response = event_response
+        else:
+            maybe_compress_request(
+                self.meta.config, request_dict, operation_model
+            )
+            apply_request_checksum(request_dict)
+            http, parsed_response = self._make_request(
+                operation_model, request_dict, request_context
+            )
+    
+        self.meta.events.emit(
+            f'after-call.{service_id}.{operation_name}',
+            http_response=http,
+            parsed=parsed_response,
+            model=operation_model,
+            context=request_context,
+        )
+    
+        if http.status_code >= 300:
+            error_info = parsed_response.get("Error", {})
+            error_code = request_context.get(
+                'error_code_override'
+            ) or error_info.get("Code")
+            error_class = self.exceptions.from_code(error_code)
+>           raise error_class(parsed_response, operation_name)
+E           botocore.exceptions.ClientError: An error occurred (500) when calling the HeadBucket operation (reached max retries: 1): Internal Server Error
+
+../../.venv/lib/python3.12/site-packages/botocore/client.py:1094: ClientError
+_______ test_internal_entity_amplification_is_rejected_before_expansion ________
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x10a767b60>, namespace(status=200, body=b'<!DOCTYPE Result [<!ENTIT...126bc7108e017b', 'amz-sdk-invocation-id': b'0a9dd6e0-5b89-4d24-bb40-168d01bc7767', 'amz-sdk-request': b'attempt=1'}>]))
+
+    def test_internal_entity_amplification_is_rejected_before_expansion(recorded):
+        objects, state = recorded
+        state.body = (
+            b'<!DOCTYPE Result [<!ENTITY a "PRIVATE_XML_CANARY">'
+            b'<!ENTITY b "&a;&a;&a;&a;&a;&a;&a;&a;">'
+            b'<!ENTITY c "&b;&b;&b;&b;&b;&b;&b;&b;">]><Result>&c;</Result>'
+        )
+>       assert_generic_xml_failure(objects.probe)
+
+tests/backend/test_storage_xml.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+call = <bound method PrivateObjects.probe of <cargopulse_api.storage.PrivateObjects object at 0x10a767b60>>
+marker = 'PRIVATE_XML_CANARY'
+
+    def assert_generic_xml_failure(call, marker="PRIVATE_XML_CANARY"):
+>       with pytest.raises(ResponseParserError) as rejected:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ResponseParserError
+
+tests/backend/test_storage_xml.py:69: Failed
+___________ test_malformed_xml_exception_does_not_echo_protocol_body ___________
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x11277db80>, namespace(status=200, body=b'<Result>PRIVATE_XML_CANAR...9d576a4', 'amz-sdk-invocation-id': b'01021f70-a107-4cc9-99bf-efd48042314e', 'amz-sdk-request': b'attempt=2; max=2'}>]))
+
+    def test_malformed_xml_exception_does_not_echo_protocol_body(recorded):
+        objects, state = recorded
+        state.body = b"<Result>PRIVATE_XML_CANARY<Unclosed>"
+>       assert_generic_xml_failure(objects.probe)
+
+tests/backend/test_storage_xml.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/backend/test_storage_xml.py:70: in assert_generic_xml_failure
+    call()
+services/api/cargopulse_api/storage.py:55: in probe
+    self.s3.head_bucket(Bucket=self.bucket)
+../../.venv/lib/python3.12/site-packages/botocore/client.py:606: in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.venv/lib/python3.12/site-packages/botocore/context.py:123: in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <botocore.client.S3 object at 0x112443c50>, operation_name = 'HeadBucket'
+api_params = {'Bucket': 'synthetic-private-test'}
+
+    @with_current_context()
+    def _make_api_call(self, operation_name, api_params):
+        operation_model = self._service_model.operation_model(operation_name)
+        service_name = self._service_model.service_name
+        history_recorder.record(
+            'API_CALL',
+            {
+                'service': service_name,
+                'operation': operation_name,
+                'params': api_params,
+            },
+        )
+        if operation_model.deprecated:
+            logger.debug(
+                'Warning: %s.%s() is deprecated', service_name, operation_name
+            )
+        # If the operation has the `auth` property and the client has a
+        # configured auth scheme preference, use both to compute the
+        # auth type. Otherwise, fallback to auth/auth_type resolution.
+        if operation_model.auth and self.meta.config.auth_scheme_preference:
+            preferred_schemes = self.meta.config.auth_scheme_preference.split(
+                ','
+            )
+            auth_type = resolve_auth_scheme_preference(
+                preferred_schemes, operation_model.auth
+            )
+        else:
+            auth_type = operation_model.resolved_auth_type
+        request_context = {
+            'client_region': self.meta.region_name,
+            'client_config': self.meta.config,
+            'has_streaming_input': operation_model.has_streaming_input,
+            'auth_type': auth_type,
+            'unsigned_payload': operation_model.unsigned_payload,
+            'auth_options': self._service_model.metadata.get('auth'),
+        }
+    
+        api_params = self._emit_api_params(
+            api_params=api_params,
+            operation_model=operation_model,
+            context=request_context,
+        )
+        (
+            endpoint_url,
+            additional_headers,
+            properties,
+        ) = self._resolve_endpoint_ruleset(
+            operation_model, api_params, request_context
+        )
+        if properties:
+            # Pass arbitrary endpoint info with the Request
+            # for use during construction.
+            request_context['endpoint_properties'] = properties
+        request_dict = self._convert_to_request_dict(
+            api_params=api_params,
+            operation_model=operation_model,
+            endpoint_url=endpoint_url,
+            context=request_context,
+            headers=additional_headers,
+        )
+        resolve_checksum_context(request_dict, operation_model, api_params)
+    
+        service_id = self._service_model.service_id.hyphenize()
+        handler, event_response = self.meta.events.emit_until_response(
+            f'before-call.{service_id}.{operation_name}',
+            model=operation_model,
+            params=request_dict,
+            request_signer=self._request_signer,
+            context=request_context,
+        )
+    
+        if event_response is not None:
+            http, parsed_response = event_response
+        else:
+            maybe_compress_request(
+                self.meta.config, request_dict, operation_model
+            )
+            apply_request_checksum(request_dict)
+            http, parsed_response = self._make_request(
+                operation_model, request_dict, request_context
+            )
+    
+        self.meta.events.emit(
+            f'after-call.{service_id}.{operation_name}',
+            http_response=http,
+            parsed=parsed_response,
+            model=operation_model,
+            context=request_context,
+        )
+    
+        if http.status_code >= 300:
+            error_info = parsed_response.get("Error", {})
+            error_code = request_context.get(
+                'error_code_override'
+            ) or error_info.get("Code")
+            error_class = self.exceptions.from_code(error_code)
+>           raise error_class(parsed_response, operation_name)
+E           botocore.exceptions.ClientError: An error occurred (500) when calling the HeadBucket operation (reached max retries: 1): Internal Server Error
+
+../../.venv/lib/python3.12/site-packages/botocore/client.py:1094: ClientError
+__________________ test_protocol_xml_parse_budget_is_enforced __________________
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x110d294c0>, namespace(status=200, body=b'<Result>xxxxxxxxxxxxxxxxx...8ba6ba69d576a4', 'amz-sdk-invocation-id': b'ef99bf7d-d8df-4254-b76e-41a375a82325', 'amz-sdk-request': b'attempt=1'}>]))
+
+    def test_protocol_xml_parse_budget_is_enforced(recorded):
+        objects, state = recorded
+        state.body = b"<Result>" + b"x" * MAX_XML + b"</Result>"
+>       assert_generic_xml_failure(objects.probe)
+
+tests/backend/test_storage_xml.py:135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+call = <bound method PrivateObjects.probe of <cargopulse_api.storage.PrivateObjects object at 0x110d294c0>>
+marker = 'PRIVATE_XML_CANARY'
+
+    def assert_generic_xml_failure(call, marker="PRIVATE_XML_CANARY"):
+>       with pytest.raises(ResponseParserError) as rejected:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ResponseParserError
+
+tests/backend/test_storage_xml.py:69: Failed
+_____ test_bad_xml_error_fails_closed_without_raw_body_in_exception[body0] _____
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x116366570>, namespace(status=404, body=b'<!DOCTYPE Error [<!ENTITY...4b8f934c744c03', 'amz-sdk-invocation-id': b'b42862df-bd15-4906-be0c-3c085c0685fb', 'amz-sdk-request': b'attempt=1'}>]))
+body = b'<!DOCTYPE Error [<!ENTITY x "PRIVATE_XML_CANARY">]><Error><Code>NoSuchKey</Code><Message>&x;</Message></Error>'
+
+    @pytest.mark.parametrize(
+        "body",
+        [
+            b'<!DOCTYPE Error [<!ENTITY x "PRIVATE_XML_CANARY">]>'
+            b"<Error><Code>NoSuchKey</Code><Message>&x;</Message></Error>",
+            b"<Error>PRIVATE_XML_CANARY<Unclosed>",
+        ],
+    )
+    def test_bad_xml_error_fails_closed_without_raw_body_in_exception(recorded, body):
+        objects, state = recorded
+        state.status, state.body = 404, body
+        with pytest.raises((ClientError, ResponseParserError)) as error:
+            objects.probe()
+>       assert "PRIVATE_XML_CANARY" not in str(error.value)
+E       AssertionError: assert 'PRIVATE_XML_CANARY' not in 'An error oc...E_XML_CANARY'
+E         
+E         'PRIVATE_XML_CANARY' is contained here:
+E           operation: PRIVATE_XML_CANARY
+
+tests/backend/test_storage_xml.py:189: AssertionError
+_____________ test_verify_catches_parser_error_instead_of_escaping _____________
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x117943380>, namespace(status=200, body=b'', headers={}, requests=[]))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117942240>
+
+    def test_verify_catches_parser_error_instead_of_escaping(recorded, monkeypatch):
+        objects, _ = recorded
+    
+        def failed_parse(**kwargs):
+            raise ResponseParserError("Rejected S3 protocol XML")
+    
+        monkeypatch.setattr(objects.s3, "get_object", failed_parse)
+        key = TENANT + "/imports/" + hashlib.sha256(b"missing").hexdigest()
+>       assert objects.verify(TENANT, key) is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/backend/test_storage_xml.py:202: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+services/api/cargopulse_api/storage.py:73: in verify
+    response = self.s3.get_object(Bucket=self.bucket, Key=key)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+kwargs = {'Bucket': 'synthetic-private-test', 'Key': '10000000-0000-4000-8000-000000000001/imports/ffa63583dfa6706b87d284b86b0d693a161e4840aad2c5cf6b5d27c3b9621f7d'}
+
+    def failed_parse(**kwargs):
+>       raise ResponseParserError("Rejected S3 protocol XML")
+E       botocore.parsers.ResponseParserError: Rejected S3 protocol XML
+
+tests/backend/test_storage_xml.py:198: ResponseParserError
+_________ test_owned_factory_preserves_defaults_json_and_global_parser _________
+
+recorded = (<cargopulse_api.storage.PrivateObjects object at 0x11841e990>, namespace(status=200, body=b'', headers={}, requests=[]))
+
+    def test_owned_factory_preserves_defaults_json_and_global_parser(recorded):
+>       from cargopulse_api.storage_xml import StrictResponseParserFactory
+E       ModuleNotFoundError: No module named 'cargopulse_api.storage_xml'
+
+tests/backend/test_storage_xml.py:206: ModuleNotFoundError
+=============================== warnings summary ===============================
+../../.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/pie/CargoPulse_Production_Build_Package/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/backend/test_storage_xml.py::test_internal_dtd_is_rejected_on_success_xml_response[probe]
+FAILED tests/backend/test_storage_xml.py::test_internal_dtd_is_rejected_on_success_xml_response[put]
+FAILED tests/backend/test_storage_xml.py::test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-8-sig]
+FAILED tests/backend/test_storage_xml.py::test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-16]
+FAILED tests/backend/test_storage_xml.py::test_dtd_rejection_is_encoding_aware_not_a_byte_regex[utf-16-be]
+FAILED tests/backend/test_storage_xml.py::test_external_file_entity_canary_is_not_read_and_dtd_is_rejected
+FAILED tests/backend/test_storage_xml.py::test_external_http_entity_cannot_fetch
+FAILED tests/backend/test_storage_xml.py::test_internal_entity_amplification_is_rejected_before_expansion
+FAILED tests/backend/test_storage_xml.py::test_malformed_xml_exception_does_not_echo_protocol_body
+FAILED tests/backend/test_storage_xml.py::test_protocol_xml_parse_budget_is_enforced
+FAILED tests/backend/test_storage_xml.py::test_bad_xml_error_fails_closed_without_raw_body_in_exception[body0]
+FAILED tests/backend/test_storage_xml.py::test_verify_catches_parser_error_instead_of_escaping
+FAILED tests/backend/test_storage_xml.py::test_owned_factory_preserves_defaults_json_and_global_parser
+13 failed, 6 passed, 1 warning in 6.57s

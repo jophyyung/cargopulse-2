@@ -1,0 +1,1 @@
+Runtime OpenAPI matches the canonical contract.

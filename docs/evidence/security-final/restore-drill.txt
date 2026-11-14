@@ -1,0 +1,30 @@
+{
+  "scope": "quiesced local synthetic container restore; not managed PITR or S3 recovery",
+  "status": "PASS",
+  "started_utc": "20261111_173403",
+  "isolated_restored_database": "cargopulse_restore_drill_20261111_173403",
+  "backup_sha256": "31b21dbeca85fd40a792870638f593d65ed90f3a2c9d3ac2bc9ea47e3a8d456a",
+  "object_archive_sha256": "cfbf59e14efead343cbbea587f46cdbb219a3c2faa5b3d65617632b0c85ece2e",
+  "private_object_count": 11,
+  "pending_jobs_cancelled": 0,
+  "referenced_import_objects": 11,
+  "backup_seconds": 11.256,
+  "restore_and_verify_seconds": 1.147,
+  "total_seconds": 13.23,
+  "quiesced_data_loss_rows": 0,
+  "checks": [
+    "all restored table counts and row digests identical before reconciliation",
+    "every restored private object matches SHA-256 key",
+    "all referenced source objects restored",
+    "sessions and transient OIDC flows invalidated",
+    "pending jobs cancelled and outbox reconciled",
+    "no restored scenario is current",
+    "historical decisions, audit, snapshots and policies unchanged"
+  ],
+  "limits": [
+    "source stack is deliberately quiesced",
+    "not an online backup or multi-region test",
+    "no 15-minute PITR RPO or four-hour production RTO established",
+    "isolated restored database is retained for inspection; it is never promoted"
+  ]
+}

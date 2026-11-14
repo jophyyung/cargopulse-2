@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "recorded_utc": "2026-11-13T05:51:38.236223+00:00",
+  "application_source_commit": "97cc22cfe7f3cd3b2e560b3c02555b0dbce3d2f2",
+  "application_source_changed": false,
+  "image_scan_verification": "image-scan-verification.json",
+  "four_high_critical_gate_exits": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "python_package_advisories": 0,
+  "npm_package_advisories": 0,
+  "remaining_image_package_findings": {
+    "MEDIUM": 103,
+    "LOW": 38,
+    "UNKNOWN": 8
+  },
+  "full_test_execution_date": "2026-11-12 Asia/Hong_Kong",
+  "full_tests_rerun_today": false,
+  "scope": "same immutable images refreshed against current scanner/package advisory data; prior tests retain their actual date"
+}

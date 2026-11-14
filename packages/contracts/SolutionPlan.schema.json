@@ -1,0 +1,568 @@
+{
+  "$defs": {
+    "Assignment": {
+      "additionalProperties": false,
+      "properties": {
+        "cargo_unit_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Cargo Unit Id",
+          "type": "string"
+        },
+        "path_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Path Id",
+          "type": "string"
+        },
+        "legs": {
+          "items": {
+            "$ref": "#/$defs/PathLeg"
+          },
+          "maxItems": 3,
+          "minItems": 1,
+          "title": "Legs",
+          "type": "array"
+        },
+        "arrival_at": {
+          "format": "date-time",
+          "title": "Arrival At",
+          "type": "string"
+        },
+        "delay_hours": {
+          "ge": 0,
+          "le": "1000000000",
+          "title": "Delay Hours",
+          "type": "string"
+        },
+        "weighted_delay_hours": {
+          "ge": 0,
+          "le": "1000000000",
+          "title": "Weighted Delay Hours",
+          "type": "string"
+        },
+        "changed_from_previous": {
+          "title": "Changed From Previous",
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Reason Codes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cargo_unit_id",
+        "path_id",
+        "legs",
+        "arrival_at",
+        "delay_hours",
+        "weighted_delay_hours",
+        "changed_from_previous",
+        "reason_codes"
+      ],
+      "title": "Assignment",
+      "type": "object"
+    },
+    "MetricValue": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Name",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "numerator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Numerator"
+        },
+        "denominator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Denominator"
+        },
+        "cohort_id": {
+          "title": "Cohort Id",
+          "type": "string"
+        },
+        "window_start_utc": {
+          "format": "date-time",
+          "title": "Window Start Utc",
+          "type": "string"
+        },
+        "window_end_utc": {
+          "format": "date-time",
+          "title": "Window End Utc",
+          "type": "string"
+        },
+        "event_as_of_utc": {
+          "format": "date-time",
+          "title": "Event As Of Utc",
+          "type": "string"
+        },
+        "scenario_type": {
+          "const": "RECOVER",
+          "default": "RECOVER",
+          "title": "Scenario Type",
+          "type": "string"
+        },
+        "metric_method_version": {
+          "const": "metrics-v1",
+          "default": "metrics-v1",
+          "title": "Metric Method Version",
+          "type": "string"
+        },
+        "evidence_tier": {
+          "const": "TEAM_SYNTHETIC_UNVERIFIED",
+          "default": "TEAM_SYNTHETIC_UNVERIFIED",
+          "title": "Evidence Tier",
+          "type": "string"
+        },
+        "data_source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Data Source Ids",
+          "type": "array"
+        },
+        "snapshot_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Snapshot Hash",
+          "type": "string"
+        },
+        "policy_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Policy Hash",
+          "type": "string"
+        },
+        "baseline_policy_version": {
+          "title": "Baseline Policy Version",
+          "type": "string"
+        },
+        "statistic": {
+          "title": "Statistic",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "COMPUTED",
+            "PROPOSED",
+            "UNDEFINED"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value",
+        "unit",
+        "numerator",
+        "denominator",
+        "cohort_id",
+        "window_start_utc",
+        "window_end_utc",
+        "event_as_of_utc",
+        "data_source_ids",
+        "snapshot_hash",
+        "policy_hash",
+        "baseline_policy_version",
+        "statistic",
+        "status"
+      ],
+      "title": "MetricValue",
+      "type": "object"
+    },
+    "PathLeg": {
+      "additionalProperties": false,
+      "properties": {
+        "flight_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Flight Id",
+          "type": "string"
+        },
+        "position_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Position Id",
+          "type": "string"
+        },
+        "handling_window_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Handling Window Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "flight_id",
+        "position_id",
+        "handling_window_id"
+      ],
+      "title": "PathLeg",
+      "type": "object"
+    },
+    "SolverStatus": {
+      "enum": [
+        "OPTIMAL",
+        "FEASIBLE",
+        "INFEASIBLE",
+        "TIME_LIMIT_WITH_FEASIBLE",
+        "TIME_LIMIT_NO_FEASIBLE",
+        "ERROR",
+        "CANCELLED"
+      ],
+      "title": "SolverStatus",
+      "type": "string"
+    },
+    "SolverTelemetry": {
+      "additionalProperties": false,
+      "properties": {
+        "engine": {
+          "enum": [
+            "HiGHS",
+            "EARLIEST_FEASIBLE",
+            "PRIORITY_FIRST"
+          ],
+          "title": "Engine",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/SolverStatus"
+        },
+        "wall_time_ms": {
+          "ge": 0,
+          "le": "1000000000",
+          "title": "Wall Time Ms",
+          "type": "string"
+        },
+        "time_limit_seconds": {
+          "maximum": 60,
+          "minimum": 1,
+          "title": "Time Limit Seconds",
+          "type": "integer"
+        },
+        "objective_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Objective Value"
+        },
+        "best_bound": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Best Bound"
+        },
+        "optimality_gap": {
+          "anyOf": [
+            {
+              "ge": 0,
+              "le": "1000000000",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Optimality Gap"
+        },
+        "variable_count": {
+          "minimum": 0,
+          "title": "Variable Count",
+          "type": "integer"
+        },
+        "candidate_count": {
+          "minimum": 0,
+          "title": "Candidate Count",
+          "type": "integer"
+        },
+        "termination_reason": {
+          "title": "Termination Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "engine",
+        "version",
+        "status",
+        "wall_time_ms",
+        "time_limit_seconds",
+        "objective_value",
+        "best_bound",
+        "optimality_gap",
+        "variable_count",
+        "candidate_count",
+        "termination_reason"
+      ],
+      "title": "SolverTelemetry",
+      "type": "object"
+    },
+    "Unassigned": {
+      "additionalProperties": false,
+      "properties": {
+        "cargo_unit_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Cargo Unit Id",
+          "type": "string"
+        },
+        "reason_codes": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "action": {
+          "const": "ESCALATE",
+          "default": "ESCALATE",
+          "title": "Action",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cargo_unit_id",
+        "reason_codes"
+      ],
+      "title": "Unassigned",
+      "type": "object"
+    },
+    "ValidationResult": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "version": {
+          "const": "independent-v1",
+          "default": "independent-v1",
+          "title": "Version",
+          "type": "string"
+        },
+        "checked_gates": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Checked Gates",
+          "type": "array"
+        },
+        "violations": {
+          "items": {
+            "$ref": "#/$defs/Violation"
+          },
+          "title": "Violations",
+          "type": "array"
+        },
+        "snapshot_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Snapshot Hash",
+          "type": "string"
+        },
+        "policy_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Policy Hash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "checked_gates",
+        "violations",
+        "snapshot_hash",
+        "policy_hash"
+      ],
+      "title": "ValidationResult",
+      "type": "object"
+    },
+    "Violation": {
+      "additionalProperties": false,
+      "properties": {
+        "gate": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "CONTRACT"
+          ],
+          "title": "Gate",
+          "type": "string"
+        },
+        "code": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Code",
+          "type": "string"
+        },
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        }
+      },
+      "required": [
+        "gate",
+        "code",
+        "entity_id",
+        "detail"
+      ],
+      "title": "Violation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "snapshot_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Snapshot Hash",
+      "type": "string"
+    },
+    "policy_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Policy Hash",
+      "type": "string"
+    },
+    "synthetic": {
+      "const": true,
+      "default": true,
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "evidence_tier": {
+      "const": "TEAM_SYNTHETIC_UNVERIFIED",
+      "default": "TEAM_SYNTHETIC_UNVERIFIED",
+      "title": "Evidence Tier",
+      "type": "string"
+    },
+    "solver": {
+      "$ref": "#/$defs/SolverTelemetry"
+    },
+    "assignments": {
+      "items": {
+        "$ref": "#/$defs/Assignment"
+      },
+      "title": "Assignments",
+      "type": "array"
+    },
+    "unassigned": {
+      "items": {
+        "$ref": "#/$defs/Unassigned"
+      },
+      "title": "Unassigned",
+      "type": "array"
+    },
+    "independent_validation": {
+      "$ref": "#/$defs/ValidationResult"
+    },
+    "metrics": {
+      "items": {
+        "$ref": "#/$defs/MetricValue"
+      },
+      "title": "Metrics",
+      "type": "array"
+    },
+    "model_scope": {
+      "title": "Model Scope",
+      "type": "string"
+    },
+    "has_external_write_permission": {
+      "const": false,
+      "default": false,
+      "title": "Has External Write Permission",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "snapshot_hash",
+    "policy_hash",
+    "solver",
+    "assignments",
+    "unassigned",
+    "independent_validation",
+    "metrics",
+    "model_scope"
+  ],
+  "title": "SolutionPlan",
+  "type": "object"
+}

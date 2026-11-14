@@ -1,0 +1,23 @@
+{
+  "name": "cargopulse",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "contracts": "openapi-typescript packages/contracts/openapi.json -o packages/contracts/generated/api.ts",
+    "typecheck": "npm run typecheck --workspace apps/web",
+    "build": "npm run build --workspace apps/web",
+    "dev": "npm run dev --workspace apps/web",
+    "e2e": "playwright test --config apps/web/playwright.config.ts"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.65.0",
+    "openapi-typescript": "7.13.0"
+  },
+  "engines": {
+    "node": ">=24.22.2 <25"
+  }
+}

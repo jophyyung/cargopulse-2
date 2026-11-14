@@ -1,0 +1,2 @@
+before-parse.s3.* ['builtin', 'guard']
+before-parse.s3.HeadBucket ['builtin', 'guard']

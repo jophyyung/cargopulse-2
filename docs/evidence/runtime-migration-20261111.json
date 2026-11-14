@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "scope": "quiesced owned local synthetic glibc-to-musl logical migration",
+  "completed_utc": "2026-11-11T11:45:06.010942+00:00",
+  "source_volume_preserved": "cargopulse-local_postgres",
+  "target_volume": "cargopulse-local_postgres_alpine",
+  "source_images": {
+    "postgres": "sha256:e833fa4f2aadb8e93fb4c56a7a131abff194d1b142ba99eab73fcef2fc0b218c",
+    "api": "sha256:9f098864022455d0f7d9889554a5fe71382ad3a13eef07e5da88906d5f4e3861",
+    "worker": "sha256:9f098864022455d0f7d9889554a5fe71382ad3a13eef07e5da88906d5f4e3861",
+    "migrate": "sha256:9f098864022455d0f7d9889554a5fe71382ad3a13eef07e5da88906d5f4e3861",
+    "web": "sha256:b97897447413901ee7839ac50af7eebbbaa1779a6587b6b4e753bab881bb5214"
+  },
+  "target_images": {
+    "postgres": "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+    "api": "sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b",
+    "worker": "sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b",
+    "web": "sha256:0fa03daf4fefd8cbcd6a4b4223cdddbd52706faed77110c2a03638e0b1eb0952"
+  },
+  "source_locale": {
+    "datlocprovider": "c",
+    "datcollate": "en_US.utf8",
+    "datctype": "en_US.utf8",
+    "datcollversion": "2.41",
+    "encoding": "UTF8"
+  },
+  "target_locale": {
+    "datlocprovider": "c",
+    "datcollate": "en_US.utf8",
+    "datctype": "en_US.utf8",
+    "datcollversion": null,
+    "encoding": "UTF8"
+  },
+  "before": {
+    "alembic_version": {
+      "rows": 1,
+      "digest": "6d3e7214d108655b1a1a65f86a7cb46e"
+    },
+    "audit_events": {
+      "rows": 74,
+      "digest": "2c358fe45f0db19cc4f7719d5ab1fd08"
+    },
+    "idempotency_keys": {
+      "rows": 38,
+      "digest": "24255eff9b1c69752e04e4b1859dcf04"
+    },
+    "identities": {
+      "rows": 6,
+      "digest": "992ba32fdedc31d38861edd4eed5e7ad"
+    },
+    "ingest_batches": {
+      "rows": 8,
+      "digest": "86ea8a44bc48c29c567d78cda18bd7a5"
+    },
+    "oidc_flows": {
+      "rows": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "outbox_events": {
+      "rows": 8,
+      "digest": "5af156e7cdb3fbac1ecca63f2e2855c4"
+    },
+    "plan_decisions": {
+      "rows": 6,
+      "digest": "d86ab8446b427a98b669ff44f625a41f"
+    },
+    "policy_sets": {
+      "rows": 2,
+      "digest": "397e6ed8eac03d4a73c6dab6566aba60"
+    },
+    "scenarios": {
+      "rows": 8,
+      "digest": "0297fd9884f95e2c671f9940a4f59105"
+    },
+    "sessions": {
+      "rows": 24,
+      "digest": "0a1a5400f805d405242ca1ed647c1418"
+    },
+    "snapshots": {
+      "rows": 8,
+      "digest": "60b0ef3baa70380417a13549f3815846"
+    },
+    "solution_plans": {
+      "rows": 16,
+      "digest": "c1fd74561bf26d1557d09b680ef2a9d0"
+    },
+    "solve_jobs": {
+      "rows": 8,
+      "digest": "bb6d6d4fad9e518cc1e2eb3cb4a1822d"
+    },
+    "tenants": {
+      "rows": 2,
+      "digest": "d1c153083f61f445fea534558062d16a"
+    }
+  },
+  "all_row_counts_and_digests_identical": true,
+  "private_objects_verified": 8,
+  "application_role": {
+    "superuser": false,
+    "bypassrls": false
+  },
+  "forced_rls_tables": 12,
+  "application_owned_tables": 0,
+  "constraints_validated": true,
+  "policy_order_preserved": true,
+  "indexes_valid": true,
+  "database_rollback_exercised": true,
+  "forward_return_verified": true,
+  "login_http_status": 200,
+  "seconds": 29.817,
+  "private_backup_directory": ".local/backups/runtime-migration_20261111_114436_176173",
+  "backup_sha256": "238d9156064646fddfb09d365f9df4e41bf079e97c53b0559ccf2f1327300da5",
+  "object_archive_sha256": "205aa550f35e77a5936f8ae0e525b44259af3308d3ea7b8e41a6463b3d0fdfac",
+  "limits": [
+    "local development only",
+    "not online/PITR or hosted recovery",
+    "locale names do not prove universal collation equivalence",
+    "rollback exercise occurred before new writes"
+  ]
+}

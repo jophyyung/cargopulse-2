@@ -1,0 +1,42 @@
+{
+  "python": "3.12.16",
+  "logical_cpu_count": 12,
+  "base_revision": "9a92fc16d297f4e65cc5a845fcbdcd1126810af5",
+  "source_sha256": {
+    "benchmark.py": "18bb1aae52c746acad3ec89364fe44203a14a9fe1368cb658a05fba96061d924",
+    "solver.py": "6440caba4b622941ace1712ca7e48c9d4ecaa8b94fc955aaf9c99dc0f69e7870",
+    "__init__.py": "aff79e8dbfcd447e578a5fdda298341a017bda08f5852801c60c76b61312ba82",
+    "candidates.py": "f7af41b020bf7078083fc534b4252e83b014a422e7326c507132ce73125b79ba",
+    "independent_validator": "3bcc1eebc1d4f9bc9d9216d1b2fd6e359b749be998be0db3c115a1319ea8cc21",
+    "independent_metrics": "4a8c80aed6436be71d8f06a789eb7a53caf762b46af9d01ceefee48f23ec1d90",
+    "contract_models": "e918bf710029d5d29fd1fcfaa752eaad6244be46d2678de47c22c9122719318d",
+    "domain_generator": "8c5073288564ef04bce1fcd725c99237991441e1705c5baf17c18118ed6a0cbd"
+  },
+  "os": "Darwin",
+  "os_release": "27.2.0",
+  "architecture": "arm64",
+  "solver": "1.15.1",
+  "solver_threads": 1,
+  "scope": "exploratory synthetic single-process warm-library; no production SLA, no concurrency",
+  "quantile_method": "linear interpolation",
+  "as_of": "2026-11-10T00:00:00+00:00",
+  "generator": "packages.domain_fixtures.generator-v1 plus benchmark.generate-v1",
+  "seeds": [
+    101,
+    102,
+    103
+  ],
+  "sizes": [
+    50,
+    140,
+    400,
+    800,
+    1200
+  ],
+  "profiles": [
+    "low-density",
+    "capacity-shortage",
+    "cold-dg-blocked"
+  ],
+  "max_wall_seconds": 10
+}

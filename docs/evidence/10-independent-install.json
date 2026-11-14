@@ -1,0 +1,359 @@
+{
+  "scope": "independent fresh-volume local synthetic install at e40c67671aff8889234c4af1dee490eb2da75999",
+  "started_utc": "2026-11-10T14:14:07.354710+00:00",
+  "project": "cargopulse-independent-install",
+  "base_url": "http://localhost:3112",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/health/ready",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/development",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/fixtures/recover",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/imports/validate",
+      "status": 202
+    },
+    {
+      "method": "POST",
+      "path": "/imports/5b1f3dd2-60c8-4223-bacf-63fb4e821cce/commit",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/scenarios",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/scenarios/8041d4fe-b825-40e0-8f37-c3e1bc517489/candidates",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/health/ready",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/scenarios/8041d4fe-b825-40e0-8f37-c3e1bc517489/solve",
+      "status": 202
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/3a0dcc3e-da2c-4cd6-ab54-a4fc0321faed",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/scenarios/8041d4fe-b825-40e0-8f37-c3e1bc517489/solve",
+      "status": 202
+    },
+    {
+      "method": "GET",
+      "path": "/plans/81e56318-32df-42b7-b96d-541f4664d44c",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/plans/81e56318-32df-42b7-b96d-541f4664d44c/alternatives",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/plans/81e56318-32df-42b7-b96d-541f4664d44c/decisions",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/reports/81e56318-32df-42b7-b96d-541f4664d44c/export?format=json",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/reports/81e56318-32df-42b7-b96d-541f4664d44c/export?format=csv",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/reports/81e56318-32df-42b7-b96d-541f4664d44c/export?format=pdf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/development",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/imports/5b1f3dd2-60c8-4223-bacf-63fb4e821cce",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/scenarios/8041d4fe-b825-40e0-8f37-c3e1bc517489",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/scenarios/8041d4fe-b825-40e0-8f37-c3e1bc517489/candidates",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/3a0dcc3e-da2c-4cd6-ab54-a4fc0321faed",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/plans/81e56318-32df-42b7-b96d-541f4664d44c",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/plans/81e56318-32df-42b7-b96d-541f4664d44c/alternatives",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/reports/81e56318-32df-42b7-b96d-541f4664d44c/export?format=json",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/reports/81e56318-32df-42b7-b96d-541f4664d44c/export?format=csv",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/reports/81e56318-32df-42b7-b96d-541f4664d44c/export?format=pdf",
+      "status": 404
+    },
+    {
+      "method": "POST",
+      "path": "/plans/81e56318-32df-42b7-b96d-541f4664d44c/decisions",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/3a0dcc3e-da2c-4cd6-ab54-a4fc0321faed",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/plans/81e56318-32df-42b7-b96d-541f4664d44c",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/plans/81e56318-32df-42b7-b96d-541f4664d44c/decisions",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/reports/81e56318-32df-42b7-b96d-541f4664d44c/export?format=json",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/reports/81e56318-32df-42b7-b96d-541f4664d44c/export?format=csv",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/reports/81e56318-32df-42b7-b96d-541f4664d44c/export?format=pdf",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/health/ready",
+      "status": 200
+    }
+  ],
+  "status": "PASS",
+  "seconds": 37.837,
+  "cargo_units": 8,
+  "scenario_id": "8041d4fe-b825-40e0-8f37-c3e1bc517489",
+  "import_id": "5b1f3dd2-60c8-4223-bacf-63fb4e821cce",
+  "job_id": "3a0dcc3e-da2c-4cd6-ab54-a4fc0321faed",
+  "plan_id": "81e56318-32df-42b7-b96d-541f4664d44c",
+  "decision_id": "17548761-b1d8-4daf-a7ca-00859f96b87d",
+  "snapshot_hash": "1d2846fc38aba9aa84082ca144b5ab9e1ff20d4b4cfc096867279d4a609e0c9c",
+  "plan_hash": "1df1f33430b2778d16e878e61436625149f6b9e555cd6388ef0954ef0b84f09f",
+  "independent_validation": "PASS",
+  "solver_status": "OPTIMAL",
+  "external_write_performed": false,
+  "exports": {
+    "json": {
+      "bytes": 8223,
+      "sha256": "fb16eaf7cbcebc0ea32ab83dad186d1dddc899733224fbb4af44495ceaf6a639",
+      "content_type": "application/json"
+    },
+    "csv": {
+      "bytes": 3088,
+      "sha256": "146d83dddeb095f651274d6c695065056ce8a53427865399a85f5fb98b5906a4",
+      "content_type": "text/csv; charset=utf-8"
+    },
+    "pdf": {
+      "bytes": 4810,
+      "sha256": "23631920afa7a3dc07207f78eccf17ee4375cc228b531461be7a3d08e87e9b16",
+      "content_type": "application/pdf"
+    }
+  },
+  "cross_tenant_get_denials": 8,
+  "cross_tenant_decision_denial": true,
+  "redis_outage_durable_queue": true,
+  "api_restart_session_and_idempotent_solve": true,
+  "full_stack_stop_start_persistence": true,
+  "idempotent_decision_after_restart": true,
+  "operations_html_status": 200,
+  "operations_synthetic_notice": true,
+  "solver": {
+    "engine": "HiGHS",
+    "version": "1.15.1",
+    "status": "OPTIMAL",
+    "wall_time_ms": "32.982148",
+    "time_limit_seconds": 10,
+    "objective_value": "37.550000",
+    "best_bound": "37.550000",
+    "optimality_gap": "0.000000",
+    "variable_count": 160,
+    "candidate_count": 152,
+    "termination_reason": "LEXICOGRAPHIC_OPTIMAL; unassigned=0; retained_paths_only"
+  },
+  "containers": [
+    {
+      "name": "cargopulse-independent-install-postgres-1",
+      "image_id": "sha256:e833fa4f2aadb8e93fb4c56a7a131abff194d1b142ba99eab73fcef2fc0b218c",
+      "configured_user": "postgres",
+      "state": "running",
+      "port_bindings": {},
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "cargopulse-independent-install_postgres",
+          "destination": "/var/lib/postgresql"
+        }
+      ]
+    },
+    {
+      "name": "cargopulse-independent-install-redis-1",
+      "image_id": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041",
+      "configured_user": "",
+      "state": "running",
+      "port_bindings": {},
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "26db038f621b6b203f2345daf339a0ff631a67b516d3db8d447b1d2a46485a1f",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "name": "cargopulse-independent-install-migrate-1",
+      "image_id": "sha256:9f098864022455d0f7d9889554a5fe71382ad3a13eef07e5da88906d5f4e3861",
+      "configured_user": "10001:10001",
+      "state": "exited",
+      "port_bindings": {},
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "cargopulse-independent-install_objects",
+          "destination": "/var/lib/cargopulse/objects"
+        }
+      ]
+    },
+    {
+      "name": "cargopulse-independent-install-api-1",
+      "image_id": "sha256:9f098864022455d0f7d9889554a5fe71382ad3a13eef07e5da88906d5f4e3861",
+      "configured_user": "10001:10001",
+      "state": "running",
+      "port_bindings": {},
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "cargopulse-independent-install_objects",
+          "destination": "/var/lib/cargopulse/objects"
+        }
+      ]
+    },
+    {
+      "name": "cargopulse-independent-install-worker-1",
+      "image_id": "sha256:9f098864022455d0f7d9889554a5fe71382ad3a13eef07e5da88906d5f4e3861",
+      "configured_user": "10001:10001",
+      "state": "running",
+      "port_bindings": {},
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "cargopulse-independent-install_objects",
+          "destination": "/var/lib/cargopulse/objects"
+        }
+      ]
+    },
+    {
+      "name": "cargopulse-independent-install-web-1",
+      "image_id": "sha256:c75d62e9bdb90c558ba4cb9f05a4d3a356b6dae1dfcde49bb4235c82d5914e68",
+      "configured_user": "node",
+      "state": "running",
+      "port_bindings": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "3112"
+          }
+        ]
+      },
+      "mounts": []
+    }
+  ],
+  "only_published_port": "127.0.0.1:3112 -> web:3000/tcp",
+  "database_verification": {
+    "migration_version": "0004",
+    "postgres_uid": 999,
+    "postgres_user": "postgres",
+    "gosu_absent": true,
+    "effective_api_role": "cargopulse_app",
+    "effective_api_role_superuser": false,
+    "effective_api_role_bypassrls": false,
+    "effective_api_role_owned_public_tables": 0,
+    "public_table_owner": "cargopulse",
+    "public_table_count": 15
+  },
+  "env_file_mode": "0600",
+  "harness_corrections": [
+    "The first attempt expected import validation 201; OpenAPI specifies and the server returned 202.",
+    "The second attempt expected cross-tenant import read 404; controller-b first fails its import role check with 403. Eight operational-resource GETs and the decision command subsequently returned 404."
+  ],
+  "final_states": {
+    "cargopulse-independent-install-postgres-1": "exited",
+    "cargopulse-independent-install-redis-1": "exited",
+    "cargopulse-independent-install-migrate-1": "exited",
+    "cargopulse-independent-install-api-1": "exited",
+    "cargopulse-independent-install-worker-1": "exited",
+    "cargopulse-independent-install-web-1": "exited"
+  },
+  "final_stack_stopped": true,
+  "tracked_diff_empty": true
+}

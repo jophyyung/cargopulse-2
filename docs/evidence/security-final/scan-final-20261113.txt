@@ -1,0 +1,4 @@
+api sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34 {'audit': 0, 'gate': 0, 'sbom': 0}
+web sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f {'audit': 0, 'gate': 0, 'sbom': 0}
+postgres sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3 {'audit': 0, 'gate': 0, 'sbom': 0}
+redis sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041 {'audit': 0, 'gate': 0, 'sbom': 0}

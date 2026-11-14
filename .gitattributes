@@ -1,0 +1,12 @@
+*.pdf binary
+*.png binary
+*.py text eol=lf
+*.csv text eol=lf
+docs/security/ASVS-5.0.0-source.csv -text -whitespace
+docs/evidence/asvs-review/assessment-base.csv -text -whitespace
+
+# Preserve raw command/test output bytes, including terminal spacing.
+docs/evidence/*.txt -text -whitespace
+docs/evidence/**/*.txt -text -whitespace
+docs/team-evidence/**/*.txt -text -whitespace
+docs/evidence/security-final/pytest-initial.xml -text -whitespace

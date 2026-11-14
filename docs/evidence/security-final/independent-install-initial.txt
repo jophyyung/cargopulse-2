@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/accept.py", line 178, in <module>
+    if mount.get('Type')=='volume':assert mount.get('Name') in (PROJECT+'_postgres_alpine',PROJECT+'_objects')
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

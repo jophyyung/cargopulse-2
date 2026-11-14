@@ -1,0 +1,10 @@
+{
+  "backend": 52,
+  "contracts": 11,
+  "observability": 17,
+  "optimizer": 34,
+  "release_math_final": 9,
+  "release_math_qa": 16,
+  "release_qa": 21,
+  "validation": 20
+}

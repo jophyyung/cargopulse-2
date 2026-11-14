@@ -1,0 +1,332 @@
+FFFF.FFFFFFF.                                                            [100%]
+=================================== FAILURES ===================================
+__________ test_production_cookie_prefixes_flags_and_logout_deletion ___________
+
+production_mode = <starlette.testclient.TestClient object at 0x10d441490>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10d65f4f0>, 'public': {'kty': 'RSA',...PoYf2UZhTej1N8R87wJv0qx5Vrcyvl37pn7-G6riBhUTGaWvtIzIyh7MFGcw', 'e': 'AQAB', ...}, 'mutations': {}, 'exchanges': 1, ...}
+
+    def test_production_cookie_prefixes_flags_and_logout_deletion(production_mode, provider):
+        client = production_mode
+        result = finish_login(client, provider)
+        issued = cookies(result)
+        for name, httponly, samesite in (
+            ("__Host-cp_session", True, "lax"),
+            ("__Host-cp_csrf", False, "strict"),
+        ):
+>           cookie = issued[name]
+                     ^^^^^^^^^^^^
+E           KeyError: '__Host-cp_session'
+
+tests/backend/test_cookie_csrf_security.py:66: KeyError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "421b1247-b83e-471b-b366-2c54df56101a", "elapsed_ms": 6.124, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "a67280a6cf7a9c22", "trace_id": "a3a7f1b04b0cfc22741d3f40a120c59c"}
+{"correlation.id": "d9b9c80f-61bd-44b2-9907-12029899a156", "elapsed_ms": 7.042, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "84ff34439ee3fcf5", "trace_id": "89a8be9b02575ff264047b48d2299409"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "421b1247-b83e-471b-b366-2c54df56101a", "elapsed_ms": 6.124, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "a67280a6cf7a9c22", "trace_id": "a3a7f1b04b0cfc22741d3f40a120c59c"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "d9b9c80f-61bd-44b2-9907-12029899a156", "elapsed_ms": 7.042, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "84ff34439ee3fcf5", "trace_id": "89a8be9b02575ff264047b48d2299409"}
+_____________ test_production_rejects_unprefixed_session_fallback ______________
+
+production_mode = <starlette.testclient.TestClient object at 0x10d6d2990>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10d6e2910>, 'public': {'kty': 'RSA',...f6eY7f-vnKS8ojwDlwsQgRatAaLM16hiNJvXmMKe1KJE3JV3KdqKt3eXahqQ', 'e': 'AQAB', ...}, 'mutations': {}, 'exchanges': 1, ...}
+
+    def test_production_rejects_unprefixed_session_fallback(production_mode, provider):
+        client = production_mode
+        finish_login(client, provider)
+        token = client.cookies.get("__Host-cp_session")
+        client.cookies.clear()
+>       response = client.get("/api/v1/me", headers={"Cookie": "cp_session=" + token})
+                                                               ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: can only concatenate str (not "NoneType") to str
+
+tests/backend/test_cookie_csrf_security.py:97: TypeError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "c3194446-35a1-4d89-a43c-20c5d88b2774", "elapsed_ms": 1.456, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5376b824449010e5", "trace_id": "bb17dfb3fcd78da23d60b68b25ed0055"}
+{"correlation.id": "0b45a34f-d706-43bc-9d76-67b064f70d6c", "elapsed_ms": 3.972, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0faa7a37670b859d", "trace_id": "9ef4b950f4cf75d23bd8fa216c119872"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "c3194446-35a1-4d89-a43c-20c5d88b2774", "elapsed_ms": 1.456, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5376b824449010e5", "trace_id": "bb17dfb3fcd78da23d60b68b25ed0055"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "0b45a34f-d706-43bc-9d76-67b064f70d6c", "elapsed_ms": 3.972, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0faa7a37670b859d", "trace_id": "9ef4b950f4cf75d23bd8fa216c119872"}
+________ test_production_oidc_binding_prefix_and_no_unprefixed_fallback ________
+
+production_mode = <starlette.testclient.TestClient object at 0x10d8742c0>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10e444810>, 'public': {'kty': 'RSA',...7ows-MZ9EwDtsllOz3-UDteLB0pOIcwF9-puXY0e_VsOBU0Ujw5xuNejexcQ', 'e': 'AQAB', ...}, 'mutations': {}, 'exchanges': 0, ...}
+
+    def test_production_oidc_binding_prefix_and_no_unprefixed_fallback(production_mode, provider):
+        client = production_mode
+        state = begin(client, provider)
+>       binding = next(cookie for cookie in client.cookies.jar if cookie.name == "__Secure-cp_oidc_binding")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests/backend/test_cookie_csrf_security.py:104: StopIteration
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "061c43c3-11fa-47cf-8430-e220c2485cdc", "elapsed_ms": 1.5, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "344e7d6a4730b9a4", "trace_id": "4495ea63f4b5234cf36d153cd3a278ff"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "061c43c3-11fa-47cf-8430-e220c2485cdc", "elapsed_ms": 1.5, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "344e7d6a4730b9a4", "trace_id": "4495ea63f4b5234cf36d153cd3a278ff"}
+________ test_production_oidc_reauthentication_rotates_selected_cookie _________
+
+production_mode = <starlette.testclient.TestClient object at 0x10e43fe60>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10e4459d0>, 'public': {'kty': 'RSA',...n_XVg-p_bOvmF9FNJPYHr0Ys22VR6VwtO04Cf3VH4qN_SH6OQbE4n_8zBmQw', 'e': 'AQAB', ...}, 'mutations': {}, 'exchanges': 2, ...}
+
+    def test_production_oidc_reauthentication_rotates_selected_cookie(production_mode, provider):
+        client = production_mode
+        finish_login(client, provider)
+        old = client.cookies.get("__Host-cp_session")
+        finish_login(client, provider)
+>       assert client.cookies.get("__Host-cp_session") != old
+E       AssertionError: assert None != None
+E        +  where None = get('__Host-cp_session')
+E        +    where get = <Cookies[<Cookie cp_session=10000000-0000-4000-8000-000000000001._oAkxolyu6j0EXJAcwPFi0gm2BkVf_v4Fyr9i9mqKBihv2JhErNPlA for testserver.local />, <Cookie cp_csrf=C1YF_45TmEC_wRFtchM35shXTXD6ySDKfHm62t9H9-U for testserver.local />]>.get
+E        +      where <Cookies[<Cookie cp_session=10000000-0000-4000-8000-000000000001._oAkxolyu6j0EXJAcwPFi0gm2BkVf_v4Fyr9i9mqKBihv2JhErNPlA for testserver.local />, <Cookie cp_csrf=C1YF_45TmEC_wRFtchM35shXTXD6ySDKfHm62t9H9-U for testserver.local />]> = <starlette.testclient.TestClient object at 0x10e43fe60>.cookies
+
+tests/backend/test_cookie_csrf_security.py:126: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "794d2808-f78c-4ae0-9f28-294596ad9229", "elapsed_ms": 1.176, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "825690cbf4ccfc45", "trace_id": "9b22110def778c0be96231cc5aca4a00"}
+{"correlation.id": "05506311-3467-4f46-86de-6ad5460dbcdb", "elapsed_ms": 3.759, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "da1732bc16449818", "trace_id": "f3c78370a4654ff8108fe0e6dfa6577b"}
+{"correlation.id": "7557621d-78eb-4ff1-acd1-90aba412cb2c", "elapsed_ms": 0.739, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "f8902adc724488fd", "trace_id": "dd118c32eed61443a65d484cb0d13b48"}
+{"correlation.id": "f40524ae-25bb-4db7-b92c-90007eef0e57", "elapsed_ms": 2.628, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "27ef6a66ed9482b6", "trace_id": "136454e5edbcabc8e84ef84224de275c"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "794d2808-f78c-4ae0-9f28-294596ad9229", "elapsed_ms": 1.176, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "825690cbf4ccfc45", "trace_id": "9b22110def778c0be96231cc5aca4a00"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "05506311-3467-4f46-86de-6ad5460dbcdb", "elapsed_ms": 3.759, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "da1732bc16449818", "trace_id": "f3c78370a4654ff8108fe0e6dfa6577b"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "7557621d-78eb-4ff1-acd1-90aba412cb2c", "elapsed_ms": 0.739, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "f8902adc724488fd", "trace_id": "dd118c32eed61443a65d484cb0d13b48"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "f40524ae-25bb-4db7-b92c-90007eef0e57", "elapsed_ms": 2.628, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "27ef6a66ed9482b6", "trace_id": "136454e5edbcabc8e84ef84224de275c"}
+_______ test_repeated_csrf_get_is_stable_and_does_not_update_hash[False] _______
+
+client = <starlette.testclient.TestClient object at 0x10e6bd3d0>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10e73dd30>, 'public': {'kty': 'RSA',...7Vub15Pyphm8E220aBp3SVxtkFT6IAGvbLxQiOH8B_2CNqMiz4mgLH8s6cymCBhSw', 'e': 'AQAB', ...}, 'mutations': {}, 'exchanges': 0}
+production = False
+
+    @pytest.mark.parametrize("production", [False, True])
+    def test_repeated_csrf_get_is_stable_and_does_not_update_hash(client, provider, production):
+        if production:
+            object.__setattr__(client.app.state.settings, "environment", "production")
+            object.__setattr__(client.app.state.settings, "development_auth", False)
+            client.base_url = "https://testserver"
+            finish_login(client, provider)
+            cookie_name = "__Host-cp_csrf"
+        else:
+            login(client)
+            cookie_name = "cp_csrf"
+        original = client.cookies.get(cookie_name)
+        before = csrf_hash(client)
+        for _ in range(3):
+            result = client.get("/api/v1/auth/csrf")
+            assert result.status_code == 200
+>           assert result.json()["csrf"] == original
+E           AssertionError: assert 'GtLvlnFYHoKW...PdvXxJOYOoZSc' == '9IwUqzlWLuFG...1AZLQsxtxlOx4'
+E             
+E             - 9IwUqzlWLuFGOkK0AmNjbYYTQaA8Qm1AZLQsxtxlOx4
+E             + GtLvlnFYHoKWQQCvWTDsutyOAYGs_mPdvXxJOYOoZSc
+
+tests/backend/test_cookie_csrf_security.py:166: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "ff664195-3873-4b66-94b0-922bcb52e0bf", "elapsed_ms": 3.084, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "6c99cf72b82161c0", "trace_id": "1e08376d3a523464ef31d7b32a9d71ab"}
+{"correlation.id": "52df682e-082a-494d-b8cf-f1ff0d166a4b", "elapsed_ms": 1.783, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "f7758255724b542c", "trace_id": "650c904e8f0d8f24cd3fef64284c224f"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "ff664195-3873-4b66-94b0-922bcb52e0bf", "elapsed_ms": 3.084, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "6c99cf72b82161c0", "trace_id": "1e08376d3a523464ef31d7b32a9d71ab"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "52df682e-082a-494d-b8cf-f1ff0d166a4b", "elapsed_ms": 1.783, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "f7758255724b542c", "trace_id": "650c904e8f0d8f24cd3fef64284c224f"}
+_______ test_repeated_csrf_get_is_stable_and_does_not_update_hash[True] ________
+
+client = <starlette.testclient.TestClient object at 0x10e884fe0>
+provider = {'key': <cryptography.hazmat.bindings._rust.openssl.rsa.RSAPrivateKey object at 0x10e73fe90>, 'public': {'kty': 'RSA',...eEV7qsoow0Gq8gQ7D1uID7sZyA10SVg5qcx2-21hZiipkYZvLwZI4V3ZjlxQ', 'e': 'AQAB', ...}, 'mutations': {}, 'exchanges': 1, ...}
+production = True
+
+    @pytest.mark.parametrize("production", [False, True])
+    def test_repeated_csrf_get_is_stable_and_does_not_update_hash(client, provider, production):
+        if production:
+            object.__setattr__(client.app.state.settings, "environment", "production")
+            object.__setattr__(client.app.state.settings, "development_auth", False)
+            client.base_url = "https://testserver"
+            finish_login(client, provider)
+            cookie_name = "__Host-cp_csrf"
+        else:
+            login(client)
+            cookie_name = "cp_csrf"
+        original = client.cookies.get(cookie_name)
+        before = csrf_hash(client)
+        for _ in range(3):
+            result = client.get("/api/v1/auth/csrf")
+            assert result.status_code == 200
+>           assert result.json()["csrf"] == original
+E           AssertionError: assert 'LT7nwVnAQCTCWvyIpZtzX6-nV_aiq2XcNsWOqWVPzEY' == None
+
+tests/backend/test_cookie_csrf_security.py:166: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "0915301b-f99e-4eda-ade2-58b25a0eba6b", "elapsed_ms": 1.406, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4b8c033fc740667b", "trace_id": "d6f5cff5e3e78417e6f95b208a42ae96"}
+{"correlation.id": "d4c28fb0-71cf-4551-8fe0-ae089a62721e", "elapsed_ms": 4.885, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "63b2b6333d9196bb", "trace_id": "b404f5b443254b0cf491a07c183e0d58"}
+{"correlation.id": "2e8ece6b-0858-44cd-8979-770cdcc3444c", "elapsed_ms": 1.738, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "34cb8007e655e5d6", "trace_id": "ac7dd1a4c05eacbcb9e4967f35abb173"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "0915301b-f99e-4eda-ade2-58b25a0eba6b", "elapsed_ms": 1.406, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/login", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4b8c033fc740667b", "trace_id": "d6f5cff5e3e78417e6f95b208a42ae96"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "d4c28fb0-71cf-4551-8fe0-ae089a62721e", "elapsed_ms": 4.885, "event": "operation", "http.request.method": "GET", "http.response.status_code": 302, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "63b2b6333d9196bb", "trace_id": "b404f5b443254b0cf491a07c183e0d58"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "2e8ece6b-0858-44cd-8979-770cdcc3444c", "elapsed_ms": 1.738, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "34cb8007e655e5d6", "trace_id": "ac7dd1a4c05eacbcb9e4967f35abb173"}
+________ test_concurrent_csrf_reads_do_not_invalidate_an_existing_token ________
+
+client = <starlette.testclient.TestClient object at 0x10e9fbe30>
+
+    def test_concurrent_csrf_reads_do_not_invalidate_an_existing_token(client):
+        login(client)
+        original = client.cookies.get("cp_csrf")
+        session = client.cookies.get("cp_session")
+        before = csrf_hash(client)
+    
+        def read(_):
+            actor = TestClient(client.app)
+            result = actor.get("/api/v1/auth/csrf", headers={"Cookie": "cp_session=" + session})
+            assert result.status_code == 200, result.text
+            return result.json()["csrf"]
+    
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            tokens = list(pool.map(read, range(12)))
+>       assert tokens == [original] * 12
+E       AssertionError: assert ['lvwPtjzVobQ...qVsGTcs', ...] == ['cONmNXI5SYa...3X6FKGk', ...]
+E         
+E         At index 0 diff: 'lvwPtjzVobQAI2L-pdpWylPx42vno2u4mgnGFCu3rEQ' != 'cONmNXI5SYaKtrF7fYihZysbwBG3EwLYsRk13X6FKGk'
+E         Use -v to get more diff
+
+tests/backend/test_cookie_csrf_security.py:184: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "5c798435-b9a4-4528-b94e-251fc4767f06", "elapsed_ms": 2.741, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3061f1ce533c4be3", "trace_id": "e20a26a15b0d61ebb90dac3edd127747"}
+{"correlation.id": "ca7602b4-6c8d-4418-b02e-49de7c7f2e28", "elapsed_ms": 5.461, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3b9ca85bae6edb06", "trace_id": "8b66d1cfb35d06bf2872e560e61d5f8c"}
+{"correlation.id": "4ac803ec-38ec-49f5-8503-4522c2c8c491", "elapsed_ms": 4.761, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "f21208fba23202d9", "trace_id": "caca65fcf2d17163c1f7f042fa38a066"}
+{"correlation.id": "b194daae-f28d-47fa-815a-59189bd31cc3", "elapsed_ms": 5.16, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "dde011c713064a11", "trace_id": "38132206d32d48fd581f3223eb6326a0"}
+{"correlation.id": "9c8c683b-27cc-448b-9602-fbb105b0e9c9", "elapsed_ms": 5.123, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5175a87fe80fd598", "trace_id": "e65df7c7bda1dedcb9eda0e298b22e32"}
+{"correlation.id": "7137379b-4b20-48b8-aaa1-2b1a6b729079", "elapsed_ms": 4.74, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "100ad1cda9922b57", "trace_id": "803c6b9980435e4c37bc05b8e401f1ec"}
+{"correlation.id": "8aaee707-f15b-4d0e-9e6e-b87101fe122d", "elapsed_ms": 5.402, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "af1de8555ee2f3b6", "trace_id": "6847a4fe928e3c92d054024a43624e5e"}
+{"correlation.id": "e1542e8f-a4fd-4196-aa70-a614494abb29", "elapsed_ms": 4.432, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "1cba8801b7f572aa", "trace_id": "d929d3d28cb3f6c847e21d8c891f411d"}
+{"correlation.id": "f4596837-0acf-4b36-8217-b0aeb8df0081", "elapsed_ms": 3.67, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9e8208c41e2364c6", "trace_id": "1c0bb56786b9bde4240da9f9636dda62"}
+{"correlation.id": "6747a138-d7f3-4bf2-b3a1-8819737c8711", "elapsed_ms": 4.41, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "017f21de117299f7", "trace_id": "8019dd025ffdbdacae7681044421b77f"}
+{"correlation.id": "0b0a0b77-dc53-4d18-ba64-7177daacad94", "elapsed_ms": 4.718, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4940ecdbc03dc270", "trace_id": "ec86d5c0cfbce58a5d3cda6e852e6263"}
+{"correlation.id": "192b2f22-1fa2-49e4-a961-5527fd915c4f", "elapsed_ms": 3.574, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5329cf5caec6d215", "trace_id": "3583e66c8b70bb3eb746a47e009b589b"}
+{"correlation.id": "78042749-25a8-48e4-b2bb-1368c9eb17d5", "elapsed_ms": 4.087, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "e7b8e9a793670495", "trace_id": "ea6f61cc6c113115c15914eb821c5692"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "5c798435-b9a4-4528-b94e-251fc4767f06", "elapsed_ms": 2.741, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3061f1ce533c4be3", "trace_id": "e20a26a15b0d61ebb90dac3edd127747"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "ca7602b4-6c8d-4418-b02e-49de7c7f2e28", "elapsed_ms": 5.461, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3b9ca85bae6edb06", "trace_id": "8b66d1cfb35d06bf2872e560e61d5f8c"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "4ac803ec-38ec-49f5-8503-4522c2c8c491", "elapsed_ms": 4.761, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "f21208fba23202d9", "trace_id": "caca65fcf2d17163c1f7f042fa38a066"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "b194daae-f28d-47fa-815a-59189bd31cc3", "elapsed_ms": 5.16, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "dde011c713064a11", "trace_id": "38132206d32d48fd581f3223eb6326a0"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "9c8c683b-27cc-448b-9602-fbb105b0e9c9", "elapsed_ms": 5.123, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5175a87fe80fd598", "trace_id": "e65df7c7bda1dedcb9eda0e298b22e32"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "7137379b-4b20-48b8-aaa1-2b1a6b729079", "elapsed_ms": 4.74, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "100ad1cda9922b57", "trace_id": "803c6b9980435e4c37bc05b8e401f1ec"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "8aaee707-f15b-4d0e-9e6e-b87101fe122d", "elapsed_ms": 5.402, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "af1de8555ee2f3b6", "trace_id": "6847a4fe928e3c92d054024a43624e5e"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "e1542e8f-a4fd-4196-aa70-a614494abb29", "elapsed_ms": 4.432, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "1cba8801b7f572aa", "trace_id": "d929d3d28cb3f6c847e21d8c891f411d"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "f4596837-0acf-4b36-8217-b0aeb8df0081", "elapsed_ms": 3.67, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9e8208c41e2364c6", "trace_id": "1c0bb56786b9bde4240da9f9636dda62"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "6747a138-d7f3-4bf2-b3a1-8819737c8711", "elapsed_ms": 4.41, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "017f21de117299f7", "trace_id": "8019dd025ffdbdacae7681044421b77f"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "0b0a0b77-dc53-4d18-ba64-7177daacad94", "elapsed_ms": 4.718, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4940ecdbc03dc270", "trace_id": "ec86d5c0cfbce58a5d3cda6e852e6263"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "192b2f22-1fa2-49e4-a961-5527fd915c4f", "elapsed_ms": 3.574, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5329cf5caec6d215", "trace_id": "3583e66c8b70bb3eb746a47e009b589b"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "78042749-25a8-48e4-b2bb-1368c9eb17d5", "elapsed_ms": 4.087, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "e7b8e9a793670495", "trace_id": "ea6f61cc6c113115c15914eb821c5692"}
+_____________ test_csrf_get_rederives_token_after_cookie_deletion ______________
+
+client = <starlette.testclient.TestClient object at 0x10eb89130>
+
+    def test_csrf_get_rederives_token_after_cookie_deletion(client):
+        login(client)
+        original = client.cookies.get("cp_csrf")
+        before = csrf_hash(client)
+        client.cookies.delete("cp_csrf")
+        result = client.get("/api/v1/auth/csrf")
+        assert result.status_code == 200
+>       assert result.json()["csrf"] == original
+E       AssertionError: assert 'NQQH1hp9If7w...b9_MuQg5tPD-U' == 'v5xx-afEX-Ro...SOd_ObmmpqRSc'
+E         
+E         - v5xx-afEX-Roq81S-UjzNN_Hc8u3eJSOd_ObmmpqRSc
+E         + NQQH1hp9If7wlPOwjQZ-TqoJZ1aBGNb9_MuQg5tPD-U
+
+tests/backend/test_cookie_csrf_security.py:202: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "e2919802-1395-4bc5-90af-3ff5814657f8", "elapsed_ms": 2.442, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "ca93be99f9625d06", "trace_id": "aacede890baf1eb16d1956c346df84ea"}
+{"correlation.id": "63270493-2440-43ae-bf4b-80404b9099ac", "elapsed_ms": 1.611, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "f032185a97a0e6c4", "trace_id": "8a093731374fb28aca41e67592d41dd5"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "e2919802-1395-4bc5-90af-3ff5814657f8", "elapsed_ms": 2.442, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "ca93be99f9625d06", "trace_id": "aacede890baf1eb16d1956c346df84ea"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "63270493-2440-43ae-bf4b-80404b9099ac", "elapsed_ms": 1.611, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "f032185a97a0e6c4", "trace_id": "8a093731374fb28aca41e67592d41dd5"}
+_________ test_legacy_random_csrf_is_reused_only_with_matching_cookie __________
+
+client = <starlette.testclient.TestClient object at 0x10ed2f980>
+
+    def test_legacy_random_csrf_is_reused_only_with_matching_cookie(client):
+        login(client)
+        legacy = "legacy-random-token-not-derived-from-session"
+        with client.app.state.factory.begin() as db:
+            db.scalar(select(SessionRow)).csrf_hash = digest(legacy)
+        before = csrf_hash(client)
+        session = client.cookies.get("cp_session")
+        result = client.get(
+            "/api/v1/auth/csrf",
+            headers={"Cookie": "cp_session=" + session + "; cp_csrf=" + legacy},
+        )
+        assert result.status_code == 200
+>       assert result.json()["csrf"] == legacy
+E       AssertionError: assert 'Shav5itKBHhF...-I7TKF3clQ7dQ' == 'legacy-rando...-from-session'
+E         
+E         - legacy-random-token-not-derived-from-session
+E         + Shav5itKBHhFkcIMK0Gz0APjTI3p2E-I7TKF3clQ7dQ
+
+tests/backend/test_cookie_csrf_security.py:219: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "4f6ea47e-9a81-479f-ba5c-9824a54142f4", "elapsed_ms": 3.06, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "b0d1bb1a823e8ac8", "trace_id": "f0f7487ec65c14def146bdbc479d123c"}
+{"correlation.id": "7cb37ec8-f63a-4571-9b55-11448c37a359", "elapsed_ms": 1.455, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "6ccfc486aae43e6c", "trace_id": "fa3e8b0952d816f115de703213600d86"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "4f6ea47e-9a81-479f-ba5c-9824a54142f4", "elapsed_ms": 3.06, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "b0d1bb1a823e8ac8", "trace_id": "f0f7487ec65c14def146bdbc479d123c"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "7cb37ec8-f63a-4571-9b55-11448c37a359", "elapsed_ms": 1.455, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "6ccfc486aae43e6c", "trace_id": "fa3e8b0952d816f115de703213600d86"}
+______ test_legacy_random_csrf_without_matching_cookie_requires_signin[] _______
+
+client = <starlette.testclient.TestClient object at 0x10ee867e0>, cookie = ''
+
+    @pytest.mark.parametrize("cookie", ["", "; cp_csrf=wrong-legacy-token"])
+    def test_legacy_random_csrf_without_matching_cookie_requires_signin(client, cookie):
+        login(client)
+        with client.app.state.factory.begin() as db:
+            db.scalar(select(SessionRow)).csrf_hash = digest("legacy-random-token")
+        before = csrf_hash(client)
+        session = client.cookies.get("cp_session")
+        denied = client.get("/api/v1/auth/csrf", headers={"Cookie": "cp_session=" + session + cookie})
+>       assert denied.status_code == 401
+E       assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+
+tests/backend/test_cookie_csrf_security.py:231: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "1dd10261-dfdd-4a63-8ed8-b522391ef61d", "elapsed_ms": 2.509, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "177a6bf43c1b91e6", "trace_id": "456e9621db17da2fde3e9bdf57f10ede"}
+{"correlation.id": "fb75d9f8-f0fb-46d5-9f05-999745725e13", "elapsed_ms": 1.519, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "c4dd3a9d3e1be7f2", "trace_id": "144d84adb3b16843b8ad40dedc7384d7"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "1dd10261-dfdd-4a63-8ed8-b522391ef61d", "elapsed_ms": 2.509, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "177a6bf43c1b91e6", "trace_id": "456e9621db17da2fde3e9bdf57f10ede"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "fb75d9f8-f0fb-46d5-9f05-999745725e13", "elapsed_ms": 1.519, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "c4dd3a9d3e1be7f2", "trace_id": "144d84adb3b16843b8ad40dedc7384d7"}
+_ test_legacy_random_csrf_without_matching_cookie_requires_signin[; cp_csrf=wrong-legacy-token] _
+
+client = <starlette.testclient.TestClient object at 0x10d8954c0>
+cookie = '; cp_csrf=wrong-legacy-token'
+
+    @pytest.mark.parametrize("cookie", ["", "; cp_csrf=wrong-legacy-token"])
+    def test_legacy_random_csrf_without_matching_cookie_requires_signin(client, cookie):
+        login(client)
+        with client.app.state.factory.begin() as db:
+            db.scalar(select(SessionRow)).csrf_hash = digest("legacy-random-token")
+        before = csrf_hash(client)
+        session = client.cookies.get("cp_session")
+        denied = client.get("/api/v1/auth/csrf", headers={"Cookie": "cp_session=" + session + cookie})
+>       assert denied.status_code == 401
+E       assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+
+tests/backend/test_cookie_csrf_security.py:231: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "a1adadcd-6cf0-45b8-b88c-3a2d08683d15", "elapsed_ms": 2.98, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "600be3ca3eb83791", "trace_id": "d61ef6bdb9fc6d4761c21384a4351bce"}
+{"correlation.id": "76afbd43-393f-448f-b8ad-839ec5d3826e", "elapsed_ms": 1.494, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3d5dc9b8eeff70c8", "trace_id": "091f36bd0cfcf0b4f2e612590bf7b8df"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "a1adadcd-6cf0-45b8-b88c-3a2d08683d15", "elapsed_ms": 2.98, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "600be3ca3eb83791", "trace_id": "d61ef6bdb9fc6d4761c21384a4351bce"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "76afbd43-393f-448f-b8ad-839ec5d3826e", "elapsed_ms": 1.494, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/auth/csrf", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "3d5dc9b8eeff70c8", "trace_id": "091f36bd0cfcf0b4f2e612590bf7b8df"}
+=============================== warnings summary ===============================
+../../.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/pie/CargoPulse_Production_Build_Package/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/backend/test_cookie_csrf_security.py::test_production_cookie_prefixes_flags_and_logout_deletion
+FAILED tests/backend/test_cookie_csrf_security.py::test_production_rejects_unprefixed_session_fallback
+FAILED tests/backend/test_cookie_csrf_security.py::test_production_oidc_binding_prefix_and_no_unprefixed_fallback
+FAILED tests/backend/test_cookie_csrf_security.py::test_production_oidc_reauthentication_rotates_selected_cookie
+FAILED tests/backend/test_cookie_csrf_security.py::test_repeated_csrf_get_is_stable_and_does_not_update_hash[False]
+FAILED tests/backend/test_cookie_csrf_security.py::test_repeated_csrf_get_is_stable_and_does_not_update_hash[True]
+FAILED tests/backend/test_cookie_csrf_security.py::test_concurrent_csrf_reads_do_not_invalidate_an_existing_token
+FAILED tests/backend/test_cookie_csrf_security.py::test_csrf_get_rederives_token_after_cookie_deletion
+FAILED tests/backend/test_cookie_csrf_security.py::test_legacy_random_csrf_is_reused_only_with_matching_cookie
+FAILED tests/backend/test_cookie_csrf_security.py::test_legacy_random_csrf_without_matching_cookie_requires_signin[]
+FAILED tests/backend/test_cookie_csrf_security.py::test_legacy_random_csrf_without_matching_cookie_requires_signin[; cp_csrf=wrong-legacy-token]
+11 failed, 2 passed, 1 warning in 1.44s

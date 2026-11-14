@@ -1,0 +1,47 @@
+FFFFF                                                                    [100%]
+================================== FAILURES ===================================
+___________ test_json_escapes_cannot_bypass_csv_control_checks[\t] ____________
+tests\backend\test_csv_security.py:106: in test_json_escapes_cannot_bypass_csv_control_checks
+    assert_rejected_without_import(client, result)
+tests\backend\test_csv_security.py:58: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"7b8c8cca-8bae-48dc-b238-56f786ef0c78","status":"READY","content_sha256":"85e66855e4aaec7ac10594059bca548980d440531d2540494336adc0b4184dc3","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T06:07:40.023901Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+___________ test_json_escapes_cannot_bypass_csv_control_checks[\r] ____________
+tests\backend\test_csv_security.py:106: in test_json_escapes_cannot_bypass_csv_control_checks
+    assert_rejected_without_import(client, result)
+tests\backend\test_csv_security.py:58: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"1e936428-ff9c-4e3f-b4fa-3ded63c4ad95","status":"READY","content_sha256":"85e66855e4aaec7ac10594059bca548980d440531d2540494336adc0b4184dc3","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T06:07:40.666769Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+___________ test_json_escapes_cannot_bypass_csv_control_checks[\n] ____________
+tests\backend\test_csv_security.py:106: in test_json_escapes_cannot_bypass_csv_control_checks
+    assert_rejected_without_import(client, result)
+tests\backend\test_csv_security.py:58: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"bfcf7460-0580-4c03-8515-02b7596460c2","status":"READY","content_sha256":"85e66855e4aaec7ac10594059bca548980d440531d2540494336adc0b4184dc3","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T06:07:40.999216Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+__________ test_json_escapes_cannot_bypass_csv_control_checks[\x00] ___________
+tests\backend\test_csv_security.py:107: in test_json_escapes_cannot_bypass_csv_control_checks
+    assert "control character" in result.json()["detail"]
+E   AssertionError: assert 'control character' in 'Controlled CSV failed validation: CSV or metadata does not match the snapshot schema'
+__________ test_json_escapes_cannot_bypass_csv_control_checks[\x7f] ___________
+tests\backend\test_csv_security.py:107: in test_json_escapes_cannot_bypass_csv_control_checks
+    assert "control character" in result.json()["detail"]
+E   AssertionError: assert 'control character' in 'Controlled CSV failed validation: CSV or metadata does not match the snapshot schema'
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  <checkout>\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/backend/test_csv_security.py::test_json_escapes_cannot_bypass_csv_control_checks[\t]
+FAILED tests/backend/test_csv_security.py::test_json_escapes_cannot_bypass_csv_control_checks[\r]
+FAILED tests/backend/test_csv_security.py::test_json_escapes_cannot_bypass_csv_control_checks[\n]
+FAILED tests/backend/test_csv_security.py::test_json_escapes_cannot_bypass_csv_control_checks[\x00]
+FAILED tests/backend/test_csv_security.py::test_json_escapes_cannot_bypass_csv_control_checks[\x7f]
+5 failed, 41 deselected, 1 warning in 2.68s

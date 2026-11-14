@@ -1,0 +1,154 @@
+{
+  "scope": "quiesced local synthetic container restore; not managed PITR or S3 recovery",
+  "status": "PASS",
+  "started_utc": "20261111_173403",
+  "isolated_restored_database": "cargopulse_restore_drill_20261111_173403",
+  "backup_sha256": "31b21dbeca85fd40a792870638f593d65ed90f3a2c9d3ac2bc9ea47e3a8d456a",
+  "object_archive_sha256": "cfbf59e14efead343cbbea587f46cdbb219a3c2faa5b3d65617632b0c85ece2e",
+  "private_object_count": 11,
+  "pending_jobs_cancelled": 0,
+  "referenced_import_objects": 11,
+  "backup_seconds": 11.256,
+  "restore_and_verify_seconds": 1.147,
+  "total_seconds": 13.23,
+  "quiesced_data_loss_rows": 0,
+  "before": {
+    "alembic_version": {
+      "rows": 1,
+      "digest": "dff5707f847badf329193d5c49c49816"
+    },
+    "audit_events": {
+      "rows": 116,
+      "digest": "bf90c7029c87beebe74836406bf97132"
+    },
+    "idempotency_keys": {
+      "rows": 53,
+      "digest": "c714b4b4607b04d4c39b58b79ce3cd3b"
+    },
+    "identities": {
+      "rows": 6,
+      "digest": "992ba32fdedc31d38861edd4eed5e7ad"
+    },
+    "ingest_batches": {
+      "rows": 11,
+      "digest": "c5ca12f71ebbffc18f1bb390ca53a983"
+    },
+    "oidc_flows": {
+      "rows": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "outbox_events": {
+      "rows": 11,
+      "digest": "3acffe5f403686ea4b6e368e4867ecbc"
+    },
+    "plan_decisions": {
+      "rows": 9,
+      "digest": "9c7b68d88b8404a9d5f6f7faeb569022"
+    },
+    "policy_sets": {
+      "rows": 2,
+      "digest": "397e6ed8eac03d4a73c6dab6566aba60"
+    },
+    "scenarios": {
+      "rows": 11,
+      "digest": "eb75634401ee0595bee64527d3d7c4a4"
+    },
+    "sessions": {
+      "rows": 37,
+      "digest": "e9e5901333225775b39bd6bbca16f1c5"
+    },
+    "snapshots": {
+      "rows": 11,
+      "digest": "c489494252f0b4398fd986709595bb0a"
+    },
+    "solution_plans": {
+      "rows": 23,
+      "digest": "d59d0e7a898e5bb355b6ccd2145478e5"
+    },
+    "solve_jobs": {
+      "rows": 11,
+      "digest": "4f073d9e90649a44fc445ec9b1a8431a"
+    },
+    "tenants": {
+      "rows": 2,
+      "digest": "d1c153083f61f445fea534558062d16a"
+    }
+  },
+  "after_reconciliation": {
+    "alembic_version": {
+      "rows": 1,
+      "digest": "dff5707f847badf329193d5c49c49816"
+    },
+    "audit_events": {
+      "rows": 116,
+      "digest": "bf90c7029c87beebe74836406bf97132"
+    },
+    "idempotency_keys": {
+      "rows": 53,
+      "digest": "c714b4b4607b04d4c39b58b79ce3cd3b"
+    },
+    "identities": {
+      "rows": 6,
+      "digest": "992ba32fdedc31d38861edd4eed5e7ad"
+    },
+    "ingest_batches": {
+      "rows": 11,
+      "digest": "c5ca12f71ebbffc18f1bb390ca53a983"
+    },
+    "oidc_flows": {
+      "rows": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "outbox_events": {
+      "rows": 11,
+      "digest": "3acffe5f403686ea4b6e368e4867ecbc"
+    },
+    "plan_decisions": {
+      "rows": 9,
+      "digest": "9c7b68d88b8404a9d5f6f7faeb569022"
+    },
+    "policy_sets": {
+      "rows": 2,
+      "digest": "397e6ed8eac03d4a73c6dab6566aba60"
+    },
+    "scenarios": {
+      "rows": 11,
+      "digest": "e9bb48ae6f14d9414f8814ede26e2d8d"
+    },
+    "sessions": {
+      "rows": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "snapshots": {
+      "rows": 11,
+      "digest": "c489494252f0b4398fd986709595bb0a"
+    },
+    "solution_plans": {
+      "rows": 23,
+      "digest": "b766afb07f1cd960e48ec677acb4d63a"
+    },
+    "solve_jobs": {
+      "rows": 11,
+      "digest": "4f073d9e90649a44fc445ec9b1a8431a"
+    },
+    "tenants": {
+      "rows": 2,
+      "digest": "d1c153083f61f445fea534558062d16a"
+    }
+  },
+  "checks": [
+    "all restored table counts and row digests identical before reconciliation",
+    "every restored private object matches SHA-256 key",
+    "all referenced source objects restored",
+    "sessions and transient OIDC flows invalidated",
+    "pending jobs cancelled and outbox reconciled",
+    "no restored scenario is current",
+    "historical decisions, audit, snapshots and policies unchanged"
+  ],
+  "limits": [
+    "source stack is deliberately quiesced",
+    "not an online backup or multi-region test",
+    "no 15-minute PITR RPO or four-hour production RTO established",
+    "isolated restored database is retained for inspection; it is never promoted"
+  ]
+}

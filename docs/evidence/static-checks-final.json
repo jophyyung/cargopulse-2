@@ -1,0 +1,23 @@
+{
+  "configured_security_gate": {
+    "command": "ruff check services packages scripts --select S --ignore S101",
+    "exit_code": 0,
+    "scope": "selected runtime/tooling security rules; asserts excluded by the existing CI policy"
+  },
+  "extra_broad_diagnostic": {
+    "command": "ruff check --select S services packages scripts tests",
+    "exit_code": 1,
+    "rule_counts": {
+      "S101": 528
+    },
+    "non_test_files": {
+      "scripts/restore_drill.py": 9,
+      "scripts/verify_runtime.py": 13
+    },
+    "interpretation": "All 528 findings are S101 assertions in tests or verification/drill tooling. This broad diagnostic is not reported as a pass."
+  },
+  "standard_lint_exit_code": 0,
+  "typescript_typecheck_exit_code": 0,
+  "tracked_secret_conflict_pattern_check_exit_code": 0,
+  "staged_whitespace_check_exit_code": 0
+}

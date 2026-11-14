@@ -1,0 +1,538 @@
+FFFFFFFFFFFFFFF....FFFFFFFF........F                                     [100%]
+================================== FAILURES ===================================
+_________ test_duplicate_columns_cannot_silently_replace_a_value[id] __________
+tests\backend\test_csv_security.py:71: in test_duplicate_columns_cannot_silently_replace_a_value
+    assert_rejected_without_import(client, upload(client, metadata, csv_bytes(fields, rows)))
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"3e56d149-7e71-4bb0-aaed-c3ddd162f933","status":"READY","content_sha256":"587f32ce7e1c49abc8df7a7da717d8b0a850468e7012835a34eeb617ca572a88","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:15.552080Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+___ test_duplicate_columns_cannot_silently_replace_a_value[actual_mass_kg] ____
+tests\backend\test_csv_security.py:71: in test_duplicate_columns_cannot_silently_replace_a_value
+    assert_rejected_without_import(client, upload(client, metadata, csv_bytes(fields, rows)))
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"01b4b834-25e1-4aea-9d8c-bb9f5951cee5","status":"READY","content_sha256":"587f32ce7e1c49abc8df7a7da717d8b0a850468e7012835a34eeb617ca572a88","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:15.877282Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+______ test_duplicate_columns_cannot_silently_replace_a_value[security] _______
+tests\backend\test_csv_security.py:71: in test_duplicate_columns_cannot_silently_replace_a_value
+    assert_rejected_without_import(client, upload(client, metadata, csv_bytes(fields, rows)))
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"4a7f441c-a841-436a-8032-48fff625b12f","status":"READY","content_sha256":"587f32ce7e1c49abc8df7a7da717d8b0a850468e7012835a34eeb617ca572a88","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:15.999073Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+______________ test_empty_or_unknown_columns_cannot_be_ignored[] ______________
+tests\backend\test_csv_security.py:77: in test_empty_or_unknown_columns_cannot_be_ignored
+    assert_rejected_without_import(
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"32ebe1c9-ceb5-4f18-a587-1c8de6e10a32","status":"READY","content_sha256":"1c4077fffebbe34768660afb01ed020047e050e9455058cfd5ccd02acc75cfa3","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:16.088596Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+_____ test_empty_or_unknown_columns_cannot_be_ignored[unexpected_column] ______
+tests\backend\test_csv_security.py:77: in test_empty_or_unknown_columns_cannot_be_ignored
+    assert_rejected_without_import(
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"7e713916-26e2-492a-a3b9-f52a10c5a126","status":"READY","content_sha256":"1c4077fffebbe34768660afb01ed020047e050e9455058cfd5ccd02acc75cfa3","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:16.179525Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+____________ test_empty_or_unknown_columns_cannot_be_ignored[ id] _____________
+tests\backend\test_csv_security.py:77: in test_empty_or_unknown_columns_cannot_be_ignored
+    assert_rejected_without_import(
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"4d0a9edc-f04a-464a-8e45-55456e0c2ab3","status":"READY","content_sha256":"1c4077fffebbe34768660afb01ed020047e050e9455058cfd5ccd02acc75cfa3","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:16.270101Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+_____________ test_empty_or_unknown_columns_cannot_be_ignored[ID] _____________
+tests\backend\test_csv_security.py:77: in test_empty_or_unknown_columns_cannot_be_ignored
+    assert_rejected_without_import(
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"8f27680f-6311-4443-bda9-6f8afd534c94","status":"READY","content_sha256":"1c4077fffebbe34768660afb01ed020047e050e9455058cfd5ccd02acc75cfa3","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:16.356507Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+______ test_control_characters_are_rejected_before_numeric_coercion[\t] _______
+tests\backend\test_csv_security.py:88: in test_control_characters_are_rejected_before_numeric_coercion
+    assert_rejected_without_import(client, result)
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"1bf62a09-6720-4332-a7cf-9a29db0aacf9","status":"READY","content_sha256":"1c4077fffebbe34768660afb01ed020047e050e9455058cfd5ccd02acc75cfa3","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:16.443128Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+______ test_control_characters_are_rejected_before_numeric_coercion[\r] _______
+tests\backend\test_csv_security.py:88: in test_control_characters_are_rejected_before_numeric_coercion
+    assert_rejected_without_import(client, result)
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"b1d43beb-1b32-4472-ac41-7f6d8d4e23da","status":"READY","content_sha256":"1c4077fffebbe34768660afb01ed020047e050e9455058cfd5ccd02acc75cfa3","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:16.578298Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+______ test_control_characters_are_rejected_before_numeric_coercion[\n] _______
+tests\backend\test_csv_security.py:88: in test_control_characters_are_rejected_before_numeric_coercion
+    assert_rejected_without_import(client, result)
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"2a820489-8df8-4552-96be-4a4e2422b4a8","status":"READY","content_sha256":"1c4077fffebbe34768660afb01ed020047e050e9455058cfd5ccd02acc75cfa3","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:16.668536Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+_____ test_control_characters_are_rejected_before_numeric_coercion[\x00] ______
+tests\backend\test_csv_security.py:87: in test_control_characters_are_rejected_before_numeric_coercion
+    result = upload(client, metadata, csv_bytes(fields, rows))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\backend\test_csv_security.py:45: in upload
+    return client.post(
+.venv\Lib\site-packages\httpx\_client.py:1144: in post
+    return self.request(
+.venv\Lib\site-packages\starlette\testclient.py:518: in request
+    return super().request(
+.venv\Lib\site-packages\httpx\_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_client.py:928: in send
+    raise exc
+.venv\Lib\site-packages\httpx\_client.py:922: in send
+    response.read()
+.venv\Lib\site-packages\httpx\_models.py:881: in read
+    self._content = b"".join(self.iter_bytes())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_models.py:897: in iter_bytes
+    for raw_bytes in self.iter_raw():
+                     ^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_models.py:951: in iter_raw
+    for raw_stream_bytes in self.stream:
+                            ^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_client.py:153: in __iter__
+    for chunk in self._stream:
+                 ^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\testclient.py:384: in iter_body
+    exit_stack.close()
+<python-runtime>\Lib\contextlib.py:618: in close
+    self.__exit__(None, None, None)
+<python-runtime>\Lib\contextlib.py:610: in __exit__
+    raise exc_details[1]
+<python-runtime>\Lib\contextlib.py:595: in __exit__
+    if cb(*exc_details):
+       ^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\testclient.py:399: in close_app
+    raise exception
+.venv\Lib\site-packages\anyio\from_thread.py:272: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\testclient.py:366: in run_app
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\fastapi\applications.py:1194: in __call__
+    await super().__call__(scope, receive, send)
+.venv\Lib\site-packages\starlette\applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv\Lib\site-packages\starlette\middleware\errors.py:186: in __call__
+    raise exc
+.venv\Lib\site-packages\starlette\middleware\errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv\Lib\site-packages\fastapi\telemetry\_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\starlette\middleware\base.py:203: in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services\api\cargopulse_api\main.py:197: in boundaries
+    response = await boundary_response(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services\api\cargopulse_api\main.py:183: in boundary_response
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\middleware\base.py:179: in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+.venv\Lib\site-packages\starlette\middleware\base.py:149: in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+.venv\Lib\site-packages\starlette\middleware\exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\starlette\routing.py:683: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv\Lib\site-packages\fastapi\routing.py:2811: in app
+    await route.handle(scope, receive, send)
+.venv\Lib\site-packages\fastapi\routing.py:1330: in handle
+    await super().handle(scope, receive, send)
+.venv\Lib\site-packages\starlette\routing.py:289: in handle
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\fastapi\routing.py:166: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv\Lib\site-packages\fastapi\routing.py:152: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\fastapi\routing.py:745: in app
+    raw_response = await run_endpoint_function(
+.venv\Lib\site-packages\fastapi\routing.py:374: in run_endpoint_function
+    return await run_in_threadpool(
+.venv\Lib\site-packages\starlette\concurrency.py:34: in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\anyio\to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+.venv\Lib\site-packages\anyio\_backends\_asyncio.py:2779: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+.venv\Lib\site-packages\anyio\_backends\_asyncio.py:1124: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\fastapi\telemetry\_api.py:244: in _run_sync_endpoint
+    return function(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^
+services\api\cargopulse_api\main.py:518: in upload_csv
+    snapshot = ScenarioSnapshot.model_validate(value)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+packages\contracts\python\cargopulse_contracts\models.py:24: in _decimal
+    d = Decimal(value)
+        ^^^^^^^^^^^^^^
+E   decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+_____ test_control_characters_are_rejected_before_numeric_coercion[\x0b] ______
+tests\backend\test_csv_security.py:88: in test_control_characters_are_rejected_before_numeric_coercion
+    assert_rejected_without_import(client, result)
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"6a089505-f35a-422c-9fce-4abd0c29780e","status":"READY","content_sha256":"1c4077fffebbe34768660afb01ed020047e050e9455058cfd5ccd02acc75cfa3","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:16.993778Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+_____ test_control_characters_are_rejected_before_numeric_coercion[\x0c] ______
+tests\backend\test_csv_security.py:88: in test_control_characters_are_rejected_before_numeric_coercion
+    assert_rejected_without_import(client, result)
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"a2972b7e-a7d4-494d-aa79-cb8898b15633","status":"READY","content_sha256":"b3b47b46fad5f2d1ef643013bea39276af30b2d07dcd5b4af989efe9be459ba5","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:17.078634Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+_____ test_control_characters_are_rejected_before_numeric_coercion[\x1f] ______
+tests\backend\test_csv_security.py:88: in test_control_characters_are_rejected_before_numeric_coercion
+    assert_rejected_without_import(client, result)
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"edc49d4c-39f0-4653-97ad-99928b5ddba7","status":"READY","content_sha256":"b3b47b46fad5f2d1ef643013bea39276af30b2d07dcd5b4af989efe9be459ba5","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:17.227192Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+_____ test_control_characters_are_rejected_before_numeric_coercion[\x7f] ______
+tests\backend\test_csv_security.py:87: in test_control_characters_are_rejected_before_numeric_coercion
+    result = upload(client, metadata, csv_bytes(fields, rows))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\backend\test_csv_security.py:45: in upload
+    return client.post(
+.venv\Lib\site-packages\httpx\_client.py:1144: in post
+    return self.request(
+.venv\Lib\site-packages\starlette\testclient.py:518: in request
+    return super().request(
+.venv\Lib\site-packages\httpx\_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_client.py:928: in send
+    raise exc
+.venv\Lib\site-packages\httpx\_client.py:922: in send
+    response.read()
+.venv\Lib\site-packages\httpx\_models.py:881: in read
+    self._content = b"".join(self.iter_bytes())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_models.py:897: in iter_bytes
+    for raw_bytes in self.iter_raw():
+                     ^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_models.py:951: in iter_raw
+    for raw_stream_bytes in self.stream:
+                            ^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_client.py:153: in __iter__
+    for chunk in self._stream:
+                 ^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\testclient.py:384: in iter_body
+    exit_stack.close()
+<python-runtime>\Lib\contextlib.py:618: in close
+    self.__exit__(None, None, None)
+<python-runtime>\Lib\contextlib.py:610: in __exit__
+    raise exc_details[1]
+<python-runtime>\Lib\contextlib.py:595: in __exit__
+    if cb(*exc_details):
+       ^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\testclient.py:399: in close_app
+    raise exception
+.venv\Lib\site-packages\anyio\from_thread.py:272: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\testclient.py:366: in run_app
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\fastapi\applications.py:1194: in __call__
+    await super().__call__(scope, receive, send)
+.venv\Lib\site-packages\starlette\applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv\Lib\site-packages\starlette\middleware\errors.py:186: in __call__
+    raise exc
+.venv\Lib\site-packages\starlette\middleware\errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv\Lib\site-packages\fastapi\telemetry\_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\starlette\middleware\base.py:203: in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services\api\cargopulse_api\main.py:197: in boundaries
+    response = await boundary_response(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services\api\cargopulse_api\main.py:183: in boundary_response
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\middleware\base.py:179: in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+.venv\Lib\site-packages\starlette\middleware\base.py:149: in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+.venv\Lib\site-packages\starlette\middleware\exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\starlette\routing.py:683: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv\Lib\site-packages\fastapi\routing.py:2811: in app
+    await route.handle(scope, receive, send)
+.venv\Lib\site-packages\fastapi\routing.py:1330: in handle
+    await super().handle(scope, receive, send)
+.venv\Lib\site-packages\starlette\routing.py:289: in handle
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\fastapi\routing.py:166: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv\Lib\site-packages\fastapi\routing.py:152: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\fastapi\routing.py:745: in app
+    raw_response = await run_endpoint_function(
+.venv\Lib\site-packages\fastapi\routing.py:374: in run_endpoint_function
+    return await run_in_threadpool(
+.venv\Lib\site-packages\starlette\concurrency.py:34: in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\anyio\to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+.venv\Lib\site-packages\anyio\_backends\_asyncio.py:2779: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+.venv\Lib\site-packages\anyio\_backends\_asyncio.py:1124: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\fastapi\telemetry\_api.py:244: in _run_sync_endpoint
+    return function(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^
+services\api\cargopulse_api\main.py:518: in upload_csv
+    snapshot = ScenarioSnapshot.model_validate(value)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+packages\contracts\python\cargopulse_contracts\models.py:24: in _decimal
+    d = Decimal(value)
+        ^^^^^^^^^^^^^^
+E   decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+_____ test_formula_prefixes_are_rejected_with_leading_whitespace[\uff1d] ______
+tests\backend\test_csv_security.py:98: in test_formula_prefixes_are_rejected_with_leading_whitespace
+    assert "unsafe formula" in result.json()["detail"]
+E   assert 'unsafe formula' in "Controlled CSV failed validation: 1 validation error for ScenarioSnapshot\ncargo_units.0.id\n  String should match pa...CANARY', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch"
+_____ test_formula_prefixes_are_rejected_with_leading_whitespace[\uff0b] ______
+tests\backend\test_csv_security.py:98: in test_formula_prefixes_are_rejected_with_leading_whitespace
+    assert "unsafe formula" in result.json()["detail"]
+E   assert 'unsafe formula' in "Controlled CSV failed validation: 1 validation error for ScenarioSnapshot\ncargo_units.0.id\n  String should match pa...CANARY', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch"
+_____ test_formula_prefixes_are_rejected_with_leading_whitespace[\uff0d] ______
+tests\backend\test_csv_security.py:98: in test_formula_prefixes_are_rejected_with_leading_whitespace
+    assert "unsafe formula" in result.json()["detail"]
+E   assert 'unsafe formula' in "Controlled CSV failed validation: 1 validation error for ScenarioSnapshot\ncargo_units.0.id\n  String should match pa...CANARY', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch"
+_____ test_formula_prefixes_are_rejected_with_leading_whitespace[\uff20] ______
+tests\backend\test_csv_security.py:98: in test_formula_prefixes_are_rejected_with_leading_whitespace
+    assert "unsafe formula" in result.json()["detail"]
+E   assert 'unsafe formula' in "Controlled CSV failed validation: 1 validation error for ScenarioSnapshot\ncargo_units.0.id\n  String should match pa...CANARY', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch"
+_____________ test_schema_errors_do_not_echo_private_cell_values ______________
+tests\backend\test_csv_security.py:106: in test_schema_errors_do_not_echo_private_cell_values
+    result = upload(client, metadata, csv_bytes(fields, rows))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\backend\test_csv_security.py:45: in upload
+    return client.post(
+.venv\Lib\site-packages\httpx\_client.py:1144: in post
+    return self.request(
+.venv\Lib\site-packages\starlette\testclient.py:518: in request
+    return super().request(
+.venv\Lib\site-packages\httpx\_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_client.py:928: in send
+    raise exc
+.venv\Lib\site-packages\httpx\_client.py:922: in send
+    response.read()
+.venv\Lib\site-packages\httpx\_models.py:881: in read
+    self._content = b"".join(self.iter_bytes())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_models.py:897: in iter_bytes
+    for raw_bytes in self.iter_raw():
+                     ^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_models.py:951: in iter_raw
+    for raw_stream_bytes in self.stream:
+                            ^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_client.py:153: in __iter__
+    for chunk in self._stream:
+                 ^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\testclient.py:384: in iter_body
+    exit_stack.close()
+<python-runtime>\Lib\contextlib.py:618: in close
+    self.__exit__(None, None, None)
+<python-runtime>\Lib\contextlib.py:610: in __exit__
+    raise exc_details[1]
+<python-runtime>\Lib\contextlib.py:595: in __exit__
+    if cb(*exc_details):
+       ^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\testclient.py:399: in close_app
+    raise exception
+.venv\Lib\site-packages\anyio\from_thread.py:272: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\testclient.py:366: in run_app
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\fastapi\applications.py:1194: in __call__
+    await super().__call__(scope, receive, send)
+.venv\Lib\site-packages\starlette\applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv\Lib\site-packages\starlette\middleware\errors.py:186: in __call__
+    raise exc
+.venv\Lib\site-packages\starlette\middleware\errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv\Lib\site-packages\fastapi\telemetry\_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\starlette\middleware\base.py:203: in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services\api\cargopulse_api\main.py:197: in boundaries
+    response = await boundary_response(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services\api\cargopulse_api\main.py:183: in boundary_response
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\starlette\middleware\base.py:179: in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+.venv\Lib\site-packages\starlette\middleware\base.py:149: in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+.venv\Lib\site-packages\starlette\middleware\exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\starlette\routing.py:683: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv\Lib\site-packages\fastapi\routing.py:2811: in app
+    await route.handle(scope, receive, send)
+.venv\Lib\site-packages\fastapi\routing.py:1330: in handle
+    await super().handle(scope, receive, send)
+.venv\Lib\site-packages\starlette\routing.py:289: in handle
+    await self.app(scope, receive, send)
+.venv\Lib\site-packages\fastapi\routing.py:166: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv\Lib\site-packages\fastapi\routing.py:152: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\fastapi\routing.py:745: in app
+    raw_response = await run_endpoint_function(
+.venv\Lib\site-packages\fastapi\routing.py:374: in run_endpoint_function
+    return await run_in_threadpool(
+.venv\Lib\site-packages\starlette\concurrency.py:34: in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\anyio\to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+.venv\Lib\site-packages\anyio\_backends\_asyncio.py:2779: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+.venv\Lib\site-packages\anyio\_backends\_asyncio.py:1124: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\fastapi\telemetry\_api.py:244: in _run_sync_endpoint
+    return function(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^
+services\api\cargopulse_api\main.py:518: in upload_csv
+    snapshot = ScenarioSnapshot.model_validate(value)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+packages\contracts\python\cargopulse_contracts\models.py:24: in _decimal
+    d = Decimal(value)
+        ^^^^^^^^^^^^^^
+E   decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+__ test_duplicate_json_keys_cannot_hide_conflicting_source_values[metadata] ___
+tests\backend\test_csv_security.py:120: in test_duplicate_json_keys_cannot_hide_conflicting_source_values
+    assert_rejected_without_import(client, upload(client, metadata, csv_bytes(fields, rows)))
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"00145028-5d00-43c9-8062-c26bad7c9603","status":"READY","content_sha256":"f8cb0a4a5eeba73e28f7413c2ebd35ff87e584d65d43efe5bce32b680477a7ed","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:18.470588Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+_ test_duplicate_json_keys_cannot_hide_conflicting_source_values[nested_cell] _
+tests\backend\test_csv_security.py:120: in test_duplicate_json_keys_cannot_hide_conflicting_source_values
+    assert_rejected_without_import(client, upload(client, metadata, csv_bytes(fields, rows)))
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"cb4c84e3-3622-4b87-9cd2-9cff53e34375","status":"READY","content_sha256":"f8cb0a4a5eeba73e28f7413c2ebd35ff87e584d65d43efe5bce32b680477a7ed","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:18.676326Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+_________ test_metadata_cannot_silently_replace_an_embedded_manifest __________
+tests\backend\test_csv_security.py:126: in test_metadata_cannot_silently_replace_an_embedded_manifest
+    assert_rejected_without_import(client, upload(client, metadata, csv_bytes(fields, rows)))
+tests\backend\test_csv_security.py:54: in assert_rejected_without_import
+    assert response.status_code == 422, response.text
+E   AssertionError: {"id":"07e2f36d-b407-4511-aff8-a5f4121d18b3","status":"READY","content_sha256":"f8cb0a4a5eeba73e28f7413c2ebd35ff87e584d65d43efe5bce32b680477a7ed","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:18.761460Z"}
+E   assert 202 == 422
+E    +  where 202 = <Response [202 Accepted]>.status_code
+________ test_raw_evidence_change_conflicts_even_when_only_bom_changes ________
+tests\backend\test_csv_security.py:189: in test_raw_evidence_change_conflicts_even_when_only_bom_changes
+    assert changed.status_code == 409, changed.text
+E   AssertionError: {"id":"8d30304f-f54f-4c36-a93d-f56327c5ac55","status":"READY","content_sha256":"c8687654acaeb7655655228570e7b8600afdeed5f8d4aa0b11e0a128b355b763","snapshot_id":null,"quality_issues":[],"row_errors":[],"created_at":"2026-11-14T05:36:19.637959Z"}
+E   assert 202 == 409
+E    +  where 202 = <Response [202 Accepted]>.status_code
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  <checkout>\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/backend/test_csv_security.py::test_duplicate_columns_cannot_silently_replace_a_value[id]
+FAILED tests/backend/test_csv_security.py::test_duplicate_columns_cannot_silently_replace_a_value[actual_mass_kg]
+FAILED tests/backend/test_csv_security.py::test_duplicate_columns_cannot_silently_replace_a_value[security]
+FAILED tests/backend/test_csv_security.py::test_empty_or_unknown_columns_cannot_be_ignored[]
+FAILED tests/backend/test_csv_security.py::test_empty_or_unknown_columns_cannot_be_ignored[unexpected_column]
+FAILED tests/backend/test_csv_security.py::test_empty_or_unknown_columns_cannot_be_ignored[ id]
+FAILED tests/backend/test_csv_security.py::test_empty_or_unknown_columns_cannot_be_ignored[ID]
+FAILED tests/backend/test_csv_security.py::test_control_characters_are_rejected_before_numeric_coercion[\t]
+FAILED tests/backend/test_csv_security.py::test_control_characters_are_rejected_before_numeric_coercion[\r]
+FAILED tests/backend/test_csv_security.py::test_control_characters_are_rejected_before_numeric_coercion[\n]
+FAILED tests/backend/test_csv_security.py::test_control_characters_are_rejected_before_numeric_coercion[\x00]
+FAILED tests/backend/test_csv_security.py::test_control_characters_are_rejected_before_numeric_coercion[\x0b]
+FAILED tests/backend/test_csv_security.py::test_control_characters_are_rejected_before_numeric_coercion[\x0c]
+FAILED tests/backend/test_csv_security.py::test_control_characters_are_rejected_before_numeric_coercion[\x1f]
+FAILED tests/backend/test_csv_security.py::test_control_characters_are_rejected_before_numeric_coercion[\x7f]
+FAILED tests/backend/test_csv_security.py::test_formula_prefixes_are_rejected_with_leading_whitespace[\uff1d]
+FAILED tests/backend/test_csv_security.py::test_formula_prefixes_are_rejected_with_leading_whitespace[\uff0b]
+FAILED tests/backend/test_csv_security.py::test_formula_prefixes_are_rejected_with_leading_whitespace[\uff0d]
+FAILED tests/backend/test_csv_security.py::test_formula_prefixes_are_rejected_with_leading_whitespace[\uff20]
+FAILED tests/backend/test_csv_security.py::test_schema_errors_do_not_echo_private_cell_values
+FAILED tests/backend/test_csv_security.py::test_duplicate_json_keys_cannot_hide_conflicting_source_values[metadata]
+FAILED tests/backend/test_csv_security.py::test_duplicate_json_keys_cannot_hide_conflicting_source_values[nested_cell]
+FAILED tests/backend/test_csv_security.py::test_metadata_cannot_silently_replace_an_embedded_manifest
+FAILED tests/backend/test_csv_security.py::test_raw_evidence_change_conflicts_even_when_only_bom_changes
+24 failed, 12 passed, 1 warning in 4.38s

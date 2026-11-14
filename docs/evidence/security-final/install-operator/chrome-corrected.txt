@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+
+[1/1] apps/web/tests/session-boundary.spec.ts:22:1 › real service: logout unmounts both tabs and preserves unrelated storage
+  1 passed (6.3s)

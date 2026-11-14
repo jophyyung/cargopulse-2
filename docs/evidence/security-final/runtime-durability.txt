@@ -1,0 +1,23 @@
+{
+  "scope": "local synthetic container durability drill",
+  "started_utc": "2026-11-11T17:31:14.060011+00:00",
+  "status": "PASS",
+  "scenario_id": "69d67543-0144-42b7-b2b0-00e72a03844c",
+  "job_id": "226a5bd2-b76f-4eae-b9ff-b5ca24f6a606",
+  "plan_id": "5cead356-cb0c-4328-bb78-1d22b68f94ee",
+  "decision_id": "df420a37-4caf-4a0d-9ec3-b617e69b5ee3",
+  "snapshot_hash": "39c4a303f306a220bfb719ae9d0fcf1c63ae0fbb377fd619de8e5b4af75634ad",
+  "plan_hash": "b908fc9823b4b4070477f6f1b5242e2c5720dfdcf37bff24a61f2cd0b8b958fb",
+  "external_write_performed": false,
+  "seconds": 26.563,
+  "assertions": [
+    "durable queue without Redis",
+    "API restart preserves session and queued command",
+    "idempotent solve returns original job",
+    "worker resumes durable job",
+    "independent validator PASS",
+    "exact-hash decision persists across restart",
+    "idempotent decision returns original receipt",
+    "Redis recovers"
+  ]
+}

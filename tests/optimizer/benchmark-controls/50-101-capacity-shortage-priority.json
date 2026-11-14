@@ -1,0 +1,621 @@
+{
+  "run": {
+    "size": 50,
+    "seed": 101,
+    "profile": "capacity-shortage",
+    "policy": "priority",
+    "wall_ms": 19.433458000094106,
+    "status": "FEASIBLE",
+    "validation": "PASS",
+    "weighted_delay_hours": "83.500000",
+    "objective": "5556.000000",
+    "best_bound": "None",
+    "gap": "None",
+    "assigned": 5,
+    "unassigned": 45,
+    "recoverable_uld_denominator": 7,
+    "all_affected_uld_denominator": 50,
+    "candidate_count": 98,
+    "pruned_paths": 44,
+    "snapshot_hash": "4dc2530e9bfa422e5ebd4f6bcf949b5560e8dde6daffbb96bd0adc70543bf0e2",
+    "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e"
+  },
+  "plan": {
+    "schema_version": "1.0.0",
+    "snapshot_hash": "4dc2530e9bfa422e5ebd4f6bcf949b5560e8dde6daffbb96bd0adc70543bf0e2",
+    "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e",
+    "synthetic": true,
+    "evidence_tier": "TEAM_SYNTHETIC_UNVERIFIED",
+    "solver": {
+      "engine": "PRIORITY_FIRST",
+      "version": "reference-v1",
+      "status": "FEASIBLE",
+      "wall_time_ms": "6.013917",
+      "time_limit_seconds": 30,
+      "objective_value": "5556.000000",
+      "best_bound": null,
+      "optimality_gap": null,
+      "variable_count": 0,
+      "candidate_count": 98,
+      "termination_reason": "GREEDY_REFERENCE_NO_OPTIMALITY_CLAIM"
+    },
+    "assignments": [
+      {
+        "cargo_unit_id": "U-0012",
+        "path_id": "P-0bf901daec0a8d76e4bd0f44",
+        "legs": [
+          {
+            "flight_id": "F-LAX-1",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-1"
+          }
+        ],
+        "arrival_at": "2026-11-10T10:45:00Z",
+        "delay_hours": "0.750000",
+        "weighted_delay_hours": "1.875000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0050",
+        "path_id": "P-10dfbdea5deb4987e61dd6aa",
+        "legs": [
+          {
+            "flight_id": "F-AMS-3",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-AMS-1"
+          }
+        ],
+        "arrival_at": "2026-11-11T08:15:00Z",
+        "delay_hours": "18.250000",
+        "weighted_delay_hours": "45.625000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0035",
+        "path_id": "P-06776bef2902dd95fa210ce7",
+        "legs": [
+          {
+            "flight_id": "F-LHR-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-LAX-2"
+          }
+        ],
+        "arrival_at": "2026-11-10T21:30:00Z",
+        "delay_hours": "0.000000",
+        "weighted_delay_hours": "0.000000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0018",
+        "path_id": "P-1f1d4806355f9b5649213c5e",
+        "legs": [
+          {
+            "flight_id": "F-AMS-4",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-DXB-3"
+          }
+        ],
+        "arrival_at": "2026-11-11T20:15:00Z",
+        "delay_hours": "26.250000",
+        "weighted_delay_hours": "26.250000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      },
+      {
+        "cargo_unit_id": "U-0032",
+        "path_id": "P-1d98a0a8eb297bdb527e2343",
+        "legs": [
+          {
+            "flight_id": "F-SIN-2",
+            "position_id": "POOL",
+            "handling_window_id": "H-F-BOM-1"
+          }
+        ],
+        "arrival_at": "2026-11-11T03:45:00Z",
+        "delay_hours": "9.750000",
+        "weighted_delay_hours": "9.750000",
+        "changed_from_previous": false,
+        "reason_codes": [
+          "GATES_A_TO_H_VERIFIED",
+          "WHOLE_ULD_ATOMIC",
+          "EXPLICIT_HANDLING_EVERY_LEG",
+          "GLOBAL_RESOURCE_ALLOCATION"
+        ]
+      }
+    ],
+    "unassigned": [
+      {
+        "cargo_unit_id": "U-0001",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0002",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0003",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0004",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0005",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0006",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0007",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0008",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0009",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0010",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0011",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0013",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0014",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0015",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0016",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0017",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0019",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0020",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0021",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0022",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0023",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0024",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0025",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0026",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0027",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0028",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0029",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0030",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0031",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0033",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0034",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0036",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0037",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0038",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0039",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0040",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0041",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0042",
+        "reason_codes": [
+          "SHARED_RESOURCE_TRADEOFF"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0043",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0044",
+        "reason_codes": [
+          "DG_AIRCRAFT_INCOMPATIBLE",
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0045",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0046",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0047",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0048",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      },
+      {
+        "cargo_unit_id": "U-0049",
+        "reason_codes": [
+          "DG_PERMISSION_NOT_VERIFIED",
+          "FLIGHT_CAPACITY_INSUFFICIENT_OR_UNKNOWN"
+        ],
+        "action": "ESCALATE"
+      }
+    ],
+    "independent_validation": {
+      "status": "PASS",
+      "version": "independent-v1",
+      "checked_gates": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "CONTRACT"
+      ],
+      "violations": [],
+      "snapshot_hash": "4dc2530e9bfa422e5ebd4f6bcf949b5560e8dde6daffbb96bd0adc70543bf0e2",
+      "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e"
+    },
+    "metrics": [
+      {
+        "name": "proposed_departure_48h_eligible_uld_rate",
+        "value": "0.714286",
+        "unit": "ratio",
+        "numerator": "5",
+        "denominator": "7",
+        "cohort_id": "synthetic-recover-101-20261110T000000",
+        "window_start_utc": "2026-11-10T00:00:00Z",
+        "window_end_utc": "2026-11-12T00:00:00Z",
+        "event_as_of_utc": "2026-11-10T00:00:00Z",
+        "scenario_type": "RECOVER",
+        "metric_method_version": "metrics-v1",
+        "evidence_tier": "TEAM_SYNTHETIC_UNVERIFIED",
+        "data_source_ids": [
+          "seeded-synthetic-generator-v1"
+        ],
+        "snapshot_hash": "4dc2530e9bfa422e5ebd4f6bcf949b5560e8dde6daffbb96bd0adc70543bf0e2",
+        "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e",
+        "baseline_policy_version": "PRIORITY_FIRST-v1; matched candidates and resources",
+        "statistic": "proposed_first_departure_within_48h_not_approved_capacity",
+        "status": "COMPUTED"
+      },
+      {
+        "name": "proposed_departure_48h_all_affected_uld_rate",
+        "value": "0.100000",
+        "unit": "ratio",
+        "numerator": "5",
+        "denominator": "50",
+        "cohort_id": "synthetic-recover-101-20261110T000000",
+        "window_start_utc": "2026-11-10T00:00:00Z",
+        "window_end_utc": "2026-11-12T00:00:00Z",
+        "event_as_of_utc": "2026-11-10T00:00:00Z",
+        "scenario_type": "RECOVER",
+        "metric_method_version": "metrics-v1",
+        "evidence_tier": "TEAM_SYNTHETIC_UNVERIFIED",
+        "data_source_ids": [
+          "seeded-synthetic-generator-v1"
+        ],
+        "snapshot_hash": "4dc2530e9bfa422e5ebd4f6bcf949b5560e8dde6daffbb96bd0adc70543bf0e2",
+        "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e",
+        "baseline_policy_version": "PRIORITY_FIRST-v1; matched candidates and resources",
+        "statistic": "proposed_first_departure_within_48h_not_approved_capacity",
+        "status": "COMPUTED"
+      },
+      {
+        "name": "weighted_delay_hours",
+        "value": "83.500000",
+        "unit": "weighted_hours",
+        "numerator": "83.500000",
+        "denominator": "1",
+        "cohort_id": "synthetic-recover-101-20261110T000000",
+        "window_start_utc": "2026-11-10T00:00:00Z",
+        "window_end_utc": "2026-11-12T00:00:00Z",
+        "event_as_of_utc": "2026-11-10T00:00:00Z",
+        "scenario_type": "RECOVER",
+        "metric_method_version": "metrics-v1",
+        "evidence_tier": "TEAM_SYNTHETIC_UNVERIFIED",
+        "data_source_ids": [
+          "seeded-synthetic-generator-v1"
+        ],
+        "snapshot_hash": "4dc2530e9bfa422e5ebd4f6bcf949b5560e8dde6daffbb96bd0adc70543bf0e2",
+        "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e",
+        "baseline_policy_version": "PRIORITY_FIRST-v1; matched candidates and resources",
+        "statistic": "proposed_assigned_cargo_weighted_hours",
+        "status": "COMPUTED"
+      },
+      {
+        "name": "unassigned_uld_count",
+        "value": "45.000000",
+        "unit": "ULD",
+        "numerator": "45",
+        "denominator": "1",
+        "cohort_id": "synthetic-recover-101-20261110T000000",
+        "window_start_utc": "2026-11-10T00:00:00Z",
+        "window_end_utc": "2026-11-12T00:00:00Z",
+        "event_as_of_utc": "2026-11-10T00:00:00Z",
+        "scenario_type": "RECOVER",
+        "metric_method_version": "metrics-v1",
+        "evidence_tier": "TEAM_SYNTHETIC_UNVERIFIED",
+        "data_source_ids": [
+          "seeded-synthetic-generator-v1"
+        ],
+        "snapshot_hash": "4dc2530e9bfa422e5ebd4f6bcf949b5560e8dde6daffbb96bd0adc70543bf0e2",
+        "policy_hash": "f3b6224a96acd401cbdced0a038bde289d0bdb96ca924d4f63339076c541165e",
+        "baseline_policy_version": "PRIORITY_FIRST-v1; matched candidates and resources",
+        "statistic": "explicit_escalated_whole_uld_count",
+        "status": "COMPUTED"
+      }
+    ],
+    "model_scope": "SYNTHETIC_CONSERVATIVE_ENVELOPE; whole ULD; explicit per-leg handling; no clearance",
+    "has_external_write_permission": false
+  }
+}

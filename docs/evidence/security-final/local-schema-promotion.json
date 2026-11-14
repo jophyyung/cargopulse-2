@@ -1,0 +1,172 @@
+{
+  "status": "PASS",
+  "scope": "owned synthetic local 0004 to 0005 schema and application promotion; no public deployment",
+  "started_utc": "20261111_172830",
+  "seconds": 21.59,
+  "migration_before": "0004",
+  "migration_after": "0005",
+  "backup_sha256": "63ceb6fee216492648b234c98357457cccd8c0509f0f54505824e0052eab0813",
+  "object_archive_sha256": "a410a2fef967900b022a166c4fa3484d4a2abfd609f1f52c00aac50028b21035",
+  "before": {
+    "alembic_version": {
+      "rows": 1,
+      "digest": "6d3e7214d108655b1a1a65f86a7cb46e"
+    },
+    "audit_events": {
+      "rows": 84,
+      "digest": "9bc4bd26ed48d73b7d82b410c3e670bb"
+    },
+    "idempotency_keys": {
+      "rows": 43,
+      "digest": "40e481308d3d45271432cbcbf5588407"
+    },
+    "identities": {
+      "rows": 6,
+      "digest": "992ba32fdedc31d38861edd4eed5e7ad"
+    },
+    "ingest_batches": {
+      "rows": 9,
+      "digest": "a71ca86ee87baa02a2b26ffb89f233b1"
+    },
+    "oidc_flows": {
+      "rows": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "outbox_events": {
+      "rows": 9,
+      "digest": "788b3535f12fa5683cadade8e5bf1428"
+    },
+    "plan_decisions": {
+      "rows": 7,
+      "digest": "8524d8c317ea30f7dc4a5d62b68a2f10"
+    },
+    "policy_sets": {
+      "rows": 2,
+      "digest": "397e6ed8eac03d4a73c6dab6566aba60"
+    },
+    "scenarios": {
+      "rows": 9,
+      "digest": "47f91a9e32ab737f6909b0736b30dcb1"
+    },
+    "sessions": {
+      "rows": 27,
+      "digest": "8701a3caff63bc0cc1ce01d7670e755d"
+    },
+    "snapshots": {
+      "rows": 9,
+      "digest": "d8f121afd45e2df48dc57e9c0e2d0261"
+    },
+    "solution_plans": {
+      "rows": 19,
+      "digest": "99dbf58c84af1c50d080ae910c0a8ecc"
+    },
+    "solve_jobs": {
+      "rows": 9,
+      "digest": "f6ab996f6fc1c4c3594ec353ffc9b52e"
+    },
+    "tenants": {
+      "rows": 2,
+      "digest": "d1c153083f61f445fea534558062d16a"
+    }
+  },
+  "after_before_new_traffic": {
+    "alembic_version": {
+      "rows": 1,
+      "digest": "dff5707f847badf329193d5c49c49816"
+    },
+    "audit_events": {
+      "rows": 84,
+      "digest": "9bc4bd26ed48d73b7d82b410c3e670bb"
+    },
+    "idempotency_keys": {
+      "rows": 43,
+      "digest": "40e481308d3d45271432cbcbf5588407"
+    },
+    "identities": {
+      "rows": 6,
+      "digest": "992ba32fdedc31d38861edd4eed5e7ad"
+    },
+    "ingest_batches": {
+      "rows": 9,
+      "digest": "a71ca86ee87baa02a2b26ffb89f233b1"
+    },
+    "oidc_flows": {
+      "rows": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "outbox_events": {
+      "rows": 9,
+      "digest": "788b3535f12fa5683cadade8e5bf1428"
+    },
+    "plan_decisions": {
+      "rows": 7,
+      "digest": "8524d8c317ea30f7dc4a5d62b68a2f10"
+    },
+    "policy_sets": {
+      "rows": 2,
+      "digest": "397e6ed8eac03d4a73c6dab6566aba60"
+    },
+    "scenarios": {
+      "rows": 9,
+      "digest": "47f91a9e32ab737f6909b0736b30dcb1"
+    },
+    "sessions": {
+      "rows": 27,
+      "digest": "f5feb695e2a9d24a4bfc5a0c1a59963b"
+    },
+    "snapshots": {
+      "rows": 9,
+      "digest": "d8f121afd45e2df48dc57e9c0e2d0261"
+    },
+    "solution_plans": {
+      "rows": 19,
+      "digest": "99dbf58c84af1c50d080ae910c0a8ecc"
+    },
+    "solve_jobs": {
+      "rows": 9,
+      "digest": "f6ab996f6fc1c4c3594ec353ffc9b52e"
+    },
+    "tenants": {
+      "rows": 2,
+      "digest": "d1c153083f61f445fea534558062d16a"
+    }
+  },
+  "legacy_session_values_sha256": "3fa0148dc10d99d7a6e0567bb15870ade08ec48e5bb0d679358d972f5b945bb2",
+  "legacy_assurance_preserved_as_null": true,
+  "private_object_hashes": {
+    "10000000-0000-4000-8000-000000000001/imports/05a52605100abcc5f40c45cd9d5f0a3e62df6dca38b1becc2ed1d4b8f8df11c3": "05a52605100abcc5f40c45cd9d5f0a3e62df6dca38b1becc2ed1d4b8f8df11c3",
+    "10000000-0000-4000-8000-000000000001/imports/1873f962067139e2a1c4973f297c3dc029c94fbf9e0089b12683a465c06eb5e6": "1873f962067139e2a1c4973f297c3dc029c94fbf9e0089b12683a465c06eb5e6",
+    "10000000-0000-4000-8000-000000000001/imports/2b409383e401a8807fe8700d63e4c40aac7a8739563e641b7de0a6b486036ffc": "2b409383e401a8807fe8700d63e4c40aac7a8739563e641b7de0a6b486036ffc",
+    "10000000-0000-4000-8000-000000000001/imports/315a660c43b018b773f5755bb0caff08adc07ca6fe040e0fbe7297cbd32bab93": "315a660c43b018b773f5755bb0caff08adc07ca6fe040e0fbe7297cbd32bab93",
+    "10000000-0000-4000-8000-000000000001/imports/725b937b20763c318868b9e5694062082ebf8fd94acef1babe2c6327c2097d9b": "725b937b20763c318868b9e5694062082ebf8fd94acef1babe2c6327c2097d9b",
+    "10000000-0000-4000-8000-000000000001/imports/76b5313a3067d4b5ae9a881cbf3d89e408af3df7333e265d68822426d81d4fe4": "76b5313a3067d4b5ae9a881cbf3d89e408af3df7333e265d68822426d81d4fe4",
+    "10000000-0000-4000-8000-000000000001/imports/858db469ccba72d801ab66faa909758c4517aa9cf35d360668f104846d53885d": "858db469ccba72d801ab66faa909758c4517aa9cf35d360668f104846d53885d",
+    "10000000-0000-4000-8000-000000000001/imports/9cdac610de976c573f58f76dc306a82e6c31b8f8416e8c71b0869b4a74dcfc6a": "9cdac610de976c573f58f76dc306a82e6c31b8f8416e8c71b0869b4a74dcfc6a",
+    "10000000-0000-4000-8000-000000000001/imports/ec13905c078451440d9d37922419da55af76a72617dee1ebdfec65a6032c27ce": "ec13905c078451440d9d37922419da55af76a72617dee1ebdfec65a6032c27ce"
+  },
+  "private_objects_preserved": true,
+  "all_other_table_digests_preserved": true,
+  "forced_rls_tables": 12,
+  "app_is_nonowner_nonbypassrls": true,
+  "app_cannot_update_directory": true,
+  "disable_revocation_trigger_installed": true,
+  "prior_image_ids": {
+    "api": "sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b",
+    "worker": "sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b",
+    "migrate": "sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b",
+    "web": "sha256:0fa03daf4fefd8cbcd6a4b4223cdddbd52706faed77110c2a03638e0b1eb0952"
+  },
+  "final_images": {
+    "api": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "web": "sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f",
+    "postgres": "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+    "redis": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041"
+  },
+  "original_glibc_volume_retained": true,
+  "login_http_status": 200,
+  "limitations": [
+    "not a managed production migration or rollback approval",
+    "legacy privileged OIDC sessions require fresh verified sign-in",
+    "after any new writer starts, no automatic old-volume rollback"
+  ]
+}

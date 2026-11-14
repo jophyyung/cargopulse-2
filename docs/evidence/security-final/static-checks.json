@@ -1,0 +1,49 @@
+{
+  "recorded_utc": "2026-11-12T05:49:53.206396+00:00",
+  "status": "PASS",
+  "checks": {
+    "standard_ruff": {
+      "command": ".venv/bin/ruff check services packages scripts tests infra",
+      "exit_code": 0,
+      "raw": "ruff.txt"
+    },
+    "selected_security_ruff": {
+      "command": ".venv/bin/ruff check services packages scripts infra/assemble_runtime.py --select S --ignore S101",
+      "exit_code": 0,
+      "raw": "ruff-security.txt",
+      "scope_notes": "Tests/assertions excluded; bounded DTD-rejecting XMLParser has one explained S314 annotation."
+    },
+    "typescript": {
+      "command": "npm run typecheck with Node24.22.2",
+      "exit_code": 0,
+      "raw": "typecheck.txt"
+    },
+    "contract_generation": {
+      "command": "PYTHONPATH=packages/contracts/python:services/api:services/worker:. .venv/bin/python scripts/export_contracts.py --runtime; npm run contracts; git diff --exit-code -- packages/contracts",
+      "exit_code": 0,
+      "raw": "contracts.txt"
+    },
+    "actionlint": {
+      "command": ".local/tools/actionlint/actionlint -shellcheck=",
+      "exit_code": 0,
+      "raw": "actionlint.txt",
+      "hosted_ci": false
+    },
+    "production_config": {
+      "exit_code": 0,
+      "raw": "production-config.json",
+      "services_started": false
+    },
+    "repository_patterns": {
+      "command": ".venv/bin/python scripts/check_repository.py after staging new files",
+      "exit_code": 0,
+      "raw": "repository-patterns.txt",
+      "scope": "bounded tracked-file patterns, not provider secret scanning"
+    },
+    "staged_whitespace": {
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "scope": "source/docs checked; raw evidence TXT and one initial JUnit XML retain terminal spacing under explicit attributes"
+    }
+  }
+}

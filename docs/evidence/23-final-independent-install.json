@@ -1,0 +1,1589 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-11-12T05:32:55.376316+00:00",
+  "project": "cargopulse-final-install-2",
+  "base_url": "http://localhost:3116",
+  "private_evidence_directory": ".local/final-install/20261112T053255Z",
+  "requested_images": {
+    "api": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "worker": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "migrate": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "web": "sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f",
+    "postgres": "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+    "redis": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041"
+  },
+  "commands": [
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "label=com.docker.compose.project=cargopulse-final-install-2"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "volume",
+        "ls",
+        "--filter",
+        "name=cargopulse-final-install-2",
+        "--format",
+        "{{.Name}}"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "network",
+        "ls",
+        "--filter",
+        "name=cargopulse-final-install-2",
+        "--format",
+        "{{.Name}}"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "publish=3116"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "volume",
+        "ls",
+        "--format",
+        "{{.Name}}"
+      ],
+      "exit_code": 0,
+      "stdout": "6f9f77fa4fb200020e6967e86a28f600abc01c527ef71a397d9a10120d65de40\n26db038f621b6b203f2345daf339a0ff631a67b516d3db8d447b1d2a46485a1f\n34001e14e1823592f57415cc4ed7faeea0bde9874248cfa1d00ff5ac550447f6\n92068de59735ce19fc5e057e92c6b90fbf9eb9d690e9ad128f88889c9ffce32a\ncargopulse-clean-install_objects\ncargopulse-clean-install_postgres\ncargopulse-final-install_objects\ncargopulse-final-install_postgres_alpine\ncargopulse-independent-install_objects\ncargopulse-independent-install_postgres\ncargopulse-local_objects\ncargopulse-local_postgres\ncargopulse-local_postgres_alpine\ncargopulse-security-check_objects\ncargopulse-security-check_postgres_alpine\ne2fd31995ac28975b3b2fd94f67a6cf5be9dba6e11f0a00621f6374772678d92\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "image",
+        "inspect",
+        "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+        "--format",
+        "{{json .Id}}"
+      ],
+      "exit_code": 0,
+      "stdout": "\"sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34\"\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "image",
+        "inspect",
+        "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+        "--format",
+        "{{json .Id}}"
+      ],
+      "exit_code": 0,
+      "stdout": "\"sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34\"\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "image",
+        "inspect",
+        "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+        "--format",
+        "{{json .Id}}"
+      ],
+      "exit_code": 0,
+      "stdout": "\"sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34\"\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "image",
+        "inspect",
+        "sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f",
+        "--format",
+        "{{json .Id}}"
+      ],
+      "exit_code": 0,
+      "stdout": "\"sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f\"\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "image",
+        "inspect",
+        "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+        "--format",
+        "{{json .Id}}"
+      ],
+      "exit_code": 0,
+      "stdout": "\"sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3\"\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "image",
+        "inspect",
+        "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041",
+        "--format",
+        "{{json .Id}}"
+      ],
+      "exit_code": 0,
+      "stdout": "\"sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041\"\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "config",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout": "<private config parsed in memory; omitted>",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "up",
+        "--no-build",
+        "--pull",
+        "never",
+        "--wait",
+        "-d"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": " Volume cargopulse-final-install-2_objects Creating \n Volume cargopulse-final-install-2_objects Creating \n Network cargopulse-final-install-2_default Creating \n Network cargopulse-final-install-2_default Creating \n Volume cargopulse-final-install-2_postgres_alpine Creating \n Volume cargopulse-final-install-2_postgres_alpine Creating \n Volume cargopulse-final-install-2_objects Created \n Volume cargopulse-final-install-2_objects Created \n Volume cargopulse-final-install-2_postgres_alpine Created \n Volume cargopulse-final-install-2_postgres_alpine Created \n Network cargopulse-final-install-2_default Created \n Network cargopulse-final-install-2_default Created \n Container cargopulse-final-install-2-redis-1 Creating \n Container cargopulse-final-install-2-postgres-1 Creating \n Container cargopulse-final-install-2-postgres-1 Created \n Container cargopulse-final-install-2-migrate-1 Creating \n Container cargopulse-final-install-2-redis-1 Created \n Container cargopulse-final-install-2-migrate-1 Created \n Container cargopulse-final-install-2-api-1 Creating \n Container cargopulse-final-install-2-worker-1 Creating \n Container cargopulse-final-install-2-api-1 Created \n Container cargopulse-final-install-2-web-1 Creating \n Container cargopulse-final-install-2-worker-1 Created \n Container cargopulse-final-install-2-web-1 Created \n Container cargopulse-final-install-2-postgres-1 Starting \n Container cargopulse-final-install-2-redis-1 Starting \n Container cargopulse-final-install-2-postgres-1 Started \n Container cargopulse-final-install-2-postgres-1 Waiting \n Container cargopulse-final-install-2-redis-1 Started \n Container cargopulse-final-install-2-redis-1 Waiting \n Container cargopulse-final-install-2-postgres-1 Healthy \n Container cargopulse-final-install-2-migrate-1 Starting \n Container cargopulse-final-install-2-redis-1 Healthy \n Container cargopulse-final-install-2-migrate-1 Started \n Container cargopulse-final-install-2-migrate-1 Waiting \n Container cargopulse-final-install-2-migrate-1 Exited \n Container cargopulse-final-install-2-worker-1 Starting \n Container cargopulse-final-install-2-api-1 Starting \n Container cargopulse-final-install-2-worker-1 Started \n Container cargopulse-final-install-2-api-1 Started \n Container cargopulse-final-install-2-api-1 Waiting \n Container cargopulse-final-install-2-api-1 Healthy \n Container cargopulse-final-install-2-web-1 Starting \n Container cargopulse-final-install-2-web-1 Started \n Container cargopulse-final-install-2-redis-1 Waiting \n Container cargopulse-final-install-2-migrate-1 Waiting \n Container cargopulse-final-install-2-api-1 Waiting \n Container cargopulse-final-install-2-worker-1 Waiting \n Container cargopulse-final-install-2-web-1 Waiting \n Container cargopulse-final-install-2-postgres-1 Waiting \n Container cargopulse-final-install-2-migrate-1 Exited \n Container cargopulse-final-install-2-web-1 Healthy \n Container cargopulse-final-install-2-api-1 Healthy \n Container cargopulse-final-install-2-redis-1 Healthy \n Container cargopulse-final-install-2-worker-1 Healthy \n Container cargopulse-final-install-2-postgres-1 Healthy \n"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "ps",
+        "-a",
+        "-q",
+        "api"
+      ],
+      "exit_code": 0,
+      "stdout": "a89e956111e1da60b3c64aff9cd96fdc03b31b7ac2d0990a7ffe4177c4829ce4\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "a89e956111e1da60b3c64aff9cd96fdc03b31b7ac2d0990a7ffe4177c4829ce4",
+        "--format",
+        "{\"id\":{{json .Id}},\"image\":{{json .Image}},\"user\":{{json .Config.User}},\"state\":{{json .State}},\"mounts\":{{json .Mounts}},\"ports\":{{json .HostConfig.PortBindings}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"id\":\"a89e956111e1da60b3c64aff9cd96fdc03b31b7ac2d0990a7ffe4177c4829ce4\",\"image\":\"sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34\",\"user\":\"10001:10001\",\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"0001-01-01T00:00:00Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-11-12T13:33:05.908938738+08:00\",\"ExitCode\":0,\"Output\":\"\",\"Start\":\"2026-11-12T13:33:05.791105994+08:00\"}],\"Status\":\"healthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1115347,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-11-12T05:33:00.70933149Z\",\"Status\":\"running\"},\"mounts\":[{\"Destination\":\"/var/lib/cargopulse/objects\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"cargopulse-final-install-2_objects\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/cargopulse-final-install-2_objects/_data\",\"Type\":\"volume\"}],\"ports\":{},\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "ps",
+        "-a",
+        "-q",
+        "worker"
+      ],
+      "exit_code": 0,
+      "stdout": "393f050a2e9b65a36ce7cd7700c4949fa803bb0fd60a3cc9d00d1b1b5c2255b3\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "393f050a2e9b65a36ce7cd7700c4949fa803bb0fd60a3cc9d00d1b1b5c2255b3",
+        "--format",
+        "{\"id\":{{json .Id}},\"image\":{{json .Image}},\"user\":{{json .Config.User}},\"state\":{{json .State}},\"mounts\":{{json .Mounts}},\"ports\":{{json .HostConfig.PortBindings}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"id\":\"393f050a2e9b65a36ce7cd7700c4949fa803bb0fd60a3cc9d00d1b1b5c2255b3\",\"image\":\"sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34\",\"user\":\"10001:10001\",\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"0001-01-01T00:00:00Z\",\"OOMKilled\":false,\"Paused\":false,\"Pid\":1115288,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-11-12T05:33:00.631424917Z\",\"Status\":\"running\"},\"mounts\":[{\"Destination\":\"/var/lib/cargopulse/objects\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"cargopulse-final-install-2_objects\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/cargopulse-final-install-2_objects/_data\",\"Type\":\"volume\"}],\"ports\":{},\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "ps",
+        "-a",
+        "-q",
+        "migrate"
+      ],
+      "exit_code": 0,
+      "stdout": "31b2d60c67992b19ae13cad752d3480b90778690af2c78375d51fd5d7a81886e\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "31b2d60c67992b19ae13cad752d3480b90778690af2c78375d51fd5d7a81886e",
+        "--format",
+        "{\"id\":{{json .Id}},\"image\":{{json .Image}},\"user\":{{json .Config.User}},\"state\":{{json .State}},\"mounts\":{{json .Mounts}},\"ports\":{{json .HostConfig.PortBindings}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"id\":\"31b2d60c67992b19ae13cad752d3480b90778690af2c78375d51fd5d7a81886e\",\"image\":\"sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34\",\"user\":\"10001:10001\",\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"2026-11-12T05:33:00.353602379Z\",\"OOMKilled\":false,\"Paused\":false,\"Pid\":0,\"Restarting\":false,\"Running\":false,\"StartedAt\":\"2026-11-12T05:32:59.542494932Z\",\"Status\":\"exited\"},\"mounts\":[{\"Destination\":\"/var/lib/cargopulse/objects\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"cargopulse-final-install-2_objects\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/cargopulse-final-install-2_objects/_data\",\"Type\":\"volume\"}],\"ports\":{},\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "ps",
+        "-a",
+        "-q",
+        "web"
+      ],
+      "exit_code": 0,
+      "stdout": "a7456a99011f90ab28622bc3157aa4d434f8821bb065558a8db8123401b8c373\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "a7456a99011f90ab28622bc3157aa4d434f8821bb065558a8db8123401b8c373",
+        "--format",
+        "{\"id\":{{json .Id}},\"image\":{{json .Image}},\"user\":{{json .Config.User}},\"state\":{{json .State}},\"mounts\":{{json .Mounts}},\"ports\":{{json .HostConfig.PortBindings}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"id\":\"a7456a99011f90ab28622bc3157aa4d434f8821bb065558a8db8123401b8c373\",\"image\":\"sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f\",\"user\":\"node\",\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"0001-01-01T00:00:00Z\",\"OOMKilled\":false,\"Paused\":false,\"Pid\":1115662,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-11-12T05:33:06.310702419Z\",\"Status\":\"running\"},\"mounts\":[],\"ports\":{\"3000/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"3116\"}]},\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "ps",
+        "-a",
+        "-q",
+        "postgres"
+      ],
+      "exit_code": 0,
+      "stdout": "bbe99135e32916d14338beb5ac9dd791097084307784e23731f62868c6db0d01\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "bbe99135e32916d14338beb5ac9dd791097084307784e23731f62868c6db0d01",
+        "--format",
+        "{\"id\":{{json .Id}},\"image\":{{json .Image}},\"user\":{{json .Config.User}},\"state\":{{json .State}},\"mounts\":{{json .Mounts}},\"ports\":{{json .HostConfig.PortBindings}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"id\":\"bbe99135e32916d14338beb5ac9dd791097084307784e23731f62868c6db0d01\",\"image\":\"sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3\",\"user\":\"postgres\",\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"0001-01-01T00:00:00Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-11-12T13:32:59.064634687+08:00\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-11-12T13:32:59.023030348+08:00\"},{\"End\":\"2026-11-12T13:33:02.087204451+08:00\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-11-12T13:33:02.066066041+08:00\"},{\"End\":\"2026-11-12T13:33:05.113800981+08:00\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\",\"Start\":\"2026-11-12T13:33:05.089117905+08:00\"}],\"Status\":\"healthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1114792,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-11-12T05:32:55.969891639Z\",\"Status\":\"running\"},\"mounts\":[{\"Destination\":\"/var/lib/postgresql\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"cargopulse-final-install-2_postgres_alpine\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/cargopulse-final-install-2_postgres_alpine/_data\",\"Type\":\"volume\"}],\"ports\":{},\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "ps",
+        "-a",
+        "-q",
+        "redis"
+      ],
+      "exit_code": 0,
+      "stdout": "4a5062dc4a69bc93d1812e0028cba802d559b654e9bbc132644f0b336f33f73e\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "4a5062dc4a69bc93d1812e0028cba802d559b654e9bbc132644f0b336f33f73e",
+        "--format",
+        "{\"id\":{{json .Id}},\"image\":{{json .Image}},\"user\":{{json .Config.User}},\"state\":{{json .State}},\"mounts\":{{json .Mounts}},\"ports\":{{json .HostConfig.PortBindings}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"id\":\"4a5062dc4a69bc93d1812e0028cba802d559b654e9bbc132644f0b336f33f73e\",\"image\":\"sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041\",\"user\":\"\",\"state\":{\"Dead\":false,\"Error\":\"\",\"ExitCode\":0,\"FinishedAt\":\"0001-01-01T00:00:00Z\",\"Health\":{\"FailingStreak\":0,\"Log\":[{\"End\":\"2026-11-12T13:32:59.127708697+08:00\",\"ExitCode\":0,\"Output\":\"PONG\\n\",\"Start\":\"2026-11-12T13:32:59.099435391+08:00\"},{\"End\":\"2026-11-12T13:33:02.147068184+08:00\",\"ExitCode\":0,\"Output\":\"PONG\\n\",\"Start\":\"2026-11-12T13:33:02.12824136+08:00\"},{\"End\":\"2026-11-12T13:33:05.1769613+08:00\",\"ExitCode\":0,\"Output\":\"PONG\\n\",\"Start\":\"2026-11-12T13:33:05.147805126+08:00\"}],\"Status\":\"healthy\"},\"OOMKilled\":false,\"Paused\":false,\"Pid\":1114866,\"Restarting\":false,\"Running\":true,\"StartedAt\":\"2026-11-12T05:32:56.029791479Z\",\"Status\":\"running\"},\"mounts\":[{\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"f36c2b32e33460f60591c14c2f7ff24641996088f9f8f14bc4bc0d832006a09d\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/f36c2b32e33460f60591c14c2f7ff24641996088f9f8f14bc4bc0d832006a09d/_data\",\"Type\":\"volume\"}],\"ports\":{},\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "exec",
+        "-T",
+        "postgres",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "cargopulse",
+        "-d",
+        "cargopulse",
+        "-c",
+        "SELECT json_build_object('migration',(SELECT version_num FROM alembic_version),'tables',(SELECT count(*) FROM pg_tables WHERE schemaname='public'),'forced_rls',(SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='public' AND c.relrowsecurity AND c.relforcerowsecurity),'assurance_column',(SELECT count(*) FROM information_schema.columns WHERE table_schema='public' AND table_name='sessions' AND column_name='authentication_context_hash'),'disable_trigger',(SELECT count(*) FROM pg_trigger WHERE tgname='identities_revoke_disabled_sessions' AND NOT tgisinternal),'invalid_public_indexes',(SELECT count(*) FROM pg_index i JOIN pg_class c ON c.oid=i.indrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='public' AND (NOT indisvalid OR NOT indisready)))"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"migration\" : \"0005\", \"tables\" : 15, \"forced_rls\" : 12, \"assurance_column\" : 1, \"disable_trigger\" : 1, \"invalid_public_indexes\" : 0}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "exec",
+        "-T",
+        "postgres",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "cargopulse",
+        "-d",
+        "cargopulse",
+        "-c",
+        "SELECT count(*) FROM ingest_batches"
+      ],
+      "exit_code": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "exec",
+        "-T",
+        "postgres",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "cargopulse",
+        "-d",
+        "cargopulse",
+        "-c",
+        "SELECT count(*) FROM scenarios"
+      ],
+      "exit_code": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "exec",
+        "-T",
+        "postgres",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "cargopulse",
+        "-d",
+        "cargopulse",
+        "-c",
+        "SELECT count(*) FROM sessions"
+      ],
+      "exit_code": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "exec",
+        "-T",
+        "postgres",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "cargopulse",
+        "-d",
+        "cargopulse",
+        "-c",
+        "SHOW password_encryption"
+      ],
+      "exit_code": 0,
+      "stdout": "scram-sha-256\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "exec",
+        "-T",
+        "api",
+        "python",
+        "-c",
+        "import os,json; from sqlalchemy import create_engine,text; e=create_engine(os.environ['DATABASE_URL']); c=e.connect(); print(json.dumps(dict(c.execute(text(\"SELECT current_user AS db_user,rolsuper,rolbypassrls,(SELECT count(*) FROM pg_tables WHERE schemaname='public' AND tableowner=current_user) AS owned_tables FROM pg_roles WHERE rolname=current_user\")).mappings().one()))); c.close(); e.dispose()"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"db_user\": \"cargopulse_app\", \"rolsuper\": false, \"rolbypassrls\": false, \"owned_tables\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "exec",
+        "-T",
+        "postgres",
+        "id",
+        "-u"
+      ],
+      "exit_code": 0,
+      "stdout": "70\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "exec",
+        "-T",
+        "api",
+        "python",
+        "-c",
+        "import os,json,hashlib; from pathlib import Path; p=Path(os.environ['OBJECT_STORE_ROOT']); f=[v for v in p.rglob('*') if v.is_file()]; print(json.dumps({'count':len(f),'all_sha256_names_match':all(v.name==hashlib.sha256(v.read_bytes()).hexdigest() for v in f),'all_files_0600':all(v.stat().st_mode&511==384 for v in f)}))"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"count\": 1, \"all_sha256_names_match\": true, \"all_files_0600\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "stop"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": " Container cargopulse-final-install-2-web-1 Stopping \n Container cargopulse-final-install-2-worker-1 Stopping \n Container cargopulse-final-install-2-web-1 Stopped \n Container cargopulse-final-install-2-api-1 Stopping \n Container cargopulse-final-install-2-api-1 Stopped \n Container cargopulse-final-install-2-worker-1 Stopped \n Container cargopulse-final-install-2-redis-1 Stopping \n Container cargopulse-final-install-2-migrate-1 Stopping \n Container cargopulse-final-install-2-migrate-1 Stopped \n Container cargopulse-final-install-2-postgres-1 Stopping \n Container cargopulse-final-install-2-postgres-1 Stopped \n Container cargopulse-final-install-2-redis-1 Stopped \n"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "start"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": " Container cargopulse-final-install-2-postgres-1 Starting \n Container cargopulse-final-install-2-redis-1 Starting \n Container cargopulse-final-install-2-redis-1 Started \n Container cargopulse-final-install-2-redis-1 Waiting \n Container cargopulse-final-install-2-postgres-1 Started \n Container cargopulse-final-install-2-postgres-1 Waiting \n Container cargopulse-final-install-2-redis-1 Healthy \n Container cargopulse-final-install-2-postgres-1 Healthy \n Container cargopulse-final-install-2-migrate-1 Starting \n Container cargopulse-final-install-2-migrate-1 Started \n Container cargopulse-final-install-2-migrate-1 Waiting \n Container cargopulse-final-install-2-migrate-1 Exited \n Container cargopulse-final-install-2-worker-1 Starting \n Container cargopulse-final-install-2-api-1 Starting \n Container cargopulse-final-install-2-worker-1 Started \n Container cargopulse-final-install-2-api-1 Started \n Container cargopulse-final-install-2-api-1 Waiting \n Container cargopulse-final-install-2-api-1 Healthy \n Container cargopulse-final-install-2-web-1 Starting \n Container cargopulse-final-install-2-web-1 Started \n"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "stop"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": " Container cargopulse-final-install-2-worker-1 Stopping \n Container cargopulse-final-install-2-web-1 Stopping \n Container cargopulse-final-install-2-web-1 Stopped \n Container cargopulse-final-install-2-api-1 Stopping \n Container cargopulse-final-install-2-api-1 Stopped \n Container cargopulse-final-install-2-worker-1 Stopped \n Container cargopulse-final-install-2-migrate-1 Stopping \n Container cargopulse-final-install-2-redis-1 Stopping \n Container cargopulse-final-install-2-migrate-1 Stopped \n Container cargopulse-final-install-2-postgres-1 Stopping \n Container cargopulse-final-install-2-postgres-1 Stopped \n Container cargopulse-final-install-2-redis-1 Stopped \n"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "ps",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "label=com.docker.compose.project=cargopulse-final-install-2"
+      ],
+      "exit_code": 0,
+      "stdout": "a7456a99011f\n393f050a2e9b\na89e956111e1\n31b2d60c6799\n4a5062dc4a69\nbbe99135e329\n",
+      "stderr": "",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "ps",
+        "-aq",
+        "--no-trunc",
+        "--filter",
+        "label=com.docker.compose.project=cargopulse-final-install-2"
+      ],
+      "exit_code": 0,
+      "stdout": "a7456a99011f90ab28622bc3157aa4d434f8821bb065558a8db8123401b8c373\n393f050a2e9b65a36ce7cd7700c4949fa803bb0fd60a3cc9d00d1b1b5c2255b3\na89e956111e1da60b3c64aff9cd96fdc03b31b7ac2d0990a7ffe4177c4829ce4\n31b2d60c67992b19ae13cad752d3480b90778690af2c78375d51fd5d7a81886e\n4a5062dc4a69bc93d1812e0028cba802d559b654e9bbc132644f0b336f33f73e\nbbe99135e32916d14338beb5ac9dd791097084307784e23731f62868c6db0d01\n",
+      "stderr": "",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "a7456a99011f90ab28622bc3157aa4d434f8821bb065558a8db8123401b8c373",
+        "--format",
+        "{\"image\":{{json .Image}},\"running\":{{json .State.Running}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"image\":\"sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f\",\"running\":false,\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": "",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "393f050a2e9b65a36ce7cd7700c4949fa803bb0fd60a3cc9d00d1b1b5c2255b3",
+        "--format",
+        "{\"image\":{{json .Image}},\"running\":{{json .State.Running}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"image\":\"sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34\",\"running\":false,\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": "",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "a89e956111e1da60b3c64aff9cd96fdc03b31b7ac2d0990a7ffe4177c4829ce4",
+        "--format",
+        "{\"image\":{{json .Image}},\"running\":{{json .State.Running}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"image\":\"sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34\",\"running\":false,\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": "",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "31b2d60c67992b19ae13cad752d3480b90778690af2c78375d51fd5d7a81886e",
+        "--format",
+        "{\"image\":{{json .Image}},\"running\":{{json .State.Running}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"image\":\"sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34\",\"running\":false,\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": "",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "4a5062dc4a69bc93d1812e0028cba802d559b654e9bbc132644f0b336f33f73e",
+        "--format",
+        "{\"image\":{{json .Image}},\"running\":{{json .State.Running}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"image\":\"sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041\",\"running\":false,\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": "",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "inspect",
+        "bbe99135e32916d14338beb5ac9dd791097084307784e23731f62868c6db0d01",
+        "--format",
+        "{\"image\":{{json .Image}},\"running\":{{json .State.Running}},\"project\":{{json (index .Config.Labels \"com.docker.compose.project\")}}}"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"image\":\"sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3\",\"running\":false,\"project\":\"cargopulse-final-install-2\"}\n",
+      "stderr": "",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "start"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": " Container cargopulse-final-install-2-postgres-1 Starting \n Container cargopulse-final-install-2-redis-1 Starting \n Container cargopulse-final-install-2-postgres-1 Started \n Container cargopulse-final-install-2-postgres-1 Waiting \n Container cargopulse-final-install-2-redis-1 Started \n Container cargopulse-final-install-2-redis-1 Waiting \n Container cargopulse-final-install-2-postgres-1 Healthy \n Container cargopulse-final-install-2-migrate-1 Starting \n Container cargopulse-final-install-2-redis-1 Healthy \n Container cargopulse-final-install-2-migrate-1 Started \n Container cargopulse-final-install-2-migrate-1 Waiting \n Container cargopulse-final-install-2-migrate-1 Exited \n Container cargopulse-final-install-2-worker-1 Starting \n Container cargopulse-final-install-2-api-1 Starting \n Container cargopulse-final-install-2-worker-1 Started \n Container cargopulse-final-install-2-api-1 Started \n Container cargopulse-final-install-2-api-1 Waiting \n Container cargopulse-final-install-2-api-1 Healthy \n Container cargopulse-final-install-2-web-1 Starting \n Container cargopulse-final-install-2-web-1 Started \n",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "apps/web/playwright.config.ts",
+        "apps/web/tests/session-boundary.spec.ts",
+        "--grep",
+        "logout unmounts both tabs and preserves unrelated storage",
+        "--trace",
+        "off",
+        "--reporter",
+        "line",
+        "--output",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/browser-results-corrected"
+      ],
+      "exit_code": 0,
+      "stdout": "\nRunning 1 test using 1 worker\n\n\n[1/1] apps/web/tests/session-boundary.spec.ts:22:1 \u203a real service: logout unmounts both tabs and preserves unrelated storage\n  1 passed (6.3s)\n",
+      "stderr": "(node:70472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "stop"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": " Container cargopulse-final-install-2-worker-1 Stopping \n Container cargopulse-final-install-2-web-1 Stopping \n Container cargopulse-final-install-2-web-1 Stopped \n Container cargopulse-final-install-2-api-1 Stopping \n Container cargopulse-final-install-2-api-1 Stopped \n Container cargopulse-final-install-2-worker-1 Stopped \n Container cargopulse-final-install-2-redis-1 Stopping \n Container cargopulse-final-install-2-migrate-1 Stopping \n Container cargopulse-final-install-2-migrate-1 Stopped \n Container cargopulse-final-install-2-postgres-1 Stopping \n Container cargopulse-final-install-2-postgres-1 Stopped \n Container cargopulse-final-install-2-redis-1 Stopped \n",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker-compose",
+        "--project-directory",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session",
+        "--env-file",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/install.env",
+        "-p",
+        "cargopulse-final-install-2",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/compose.yaml",
+        "-f",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/browser-session/.local/final-install/20261112T053255Z/images.json",
+        "ps",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "phase": "chrome-only completion"
+    },
+    {
+      "command": [
+        "/Users/pie/CargoPulse_Production_Build_Package/.local/tools/docker/docker",
+        "ps",
+        "-q",
+        "--filter",
+        "label=com.docker.compose.project=cargopulse-final-install"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "phase": "chrome-only completion"
+    }
+  ],
+  "http_requests": [
+    {
+      "method": "POST",
+      "path": "/auth/development",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/fixtures/recover",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/imports/validate",
+      "status": 202
+    },
+    {
+      "method": "GET",
+      "path": "/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/imports/89e228c0-7c2f-4a18-bfa9-d754c414e313/commit",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/scenarios",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/scenarios/b82c135a-051c-43d9-9b9a-23240fe8af2e/candidates",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/scenarios/b82c135a-051c-43d9-9b9a-23240fe8af2e/solve",
+      "status": 202
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/144e9612-c9ac-471c-b5f7-b8440cae8302",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/144e9612-c9ac-471c-b5f7-b8440cae8302",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/144e9612-c9ac-471c-b5f7-b8440cae8302",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/144e9612-c9ac-471c-b5f7-b8440cae8302",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/144e9612-c9ac-471c-b5f7-b8440cae8302",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/plans/c02b8dea-a08d-49af-891d-59f6145ab2af",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/plans/c02b8dea-a08d-49af-891d-59f6145ab2af/alternatives",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/plans/c02b8dea-a08d-49af-891d-59f6145ab2af/decisions",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/reports/c02b8dea-a08d-49af-891d-59f6145ab2af/export?format=json",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/reports/c02b8dea-a08d-49af-891d-59f6145ab2af/export?format=csv",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/reports/c02b8dea-a08d-49af-891d-59f6145ab2af/export?format=pdf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/development",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/scenarios/b82c135a-051c-43d9-9b9a-23240fe8af2e",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/scenarios/b82c135a-051c-43d9-9b9a-23240fe8af2e/candidates",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/144e9612-c9ac-471c-b5f7-b8440cae8302",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/plans/c02b8dea-a08d-49af-891d-59f6145ab2af",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/plans/c02b8dea-a08d-49af-891d-59f6145ab2af/alternatives",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/reports/c02b8dea-a08d-49af-891d-59f6145ab2af/export?format=json",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/reports/c02b8dea-a08d-49af-891d-59f6145ab2af/export?format=csv",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/reports/c02b8dea-a08d-49af-891d-59f6145ab2af/export?format=pdf",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/plans/c02b8dea-a08d-49af-891d-59f6145ab2af/decisions",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/imports/89e228c0-7c2f-4a18-bfa9-d754c414e313",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/logout",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/plans/c02b8dea-a08d-49af-891d-59f6145ab2af",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/reports/c02b8dea-a08d-49af-891d-59f6145ab2af/export?format=json",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/reports/c02b8dea-a08d-49af-891d-59f6145ab2af/export?format=csv",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/reports/c02b8dea-a08d-49af-891d-59f6145ab2af/export?format=pdf",
+      "status": 200
+    }
+  ],
+  "preflight": {
+    "project_absent": true,
+    "volumes_absent": true,
+    "network_absent": true,
+    "port_absent": 3116,
+    "existing_volume_name_count": 16,
+    "existing_volume_names_sha256": "893bdec45096e393df91fb287bd36d853dcdc89d974d66a43bd81432eba34821"
+  },
+  "resolved_image_ids": {
+    "api": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "worker": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "migrate": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "web": "sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f",
+    "postgres": "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+    "redis": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041"
+  },
+  "private_configuration": {
+    "existing_worktree_env_preserved": true,
+    "env_mode": "0o600",
+    "compose_sha256": "9e5a7bbdaff9bd7ffe4227fe07fe39afdc69d2d50aaf9437179699f4bf60adfb",
+    "override_sha256": "85968479b278131f4a876a75b8db837305f6391e32b8cd071ac79ffd7816bd9f"
+  },
+  "resolved_configuration": {
+    "project": "cargopulse-final-install-2",
+    "app_base_url": "http://localhost:3116",
+    "volumes": [
+      "cargopulse-final-install-2_postgres_alpine",
+      "cargopulse-final-install-2_objects"
+    ],
+    "web_binding": "127.0.0.1:3116:3000",
+    "builds_used": false
+  },
+  "initial_health": {
+    "status": "ok",
+    "dependencies": {
+      "postgresql": "ok",
+      "redis_hint_broker": "ok",
+      "private_object_store": "ok",
+      "cargopulse_optimizer": "ok",
+      "cargopulse_validation": "ok"
+    }
+  },
+  "redis_anonymous_volume": {
+    "name": "f36c2b32e33460f60591c14c2f7ff24641996088f9f8f14bc4bc0d832006a09d",
+    "container_id": "4a5062dc4a69bc93d1812e0028cba802d559b654e9bbc132644f0b336f33f73e",
+    "destination": "/data",
+    "absent_from_preflight": true,
+    "created_with_this_new_container": true
+  },
+  "initial_containers": {
+    "api": {
+      "id": "a89e956111e1da60b3c64aff9cd96fdc03b31b7ac2d0990a7ffe4177c4829ce4",
+      "image": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+      "user": "10001:10001",
+      "state": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "0001-01-01T00:00:00Z",
+        "Health": {
+          "FailingStreak": 0,
+          "Log": [
+            {
+              "End": "2026-11-12T13:33:05.908938738+08:00",
+              "ExitCode": 0,
+              "Output": "",
+              "Start": "2026-11-12T13:33:05.791105994+08:00"
+            }
+          ],
+          "Status": "healthy"
+        },
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 1115347,
+        "Restarting": false,
+        "Running": true,
+        "StartedAt": "2026-11-12T05:33:00.70933149Z",
+        "Status": "running"
+      },
+      "mounts": [
+        {
+          "Destination": "/var/lib/cargopulse/objects",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "cargopulse-final-install-2_objects",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/cargopulse-final-install-2_objects/_data",
+          "Type": "volume"
+        }
+      ],
+      "ports": {},
+      "project": "cargopulse-final-install-2"
+    },
+    "worker": {
+      "id": "393f050a2e9b65a36ce7cd7700c4949fa803bb0fd60a3cc9d00d1b1b5c2255b3",
+      "image": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+      "user": "10001:10001",
+      "state": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "0001-01-01T00:00:00Z",
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 1115288,
+        "Restarting": false,
+        "Running": true,
+        "StartedAt": "2026-11-12T05:33:00.631424917Z",
+        "Status": "running"
+      },
+      "mounts": [
+        {
+          "Destination": "/var/lib/cargopulse/objects",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "cargopulse-final-install-2_objects",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/cargopulse-final-install-2_objects/_data",
+          "Type": "volume"
+        }
+      ],
+      "ports": {},
+      "project": "cargopulse-final-install-2"
+    },
+    "migrate": {
+      "id": "31b2d60c67992b19ae13cad752d3480b90778690af2c78375d51fd5d7a81886e",
+      "image": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+      "user": "10001:10001",
+      "state": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "2026-11-12T05:33:00.353602379Z",
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 0,
+        "Restarting": false,
+        "Running": false,
+        "StartedAt": "2026-11-12T05:32:59.542494932Z",
+        "Status": "exited"
+      },
+      "mounts": [
+        {
+          "Destination": "/var/lib/cargopulse/objects",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "cargopulse-final-install-2_objects",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/cargopulse-final-install-2_objects/_data",
+          "Type": "volume"
+        }
+      ],
+      "ports": {},
+      "project": "cargopulse-final-install-2"
+    },
+    "web": {
+      "id": "a7456a99011f90ab28622bc3157aa4d434f8821bb065558a8db8123401b8c373",
+      "image": "sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f",
+      "user": "node",
+      "state": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "0001-01-01T00:00:00Z",
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 1115662,
+        "Restarting": false,
+        "Running": true,
+        "StartedAt": "2026-11-12T05:33:06.310702419Z",
+        "Status": "running"
+      },
+      "mounts": [],
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "3116"
+          }
+        ]
+      },
+      "project": "cargopulse-final-install-2"
+    },
+    "postgres": {
+      "id": "bbe99135e32916d14338beb5ac9dd791097084307784e23731f62868c6db0d01",
+      "image": "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+      "user": "postgres",
+      "state": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "0001-01-01T00:00:00Z",
+        "Health": {
+          "FailingStreak": 0,
+          "Log": [
+            {
+              "End": "2026-11-12T13:32:59.064634687+08:00",
+              "ExitCode": 0,
+              "Output": "/var/run/postgresql:5432 - accepting connections\n",
+              "Start": "2026-11-12T13:32:59.023030348+08:00"
+            },
+            {
+              "End": "2026-11-12T13:33:02.087204451+08:00",
+              "ExitCode": 0,
+              "Output": "/var/run/postgresql:5432 - accepting connections\n",
+              "Start": "2026-11-12T13:33:02.066066041+08:00"
+            },
+            {
+              "End": "2026-11-12T13:33:05.113800981+08:00",
+              "ExitCode": 0,
+              "Output": "/var/run/postgresql:5432 - accepting connections\n",
+              "Start": "2026-11-12T13:33:05.089117905+08:00"
+            }
+          ],
+          "Status": "healthy"
+        },
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 1114792,
+        "Restarting": false,
+        "Running": true,
+        "StartedAt": "2026-11-12T05:32:55.969891639Z",
+        "Status": "running"
+      },
+      "mounts": [
+        {
+          "Destination": "/var/lib/postgresql",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "cargopulse-final-install-2_postgres_alpine",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/cargopulse-final-install-2_postgres_alpine/_data",
+          "Type": "volume"
+        }
+      ],
+      "ports": {},
+      "project": "cargopulse-final-install-2"
+    },
+    "redis": {
+      "id": "4a5062dc4a69bc93d1812e0028cba802d559b654e9bbc132644f0b336f33f73e",
+      "image": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041",
+      "user": "",
+      "state": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "0001-01-01T00:00:00Z",
+        "Health": {
+          "FailingStreak": 0,
+          "Log": [
+            {
+              "End": "2026-11-12T13:32:59.127708697+08:00",
+              "ExitCode": 0,
+              "Output": "PONG\n",
+              "Start": "2026-11-12T13:32:59.099435391+08:00"
+            },
+            {
+              "End": "2026-11-12T13:33:02.147068184+08:00",
+              "ExitCode": 0,
+              "Output": "PONG\n",
+              "Start": "2026-11-12T13:33:02.12824136+08:00"
+            },
+            {
+              "End": "2026-11-12T13:33:05.1769613+08:00",
+              "ExitCode": 0,
+              "Output": "PONG\n",
+              "Start": "2026-11-12T13:33:05.147805126+08:00"
+            }
+          ],
+          "Status": "healthy"
+        },
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 1114866,
+        "Restarting": false,
+        "Running": true,
+        "StartedAt": "2026-11-12T05:32:56.029791479Z",
+        "Status": "running"
+      },
+      "mounts": [
+        {
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "",
+          "Name": "f36c2b32e33460f60591c14c2f7ff24641996088f9f8f14bc4bc0d832006a09d",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/f36c2b32e33460f60591c14c2f7ff24641996088f9f8f14bc4bc0d832006a09d/_data",
+          "Type": "volume"
+        }
+      ],
+      "ports": {},
+      "project": "cargopulse-final-install-2"
+    }
+  },
+  "bootstrap": {
+    "migration": "0005",
+    "tables": 15,
+    "forced_rls": 12,
+    "assurance_column": 1,
+    "disable_trigger": 1,
+    "invalid_public_indexes": 0,
+    "fresh_business_state_empty": true,
+    "password_encryption": "scram-sha-256",
+    "postgres_uid": 70,
+    "app_role": {
+      "db_user": "cargopulse_app",
+      "rolsuper": false,
+      "rolbypassrls": false,
+      "owned_tables": 0
+    }
+  },
+  "csrf": {
+    "stable_body_across_two_reads": true,
+    "proxy_expiry_header_seconds": 3599,
+    "cookie_name_dependency": false
+  },
+  "journey": {
+    "cargo_units": 8,
+    "import_id": "89e228c0-7c2f-4a18-bfa9-d754c414e313",
+    "scenario_id": "b82c135a-051c-43d9-9b9a-23240fe8af2e",
+    "job_id": "144e9612-c9ac-471c-b5f7-b8440cae8302",
+    "plan_id": "c02b8dea-a08d-49af-891d-59f6145ab2af",
+    "decision_id": "78d02dcb-7e66-4734-837e-e665d0871490",
+    "snapshot_hash": "972a562c148ae63ab1e661fdd762c596ac6fefa368987042cfcce8d0f246b5e3",
+    "plan_hash": "b63901d70787c5f3d61285640652867a03dd756781250fd56a7bf31de9ef305d",
+    "solver_status": "OPTIMAL",
+    "independent_validation": "PASS",
+    "external_write_performed": false
+  },
+  "exports": {
+    "json": {
+      "bytes": 8223,
+      "sha256": "6d031c52257591f235cf9394cad86bbb839baab4aebcd2e61141fdaa73e48d9a",
+      "content_type": "application/json",
+      "attachment": true
+    },
+    "csv": {
+      "bytes": 3088,
+      "sha256": "692e8019a034caa4c1561f98cc1a8e0f24c42e40c7927f8971376f46d599dde4",
+      "content_type": "text/csv; charset=utf-8",
+      "attachment": true
+    },
+    "pdf": {
+      "bytes": 4810,
+      "sha256": "d30e3145fa6a6e77fb28e6f502d8077f7f63e41630d37ca95f638d44b9baaa84",
+      "content_type": "application/pdf",
+      "attachment": true
+    }
+  },
+  "cross_tenant": {
+    "known_resource_gets_404": 8,
+    "decision_404": true,
+    "import_role_gate_403": true,
+    "import_403_not_claimed_as_object_isolation": true
+  },
+  "private_objects": {
+    "count": 1,
+    "all_sha256_names_match": true,
+    "all_files_0600": true
+  },
+  "stop_start_persistence": {
+    "session_survived": true,
+    "same_plan_hash": true,
+    "exports_byte_identical": true
+  },
+  "chrome": {
+    "exit_code": 0,
+    "tests_requested": 1,
+    "tests_passed": 1,
+    "trace_recording": false,
+    "actual_base_url": "http://localhost:3116",
+    "browser_channel": "chrome",
+    "scope": "real Chrome login/view/cross-tab logout DOM removal and server-session rejection; queued-storage-event subcase is injected",
+    "authorship_independence_claimed": false
+  },
+  "final_disposition": {
+    "services_stopped": true,
+    "volumes_preserved": [
+      "cargopulse-final-install-2_postgres_alpine",
+      "cargopulse-final-install-2_objects",
+      "f36c2b32e33460f60591c14c2f7ff24641996088f9f8f14bc4bc0d832006a09d"
+    ],
+    "no_volume_deletion": true,
+    "initial_project_and_volumes_untouched": true,
+    "first_and_second_projects_stopped": true,
+    "first_project_volumes_preserved": [
+      "cargopulse-final-install_postgres_alpine",
+      "cargopulse-final-install_objects",
+      "34001e14e1823592f57415cc4ed7faeea0bde9874248cfa1d00ff5ac550447f6"
+    ],
+    "all_six_created_volumes_confirmed_present": true
+  },
+  "finished_utc": "2026-11-12T05:37:33.141091+00:00",
+  "seconds": 277.765,
+  "limits": [
+    "Prebuilt pinned images and existing local Docker VM/cache; not cold/new-host provisioning.",
+    "Synthetic local acceptance only; no real enterprise IdP/MFA, hosted CI, cloud TLS/storage/monitoring or public release verified.",
+    "PDF bytes/header verified; PDF layout not visually reviewed.",
+    "Chrome storage-notification injection is not native BFCache acceptance."
+  ],
+  "chrome_completion_seconds": 27.91,
+  "active_execution_seconds": 74.957,
+  "historical_failures": [
+    {
+      "phase": "first fresh project mount assertion",
+      "report": "docs/evidence/23-final-independent-install-initial.json",
+      "sha256": "4613976f27ab83495e876d933c84bc0bc5e12ef86b047288c46f2d67b3421493",
+      "http_journey_executed": false
+    },
+    {
+      "phase": "second project initial Chrome selector",
+      "report": ".local/final-install/20261112T053255Z/before-chrome-correction.json",
+      "sha256": "7c68bb511df12e301674ac88d0faecd050fbf1d57169cf0a733efde7b019d23a",
+      "failure": {
+        "type": "AssertionError",
+        "summary": "Chrome supplement failed; see scoped chrome log"
+      },
+      "browser_tests_executed": 0
+    },
+    {
+      "phase": "Chrome completion read-only ID guard",
+      "report": ".local/final-install/20261112T053255Z/chrome-guard-short-id-failure.json",
+      "sha256": "55011c92201a67d792941e67be3d9b308a4821ee3a1c1f4acfa437746ce42874",
+      "failure": {
+        "type": "AssertionError",
+        "summary": ""
+      },
+      "services_started": false,
+      "browser_tests_executed": 0
+    }
+  ],
+  "initial_fresh_install_and_http_seconds": 47.047,
+  "reviewer_role": "Second-person installation/runbook operator for lead/backend/runtime integration; operator also authored the frontend boundary and does not claim independent security review of that feature.",
+  "credential_isolation": {
+    "existing_worktree_env_not_overwritten_on_second_run": true,
+    "new_passwords_differ_from_first_attempt": true,
+    "published_and_selected_raw_logs_checked_for_both_attempt_passwords": true
+  },
+  "runtime_identity_exact_match": {
+    "api": true,
+    "worker": true,
+    "migrate": true,
+    "web": true,
+    "postgres": true,
+    "redis": true
+  }
+}

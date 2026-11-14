@@ -1,0 +1,48 @@
+{
+  "scope": "isolated local PostgreSQL 18 Debian 12 to Debian 13 image update; prior verified backup retained",
+  "status": "PASS",
+  "reindexed": [
+    {
+      "database": "cargopulse",
+      "recorded": "2.36",
+      "actual": "2.41"
+    },
+    {
+      "database": "cargopulse_restore_drill_20261110_085623",
+      "recorded": "2.36",
+      "actual": "2.41"
+    },
+    {
+      "database": "postgres",
+      "recorded": "2.36",
+      "actual": "2.41"
+    },
+    {
+      "database": "template1",
+      "recorded": "2.36",
+      "actual": "2.41"
+    }
+  ],
+  "after": [
+    {
+      "database": "cargopulse",
+      "recorded": "2.41",
+      "actual": "2.41"
+    },
+    {
+      "database": "cargopulse_restore_drill_20261110_085623",
+      "recorded": "2.41",
+      "actual": "2.41"
+    },
+    {
+      "database": "postgres",
+      "recorded": "2.41",
+      "actual": "2.41"
+    },
+    {
+      "database": "template1",
+      "recorded": "2.41",
+      "actual": "2.41"
+    }
+  ]
+}

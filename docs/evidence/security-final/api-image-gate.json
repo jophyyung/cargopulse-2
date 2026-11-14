@@ -1,0 +1,1682 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.76.2"
+  },
+  "ReportID": "01a1d372-3db0-7b42-8081-49c3c2a37d58",
+  "CreatedAt": "2026-11-13T13:47:21.904739+08:00",
+  "ArtifactID": "sha256:13fef5a3271d4a38e9f7cbb48467ca130f11c3ff394bcf1321bd8adffffb3a7b",
+  "ArtifactName": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "Size": 270851072,
+    "OS": {
+      "Family": "debian",
+      "Name": "13.7"
+    },
+    "ImageID": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "DiffIDs": [
+      "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f",
+      "sha256:4928a9025127f4b7547cbe6fbf05884c0c0594426c2233f7eeac05288646277d",
+      "sha256:dc43d028f79916e8a2202c50b93bb2646cf73d108010b7c267055a99812a8bf6",
+      "sha256:3d425659ce13349f7d0a98137881d3a3521e7b44c09b5817fdf753396126f13e",
+      "sha256:70c8369bae25a0f8e56a4625b7d87b15f6e1fda2b6b1722387abd2849628a556",
+      "sha256:c354a99122b091eedc4862043b87ac8df7c0ef26ef7450a22b79f0ae01a3339e"
+    ],
+    "RepoTags": [
+      "cargopulse-api-remediation:final",
+      "cargopulse-local-api:latest",
+      "cargopulse-local-migrate:latest",
+      "cargopulse-local-worker:latest"
+    ],
+    "RepoDigests": [
+      "cargopulse-api-remediation@sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+      "cargopulse-local-api@sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+      "cargopulse-local-migrate@sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+      "cargopulse-local-worker@sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34"
+    ],
+    "Reference": "cargopulse-api-remediation:final",
+    "ImageConfig": {
+      "architecture": "arm64",
+      "created": "2026-11-12T01:21:02.528980635+08:00",
+      "history": [
+        {
+          "created": "2026-11-11T11:13:36Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PATH=/usr/local/bin:/usr/bin:/bin LD_LIBRARY_PATH=/usr/local/lib HOME=/tmp SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PYTHONPATH=/app/packages/contracts/python:/app/services/api:/app/services/worker:/app",
+          "empty_layer": true
+        },
+        {
+          "created": "2026-11-11T11:22:52Z",
+          "created_by": "/bin/sh -c #(nop) COPY dir:5553cc8103edbc3f392bc448171545d596cf746395518bb9885f943729a65429 in / "
+        },
+        {
+          "created": "2026-11-11T11:22:54Z",
+          "created_by": "/bin/sh -c #(nop) WORKDIR /app"
+        },
+        {
+          "created": "2026-11-11T11:22:54Z",
+          "created_by": "/bin/sh -c #(nop) COPY dir:3181fe92fe4e98d27ca6fd0c70a3d217783b1d9681d45c474808d7c5c05ef50e in packages/contracts/python "
+        },
+        {
+          "created": "2026-11-11T11:22:55Z",
+          "created_by": "/bin/sh -c #(nop) COPY dir:e4f568a5a344600ef5539d17a1a00a1d8b52b8bde1d5bd12b31c4562940fb5fc in packages/domain_fixtures "
+        },
+        {
+          "created": "2026-11-11T17:21:01Z",
+          "created_by": "/bin/sh -c #(nop) COPY dir:7b59455a86009b33984a67a7d9fe6c0f9e4b09568cf5a6d910a13dab484fc58c in services "
+        },
+        {
+          "created": "2026-11-11T17:21:01Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:21ffe20e827c7aa08e0e4012a2aea584954a86cdcc6ec780097c0358a032a55f in infra/bootstrap.py "
+        },
+        {
+          "created": "2026-11-11T17:21:01Z",
+          "created_by": "/bin/sh -c #(nop)  USER 10001:10001",
+          "empty_layer": true
+        },
+        {
+          "created": "2026-11-11T17:21:02Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 8000",
+          "empty_layer": true
+        },
+        {
+          "created": "2026-11-11T17:21:02Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"python\" \"-m\" \"uvicorn\" \"cargopulse_api.main:app\" \"--host\" \"0.0.0.0\" \"--port\" \"8000\" \"--no-access-log\"]",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f",
+          "sha256:4928a9025127f4b7547cbe6fbf05884c0c0594426c2233f7eeac05288646277d",
+          "sha256:dc43d028f79916e8a2202c50b93bb2646cf73d108010b7c267055a99812a8bf6",
+          "sha256:3d425659ce13349f7d0a98137881d3a3521e7b44c09b5817fdf753396126f13e",
+          "sha256:70c8369bae25a0f8e56a4625b7d87b15f6e1fda2b6b1722387abd2849628a556",
+          "sha256:c354a99122b091eedc4862043b87ac8df7c0ef26ef7450a22b79f0ae01a3339e"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "python",
+          "-m",
+          "uvicorn",
+          "cargopulse_api.main:app",
+          "--host",
+          "0.0.0.0",
+          "--port",
+          "8000",
+          "--no-access-log"
+        ],
+        "Env": [
+          "PATH=/usr/local/bin:/usr/bin:/bin",
+          "LD_LIBRARY_PATH=/usr/local/lib",
+          "HOME=/tmp",
+          "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt",
+          "PYTHONDONTWRITEBYTECODE=1",
+          "PYTHONUNBUFFERED=1",
+          "PYTHONPATH=/app/packages/contracts/python:/app/services/api:/app/services/worker:/app"
+        ],
+        "User": "10001:10001",
+        "WorkingDir": "/app",
+        "ExposedPorts": {
+          "8000/tcp": {}
+        }
+      }
+    },
+    "Layers": [
+      {
+        "Size": 270537216,
+        "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+        "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+      },
+      {
+        "Size": 1536,
+        "Digest": "sha256:6c98557587d519082c1848d367c25d06991af3818595f34c73b8d924ff000dc4",
+        "DiffID": "sha256:4928a9025127f4b7547cbe6fbf05884c0c0594426c2233f7eeac05288646277d"
+      },
+      {
+        "Size": 24576,
+        "Digest": "sha256:c63f238c2bb5bf8599a5bc93514cd9d610aff2845f3a67fb18347425f258b3d1",
+        "DiffID": "sha256:dc43d028f79916e8a2202c50b93bb2646cf73d108010b7c267055a99812a8bf6"
+      },
+      {
+        "Size": 11776,
+        "Digest": "sha256:f0aafe196f837786c728ab658e875ee9975f712296e68e279d7ef0e283691739",
+        "DiffID": "sha256:3d425659ce13349f7d0a98137881d3a3521e7b44c09b5817fdf753396126f13e"
+      },
+      {
+        "Size": 271360,
+        "Digest": "sha256:86f2d7f5d90c71a24961db0a7453a03e38279ed60fd1fe6a1190b5072dd0b20a",
+        "DiffID": "sha256:70c8369bae25a0f8e56a4625b7d87b15f6e1fda2b6b1722387abd2849628a556"
+      },
+      {
+        "Size": 4608,
+        "Digest": "sha256:e575a4df820d42e0ef698f07ef08fbfacae3ac2adf2ba3f3730745e7fb715d54",
+        "DiffID": "sha256:c354a99122b091eedc4862043b87ac8df7c0ef26ef7450a22b79f0ae01a3339e"
+      }
+    ]
+  },
+  "Results": [
+    {
+      "Target": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34 (debian 13.7)",
+      "Class": "os-pkgs",
+      "Type": "debian",
+      "Packages": [
+        {
+          "ID": "base-files@13.8+deb13u7",
+          "Name": "base-files",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/base-files@13.8%2Bdeb13u7?arch=arm64\u0026distro=debian-13.7",
+            "UID": "9efcdead37a0f982"
+          },
+          "Version": "13.8+deb13u7",
+          "Arch": "arm64",
+          "SrcName": "base-files",
+          "SrcVersion": "13.8+deb13u7",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL-2.0-only",
+            "verbatim"
+          ],
+          "Maintainer": "Santiago Vila \u003csanvila@debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "ca-certificates@20250419+deb13u1",
+          "Name": "ca-certificates",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/ca-certificates@20250419%2Bdeb13u1?arch=all\u0026distro=debian-13.7",
+            "UID": "ca213054bb4325d8"
+          },
+          "Version": "20250419+deb13u1",
+          "Arch": "all",
+          "SrcName": "ca-certificates",
+          "SrcVersion": "20250419+deb13u1",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL-2.0-only",
+            "MPL-2.0"
+          ],
+          "Maintainer": "Julien Cristau \u003cjcristau@debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "openssl@3.5.7-1~deb13u3"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "gcc-14-base@14.2.0-19",
+          "Name": "gcc-14-base",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/gcc-14-base@14.2.0-19?arch=arm64\u0026distro=debian-13.7",
+            "UID": "97729813f5e96303"
+          },
+          "Version": "14.2.0",
+          "Release": "19",
+          "Arch": "arm64",
+          "SrcName": "gcc-14",
+          "SrcVersion": "14.2.0",
+          "SrcRelease": "19",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GFDL-1.2-only",
+            "Artistic-2.0",
+            "LGPL-2.0-or-later"
+          ],
+          "Maintainer": "Debian GCC Maintainers \u003cdebian-gcc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libbz2-1.0@1.0.8-6",
+          "Name": "libbz2-1.0",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libbz2-1.0@1.0.8-6?arch=arm64\u0026distro=debian-13.7",
+            "UID": "769b04000e65b117"
+          },
+          "Version": "1.0.8",
+          "Release": "6",
+          "Arch": "arm64",
+          "SrcName": "bzip2",
+          "SrcVersion": "1.0.8",
+          "SrcRelease": "6",
+          "Licenses": [
+            "BSD-3-Clause",
+            "GPL-2.0-only"
+          ],
+          "Maintainer": "Anibal Monsalve Salazar \u003canibal@debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libc-bin@2.41-12+deb13u4",
+          "Name": "libc-bin",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libc-bin@2.41-12%2Bdeb13u4?arch=arm64\u0026distro=debian-13.7",
+            "UID": "3d43b48e34c16536"
+          },
+          "Version": "2.41",
+          "Release": "12+deb13u4",
+          "Arch": "arm64",
+          "SrcName": "glibc",
+          "SrcVersion": "2.41",
+          "SrcRelease": "12+deb13u4",
+          "Licenses": [
+            "LGPL-2.1-or-later",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1+-with-link-exception",
+            "LGPL-3.0-or-later",
+            "GPL-2.0-or-later",
+            "GPL-2+-with-link-exception",
+            "GPL-2.0-only",
+            "GPL-3.0-or-later",
+            "FSFAP",
+            "Carnegie",
+            "Inner-Net",
+            "MIT-like-Lord",
+            "BSD-like-Spencer",
+            "PCRE",
+            "BSD-3-clause-Carnegie",
+            "Unicode-DFS-2016",
+            "BSL-1.0",
+            "SunPro",
+            "CORE-MATH",
+            "BSD-3-clause-Berkeley",
+            "BSD-3-clause-WIDE",
+            "BSD-2-Clause",
+            "BSD-3-clause-Oracle",
+            "DEC",
+            "IBM",
+            "ISC",
+            "Univ-Coimbra",
+            "public-domain",
+            "GPL-3.0-only",
+            "LGPL-2.0-only",
+            "LGPL-2.1-only",
+            "LGPL-3.0-only"
+          ],
+          "Maintainer": "GNU Libc Maintainers \u003cdebian-glibc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libc6@2.41-12+deb13u4",
+          "Name": "libc6",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=arm64\u0026distro=debian-13.7",
+            "UID": "4a32d71c7466eb51"
+          },
+          "Version": "2.41",
+          "Release": "12+deb13u4",
+          "Arch": "arm64",
+          "SrcName": "glibc",
+          "SrcVersion": "2.41",
+          "SrcRelease": "12+deb13u4",
+          "Licenses": [
+            "LGPL-2.1-or-later",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1+-with-link-exception",
+            "LGPL-3.0-or-later",
+            "GPL-2.0-or-later",
+            "GPL-2+-with-link-exception",
+            "GPL-2.0-only",
+            "GPL-3.0-or-later",
+            "FSFAP",
+            "Carnegie",
+            "Inner-Net",
+            "MIT-like-Lord",
+            "BSD-like-Spencer",
+            "PCRE",
+            "BSD-3-clause-Carnegie",
+            "Unicode-DFS-2016",
+            "BSL-1.0",
+            "SunPro",
+            "CORE-MATH",
+            "BSD-3-clause-Berkeley",
+            "BSD-3-clause-WIDE",
+            "BSD-2-Clause",
+            "BSD-3-clause-Oracle",
+            "DEC",
+            "IBM",
+            "ISC",
+            "Univ-Coimbra",
+            "public-domain",
+            "GPL-3.0-only",
+            "LGPL-2.0-only",
+            "LGPL-2.1-only",
+            "LGPL-3.0-only"
+          ],
+          "Maintainer": "GNU Libc Maintainers \u003cdebian-glibc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libgcc-s1@14.2.0-19"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libcrypt1@1:4.4.38-1",
+          "Name": "libcrypt1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libcrypt1@4.4.38-1?arch=arm64\u0026distro=debian-13.7\u0026epoch=1",
+            "UID": "858188d4be8e5504"
+          },
+          "Version": "4.4.38",
+          "Release": "1",
+          "Epoch": 1,
+          "Arch": "arm64",
+          "SrcName": "libxcrypt",
+          "SrcVersion": "4.4.38",
+          "SrcRelease": "1",
+          "SrcEpoch": 1,
+          "Maintainer": "Marco d'Itri \u003cmd@linux.it\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libdb5.3t64@5.3.28+dfsg2-9",
+          "Name": "libdb5.3t64",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libdb5.3t64@5.3.28%2Bdfsg2-9?arch=arm64\u0026distro=debian-13.7",
+            "UID": "9e3c5dd0ee2aaab2"
+          },
+          "Version": "5.3.28+dfsg2",
+          "Release": "9",
+          "Arch": "arm64",
+          "SrcName": "db5.3",
+          "SrcVersion": "5.3.28+dfsg2",
+          "SrcRelease": "9",
+          "Licenses": [
+            "Sleepycat",
+            "BSD-3-Clause",
+            "MS-PL",
+            "GPL-2.0-or-later",
+            "Artistic-2.0",
+            "X11",
+            "MIT-old",
+            "TCL-like",
+            "BSD-3-clause-fjord",
+            "GPL-3.0-only",
+            "Zlib"
+          ],
+          "Maintainer": "Debian QA Group \u003cpackages@qa.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libffi8@3.4.8-2",
+          "Name": "libffi8",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libffi8@3.4.8-2?arch=arm64\u0026distro=debian-13.7",
+            "UID": "5f7e05240d572e86"
+          },
+          "Version": "3.4.8",
+          "Release": "2",
+          "Arch": "arm64",
+          "SrcName": "libffi",
+          "SrcVersion": "3.4.8",
+          "SrcRelease": "2",
+          "Licenses": [
+            "MIT",
+            "X11",
+            "GPL-2.0-or-later",
+            "GPL-3.0-or-later",
+            "MPL-1.1",
+            "LGPL-2.1-or-later",
+            "public-domain"
+          ],
+          "Maintainer": "Debian GCC Maintainers \u003cdebian-gcc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libgcc-s1@14.2.0-19",
+          "Name": "libgcc-s1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libgcc-s1@14.2.0-19?arch=arm64\u0026distro=debian-13.7",
+            "UID": "2825f15b105adc6d"
+          },
+          "Version": "14.2.0",
+          "Release": "19",
+          "Arch": "arm64",
+          "SrcName": "gcc-14",
+          "SrcVersion": "14.2.0",
+          "SrcRelease": "19",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GFDL-1.2-only",
+            "Artistic-2.0",
+            "LGPL-2.0-or-later"
+          ],
+          "Maintainer": "Debian GCC Maintainers \u003cdebian-gcc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "gcc-14-base@14.2.0-19",
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libgdbm6t64@1.24-2",
+          "Name": "libgdbm6t64",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libgdbm6t64@1.24-2?arch=arm64\u0026distro=debian-13.7",
+            "UID": "d034f98c82796944"
+          },
+          "Version": "1.24",
+          "Release": "2",
+          "Arch": "arm64",
+          "SrcName": "gdbm",
+          "SrcVersion": "1.24",
+          "SrcRelease": "2",
+          "Licenses": [
+            "GPL-3.0-or-later",
+            "GPL-2.0-or-later",
+            "GFDL-1.3-no-invariants-or-later",
+            "GPL-3.0-only",
+            "GPL-2.0-only"
+          ],
+          "Maintainer": "Nicolas Mora \u003cbabelouest@debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "liblzma5@5.8.1-1+deb13u2",
+          "Name": "liblzma5",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/liblzma5@5.8.1-1%2Bdeb13u2?arch=arm64\u0026distro=debian-13.7",
+            "UID": "353763aa0b5ea383"
+          },
+          "Version": "5.8.1",
+          "Release": "1+deb13u2",
+          "Arch": "arm64",
+          "SrcName": "xz-utils",
+          "SrcVersion": "5.8.1",
+          "SrcRelease": "1+deb13u2",
+          "Licenses": [
+            "0BSD",
+            "GPL-2.0-or-later",
+            "LGPL-2.1-or-later",
+            "FSFULLR",
+            "GPL-3.0-or-later-WITH-Autoconf-exception-macro",
+            "none",
+            "PD",
+            "permissive-nowarranty",
+            "FSFUL",
+            "noderivs",
+            "PD-debian",
+            "LGPL-2.1-only",
+            "GPL-2.0-only",
+            "GPL-3.0-only"
+          ],
+          "Maintainer": "Sebastian Andrzej Siewior \u003csebastian@breakpoint.cc\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libssl3t64@3.5.7-1~deb13u3",
+          "Name": "libssl3t64",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libssl3t64@3.5.7-1~deb13u3?arch=arm64\u0026distro=debian-13.7",
+            "UID": "202299b340b24604"
+          },
+          "Version": "3.5.7",
+          "Release": "1~deb13u3",
+          "Arch": "arm64",
+          "SrcName": "openssl",
+          "SrcVersion": "3.5.7",
+          "SrcRelease": "1~deb13u3",
+          "Licenses": [
+            "Apache-2.0",
+            "Artistic-2.0",
+            "GPL-1.0-or-later",
+            "GPL-1.0-only"
+          ],
+          "Maintainer": "Debian OpenSSL Team \u003cpkg-openssl-devel@alioth-lists.debian.net\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4",
+            "libzstd1@1.5.7+dfsg-1",
+            "zlib1g@1:1.3.dfsg+really1.3.1-1+deb13u1"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libstdc++6@14.2.0-19",
+          "Name": "libstdc++6",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libstdc%2B%2B6@14.2.0-19?arch=arm64\u0026distro=debian-13.7",
+            "UID": "e06637e916af2fb8"
+          },
+          "Version": "14.2.0",
+          "Release": "19",
+          "Arch": "arm64",
+          "SrcName": "gcc-14",
+          "SrcVersion": "14.2.0",
+          "SrcRelease": "19",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GFDL-1.2-only",
+            "Artistic-2.0",
+            "LGPL-2.0-or-later"
+          ],
+          "Maintainer": "Debian GCC Maintainers \u003cdebian-gcc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "gcc-14-base@14.2.0-19",
+            "libc6@2.41-12+deb13u4",
+            "libgcc-s1@14.2.0-19"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "libzstd1@1.5.7+dfsg-1",
+          "Name": "libzstd1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libzstd1@1.5.7%2Bdfsg-1?arch=arm64\u0026distro=debian-13.7",
+            "UID": "f1bf16aabffdcdc3"
+          },
+          "Version": "1.5.7+dfsg",
+          "Release": "1",
+          "Arch": "arm64",
+          "SrcName": "libzstd",
+          "SrcVersion": "1.5.7+dfsg",
+          "SrcRelease": "1",
+          "Licenses": [
+            "BSD-3-Clause",
+            "GPL-2.0-only",
+            "Zlib",
+            "MIT"
+          ],
+          "Maintainer": "RPM packaging team \u003cteam+pkg-rpm@tracker.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "openssl@3.5.7-1~deb13u3",
+          "Name": "openssl",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/openssl@3.5.7-1~deb13u3?arch=arm64\u0026distro=debian-13.7",
+            "UID": "eba2fb3b4d081df0"
+          },
+          "Version": "3.5.7",
+          "Release": "1~deb13u3",
+          "Arch": "arm64",
+          "SrcName": "openssl",
+          "SrcVersion": "3.5.7",
+          "SrcRelease": "1~deb13u3",
+          "Licenses": [
+            "Apache-2.0",
+            "Artistic-2.0",
+            "GPL-1.0-or-later",
+            "GPL-1.0-only"
+          ],
+          "Maintainer": "Debian OpenSSL Team \u003cpkg-openssl-devel@alioth-lists.debian.net\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4",
+            "libssl3t64@3.5.7-1~deb13u3"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "tzdata@2026f-0+deb13u1",
+          "Name": "tzdata",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/tzdata@2026f-0%2Bdeb13u1?arch=all\u0026distro=debian-13.7",
+            "UID": "9e18df6fa0230099"
+          },
+          "Version": "2026f",
+          "Release": "0+deb13u1",
+          "Arch": "all",
+          "SrcName": "tzdata",
+          "SrcVersion": "2026f",
+          "SrcRelease": "0+deb13u1",
+          "Licenses": [
+            "public-domain"
+          ],
+          "Maintainer": "GNU Libc Maintainers \u003cdebian-glibc@lists.debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        },
+        {
+          "ID": "zlib1g@1:1.3.dfsg+really1.3.1-1+deb13u1",
+          "Name": "zlib1g",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/zlib1g@1.3.dfsg%2Breally1.3.1-1%2Bdeb13u1?arch=arm64\u0026distro=debian-13.7\u0026epoch=1",
+            "UID": "f7d6a3919705a4a"
+          },
+          "Version": "1.3.dfsg+really1.3.1",
+          "Release": "1+deb13u1",
+          "Epoch": 1,
+          "Arch": "arm64",
+          "SrcName": "zlib",
+          "SrcVersion": "1.3.dfsg+really1.3.1",
+          "SrcRelease": "1+deb13u1",
+          "SrcEpoch": 1,
+          "Licenses": [
+            "Zlib"
+          ],
+          "Maintainer": "Mark Brown \u003cbroonie@debian.org\u003e",
+          "Repository": {
+            "Class": "official"
+          },
+          "DependsOn": [
+            "libc6@2.41-12+deb13u4"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "AnalyzedBy": "dpkg"
+        }
+      ]
+    },
+    {
+      "Target": "Python",
+      "Class": "lang-pkgs",
+      "Type": "python-pkg",
+      "Packages": [
+        {
+          "Name": "Authlib",
+          "Identifier": {
+            "PURL": "pkg:pypi/authlib@1.9.5",
+            "UID": "7c9571bac0096efc"
+          },
+          "Version": "1.9.5",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/authlib-1.9.5.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "Mako",
+          "Identifier": {
+            "PURL": "pkg:pypi/mako@1.4.3",
+            "UID": "da3acbfc0cc1a3aa"
+          },
+          "Version": "1.4.3",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/mako-1.4.3.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "MarkupSafe",
+          "Identifier": {
+            "PURL": "pkg:pypi/markupsafe@3.0.4",
+            "UID": "a45c39b5307973e8"
+          },
+          "Version": "3.0.4",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/markupsafe-3.0.4.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "PyJWT",
+          "Identifier": {
+            "PURL": "pkg:pypi/pyjwt@2.15.1",
+            "UID": "949f139d1825352b"
+          },
+          "Version": "2.15.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/pyjwt-2.15.1.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "SQLAlchemy",
+          "Identifier": {
+            "PURL": "pkg:pypi/sqlalchemy@2.1.8",
+            "UID": "6b41b4e060be86e8"
+          },
+          "Version": "2.1.8",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/sqlalchemy-2.1.8.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "alembic",
+          "Identifier": {
+            "PURL": "pkg:pypi/alembic@1.20.1",
+            "UID": "5467d4981a5db7e1"
+          },
+          "Version": "1.20.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/alembic-1.20.1.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "annotated-doc",
+          "Identifier": {
+            "PURL": "pkg:pypi/annotated-doc@0.0.5",
+            "UID": "fb6ac2c1f334acc0"
+          },
+          "Version": "0.0.5",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/annotated_doc-0.0.5.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "annotated-types",
+          "Identifier": {
+            "PURL": "pkg:pypi/annotated-types@0.8.0",
+            "UID": "1847359b2b3688a4"
+          },
+          "Version": "0.8.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/annotated_types-0.8.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "anyio",
+          "Identifier": {
+            "PURL": "pkg:pypi/anyio@4.16.0",
+            "UID": "a99d512d2164faed"
+          },
+          "Version": "4.16.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/anyio-4.16.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "boto3",
+          "Identifier": {
+            "PURL": "pkg:pypi/boto3@1.43.127",
+            "UID": "56114f1bdda845c2"
+          },
+          "Version": "1.43.127",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/boto3-1.43.127.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "botocore",
+          "Identifier": {
+            "PURL": "pkg:pypi/botocore@1.43.127",
+            "UID": "50897e070166bf56"
+          },
+          "Version": "1.43.127",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/botocore-1.43.127.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "certifi",
+          "Identifier": {
+            "PURL": "pkg:pypi/certifi@2026.10.23",
+            "UID": "33a8eb0b89520a33"
+          },
+          "Version": "2026.10.23",
+          "Licenses": [
+            "MPL-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/certifi-2026.10.23.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "cffi",
+          "Identifier": {
+            "PURL": "pkg:pypi/cffi@2.1.1",
+            "UID": "a44cbc0100508af6"
+          },
+          "Version": "2.1.1",
+          "Licenses": [
+            "MIT-0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/cffi-2.1.1.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "charset-normalizer",
+          "Identifier": {
+            "PURL": "pkg:pypi/charset-normalizer@3.5.2",
+            "UID": "6ea6e138e29fd5f8"
+          },
+          "Version": "3.5.2",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/charset_normalizer-3.5.2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "click",
+          "Identifier": {
+            "PURL": "pkg:pypi/click@8.5.1",
+            "UID": "bb79e0d81b20d719"
+          },
+          "Version": "8.5.1",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/click-8.5.1.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "cryptography",
+          "Identifier": {
+            "PURL": "pkg:pypi/cryptography@50.0.2",
+            "UID": "3a9cc4354fd49e31"
+          },
+          "Version": "50.0.2",
+          "Licenses": [
+            "Apache-2.0 OR BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/cryptography-50.0.2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "fastapi",
+          "Identifier": {
+            "PURL": "pkg:pypi/fastapi@0.162.2",
+            "UID": "45cee78a3c906d16"
+          },
+          "Version": "0.162.2",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/fastapi-0.162.2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "googleapis-common-protos",
+          "Identifier": {
+            "PURL": "pkg:pypi/googleapis-common-protos@1.76.0",
+            "UID": "af1e6fe09e589532"
+          },
+          "Version": "1.76.0",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/googleapis_common_protos-1.76.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "h11",
+          "Identifier": {
+            "PURL": "pkg:pypi/h11@0.16.0",
+            "UID": "2ec0fe64a8b38d3a"
+          },
+          "Version": "0.16.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/h11-0.16.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "highspy",
+          "Identifier": {
+            "PURL": "pkg:pypi/highspy@1.15.1",
+            "UID": "6ae1e9e59cad09ac"
+          },
+          "Version": "1.15.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/highspy-1.15.1.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "httpcore",
+          "Identifier": {
+            "PURL": "pkg:pypi/httpcore@1.0.9",
+            "UID": "336ebe8bbce379bb"
+          },
+          "Version": "1.0.9",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/httpcore-1.0.9.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "httpx",
+          "Identifier": {
+            "PURL": "pkg:pypi/httpx@0.28.1",
+            "UID": "e625874b858226c9"
+          },
+          "Version": "0.28.1",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/httpx-0.28.1.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "idna",
+          "Identifier": {
+            "PURL": "pkg:pypi/idna@3.20",
+            "UID": "f1b3d4f2a93b9098"
+          },
+          "Version": "3.20",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/idna-3.20.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "jmespath",
+          "Identifier": {
+            "PURL": "pkg:pypi/jmespath@1.1.0",
+            "UID": "483d80446fb1b18d"
+          },
+          "Version": "1.1.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/jmespath-1.1.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "joserfc",
+          "Identifier": {
+            "PURL": "pkg:pypi/joserfc@1.8.0",
+            "UID": "252501e72b501a94"
+          },
+          "Version": "1.8.0",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/joserfc-1.8.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "numpy",
+          "Identifier": {
+            "PURL": "pkg:pypi/numpy@2.5.4",
+            "UID": "2a52a7f0e1e9ace8"
+          },
+          "Version": "2.5.4",
+          "Licenses": [
+            "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "opentelemetry-api",
+          "Identifier": {
+            "PURL": "pkg:pypi/opentelemetry-api@1.45.2",
+            "UID": "e5257c0e0cfb3218"
+          },
+          "Version": "1.45.2",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/opentelemetry_api-1.45.2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "opentelemetry-exporter-http-transport",
+          "Identifier": {
+            "PURL": "pkg:pypi/opentelemetry-exporter-http-transport@0.66b2",
+            "UID": "f84c99d1e279250d"
+          },
+          "Version": "0.66b2",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/opentelemetry_exporter_http_transport-0.66b2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "opentelemetry-exporter-otlp-common",
+          "Identifier": {
+            "PURL": "pkg:pypi/opentelemetry-exporter-otlp-common@0.66b2",
+            "UID": "d512924bea2cff6b"
+          },
+          "Version": "0.66b2",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/opentelemetry_exporter_otlp_common-0.66b2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "opentelemetry-exporter-otlp-proto-common",
+          "Identifier": {
+            "PURL": "pkg:pypi/opentelemetry-exporter-otlp-proto-common@1.45.2",
+            "UID": "22e0126151a47f25"
+          },
+          "Version": "1.45.2",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/opentelemetry_exporter_otlp_proto_common-1.45.2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "opentelemetry-exporter-otlp-proto-http",
+          "Identifier": {
+            "PURL": "pkg:pypi/opentelemetry-exporter-otlp-proto-http@1.45.2",
+            "UID": "140518ee0cf42ff1"
+          },
+          "Version": "1.45.2",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/opentelemetry_exporter_otlp_proto_http-1.45.2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "opentelemetry-proto",
+          "Identifier": {
+            "PURL": "pkg:pypi/opentelemetry-proto@1.45.2",
+            "UID": "b1c2b5d64b4de973"
+          },
+          "Version": "1.45.2",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/opentelemetry_proto-1.45.2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "opentelemetry-sdk",
+          "Identifier": {
+            "PURL": "pkg:pypi/opentelemetry-sdk@1.45.2",
+            "UID": "91e4da213aa28e66"
+          },
+          "Version": "1.45.2",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/opentelemetry_sdk-1.45.2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "opentelemetry-semantic-conventions",
+          "Identifier": {
+            "PURL": "pkg:pypi/opentelemetry-semantic-conventions@0.66b2",
+            "UID": "8bbf216e10f3f5a7"
+          },
+          "Version": "0.66b2",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/opentelemetry_semantic_conventions-0.66b2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "protobuf",
+          "Identifier": {
+            "PURL": "pkg:pypi/protobuf@7.36.2",
+            "UID": "19e2bfb7ac091337"
+          },
+          "Version": "7.36.2",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/protobuf-7.36.2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "psycopg",
+          "Identifier": {
+            "PURL": "pkg:pypi/psycopg@3.3.8",
+            "UID": "6c8b954994bc5c3f"
+          },
+          "Version": "3.3.8",
+          "Licenses": [
+            "LGPL-3.0-only"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/psycopg-3.3.8.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "psycopg-binary",
+          "Identifier": {
+            "PURL": "pkg:pypi/psycopg-binary@3.3.8",
+            "UID": "5c59d06f1d0855d9"
+          },
+          "Version": "3.3.8",
+          "Licenses": [
+            "LGPL-3.0-only"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/psycopg_binary-3.3.8.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "pycparser",
+          "Identifier": {
+            "PURL": "pkg:pypi/pycparser@3.12",
+            "UID": "2032da60b1efb08b"
+          },
+          "Version": "3.12",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/pycparser-3.12.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "pydantic",
+          "Identifier": {
+            "PURL": "pkg:pypi/pydantic@2.14.3",
+            "UID": "da6b8639820e97b8"
+          },
+          "Version": "2.14.3",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/pydantic-2.14.3.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "pydantic_core",
+          "Identifier": {
+            "PURL": "pkg:pypi/pydantic-core@2.50.4",
+            "UID": "ef61c23763874446"
+          },
+          "Version": "2.50.4",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/pydantic_core-2.50.4.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "python-dateutil",
+          "Identifier": {
+            "PURL": "pkg:pypi/python-dateutil@2.9.0.post0",
+            "UID": "f8462eb573af85ab"
+          },
+          "Version": "2.9.0.post0",
+          "Licenses": [
+            "BSD-3-Clause",
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/python_dateutil-2.9.0.post0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "python-multipart",
+          "Identifier": {
+            "PURL": "pkg:pypi/python-multipart@0.0.33",
+            "UID": "955e88917f84069d"
+          },
+          "Version": "0.0.33",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/python_multipart-0.0.33.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "redis",
+          "Identifier": {
+            "PURL": "pkg:pypi/redis@8.1.0",
+            "UID": "b372c7373445b517"
+          },
+          "Version": "8.1.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/redis-8.1.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "requests",
+          "Identifier": {
+            "PURL": "pkg:pypi/requests@2.34.2",
+            "UID": "3fe7a3810163bf16"
+          },
+          "Version": "2.34.2",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/requests-2.34.2.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "s3transfer",
+          "Identifier": {
+            "PURL": "pkg:pypi/s3transfer@0.19.3",
+            "UID": "f9400343d20523bd"
+          },
+          "Version": "0.19.3",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/s3transfer-0.19.3.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "six",
+          "Identifier": {
+            "PURL": "pkg:pypi/six@1.17.0",
+            "UID": "3c749e9680577add"
+          },
+          "Version": "1.17.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/six-1.17.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "starlette",
+          "Identifier": {
+            "PURL": "pkg:pypi/starlette@1.10.0",
+            "UID": "c482f2672a26a130"
+          },
+          "Version": "1.10.0",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/starlette-1.10.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "typing-inspection",
+          "Identifier": {
+            "PURL": "pkg:pypi/typing-inspection@0.4.5",
+            "UID": "ef21a5f456262635"
+          },
+          "Version": "0.4.5",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/typing_inspection-0.4.5.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "typing_extensions",
+          "Identifier": {
+            "PURL": "pkg:pypi/typing-extensions@4.16.0",
+            "UID": "723d87d1aaa6dd8"
+          },
+          "Version": "4.16.0",
+          "Licenses": [
+            "PSF-2.0"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "urllib3",
+          "Identifier": {
+            "PURL": "pkg:pypi/urllib3@2.8.0",
+            "UID": "4a304fd1825f5c2e"
+          },
+          "Version": "2.8.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/urllib3-2.8.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        },
+        {
+          "Name": "uvicorn",
+          "Identifier": {
+            "PURL": "pkg:pypi/uvicorn@0.54.0",
+            "UID": "7d7dd9826c91f227"
+          },
+          "Version": "0.54.0",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "Layer": {
+            "Digest": "sha256:a21925f8e28dd8dd55fc40991ae0d559add952ab8e7c756431ca94629f398410",
+            "DiffID": "sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f"
+          },
+          "FilePath": "usr/local/lib/python3.12/site-packages/uvicorn-0.54.0.dist-info/METADATA",
+          "AnalyzedBy": "python-pkg"
+        }
+      ]
+    }
+  ]
+}

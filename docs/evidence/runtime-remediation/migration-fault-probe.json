@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "actual isolated post-start failure injection, not production recovery",
+  "expected_migration_process_exit_code": 1,
+  "injected_error": "after actual authenticated login write",
+  "before_login_write": {
+    "sessions": 0,
+    "audit_events": 0
+  },
+  "after_failure_new_database": {
+    "sessions": 1,
+    "audit_events": 1
+  },
+  "new_volume_retained": "cargopulse-migration-probe_postgres_alpine",
+  "new_database_image": "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+  "writers_running_after_failure": {
+    "web": false,
+    "api": false,
+    "worker": false
+  },
+  "automatic_old_volume_rollback": false,
+  "original_main_database_untouched_and_running": true,
+  "failure_handler": {
+    "project": "cargopulse-migration-probe",
+    "writes_may_have_started": true,
+    "automatic_old_volume_rollback": false,
+    "recovery": "stop writers and preserve new volume",
+    "exception_type": "RuntimeError",
+    "fault_injection_requested": true
+  }
+}

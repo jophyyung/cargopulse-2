@@ -1,0 +1,6 @@
+
+> cargopulse@0.1.0 contracts
+> openapi-typescript packages/contracts/openapi.json -o packages/contracts/generated/api.ts
+
+✨ openapi-typescript 7.13.0
+🚀 packages/contracts/openapi.json → packages/contracts/generated/api.ts [60.3ms]

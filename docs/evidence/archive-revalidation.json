@@ -1,0 +1,460 @@
+{
+  "scope": "Independent revalidation of archived plans; solver was not rerun; original latency does not include new metric validation",
+  "plans_checked": 90,
+  "passed": 90,
+  "elapsed_seconds": 21.403,
+  "validator_sha256": "3bcc1eebc1d4f9bc9d9216d1b2fd6e359b749be998be0db3c115a1319ea8cc21",
+  "metric_validator_sha256": "4a8c80aed6436be71d8f06a789eb7a53caf762b46af9d01ceefee48f23ec1d90",
+  "results": [
+    {
+      "file": "tests/optimizer/benchmark-controls/1200-101-capacity-shortage-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/1200-101-capacity-shortage-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/1200-101-capacity-shortage-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/1200-101-cold-dg-blocked-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/1200-101-cold-dg-blocked-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/1200-101-cold-dg-blocked-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/1200-101-low-density-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/1200-101-low-density-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/1200-101-low-density-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/140-101-capacity-shortage-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/140-101-capacity-shortage-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/140-101-capacity-shortage-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/140-101-cold-dg-blocked-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/140-101-cold-dg-blocked-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/140-101-cold-dg-blocked-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/140-101-low-density-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/140-101-low-density-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/140-101-low-density-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/400-101-capacity-shortage-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/400-101-capacity-shortage-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/400-101-capacity-shortage-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/400-101-cold-dg-blocked-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/400-101-cold-dg-blocked-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/400-101-cold-dg-blocked-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/400-101-low-density-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/400-101-low-density-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/400-101-low-density-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/50-101-capacity-shortage-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/50-101-capacity-shortage-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/50-101-capacity-shortage-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/50-101-cold-dg-blocked-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/50-101-cold-dg-blocked-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/50-101-cold-dg-blocked-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/50-101-low-density-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/50-101-low-density-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/50-101-low-density-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/800-101-capacity-shortage-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/800-101-capacity-shortage-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/800-101-capacity-shortage-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/800-101-cold-dg-blocked-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/800-101-cold-dg-blocked-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/800-101-cold-dg-blocked-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/800-101-low-density-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/800-101-low-density-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-controls/800-101-low-density-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/1200-101-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/1200-101-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/1200-101-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/1200-102-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/1200-102-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/1200-102-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/1200-103-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/1200-103-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/1200-103-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/140-101-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/140-101-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/140-101-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/140-102-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/140-102-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/140-102-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/140-103-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/140-103-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/140-103-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/400-101-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/400-101-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/400-101-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/400-102-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/400-102-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/400-102-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/400-103-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/400-103-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/400-103-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/50-101-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/50-101-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/50-101-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/50-102-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/50-102-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/50-102-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/50-103-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/50-103-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/50-103-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/800-101-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/800-101-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/800-101-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/800-102-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/800-102-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/800-102-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/800-103-mixed-earliest.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/800-103-mixed-highs.json",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "file": "tests/optimizer/benchmark-results/800-103-mixed-priority.json",
+      "status": "PASS",
+      "violations": []
+    }
+  ]
+}

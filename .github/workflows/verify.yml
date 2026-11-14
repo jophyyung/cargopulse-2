@@ -1,0 +1,114 @@
+name: Verify Recover
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: packages/contracts/python:services/api:services/worker:.
+      BACKEND_TEST_DATABASE_URL: postgresql+psycopg://cargopulse_app@127.0.0.1:55432/cargopulse_backend_test
+      OBSERVABILITY_TEST_DATABASE_URL: postgresql+psycopg://cargopulse_app@127.0.0.1:55432/cargopulse_observability_backend_test
+      CARGOPULSE_QA_WEB_URL: http://localhost:3101
+      CARGOPULSE_E2E_URL: http://localhost:3101
+      CARGOPULSE_PORT: '3101'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.16'
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.22.2'
+          cache: npm
+      - name: Install locked tools and dependencies
+        run: |
+          python -m pip install uv==0.12.19
+          uv sync --frozen
+          npm ci
+          npx playwright install --with-deps chromium
+          mkdir -p tmp/ci
+          docker build --file infra/Dockerfile.postgres --tag cargopulse-local-postgres:latest .
+          docker run -d --name cargopulse-test-postgres --cap-drop ALL --security-opt no-new-privileges \
+            -p 127.0.0.1:55432:5432 -e POSTGRES_USER=cargopulse -e POSTGRES_DB=postgres \
+            -e POSTGRES_HOST_AUTH_METHOD=trust cargopulse-local-postgres:latest
+          for attempt in $(seq 1 30); do
+            # The temporary initialization server has only a Unix socket.
+            if docker exec cargopulse-test-postgres pg_isready -h 127.0.0.1 -p 5432 -U cargopulse -d postgres; then break; fi
+            sleep 1
+          done
+          docker exec cargopulse-test-postgres pg_isready -h 127.0.0.1 -p 5432 -U cargopulse -d postgres
+          docker run -d --name cargopulse-test-redis -p 127.0.0.1:56379:6379 redis:8.2.11-alpine@sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041 redis-server --protected-mode no
+          uv run python -c "import redis; assert redis.Redis(host='127.0.0.1',port=56379).ping()"
+      - name: Lint, types, contracts and secret patterns
+        run: |
+          uv run ruff check services packages scripts tests infra
+          uv run ruff check services packages scripts infra/assemble_runtime.py --select S --ignore S101
+          uv run python scripts/check_repository.py
+          npm run typecheck
+          uv run python scripts/export_contracts.py --runtime
+          npm run contracts
+          git diff --exit-code -- packages/contracts
+      - name: Real container build and isolated migrations
+        run: |
+          uv run python scripts/provision_test_databases.py
+          python scripts/configure_local.py
+          docker compose up --build --wait -d
+      - name: Full Python and browser integration
+        run: |
+          uv run pytest --junitxml=tmp/ci/pytest.xml
+          npm run e2e
+      - name: Dependency review and SBOM
+        run: |
+          uv run pip-audit --format json --output tmp/ci/python-audit.json
+          npm audit --json > tmp/ci/npm-audit.json
+          uv run python scripts/generate_sbom.py
+      - name: Install verified image scanner
+        run: |
+          curl --fail --location --output tmp/ci/trivy.tar.gz https://github.com/aquasecurity/trivy/releases/download/v0.76.2/trivy_0.76.2_Linux-64bit.tar.gz
+          echo 'bc0fc726e017b8927a62b2d3531d7a84ee01769daf5c99ed866dced54089fdbf  tmp/ci/trivy.tar.gz' | sha256sum -c -
+          tar -xzf tmp/ci/trivy.tar.gz -C tmp/ci trivy
+      - name: Scan built images and emit image SBOMs
+        run: |
+          scan_status=0
+          for image in api web postgres; do
+            tmp/ci/trivy image --ignorefile /dev/null --list-all-pkgs --scanners vuln --exit-code 1 --severity HIGH,CRITICAL --format json --output tmp/ci/$image-vulnerabilities.json cargopulse-local-$image:latest || scan_status=1
+            tmp/ci/trivy image --format cyclonedx --output tmp/ci/$image-sbom.json cargopulse-local-$image:latest
+          done
+          redis_image=redis:8.2.11-alpine@sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041
+          tmp/ci/trivy image --ignorefile /dev/null --list-all-pkgs --scanners vuln --exit-code 1 --severity HIGH,CRITICAL --format json --output tmp/ci/redis-vulnerabilities.json "$redis_image" || scan_status=1
+          tmp/ci/trivy image --format cyclonedx --output tmp/ci/redis-sbom.json "$redis_image"
+          exit "$scan_status"
+      - name: Preserve evidence and failure logs
+        if: always()
+        run: |
+          mkdir -p tmp/ci
+          if [ -f .env ]; then
+            docker compose logs --no-color --tail=250 > tmp/ci/compose.log
+          else
+            printf 'Application stack was not configured before the failure.\n' > tmp/ci/compose.log
+          fi
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: recover-verification
+          path: |
+            tmp/ci
+            SBOM.json
+            apps/web/evidence
+            test-results
+      - name: Stop isolated services
+        if: always()
+        run: |
+          if [ -f .env ]; then
+            docker compose down
+          fi
+          for container in cargopulse-test-redis cargopulse-test-postgres; do
+            if docker container inspect "$container" > /dev/null 2>&1; then
+              docker rm -f "$container"
+            fi
+          done

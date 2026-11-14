@@ -1,0 +1,27 @@
+{
+  "api": {
+    "image_config_id": "sha256:9f098864022455d0f7d9889554a5fe71382ad3a13eef07e5da88906d5f4e3861",
+    "configured_user": "10001:10001",
+    "read_only_root": "true"
+  },
+  "worker": {
+    "image_config_id": "sha256:9f098864022455d0f7d9889554a5fe71382ad3a13eef07e5da88906d5f4e3861",
+    "configured_user": "10001:10001",
+    "read_only_root": "true"
+  },
+  "web": {
+    "image_config_id": "sha256:b97897447413901ee7839ac50af7eebbbaa1779a6587b6b4e753bab881bb5214",
+    "configured_user": "node",
+    "read_only_root": "true"
+  },
+  "postgres": {
+    "image_config_id": "sha256:e833fa4f2aadb8e93fb4c56a7a131abff194d1b142ba99eab73fcef2fc0b218c",
+    "configured_user": "postgres",
+    "read_only_root": "false"
+  },
+  "redis": {
+    "image_config_id": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041",
+    "configured_user": "",
+    "read_only_root": "false"
+  }
+}

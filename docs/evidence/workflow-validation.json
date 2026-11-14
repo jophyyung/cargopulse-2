@@ -1,0 +1,8 @@
+{
+  "tool": "actionlint 1.7.12",
+  "workflow_syntax_exit_code": 0,
+  "shellcheck_integration": "disabled",
+  "production_compose_configuration_exit_code": 0,
+  "production_configuration_values": "reserved placeholders only; no services started",
+  "hosted_ci_run": false
+}

@@ -1,0 +1,43 @@
+{
+  "recorded_utc": "2026-11-12T05:52:11.443649+00:00",
+  "source_commit": "97cc22cfe7f3cd3b2e560b3c02555b0dbce3d2f2",
+  "fresh_checkout_clean": true,
+  "all31_runtime_python_source_hashes_match": true,
+  "all45_web_build_inputs_match": true,
+  "packaging_input_hashes_match": true,
+  "six_service_image_ids_match_four_final_scans": true,
+  "services": {
+    "api": {
+      "image_id": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+      "status": "running",
+      "health": "healthy"
+    },
+    "worker": {
+      "image_id": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+      "status": "running",
+      "health": null
+    },
+    "migrate": {
+      "image_id": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+      "status": "exited",
+      "health": null
+    },
+    "web": {
+      "image_id": "sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f",
+      "status": "running",
+      "health": null
+    },
+    "postgres": {
+      "image_id": "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+      "status": "running",
+      "health": "healthy"
+    },
+    "redis": {
+      "image_id": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041",
+      "status": "running",
+      "health": "healthy"
+    }
+  },
+  "readiness_status": 200,
+  "scope": "source/identity/configuration binding; fresh-checkout test result recorded separately"
+}

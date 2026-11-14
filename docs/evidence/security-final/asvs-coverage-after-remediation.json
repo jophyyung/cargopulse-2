@@ -1,0 +1,42 @@
+{
+  "recorded_utc": "2026-11-11T17:33:11.466510+00:00",
+  "scope": "control applicability/evidence triage, not compliance or control acceptance",
+  "canonical_source_sha256": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+  "assessment_sha256": "2db98473ee181fc12e03097279953a49af6d58d16b5b45772009dea7757078b9",
+  "canonical_columns_order_and_values_preserved": true,
+  "row_count": 345,
+  "unique_ids_and_distinct_notes": 345,
+  "updated_ids": [
+    "V1.5.1",
+    "V3.3.1",
+    "V3.4.3",
+    "V3.5.3",
+    "V5.2.2",
+    "V6.8.4",
+    "V7.4.2",
+    "V14.2.1",
+    "V14.3.1",
+    "V15.1.1",
+    "V15.2.1",
+    "V7.5.3",
+    "V8.2.4"
+  ],
+  "status_counts": {
+    "BOUNDED_LOCAL_EVIDENCE": 126,
+    "NOT_APPLICABLE": 43,
+    "NOT_ASSESSED": 57,
+    "EXTERNAL_NOT_VERIFIED": 119
+  },
+  "level1_status_counts": {
+    "BOUNDED_LOCAL_EVIDENCE": 42,
+    "NOT_APPLICABLE": 3,
+    "EXTERNAL_NOT_VERIFIED": 25
+  },
+  "original_base_review": "docs/evidence/16-asvs-local-review.md",
+  "base_assessment": "docs/evidence/asvs-review/assessment-base.csv",
+  "limits": [
+    "BOUNDED_LOCAL_EVIDENCE is partial named evidence, not a passed control.",
+    "Owner/IdP/hosting and broad L2/L3 local controls remain open.",
+    "Original CP-ASVS defect reproductions remain preserved; they were not security passes."
+  ]
+}

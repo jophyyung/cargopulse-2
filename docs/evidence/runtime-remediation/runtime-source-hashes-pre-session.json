@@ -1,0 +1,39 @@
+{
+  "scope": "running API image source bytes match working runtime contracts, API, optimizer, verifier and generator",
+  "sha256": {
+    "services/api/cargopulse_api/__init__.py": "efbb9319eafe7c93c660a4f64803a7b9fb1604d855b67534e53021d7acefbf20",
+    "services/api/cargopulse_api/security.py": "4737146ad53eaf74d183d949f6f93d6757c0383d3ca453f6c7d105357b7f3e4e",
+    "services/api/cargopulse_api/db.py": "7d1a87505ffd7d05abd87e77447c181ccb594a44c265a11319ae9c06fe5a2696",
+    "services/api/cargopulse_api/worker.py": "4bec17750fadde11a044c43adcb7b2d2f4e215402642277c6a2364328816cec6",
+    "services/api/cargopulse_api/domain.py": "ffeb1e2a48e9473559e5e7a480692198a926da65e3f95ee4b2b234ee512b67e9",
+    "services/api/cargopulse_api/runtime_tables.py": "49acfd73f3b13d8780b0788d7d35b2a7eb27ade55d4ec2e1efa0e1710de60efa",
+    "services/api/cargopulse_api/config.py": "8f060835dd141587af8e53e1f0039c1bfe12d69013b0553396dc254b0d6ae36c",
+    "services/api/cargopulse_api/tables.py": "e07322c0d567f71a2da7eb15ab7aa07fa24da9324f22805ecc3013293636e271",
+    "services/api/cargopulse_api/storage.py": "d4b7ac1f2fbaec17ea481d9e1028eab81a6e5ae3b7d2570ea4dd6fd69e767b36",
+    "services/api/cargopulse_api/main.py": "1f1ad054a7544c13320575830cacf8c3628f5afc34d23ab7857354d032a484a2",
+    "services/api/cargopulse_api/observability.py": "21bad283b1de35ad4c7454c32de8123556112988d65a4e02ee820ebcf7be58d1",
+    "services/api/cargopulse_api/connectors.py": "72392dfdf6e0ae52e59f5dc0d459e900e49560b871421830cc394f95b3d6ded7",
+    "services/worker/cargopulse_optimizer/__init__.py": "aff79e8dbfcd447e578a5fdda298341a017bda08f5852801c60c76b61312ba82",
+    "services/worker/cargopulse_optimizer/solver.py": "6440caba4b622941ace1712ca7e48c9d4ecaa8b94fc955aaf9c99dc0f69e7870",
+    "services/worker/cargopulse_optimizer/candidates.py": "f7af41b020bf7078083fc534b4252e83b014a422e7326c507132ce73125b79ba",
+    "services/worker/cargopulse_optimizer/benchmark.py": "18bb1aae52c746acad3ec89364fe44203a14a9fe1368cb658a05fba96061d924",
+    "services/worker/cargopulse_validation/__init__.py": "a52d9f8c027e9c89bc49fa280940fe4b0f34b48f6fa065ee05a0690e6ba11c19",
+    "services/worker/cargopulse_validation/metrics.py": "4a8c80aed6436be71d8f06a789eb7a53caf762b46af9d01ceefee48f23ec1d90",
+    "services/worker/cargopulse_validation/validator.py": "3bcc1eebc1d4f9bc9d9216d1b2fd6e359b749be998be0db3c115a1319ea8cc21",
+    "packages/contracts/python/cargopulse_contracts/__init__.py": "57ed73ea6bfab0bad5f34e726dc08d6595728e860a42fc1f3c5c2d2eb3217cfe",
+    "packages/contracts/python/cargopulse_contracts/models.py": "e918bf710029d5d29fd1fcfaa752eaad6244be46d2678de47c22c9122719318d",
+    "packages/domain_fixtures/generator.py": "8c5073288564ef04bce1fcd725c99237991441e1705c5baf17c18118ed6a0cbd",
+    "packages/domain_fixtures/__init__.py": "f9849c89347b1be9e34d554b68395c5283389d6d4328e9d16e126c8c94778050"
+  },
+  "runtime_source_revision": "e40c67671aff8889234c4af1dee490eb2da75999",
+  "later_changes": "Runtime packaging now minimal Debian API/web and patched Alpine PostgreSQL; new guarded migration/restore tooling and evidence. Application/contract/optimizer source bytes remain unchanged.",
+  "runtime_api_image": "sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b",
+  "runtime_packaging_sha256": {
+    "infra/assemble_runtime.py": "afc35320e1c0c0b305620438bc0c2a49e05fdd12baef94d3e2b34e92c337bae1",
+    "infra/Dockerfile.api": "f08e256fa73db196ebbe8732accca779709140e86a671b4fb86e5c66ecccfe29",
+    "infra/Dockerfile.web": "042f43bf61f37f77c29339d720bca052f0d311aa8a9a002a116c23c6c5106235",
+    "infra/Dockerfile.postgres": "84a095a9741e00065b2e87c56ee8907b37f64595268d3dce59c7ec594ef77d7d",
+    "compose.yaml": "9e5a7bbdaff9bd7ffe4227fe07fe39afdc69d2d50aaf9437179699f4bf60adfb",
+    "package-lock.json": "cd68d52cb0ff9d4f170105366a40f075cea0d03df3980c7659261dd1866b64e8"
+  }
+}

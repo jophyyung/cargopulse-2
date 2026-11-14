@@ -1,0 +1,1 @@
+PASS: local schema0005, unchanged legacy session values/NULL assurance, all other table digests, private objects, 12 FORCE RLS tables, exact final images and login200

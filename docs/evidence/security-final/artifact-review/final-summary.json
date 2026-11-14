@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "failures": [],
+  "images": {
+    "api": {
+      "hashes": 9251,
+      "elf": 150,
+      "runtime_account": {
+        "name": "cargopulse",
+        "uid": "10001",
+        "gid": "10001"
+      },
+      "forbidden_executable_commands": [],
+      "setid": []
+    },
+    "web": {
+      "hashes": 1869,
+      "elf": 11,
+      "runtime_account": {
+        "name": "node",
+        "uid": "1000",
+        "gid": "1000"
+      },
+      "forbidden_executable_commands": [],
+      "setid": []
+    }
+  }
+}

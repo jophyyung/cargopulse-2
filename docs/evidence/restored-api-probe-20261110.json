@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scope": "actual ASGI TestClient application, isolated restored PostgreSQL and restored object bytes; non-owner app role; not external HTTP/network acceptance",
+  "history_scenarios_read": 8,
+  "stale_plans_blocked": 7,
+  "restored_private_objects_read": true,
+  "fresh_local_login": true,
+  "anonymous_access_status": 401
+}

@@ -1,0 +1,279 @@
+FFFFFFFF....FF                                                           [100%]
+=================================== FAILURES ===================================
+________ test_csv_rejects_unsupported_or_ambiguous_filenames[cargo.exe] ________
+
+client = <starlette.testclient.TestClient object at 0x10b4275f0>
+filename = 'cargo.exe'
+
+    @pytest.mark.parametrize("filename", [
+        "cargo.exe", "cargo", "cargo.csv.txt", "../cargo.csv", r"..\cargo.csv",
+        "cargo.csv ", ".csv", "a" * 256 + ".csv",
+    ])
+    def test_csv_rejects_unsupported_or_ambiguous_filenames(client, filename):
+>       assert upload(client, filename).status_code == 422
+E       AssertionError: assert 202 == 422
+E        +  where 202 = <Response [202 Accepted]>.status_code
+E        +    where <Response [202 Accepted]> = upload(<starlette.testclient.TestClient object at 0x10b4275f0>, 'cargo.exe')
+
+tests/backend/test_input_privacy.py:39: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "da7d469c-429d-423f-ba4f-da0227a192fa", "elapsed_ms": 6.954, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0ff0b6e3d5169c20", "trace_id": "f2584e739d9413dc32c9c26008e22cc3"}
+{"correlation.id": "51738892-2112-4679-a7ff-5f0593280667", "elapsed_ms": 22.106, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "ec8771f1679e8958", "trace_id": "15f201c3e0240405db55a16ac45ed469"}
+{"cargo.count": 140, "elapsed_ms": 36.989, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "bf68a90ea32e62b0", "trace_id": "9bd0ad912f3bd0b0159f17161ea0878d"}
+{"correlation.id": "d0854b07-a1c5-4e08-8a78-c688c5693960", "elapsed_ms": 58.575, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "7f2280c5affe1760", "trace_id": "9bd0ad912f3bd0b0159f17161ea0878d"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "da7d469c-429d-423f-ba4f-da0227a192fa", "elapsed_ms": 6.954, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0ff0b6e3d5169c20", "trace_id": "f2584e739d9413dc32c9c26008e22cc3"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "51738892-2112-4679-a7ff-5f0593280667", "elapsed_ms": 22.106, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "ec8771f1679e8958", "trace_id": "15f201c3e0240405db55a16ac45ed469"}
+INFO     cargopulse.telemetry:observability.py:234 {"cargo.count": 140, "elapsed_ms": 36.989, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "bf68a90ea32e62b0", "trace_id": "9bd0ad912f3bd0b0159f17161ea0878d"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "d0854b07-a1c5-4e08-8a78-c688c5693960", "elapsed_ms": 58.575, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "7f2280c5affe1760", "trace_id": "9bd0ad912f3bd0b0159f17161ea0878d"}
+__________ test_csv_rejects_unsupported_or_ambiguous_filenames[cargo] __________
+
+client = <starlette.testclient.TestClient object at 0x10b427e60>
+filename = 'cargo'
+
+    @pytest.mark.parametrize("filename", [
+        "cargo.exe", "cargo", "cargo.csv.txt", "../cargo.csv", r"..\cargo.csv",
+        "cargo.csv ", ".csv", "a" * 256 + ".csv",
+    ])
+    def test_csv_rejects_unsupported_or_ambiguous_filenames(client, filename):
+>       assert upload(client, filename).status_code == 422
+E       AssertionError: assert 202 == 422
+E        +  where 202 = <Response [202 Accepted]>.status_code
+E        +    where <Response [202 Accepted]> = upload(<starlette.testclient.TestClient object at 0x10b427e60>, 'cargo')
+
+tests/backend/test_input_privacy.py:39: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "563724ba-4227-4fa0-8a03-04adf08081a8", "elapsed_ms": 2.76, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "93cafaa2b914b23c", "trace_id": "d6a183635fd007bdc230e616ed8c8ca4"}
+{"correlation.id": "1cca702f-af74-4d8b-b50b-e7c2137f00ff", "elapsed_ms": 19.767, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "2ce1bc41291e79f9", "trace_id": "d777bef72ac0f648abd180ca8237b4bb"}
+{"cargo.count": 140, "elapsed_ms": 11.003, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "8bd2fb2fba7c8c68", "trace_id": "c477000ef6178849096313410e312ba8"}
+{"correlation.id": "247cfae7-b0f7-4b9b-8e53-8c8b2150edb0", "elapsed_ms": 31.269, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "afbea4fcf73be315", "trace_id": "c477000ef6178849096313410e312ba8"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "563724ba-4227-4fa0-8a03-04adf08081a8", "elapsed_ms": 2.76, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "93cafaa2b914b23c", "trace_id": "d6a183635fd007bdc230e616ed8c8ca4"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "1cca702f-af74-4d8b-b50b-e7c2137f00ff", "elapsed_ms": 19.767, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "2ce1bc41291e79f9", "trace_id": "d777bef72ac0f648abd180ca8237b4bb"}
+INFO     cargopulse.telemetry:observability.py:234 {"cargo.count": 140, "elapsed_ms": 11.003, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "8bd2fb2fba7c8c68", "trace_id": "c477000ef6178849096313410e312ba8"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "247cfae7-b0f7-4b9b-8e53-8c8b2150edb0", "elapsed_ms": 31.269, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "afbea4fcf73be315", "trace_id": "c477000ef6178849096313410e312ba8"}
+______ test_csv_rejects_unsupported_or_ambiguous_filenames[cargo.csv.txt] ______
+
+client = <starlette.testclient.TestClient object at 0x10c905310>
+filename = 'cargo.csv.txt'
+
+    @pytest.mark.parametrize("filename", [
+        "cargo.exe", "cargo", "cargo.csv.txt", "../cargo.csv", r"..\cargo.csv",
+        "cargo.csv ", ".csv", "a" * 256 + ".csv",
+    ])
+    def test_csv_rejects_unsupported_or_ambiguous_filenames(client, filename):
+>       assert upload(client, filename).status_code == 422
+E       AssertionError: assert 202 == 422
+E        +  where 202 = <Response [202 Accepted]>.status_code
+E        +    where <Response [202 Accepted]> = upload(<starlette.testclient.TestClient object at 0x10c905310>, 'cargo.csv.txt')
+
+tests/backend/test_input_privacy.py:39: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "41a90eb3-0156-4b5f-bd5b-5cbefc382189", "elapsed_ms": 2.904, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "2f41605683aebbb7", "trace_id": "26c337031f7bfe4a33c7bf7daffc144c"}
+{"correlation.id": "c8f25394-92b8-4116-af15-eed0fcd60fce", "elapsed_ms": 19.576, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "caa6a512b425a953", "trace_id": "af2e522366e85c98b73b2de59e67062b"}
+{"cargo.count": 140, "elapsed_ms": 11.881, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "e06534ba0b164361", "trace_id": "6fcc084bdadeed6bc67ef4a76cb71f08"}
+{"correlation.id": "5e261930-9041-4ea2-9343-40d3fed2931a", "elapsed_ms": 61.183, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5966988bb954ef43", "trace_id": "6fcc084bdadeed6bc67ef4a76cb71f08"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "41a90eb3-0156-4b5f-bd5b-5cbefc382189", "elapsed_ms": 2.904, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "2f41605683aebbb7", "trace_id": "26c337031f7bfe4a33c7bf7daffc144c"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "c8f25394-92b8-4116-af15-eed0fcd60fce", "elapsed_ms": 19.576, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "caa6a512b425a953", "trace_id": "af2e522366e85c98b73b2de59e67062b"}
+INFO     cargopulse.telemetry:observability.py:234 {"cargo.count": 140, "elapsed_ms": 11.881, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "e06534ba0b164361", "trace_id": "6fcc084bdadeed6bc67ef4a76cb71f08"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "5e261930-9041-4ea2-9343-40d3fed2931a", "elapsed_ms": 61.183, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5966988bb954ef43", "trace_id": "6fcc084bdadeed6bc67ef4a76cb71f08"}
+______ test_csv_rejects_unsupported_or_ambiguous_filenames[../cargo.csv] _______
+
+client = <starlette.testclient.TestClient object at 0x10b876ab0>
+filename = '../cargo.csv'
+
+    @pytest.mark.parametrize("filename", [
+        "cargo.exe", "cargo", "cargo.csv.txt", "../cargo.csv", r"..\cargo.csv",
+        "cargo.csv ", ".csv", "a" * 256 + ".csv",
+    ])
+    def test_csv_rejects_unsupported_or_ambiguous_filenames(client, filename):
+>       assert upload(client, filename).status_code == 422
+E       AssertionError: assert 202 == 422
+E        +  where 202 = <Response [202 Accepted]>.status_code
+E        +    where <Response [202 Accepted]> = upload(<starlette.testclient.TestClient object at 0x10b876ab0>, '../cargo.csv')
+
+tests/backend/test_input_privacy.py:39: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "7be90e0c-74b5-4cfc-8c17-21b1ba2792f4", "elapsed_ms": 3.338, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "bbadee5f547da89f", "trace_id": "d326f0382e80f9d8108ce18bafd0374f"}
+{"correlation.id": "47ffba9d-6a50-43de-851f-53c67d578331", "elapsed_ms": 21.927, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "d898466af25b2e4c", "trace_id": "a354ee4ba56a90fc75a8543931ffca63"}
+{"cargo.count": 140, "elapsed_ms": 12.038, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "f5b71037eeb2ac07", "trace_id": "edf59495d882e64092c6a6b42ef53bd0"}
+{"correlation.id": "987eda30-0a89-4dac-aa2e-feee9120771e", "elapsed_ms": 33.913, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "ef28f97be9c88f51", "trace_id": "edf59495d882e64092c6a6b42ef53bd0"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "7be90e0c-74b5-4cfc-8c17-21b1ba2792f4", "elapsed_ms": 3.338, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "bbadee5f547da89f", "trace_id": "d326f0382e80f9d8108ce18bafd0374f"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "47ffba9d-6a50-43de-851f-53c67d578331", "elapsed_ms": 21.927, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "d898466af25b2e4c", "trace_id": "a354ee4ba56a90fc75a8543931ffca63"}
+INFO     cargopulse.telemetry:observability.py:234 {"cargo.count": 140, "elapsed_ms": 12.038, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "f5b71037eeb2ac07", "trace_id": "edf59495d882e64092c6a6b42ef53bd0"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "987eda30-0a89-4dac-aa2e-feee9120771e", "elapsed_ms": 33.913, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "ef28f97be9c88f51", "trace_id": "edf59495d882e64092c6a6b42ef53bd0"}
+______ test_csv_rejects_unsupported_or_ambiguous_filenames[..\\cargo.csv] ______
+
+client = <starlette.testclient.TestClient object at 0x10c5b2f00>
+filename = '..\\cargo.csv'
+
+    @pytest.mark.parametrize("filename", [
+        "cargo.exe", "cargo", "cargo.csv.txt", "../cargo.csv", r"..\cargo.csv",
+        "cargo.csv ", ".csv", "a" * 256 + ".csv",
+    ])
+    def test_csv_rejects_unsupported_or_ambiguous_filenames(client, filename):
+>       assert upload(client, filename).status_code == 422
+E       AssertionError: assert 202 == 422
+E        +  where 202 = <Response [202 Accepted]>.status_code
+E        +    where <Response [202 Accepted]> = upload(<starlette.testclient.TestClient object at 0x10c5b2f00>, '..\\cargo.csv')
+
+tests/backend/test_input_privacy.py:39: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "fe9c6d53-8a3e-4db0-a2ba-ba024e74c721", "elapsed_ms": 3.03, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "d3963038d5726382", "trace_id": "67a0857fe2d5fe32a790008c9939ce00"}
+{"correlation.id": "8831840e-189e-49b9-b0b7-7a3d20c3880d", "elapsed_ms": 48.743, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "a98e1795845bc5c1", "trace_id": "dce5af3948e1e387fbda93aaad2a7e01"}
+{"cargo.count": 140, "elapsed_ms": 12.468, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "a8f6deb79f026c52", "trace_id": "7b4b3c6b21cb785dab4e7caf47b764b6"}
+{"correlation.id": "c31cdfaa-1b40-431e-928d-d19d92775a36", "elapsed_ms": 33.8, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5758dfb537e96274", "trace_id": "7b4b3c6b21cb785dab4e7caf47b764b6"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "fe9c6d53-8a3e-4db0-a2ba-ba024e74c721", "elapsed_ms": 3.03, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "d3963038d5726382", "trace_id": "67a0857fe2d5fe32a790008c9939ce00"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "8831840e-189e-49b9-b0b7-7a3d20c3880d", "elapsed_ms": 48.743, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "a98e1795845bc5c1", "trace_id": "dce5af3948e1e387fbda93aaad2a7e01"}
+INFO     cargopulse.telemetry:observability.py:234 {"cargo.count": 140, "elapsed_ms": 12.468, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "a8f6deb79f026c52", "trace_id": "7b4b3c6b21cb785dab4e7caf47b764b6"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "c31cdfaa-1b40-431e-928d-d19d92775a36", "elapsed_ms": 33.8, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "5758dfb537e96274", "trace_id": "7b4b3c6b21cb785dab4e7caf47b764b6"}
+_______ test_csv_rejects_unsupported_or_ambiguous_filenames[cargo.csv ] ________
+
+client = <starlette.testclient.TestClient object at 0x10b7ea3f0>
+filename = 'cargo.csv '
+
+    @pytest.mark.parametrize("filename", [
+        "cargo.exe", "cargo", "cargo.csv.txt", "../cargo.csv", r"..\cargo.csv",
+        "cargo.csv ", ".csv", "a" * 256 + ".csv",
+    ])
+    def test_csv_rejects_unsupported_or_ambiguous_filenames(client, filename):
+>       assert upload(client, filename).status_code == 422
+E       AssertionError: assert 202 == 422
+E        +  where 202 = <Response [202 Accepted]>.status_code
+E        +    where <Response [202 Accepted]> = upload(<starlette.testclient.TestClient object at 0x10b7ea3f0>, 'cargo.csv ')
+
+tests/backend/test_input_privacy.py:39: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "37a83664-def0-4273-80a3-125e9be3203d", "elapsed_ms": 3.054, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "741365c5ca279d28", "trace_id": "a2f0439082c4e8db3a7494d17f815d6f"}
+{"correlation.id": "eee13bfb-f443-47c3-91b9-0abb6ddcaff2", "elapsed_ms": 21.114, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "13b72950715ed9ba", "trace_id": "637b332f128f3a40bb3f0de33d5dcc5e"}
+{"cargo.count": 140, "elapsed_ms": 11.271, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "39275c562c4f542d", "trace_id": "fe6cbb02cd4de8b69afeb82a1dee7506"}
+{"correlation.id": "1ae5f6be-9972-4f3a-b908-a6a54a9404ee", "elapsed_ms": 32.375, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "a7a0bb7528ac8a02", "trace_id": "fe6cbb02cd4de8b69afeb82a1dee7506"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "37a83664-def0-4273-80a3-125e9be3203d", "elapsed_ms": 3.054, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "741365c5ca279d28", "trace_id": "a2f0439082c4e8db3a7494d17f815d6f"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "eee13bfb-f443-47c3-91b9-0abb6ddcaff2", "elapsed_ms": 21.114, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "13b72950715ed9ba", "trace_id": "637b332f128f3a40bb3f0de33d5dcc5e"}
+INFO     cargopulse.telemetry:observability.py:234 {"cargo.count": 140, "elapsed_ms": 11.271, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "39275c562c4f542d", "trace_id": "fe6cbb02cd4de8b69afeb82a1dee7506"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "1ae5f6be-9972-4f3a-b908-a6a54a9404ee", "elapsed_ms": 32.375, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "a7a0bb7528ac8a02", "trace_id": "fe6cbb02cd4de8b69afeb82a1dee7506"}
+__________ test_csv_rejects_unsupported_or_ambiguous_filenames[.csv] ___________
+
+client = <starlette.testclient.TestClient object at 0x10c6d8830>
+filename = '.csv'
+
+    @pytest.mark.parametrize("filename", [
+        "cargo.exe", "cargo", "cargo.csv.txt", "../cargo.csv", r"..\cargo.csv",
+        "cargo.csv ", ".csv", "a" * 256 + ".csv",
+    ])
+    def test_csv_rejects_unsupported_or_ambiguous_filenames(client, filename):
+>       assert upload(client, filename).status_code == 422
+E       AssertionError: assert 202 == 422
+E        +  where 202 = <Response [202 Accepted]>.status_code
+E        +    where <Response [202 Accepted]> = upload(<starlette.testclient.TestClient object at 0x10c6d8830>, '.csv')
+
+tests/backend/test_input_privacy.py:39: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "ae5cbc91-fee0-42b3-a879-18184debcb91", "elapsed_ms": 3.784, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "dd9f9ad99a8e81d9", "trace_id": "52bff2b9132581f56f5ef2d586ffc1b9"}
+{"correlation.id": "0c9b55d3-bc57-43cf-a12e-011a9a9514e8", "elapsed_ms": 22.046, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "fb3f24c39e8e8ffe", "trace_id": "29b10d372cf585501e7aafd198dc2fcd"}
+{"cargo.count": 140, "elapsed_ms": 11.925, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "f521e6d2e93e16a7", "trace_id": "d48d5936d08fb896a8c7a056fa57ff9e"}
+{"correlation.id": "a2249189-3fa5-46ef-a421-e8f87bc81c27", "elapsed_ms": 33.946, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "e0e6bd56685b0883", "trace_id": "d48d5936d08fb896a8c7a056fa57ff9e"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "ae5cbc91-fee0-42b3-a879-18184debcb91", "elapsed_ms": 3.784, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "dd9f9ad99a8e81d9", "trace_id": "52bff2b9132581f56f5ef2d586ffc1b9"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "0c9b55d3-bc57-43cf-a12e-011a9a9514e8", "elapsed_ms": 22.046, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "fb3f24c39e8e8ffe", "trace_id": "29b10d372cf585501e7aafd198dc2fcd"}
+INFO     cargopulse.telemetry:observability.py:234 {"cargo.count": 140, "elapsed_ms": 11.925, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "f521e6d2e93e16a7", "trace_id": "d48d5936d08fb896a8c7a056fa57ff9e"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "a2249189-3fa5-46ef-a421-e8f87bc81c27", "elapsed_ms": 33.946, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "e0e6bd56685b0883", "trace_id": "d48d5936d08fb896a8c7a056fa57ff9e"}
+________ test_csv_rejects_unsupported_or_ambiguous_filenames[filename7] ________
+
+client = <starlette.testclient.TestClient object at 0x10cc6dc70>
+filename = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.csv'
+
+    @pytest.mark.parametrize("filename", [
+        "cargo.exe", "cargo", "cargo.csv.txt", "../cargo.csv", r"..\cargo.csv",
+        "cargo.csv ", ".csv", "a" * 256 + ".csv",
+    ])
+    def test_csv_rejects_unsupported_or_ambiguous_filenames(client, filename):
+>       assert upload(client, filename).status_code == 422
+E       AssertionError: assert 202 == 422
+E        +  where 202 = <Response [202 Accepted]>.status_code
+E        +    where <Response [202 Accepted]> = upload(<starlette.testclient.TestClient object at 0x10cc6dc70>, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.csv')
+
+tests/backend/test_input_privacy.py:39: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "0cd8b7d7-da73-468e-b758-6c7a2950a03e", "elapsed_ms": 3.834, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "e4c4f35c7e979130", "trace_id": "87f61b0d53b808b134257918ba17f286"}
+{"correlation.id": "64c87a64-e4cd-497d-8706-14885854b652", "elapsed_ms": 20.238, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "7b22205c8d606051", "trace_id": "2e628fb3873d05aaeab12d091ee52c16"}
+{"cargo.count": 140, "elapsed_ms": 59.589, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "0263de3b4d41775d", "trace_id": "c581bf32908f656c02a466d41a7ba5cf"}
+{"correlation.id": "3b936858-b375-4d2c-bf9f-3e74b1b02fd5", "elapsed_ms": 82.339, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "b819d3c5a6269ace", "trace_id": "c581bf32908f656c02a466d41a7ba5cf"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "0cd8b7d7-da73-468e-b758-6c7a2950a03e", "elapsed_ms": 3.834, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "e4c4f35c7e979130", "trace_id": "87f61b0d53b808b134257918ba17f286"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "64c87a64-e4cd-497d-8706-14885854b652", "elapsed_ms": 20.238, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/fixtures/recover", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "7b22205c8d606051", "trace_id": "2e628fb3873d05aaeab12d091ee52c16"}
+INFO     cargopulse.telemetry:observability.py:234 {"cargo.count": 140, "elapsed_ms": 59.589, "event": "operation", "operation": "ingest.validate", "outcome": "success", "service": "cargopulse-api", "span_id": "0263de3b4d41775d", "trace_id": "c581bf32908f656c02a466d41a7ba5cf"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "3b936858-b375-4d2c-bf9f-3e74b1b02fd5", "elapsed_ms": 82.339, "event": "operation", "http.request.method": "POST", "http.response.status_code": 202, "http.route": "/api/v1/imports/upload-csv", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "b819d3c5a6269ace", "trace_id": "c581bf32908f656c02a466d41a7ba5cf"}
+_____ test_callback_query_canaries_do_not_reach_application_logs_or_spans ______
+
+client = <starlette.testclient.TestClient object at 0x10c64b4a0>
+
+    def test_callback_query_canaries_do_not_reach_application_logs_or_spans(client):
+        code, state = "CODE_CANARY_" + uuid4().hex, "STATE_CANARY_" + uuid4().hex
+        exporter = InMemorySpanExporter()
+        client.app.state.telemetry.traces.add_span_processor(SimpleSpanProcessor(exporter))
+        records = []
+    
+        class Capture(logging.Handler):
+            def emit(self, record):
+                records.append(record.getMessage())
+    
+        logger = logging.getLogger("cargopulse.telemetry")
+        handler = Capture()
+        logger.addHandler(handler)
+        try:
+            result = client.get("/api/v1/auth/callback", params={"code": code, "state": state})
+        finally:
+            logger.removeHandler(handler)
+        assert result.status_code == 401
+>       assert result.headers.get("Referrer-Policy") == "no-referrer"
+E       AssertionError: assert None == 'no-referrer'
+E        +  where None = get('Referrer-Policy')
+E        +    where get = Headers({'content-length': '250', 'content-type': 'application/problem+json', 'x-correlation-id': '85dacadd-d506-4b60-8d1b-159f88d408cf', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff'}).get
+E        +      where Headers({'content-length': '250', 'content-type': 'application/problem+json', 'x-correlation-id': '85dacadd-d506-4b60-8d1b-159f88d408cf', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff'}) = <Response [401 Unauthorized]>.headers
+
+tests/backend/test_input_privacy.py:67: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "85dacadd-d506-4b60-8d1b-159f88d408cf", "elapsed_ms": 1.388, "event": "operation", "http.request.method": "GET", "http.response.status_code": 401, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "1ff0ff97291eec10", "trace_id": "f63ba51dd80292fc3eb658f610ee7354"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "85dacadd-d506-4b60-8d1b-159f88d408cf", "elapsed_ms": 1.388, "event": "operation", "http.request.method": "GET", "http.response.status_code": 401, "http.route": "/api/v1/auth/callback", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "1ff0ff97291eec10", "trace_id": "f63ba51dd80292fc3eb658f610ee7354"}
+_________ test_early_boundary_errors_also_prevent_referrer_forwarding __________
+
+client = <starlette.testclient.TestClient object at 0x10da02060>
+
+    def test_early_boundary_errors_also_prevent_referrer_forwarding(client):
+        result = client.get("/api/v1/health/live", headers={"Content-Length": "9000000"})
+        assert result.status_code == 413
+>       assert result.headers.get("Referrer-Policy") == "no-referrer"
+E       AssertionError: assert None == 'no-referrer'
+E        +  where None = get('Referrer-Policy')
+E        +    where get = Headers({'content-length': '245', 'content-type': 'application/problem+json'}).get
+E        +      where Headers({'content-length': '245', 'content-type': 'application/problem+json'}) = <Response [413 Request Entity Too Large]>.headers
+
+tests/backend/test_input_privacy.py:79: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "84339911-98fc-4f18-a88b-f26cad013a8d", "elapsed_ms": 0.081, "event": "operation", "http.request.method": "GET", "http.response.status_code": 413, "http.route": "unmatched", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0d66d759c27b2e2f", "trace_id": "c52d381890884d659768e558c4c21b67"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "84339911-98fc-4f18-a88b-f26cad013a8d", "elapsed_ms": 0.081, "event": "operation", "http.request.method": "GET", "http.response.status_code": 413, "http.route": "unmatched", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "0d66d759c27b2e2f", "trace_id": "c52d381890884d659768e558c4c21b67"}
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/pie/CargoPulse_Production_Build_Package/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/backend/test_input_privacy.py::test_csv_rejects_unsupported_or_ambiguous_filenames[cargo.exe]
+FAILED tests/backend/test_input_privacy.py::test_csv_rejects_unsupported_or_ambiguous_filenames[cargo]
+FAILED tests/backend/test_input_privacy.py::test_csv_rejects_unsupported_or_ambiguous_filenames[cargo.csv.txt]
+FAILED tests/backend/test_input_privacy.py::test_csv_rejects_unsupported_or_ambiguous_filenames[../cargo.csv]
+FAILED tests/backend/test_input_privacy.py::test_csv_rejects_unsupported_or_ambiguous_filenames[..\\cargo.csv]
+FAILED tests/backend/test_input_privacy.py::test_csv_rejects_unsupported_or_ambiguous_filenames[cargo.csv ]
+FAILED tests/backend/test_input_privacy.py::test_csv_rejects_unsupported_or_ambiguous_filenames[.csv]
+FAILED tests/backend/test_input_privacy.py::test_csv_rejects_unsupported_or_ambiguous_filenames[filename7]
+FAILED tests/backend/test_input_privacy.py::test_callback_query_canaries_do_not_reach_application_logs_or_spans
+FAILED tests/backend/test_input_privacy.py::test_early_boundary_errors_also_prevent_referrer_forwarding
+10 failed, 4 passed, 1 warning in 1.74s

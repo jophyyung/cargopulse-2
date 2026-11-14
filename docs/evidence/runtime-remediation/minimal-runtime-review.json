@@ -1,0 +1,2196 @@
+{
+  "started_utc": "2026-11-11T11:32:54.011146+00:00",
+  "assembler_sha256": "afc35320e1c0c0b305620438bc0c2a49e05fdd12baef94d3e2b34e92c337bae1",
+  "images": {
+    "api": {
+      "kind": "python",
+      "exported_entries": 11392,
+      "manifest_file_hashes_checked": 9251,
+      "link_count": 68,
+      "links": [
+        {
+          "path": "bin",
+          "target": "usr/bin",
+          "resolved": "usr/bin"
+        },
+        {
+          "path": "etc/localtime",
+          "target": "/usr/share/zoneinfo/Etc/UTC",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "etc/mtab",
+          "target": "/proc/mounts",
+          "resolved": "proc/mounts"
+        },
+        {
+          "path": "etc/os-release",
+          "target": "../usr/lib/os-release",
+          "resolved": "usr/lib/os-release"
+        },
+        {
+          "path": "lib",
+          "target": "usr/lib",
+          "resolved": "usr/lib"
+        },
+        {
+          "path": "sbin",
+          "target": "usr/sbin",
+          "resolved": "usr/sbin"
+        },
+        {
+          "path": "usr/lib/aarch64-linux-gnu/libbz2.so.1.0",
+          "target": "libbz2.so.1.0.4",
+          "resolved": "usr/lib/aarch64-linux-gnu/libbz2.so.1.0.4"
+        },
+        {
+          "path": "usr/lib/aarch64-linux-gnu/libcrypt.so.1",
+          "target": "libcrypt.so.1.1.0",
+          "resolved": "usr/lib/aarch64-linux-gnu/libcrypt.so.1.1.0"
+        },
+        {
+          "path": "usr/lib/aarch64-linux-gnu/libffi.so.8",
+          "target": "libffi.so.8.1.4",
+          "resolved": "usr/lib/aarch64-linux-gnu/libffi.so.8.1.4"
+        },
+        {
+          "path": "usr/lib/aarch64-linux-gnu/libgdbm.so.6",
+          "target": "libgdbm.so.6.0.0",
+          "resolved": "usr/lib/aarch64-linux-gnu/libgdbm.so.6.0.0"
+        },
+        {
+          "path": "usr/lib/aarch64-linux-gnu/liblzma.so.5",
+          "target": "liblzma.so.5.8.1",
+          "resolved": "usr/lib/aarch64-linux-gnu/liblzma.so.5.8.1"
+        },
+        {
+          "path": "usr/lib/aarch64-linux-gnu/libstdc++.so.6",
+          "target": "libstdc++.so.6.0.33",
+          "resolved": "usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33"
+        },
+        {
+          "path": "usr/lib/aarch64-linux-gnu/libz.so.1",
+          "target": "libz.so.1.3.1",
+          "resolved": "usr/lib/aarch64-linux-gnu/libz.so.1.3.1"
+        },
+        {
+          "path": "usr/lib/aarch64-linux-gnu/libzstd.so.1",
+          "target": "libzstd.so.1.5.7",
+          "resolved": "usr/lib/aarch64-linux-gnu/libzstd.so.1.5.7"
+        },
+        {
+          "path": "usr/lib/ld-linux-aarch64.so.1",
+          "target": "aarch64-linux-gnu/ld-linux-aarch64.so.1",
+          "resolved": "usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1"
+        },
+        {
+          "path": "usr/local/bin/python",
+          "target": "python3",
+          "resolved": "usr/local/bin/python3.12"
+        },
+        {
+          "path": "usr/local/bin/python3",
+          "target": "python3.12",
+          "resolved": "usr/local/bin/python3.12"
+        },
+        {
+          "path": "usr/share/zoneinfo/Africa/Timbuktu",
+          "target": "Bamako",
+          "resolved": "usr/share/zoneinfo/Africa/Bamako"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Atka",
+          "target": "Adak",
+          "resolved": "usr/share/zoneinfo/America/Adak"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Coral_Harbour",
+          "target": "Atikokan",
+          "resolved": "usr/share/zoneinfo/America/Atikokan"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Ensenada",
+          "target": "Tijuana",
+          "resolved": "usr/share/zoneinfo/America/Tijuana"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Kralendijk",
+          "target": "Curacao",
+          "resolved": "usr/share/zoneinfo/America/Curacao"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Lower_Princes",
+          "target": "Curacao",
+          "resolved": "usr/share/zoneinfo/America/Curacao"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Marigot",
+          "target": "Port_of_Spain",
+          "resolved": "usr/share/zoneinfo/America/Port_of_Spain"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Montreal",
+          "target": "Toronto",
+          "resolved": "usr/share/zoneinfo/America/Toronto"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Nipigon",
+          "target": "Toronto",
+          "resolved": "usr/share/zoneinfo/America/Toronto"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Pangnirtung",
+          "target": "Iqaluit",
+          "resolved": "usr/share/zoneinfo/America/Iqaluit"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Porto_Acre",
+          "target": "Rio_Branco",
+          "resolved": "usr/share/zoneinfo/America/Rio_Branco"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Rainy_River",
+          "target": "Winnipeg",
+          "resolved": "usr/share/zoneinfo/America/Winnipeg"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Santa_Isabel",
+          "target": "Tijuana",
+          "resolved": "usr/share/zoneinfo/America/Tijuana"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Shiprock",
+          "target": "Denver",
+          "resolved": "usr/share/zoneinfo/America/Denver"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/St_Barthelemy",
+          "target": "Port_of_Spain",
+          "resolved": "usr/share/zoneinfo/America/Port_of_Spain"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Thunder_Bay",
+          "target": "Toronto",
+          "resolved": "usr/share/zoneinfo/America/Toronto"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Virgin",
+          "target": "St_Thomas",
+          "resolved": "usr/share/zoneinfo/America/St_Thomas"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Yellowknife",
+          "target": "Edmonton",
+          "resolved": "usr/share/zoneinfo/America/Edmonton"
+        },
+        {
+          "path": "usr/share/zoneinfo/Arctic/Longyearbyen",
+          "target": "../Europe/Oslo",
+          "resolved": "usr/share/zoneinfo/Europe/Oslo"
+        },
+        {
+          "path": "usr/share/zoneinfo/Asia/Chongqing",
+          "target": "Shanghai",
+          "resolved": "usr/share/zoneinfo/Asia/Shanghai"
+        },
+        {
+          "path": "usr/share/zoneinfo/Asia/Harbin",
+          "target": "Shanghai",
+          "resolved": "usr/share/zoneinfo/Asia/Shanghai"
+        },
+        {
+          "path": "usr/share/zoneinfo/Asia/Istanbul",
+          "target": "../Europe/Istanbul",
+          "resolved": "usr/share/zoneinfo/Europe/Istanbul"
+        },
+        {
+          "path": "usr/share/zoneinfo/Asia/Kashgar",
+          "target": "Urumqi",
+          "resolved": "usr/share/zoneinfo/Asia/Urumqi"
+        },
+        {
+          "path": "usr/share/zoneinfo/Asia/Tel_Aviv",
+          "target": "Jerusalem",
+          "resolved": "usr/share/zoneinfo/Asia/Jerusalem"
+        },
+        {
+          "path": "usr/share/zoneinfo/Atlantic/Jan_Mayen",
+          "target": "../Europe/Oslo",
+          "resolved": "usr/share/zoneinfo/Europe/Oslo"
+        },
+        {
+          "path": "usr/share/zoneinfo/Australia/Canberra",
+          "target": "Sydney",
+          "resolved": "usr/share/zoneinfo/Australia/Sydney"
+        },
+        {
+          "path": "usr/share/zoneinfo/Australia/Currie",
+          "target": "Hobart",
+          "resolved": "usr/share/zoneinfo/Australia/Hobart"
+        },
+        {
+          "path": "usr/share/zoneinfo/Australia/Yancowinna",
+          "target": "Broken_Hill",
+          "resolved": "usr/share/zoneinfo/Australia/Broken_Hill"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/GMT+0",
+          "target": "GMT",
+          "resolved": "usr/share/zoneinfo/Etc/GMT"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/GMT-0",
+          "target": "GMT",
+          "resolved": "usr/share/zoneinfo/Etc/GMT"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/GMT0",
+          "target": "GMT",
+          "resolved": "usr/share/zoneinfo/Etc/GMT"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/Greenwich",
+          "target": "GMT",
+          "resolved": "usr/share/zoneinfo/Etc/GMT"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/UCT",
+          "target": "UTC",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/Universal",
+          "target": "UTC",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/Zulu",
+          "target": "UTC",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Belfast",
+          "target": "London",
+          "resolved": "usr/share/zoneinfo/Europe/London"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Bratislava",
+          "target": "Prague",
+          "resolved": "usr/share/zoneinfo/Europe/Prague"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Busingen",
+          "target": "Zurich",
+          "resolved": "usr/share/zoneinfo/Europe/Zurich"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Mariehamn",
+          "target": "Helsinki",
+          "resolved": "usr/share/zoneinfo/Europe/Helsinki"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Nicosia",
+          "target": "../Asia/Nicosia",
+          "resolved": "usr/share/zoneinfo/Asia/Nicosia"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Podgorica",
+          "target": "Belgrade",
+          "resolved": "usr/share/zoneinfo/Europe/Belgrade"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/San_Marino",
+          "target": "Rome",
+          "resolved": "usr/share/zoneinfo/Europe/Rome"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Tiraspol",
+          "target": "Chisinau",
+          "resolved": "usr/share/zoneinfo/Europe/Chisinau"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Vatican",
+          "target": "Rome",
+          "resolved": "usr/share/zoneinfo/Europe/Rome"
+        },
+        {
+          "path": "usr/share/zoneinfo/GMT",
+          "target": "Etc/GMT",
+          "resolved": "usr/share/zoneinfo/Etc/GMT"
+        },
+        {
+          "path": "usr/share/zoneinfo/Pacific/Johnston",
+          "target": "Honolulu",
+          "resolved": "usr/share/zoneinfo/Pacific/Honolulu"
+        },
+        {
+          "path": "usr/share/zoneinfo/Pacific/Samoa",
+          "target": "Pago_Pago",
+          "resolved": "usr/share/zoneinfo/Pacific/Pago_Pago"
+        },
+        {
+          "path": "usr/share/zoneinfo/Pacific/Yap",
+          "target": "Chuuk",
+          "resolved": "usr/share/zoneinfo/Pacific/Chuuk"
+        },
+        {
+          "path": "usr/share/zoneinfo/UTC",
+          "target": "Etc/UTC",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "usr/share/zoneinfo/localtime",
+          "target": "/etc/localtime",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "usr/share/zoneinfo/posixrules",
+          "target": "America/New_York",
+          "resolved": "usr/share/zoneinfo/America/New_York"
+        }
+      ],
+      "runtime_mount_links": [
+        {
+          "path": "etc/mtab",
+          "target": "/proc/mounts",
+          "resolved": "proc/mounts"
+        }
+      ],
+      "nonroot_regular_file_access": {
+        "uid": 10001,
+        "gid": 10001,
+        "unreadable_files_or_unsearchable_parents": []
+      },
+      "system_packages": [
+        "base-files",
+        "ca-certificates",
+        "gcc-14-base:arm64",
+        "libbz2-1.0:arm64",
+        "libc-bin",
+        "libc6:arm64",
+        "libcrypt1:arm64",
+        "libdb5.3t64:arm64",
+        "libffi8:arm64",
+        "libgcc-s1:arm64",
+        "libgdbm6t64:arm64",
+        "liblzma5:arm64",
+        "libssl3t64:arm64",
+        "libstdc++6:arm64",
+        "libzstd1:arm64",
+        "openssl",
+        "tzdata",
+        "zlib1g:arm64"
+      ],
+      "dpkg_records": [
+        {
+          "Package": "base-files",
+          "Essential": "yes",
+          "Status": "install ok installed",
+          "Priority": "required",
+          "Section": "admin",
+          "Installed-Size": "498",
+          "Maintainer": "Santiago Vila <sanvila@debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "foreign",
+          "Version": "13.8+deb13u7",
+          "Replaces": "base, dpkg (<= 1.15.0), miscutils",
+          "Provides": "base, usr-is-merged",
+          "Pre-Depends": "awk",
+          "Breaks": "debian-security-support (<< 2019.04.25), initscripts (<< 2.88dsf-13.3), sendfile (<< 2.1b.20080616-5.2~)",
+          "Description": "Debian base system miscellaneous files"
+        },
+        {
+          "Package": "ca-certificates",
+          "Status": "install ok installed",
+          "Priority": "standard",
+          "Section": "misc",
+          "Installed-Size": "387",
+          "Maintainer": "Julien Cristau <jcristau@debian.org>",
+          "Architecture": "all",
+          "Multi-Arch": "foreign",
+          "Version": "20250419+deb13u1",
+          "Depends": "openssl (>= 1.1.1), debconf (>= 0.5) | debconf-2.0",
+          "Breaks": "ca-certificates-java (<< 20121112+nmu1)",
+          "Enhances": "openssl",
+          "Description": "Common CA certificates"
+        },
+        {
+          "Package": "gcc-14-base",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "112",
+          "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "gcc-14",
+          "Version": "14.2.0-19",
+          "Breaks": "gnat (<< 7)",
+          "Description": "GCC, the GNU Compiler Collection (base package)",
+          "Homepage": "http://gcc.gnu.org/"
+        },
+        {
+          "Package": "libbz2-1.0",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "92",
+          "Maintainer": "Anibal Monsalve Salazar <anibal@debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "bzip2",
+          "Version": "1.0.8-6",
+          "Depends": "libc6 (>= 2.17)",
+          "Description": "high-quality block-sorting file compressor library - runtime",
+          "Homepage": "https://sourceware.org/bzip2/"
+        },
+        {
+          "Package": "libc-bin",
+          "Essential": "yes",
+          "Status": "install ok installed",
+          "Priority": "required",
+          "Section": "libs",
+          "Installed-Size": "2249",
+          "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "foreign",
+          "Source": "glibc",
+          "Version": "2.41-12+deb13u4",
+          "Depends": "libc6 (>> 2.41), libc6 (<< 2.42)",
+          "Recommends": "manpages",
+          "Breaks": "dh-lua (<< 27+nmu1~)",
+          "Description": "GNU C Library: Binaries",
+          "Homepage": "https://www.gnu.org/software/libc/libc.html"
+        },
+        {
+          "Package": "libc6",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "23769",
+          "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "glibc",
+          "Version": "2.41-12+deb13u4",
+          "Depends": "libgcc-s1",
+          "Recommends": "libidn2-0 (>= 2.0.5~)",
+          "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+          "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+          "Description": "GNU C Library: Shared libraries",
+          "Homepage": "https://www.gnu.org/software/libc/libc.html"
+        },
+        {
+          "Package": "libcrypt1",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "227",
+          "Maintainer": "Marco d'Itri <md@linux.it>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "libxcrypt",
+          "Version": "1:4.4.38-1",
+          "Replaces": "libc6 (<< 2.29-4)",
+          "Depends": "libc6 (>= 2.38)",
+          "Conflicts": "libpam0g (<< 1.4.0-10)",
+          "Description": "libcrypt shared library"
+        },
+        {
+          "Package": "libdb5.3t64",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "1775",
+          "Maintainer": "Debian QA Group <packages@qa.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "db5.3",
+          "Version": "5.3.28+dfsg2-9",
+          "Replaces": "libdb5.3",
+          "Provides": "libdb5.3 (= 5.3.28+dfsg2-9)",
+          "Depends": "libc6 (>= 2.38)",
+          "Breaks": "libdb5.3 (<< 5.3.28+dfsg2-9)",
+          "Description": "Berkeley v5.3 Database Libraries [runtime]",
+          "Homepage": "http://www.oracle.com/technetwork/database/database-technologies/berkeleydb/overview/index.html"
+        },
+        {
+          "Package": "libffi8",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "92",
+          "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "libffi",
+          "Version": "3.4.8-2",
+          "Replaces": "libffi8ubuntu1 (<< 3.4.2-1)",
+          "Provides": "libffi8ubuntu1 (= 3.4.8-2)",
+          "Depends": "libc6 (>= 2.34)",
+          "Breaks": "libffi8ubuntu1 (<< 3.4.2-1)",
+          "Description": "Foreign Function Interface library runtime",
+          "Homepage": "https://sourceware.org/libffi/"
+        },
+        {
+          "Package": "libgcc-s1",
+          "Protected": "yes",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "148",
+          "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "gcc-14",
+          "Version": "14.2.0-19",
+          "Replaces": "libgcc1 (<< 1:10)",
+          "Provides": "libgcc1 (= 1:14.2.0-19)",
+          "Depends": "gcc-14-base (= 14.2.0-19), libc6 (>= 2.35)",
+          "Breaks": "libgcc-7-dev (<< 7.5.0-4), libgcc-8-dev (<< 8.3.0-27), libgcc-9-dev (<< 9.2.1-26)",
+          "Description": "GCC support library",
+          "Homepage": "http://gcc.gnu.org/",
+          "Important": "yes"
+        },
+        {
+          "Package": "libgdbm6t64",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "194",
+          "Maintainer": "Nicolas Mora <babelouest@debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "gdbm",
+          "Version": "1.24-2",
+          "Replaces": "libgdbm6",
+          "Provides": "libgdbm6 (= 1.24-2)",
+          "Depends": "libc6 (>= 2.34)",
+          "Suggests": "gdbm-l10n (= 1.24-2)",
+          "Breaks": "libgdbm6 (<< 1.24-2)",
+          "Description": "GNU dbm database routines (runtime version) ",
+          "Homepage": "https://gnu.org/software/gdbm"
+        },
+        {
+          "Package": "liblzma5",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "435",
+          "Maintainer": "Sebastian Andrzej Siewior <sebastian@breakpoint.cc>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "xz-utils",
+          "Version": "5.8.1-1+deb13u2",
+          "Depends": "libc6 (>= 2.34)",
+          "Breaks": "liblzma2 (<< 5.1.1alpha+20110809-3~)",
+          "Description": "XZ-format compression library",
+          "Homepage": "https://tukaani.org/xz/"
+        },
+        {
+          "Package": "libssl3t64",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "8019",
+          "Maintainer": "Debian OpenSSL Team <pkg-openssl-devel@alioth-lists.debian.net>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "openssl",
+          "Version": "3.5.7-1~deb13u3",
+          "Replaces": "libssl3",
+          "Provides": "libssl3 (= 3.5.7-1~deb13u3)",
+          "Depends": "libc6 (>= 2.38), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4), openssl-provider-legacy",
+          "Breaks": "freeradius (<< 3.2.7+dfsg-1+deb13u1), libssl3 (<< 3.5.7-1~deb13u3), openssh-client (<< 1:9.4p1), openssh-server (<< 1:9.4p1), python3-m2crypto (<< 0.38.0-4)",
+          "Description": "Secure Sockets Layer toolkit - shared libraries",
+          "Homepage": "https://openssl-library.org"
+        },
+        {
+          "Package": "libstdc++6",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "3022",
+          "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "gcc-14",
+          "Version": "14.2.0-19",
+          "Replaces": "libstdc++6-14-dbg (<< 4.9.0-3)",
+          "Depends": "gcc-14-base (= 14.2.0-19), libc6 (>= 2.38), libgcc-s1 (>= 4.5)",
+          "Breaks": "gcc-4.3 (<< 4.3.6-1), gcc-4.4 (<< 4.4.6-4), gcc-4.5 (<< 4.5.3-2)",
+          "Conflicts": "scim (<< 1.4.2-1)",
+          "Description": "GNU Standard C++ Library v3",
+          "Homepage": "http://gcc.gnu.org/"
+        },
+        {
+          "Package": "libzstd1",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "748",
+          "Maintainer": "RPM packaging team <team+pkg-rpm@tracker.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "libzstd",
+          "Version": "1.5.7+dfsg-1",
+          "Depends": "libc6 (>= 2.34)",
+          "Description": "fast lossless compression algorithm",
+          "Homepage": "https://github.com/facebook/zstd"
+        },
+        {
+          "Package": "openssl",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "utils",
+          "Installed-Size": "2554",
+          "Maintainer": "Debian OpenSSL Team <pkg-openssl-devel@alioth-lists.debian.net>",
+          "Architecture": "arm64",
+          "Multi-Arch": "foreign",
+          "Version": "3.5.7-1~deb13u3",
+          "Depends": "libc6 (>= 2.34), libssl3t64 (>= 3.5.0)",
+          "Suggests": "ca-certificates",
+          "Description": "Secure Sockets Layer toolkit - cryptographic utility",
+          "Homepage": "https://openssl-library.org"
+        },
+        {
+          "Package": "tzdata",
+          "Status": "install ok installed",
+          "Priority": "required",
+          "Section": "localization",
+          "Installed-Size": "1360",
+          "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+          "Architecture": "all",
+          "Multi-Arch": "foreign",
+          "Version": "2026f-0+deb13u1",
+          "Replaces": "tzdata-legacy (= 2023c-8), tzdata-legacy (= 2023c-9)",
+          "Provides": "tzdata-trixie",
+          "Depends": "debconf (>= 0.5) | debconf-2.0",
+          "Breaks": "tzdata-legacy (= 2023c-8), tzdata-legacy (= 2023c-9)",
+          "Description": "time zone and daylight-saving time data",
+          "Homepage": "https://www.iana.org/time-zones"
+        },
+        {
+          "Package": "zlib1g",
+          "Status": "install ok installed",
+          "Priority": "required",
+          "Section": "libs",
+          "Installed-Size": "180",
+          "Maintainer": "Mark Brown <broonie@debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "zlib",
+          "Version": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+          "Provides": "libz1",
+          "Depends": "libc6 (>= 2.17)",
+          "Breaks": "libxml2 (<< 2.7.6.dfsg-2), texlive-binaries (<< 2023.20230311.66589-8)",
+          "Conflicts": "zlib1 (<= 1:1.0.4-7)",
+          "Description": "compression library - runtime",
+          "Homepage": "http://zlib.net/"
+        }
+      ],
+      "os_libraries": [
+        {
+          "path": "/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+          "origin": "libc-bin",
+          "package_record": {
+            "Package": "libc-bin",
+            "Essential": "yes",
+            "Status": "install ok installed",
+            "Priority": "required",
+            "Section": "libs",
+            "Installed-Size": "2249",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "foreign",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libc6 (>> 2.41), libc6 (<< 2.42)",
+            "Recommends": "manpages",
+            "Breaks": "dh-lua (<< 27+nmu1~)",
+            "Description": "GNU C Library: Binaries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libbz2.so.1.0.4",
+          "origin": "libbz2-1.0:arm64",
+          "package_record": {
+            "Package": "libbz2-1.0",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "92",
+            "Maintainer": "Anibal Monsalve Salazar <anibal@debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "bzip2",
+            "Version": "1.0.8-6",
+            "Depends": "libc6 (>= 2.17)",
+            "Description": "high-quality block-sorting file compressor library - runtime",
+            "Homepage": "https://sourceware.org/bzip2/"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libc.so.6",
+          "origin": "libc6:arm64",
+          "package_record": {
+            "Package": "libc6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "23769",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libgcc-s1",
+            "Recommends": "libidn2-0 (>= 2.0.5~)",
+            "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+            "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+            "Description": "GNU C Library: Shared libraries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libcrypt.so.1.1.0",
+          "origin": "libcrypt1:arm64",
+          "package_record": {
+            "Package": "libcrypt1",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "227",
+            "Maintainer": "Marco d'Itri <md@linux.it>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "libxcrypt",
+            "Version": "1:4.4.38-1",
+            "Replaces": "libc6 (<< 2.29-4)",
+            "Depends": "libc6 (>= 2.38)",
+            "Conflicts": "libpam0g (<< 1.4.0-10)",
+            "Description": "libcrypt shared library"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libcrypto.so.3",
+          "origin": "libssl3t64:arm64",
+          "package_record": {
+            "Package": "libssl3t64",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "8019",
+            "Maintainer": "Debian OpenSSL Team <pkg-openssl-devel@alioth-lists.debian.net>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "openssl",
+            "Version": "3.5.7-1~deb13u3",
+            "Replaces": "libssl3",
+            "Provides": "libssl3 (= 3.5.7-1~deb13u3)",
+            "Depends": "libc6 (>= 2.38), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4), openssl-provider-legacy",
+            "Breaks": "freeradius (<< 3.2.7+dfsg-1+deb13u1), libssl3 (<< 3.5.7-1~deb13u3), openssh-client (<< 1:9.4p1), openssh-server (<< 1:9.4p1), python3-m2crypto (<< 0.38.0-4)",
+            "Description": "Secure Sockets Layer toolkit - shared libraries",
+            "Homepage": "https://openssl-library.org"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libdb-5.3.so",
+          "origin": "libdb5.3t64:arm64",
+          "package_record": {
+            "Package": "libdb5.3t64",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "1775",
+            "Maintainer": "Debian QA Group <packages@qa.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "db5.3",
+            "Version": "5.3.28+dfsg2-9",
+            "Replaces": "libdb5.3",
+            "Provides": "libdb5.3 (= 5.3.28+dfsg2-9)",
+            "Depends": "libc6 (>= 2.38)",
+            "Breaks": "libdb5.3 (<< 5.3.28+dfsg2-9)",
+            "Description": "Berkeley v5.3 Database Libraries [runtime]",
+            "Homepage": "http://www.oracle.com/technetwork/database/database-technologies/berkeleydb/overview/index.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libdl.so.2",
+          "origin": "libc6:arm64",
+          "package_record": {
+            "Package": "libc6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "23769",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libgcc-s1",
+            "Recommends": "libidn2-0 (>= 2.0.5~)",
+            "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+            "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+            "Description": "GNU C Library: Shared libraries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libffi.so.8.1.4",
+          "origin": "libffi8:arm64",
+          "package_record": {
+            "Package": "libffi8",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "92",
+            "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "libffi",
+            "Version": "3.4.8-2",
+            "Replaces": "libffi8ubuntu1 (<< 3.4.2-1)",
+            "Provides": "libffi8ubuntu1 (= 3.4.8-2)",
+            "Depends": "libc6 (>= 2.34)",
+            "Breaks": "libffi8ubuntu1 (<< 3.4.2-1)",
+            "Description": "Foreign Function Interface library runtime",
+            "Homepage": "https://sourceware.org/libffi/"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libgcc_s.so.1",
+          "origin": "libgcc-s1:arm64",
+          "package_record": {
+            "Package": "libgcc-s1",
+            "Protected": "yes",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "148",
+            "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "gcc-14",
+            "Version": "14.2.0-19",
+            "Replaces": "libgcc1 (<< 1:10)",
+            "Provides": "libgcc1 (= 1:14.2.0-19)",
+            "Depends": "gcc-14-base (= 14.2.0-19), libc6 (>= 2.35)",
+            "Breaks": "libgcc-7-dev (<< 7.5.0-4), libgcc-8-dev (<< 8.3.0-27), libgcc-9-dev (<< 9.2.1-26)",
+            "Description": "GCC support library",
+            "Homepage": "http://gcc.gnu.org/",
+            "Important": "yes"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libgdbm.so.6.0.0",
+          "origin": "libgdbm6t64:arm64",
+          "package_record": {
+            "Package": "libgdbm6t64",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "194",
+            "Maintainer": "Nicolas Mora <babelouest@debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "gdbm",
+            "Version": "1.24-2",
+            "Replaces": "libgdbm6",
+            "Provides": "libgdbm6 (= 1.24-2)",
+            "Depends": "libc6 (>= 2.34)",
+            "Suggests": "gdbm-l10n (= 1.24-2)",
+            "Breaks": "libgdbm6 (<< 1.24-2)",
+            "Description": "GNU dbm database routines (runtime version) ",
+            "Homepage": "https://gnu.org/software/gdbm"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/liblzma.so.5.8.1",
+          "origin": "liblzma5:arm64",
+          "package_record": {
+            "Package": "liblzma5",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "435",
+            "Maintainer": "Sebastian Andrzej Siewior <sebastian@breakpoint.cc>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "xz-utils",
+            "Version": "5.8.1-1+deb13u2",
+            "Depends": "libc6 (>= 2.34)",
+            "Breaks": "liblzma2 (<< 5.1.1alpha+20110809-3~)",
+            "Description": "XZ-format compression library",
+            "Homepage": "https://tukaani.org/xz/"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libm.so.6",
+          "origin": "libc6:arm64",
+          "package_record": {
+            "Package": "libc6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "23769",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libgcc-s1",
+            "Recommends": "libidn2-0 (>= 2.0.5~)",
+            "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+            "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+            "Description": "GNU C Library: Shared libraries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libpthread.so.0",
+          "origin": "libc6:arm64",
+          "package_record": {
+            "Package": "libc6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "23769",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libgcc-s1",
+            "Recommends": "libidn2-0 (>= 2.0.5~)",
+            "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+            "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+            "Description": "GNU C Library: Shared libraries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libresolv.so.2",
+          "origin": "libc6:arm64",
+          "package_record": {
+            "Package": "libc6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "23769",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libgcc-s1",
+            "Recommends": "libidn2-0 (>= 2.0.5~)",
+            "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+            "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+            "Description": "GNU C Library: Shared libraries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libssl.so.3",
+          "origin": "libssl3t64:arm64",
+          "package_record": {
+            "Package": "libssl3t64",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "8019",
+            "Maintainer": "Debian OpenSSL Team <pkg-openssl-devel@alioth-lists.debian.net>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "openssl",
+            "Version": "3.5.7-1~deb13u3",
+            "Replaces": "libssl3",
+            "Provides": "libssl3 (= 3.5.7-1~deb13u3)",
+            "Depends": "libc6 (>= 2.38), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4), openssl-provider-legacy",
+            "Breaks": "freeradius (<< 3.2.7+dfsg-1+deb13u1), libssl3 (<< 3.5.7-1~deb13u3), openssh-client (<< 1:9.4p1), openssh-server (<< 1:9.4p1), python3-m2crypto (<< 0.38.0-4)",
+            "Description": "Secure Sockets Layer toolkit - shared libraries",
+            "Homepage": "https://openssl-library.org"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libstdc++.so.6.0.33",
+          "origin": "libstdc++6:arm64",
+          "package_record": {
+            "Package": "libstdc++6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "3022",
+            "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "gcc-14",
+            "Version": "14.2.0-19",
+            "Replaces": "libstdc++6-14-dbg (<< 4.9.0-3)",
+            "Depends": "gcc-14-base (= 14.2.0-19), libc6 (>= 2.38), libgcc-s1 (>= 4.5)",
+            "Breaks": "gcc-4.3 (<< 4.3.6-1), gcc-4.4 (<< 4.4.6-4), gcc-4.5 (<< 4.5.3-2)",
+            "Conflicts": "scim (<< 1.4.2-1)",
+            "Description": "GNU Standard C++ Library v3",
+            "Homepage": "http://gcc.gnu.org/"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libz.so.1.3.1",
+          "origin": "zlib1g:arm64",
+          "package_record": {
+            "Package": "zlib1g",
+            "Status": "install ok installed",
+            "Priority": "required",
+            "Section": "libs",
+            "Installed-Size": "180",
+            "Maintainer": "Mark Brown <broonie@debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "zlib",
+            "Version": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+            "Provides": "libz1",
+            "Depends": "libc6 (>= 2.17)",
+            "Breaks": "libxml2 (<< 2.7.6.dfsg-2), texlive-binaries (<< 2023.20230311.66589-8)",
+            "Conflicts": "zlib1 (<= 1:1.0.4-7)",
+            "Description": "compression library - runtime",
+            "Homepage": "http://zlib.net/"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libzstd.so.1.5.7",
+          "origin": "libzstd1:arm64",
+          "package_record": {
+            "Package": "libzstd1",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "748",
+            "Maintainer": "RPM packaging team <team+pkg-rpm@tracker.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "libzstd",
+            "Version": "1.5.7+dfsg-1",
+            "Depends": "libc6 (>= 2.34)",
+            "Description": "fast lossless compression algorithm",
+            "Homepage": "https://github.com/facebook/zstd"
+          }
+        },
+        {
+          "path": "/usr/lib/os-release",
+          "origin": "base-files",
+          "package_record": {
+            "Package": "base-files",
+            "Essential": "yes",
+            "Status": "install ok installed",
+            "Priority": "required",
+            "Section": "admin",
+            "Installed-Size": "498",
+            "Maintainer": "Santiago Vila <sanvila@debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "foreign",
+            "Version": "13.8+deb13u7",
+            "Replaces": "base, dpkg (<= 1.15.0), miscutils",
+            "Provides": "base, usr-is-merged",
+            "Pre-Depends": "awk",
+            "Breaks": "debian-security-support (<< 2019.04.25), initscripts (<< 2.88dsf-13.3), sendfile (<< 2.1b.20080616-5.2~)",
+            "Description": "Debian base system miscellaneous files"
+          }
+        }
+      ],
+      "required_files": {
+        "etc/ssl/certs/ca-certificates.crt": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 222073
+        },
+        "etc/ssl/openssl.cnf": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 12411
+        },
+        "usr/share/zoneinfo/UTC": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 114
+        },
+        "usr/share/zoneinfo/Etc/UTC": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 114
+        },
+        "etc/nsswitch.conf": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 44
+        },
+        "etc/passwd": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 132
+        },
+        "etc/group": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 43
+        },
+        "usr/local/lib/python3.12/LICENSE.txt": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 13936
+        }
+      },
+      "permissions": {
+        "tmp": {
+          "type": "5",
+          "link": "",
+          "mode": 1023,
+          "uid": 0,
+          "gid": 0,
+          "size": 0
+        },
+        "var/lib/cargopulse/objects": {
+          "type": "5",
+          "link": "",
+          "mode": 448,
+          "uid": 10001,
+          "gid": 10001,
+          "size": 0
+        }
+      },
+      "merged_usr": {
+        "bin": {
+          "type": "2",
+          "link": "usr/bin",
+          "mode": 511,
+          "uid": 0,
+          "gid": 0,
+          "size": 0
+        },
+        "sbin": {
+          "type": "2",
+          "link": "usr/sbin",
+          "mode": 511,
+          "uid": 0,
+          "gid": 0,
+          "size": 0
+        },
+        "lib": {
+          "type": "2",
+          "link": "usr/lib",
+          "mode": 511,
+          "uid": 0,
+          "gid": 0,
+          "size": 0
+        }
+      },
+      "failures": [],
+      "runtime_manifest_sha256": "a97de047092277fecfd5a3e5d548db1cb432006910c5602264ec281975e36bbf",
+      "dpkg_status_sha256": "6263b9e8a939f05dee2993f06fcc8ab2e9fcabbbd6ce836439ef4b7c6044d1bd",
+      "image_id": "sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b",
+      "config": {
+        "User": "10001:10001",
+        "Env": [
+          "PATH=/usr/local/bin:/usr/bin:/bin",
+          "LD_LIBRARY_PATH=/usr/local/lib",
+          "HOME=/tmp",
+          "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt",
+          "PYTHONDONTWRITEBYTECODE=1",
+          "PYTHONUNBUFFERED=1",
+          "PYTHONPATH=/app/packages/contracts/python:/app/services/api:/app/services/worker:/app"
+        ],
+        "Entrypoint": null,
+        "Cmd": [
+          "python",
+          "-m",
+          "uvicorn",
+          "cargopulse_api.main:app",
+          "--host",
+          "0.0.0.0",
+          "--port",
+          "8000",
+          "--no-access-log"
+        ]
+      },
+      "unstarted_container_state": {
+        "Status": "created",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "0001-01-01T00:00:00Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "export_path": "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/runtime-postgres/.local/minimal-runtime-review/api-rootfs.tar",
+      "export_sha256": "a441d6f7d533df3500d7a47d846683366a1bd886e1479b954fde96fcc1d0f7f2"
+    },
+    "web": {
+      "kind": "node",
+      "exported_entries": 2249,
+      "manifest_file_hashes_checked": 1868,
+      "link_count": 59,
+      "links": [
+        {
+          "path": "bin",
+          "target": "usr/bin",
+          "resolved": "usr/bin"
+        },
+        {
+          "path": "etc/localtime",
+          "target": "/usr/share/zoneinfo/Etc/UTC",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "etc/mtab",
+          "target": "/proc/mounts",
+          "resolved": "proc/mounts"
+        },
+        {
+          "path": "etc/os-release",
+          "target": "../usr/lib/os-release",
+          "resolved": "usr/lib/os-release"
+        },
+        {
+          "path": "lib",
+          "target": "usr/lib",
+          "resolved": "usr/lib"
+        },
+        {
+          "path": "sbin",
+          "target": "usr/sbin",
+          "resolved": "usr/sbin"
+        },
+        {
+          "path": "usr/lib/aarch64-linux-gnu/libstdc++.so.6",
+          "target": "libstdc++.so.6.0.33",
+          "resolved": "usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33"
+        },
+        {
+          "path": "usr/lib/ld-linux-aarch64.so.1",
+          "target": "aarch64-linux-gnu/ld-linux-aarch64.so.1",
+          "resolved": "usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1"
+        },
+        {
+          "path": "usr/share/zoneinfo/Africa/Timbuktu",
+          "target": "Bamako",
+          "resolved": "usr/share/zoneinfo/Africa/Bamako"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Atka",
+          "target": "Adak",
+          "resolved": "usr/share/zoneinfo/America/Adak"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Coral_Harbour",
+          "target": "Atikokan",
+          "resolved": "usr/share/zoneinfo/America/Atikokan"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Ensenada",
+          "target": "Tijuana",
+          "resolved": "usr/share/zoneinfo/America/Tijuana"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Kralendijk",
+          "target": "Curacao",
+          "resolved": "usr/share/zoneinfo/America/Curacao"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Lower_Princes",
+          "target": "Curacao",
+          "resolved": "usr/share/zoneinfo/America/Curacao"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Marigot",
+          "target": "Port_of_Spain",
+          "resolved": "usr/share/zoneinfo/America/Port_of_Spain"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Montreal",
+          "target": "Toronto",
+          "resolved": "usr/share/zoneinfo/America/Toronto"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Nipigon",
+          "target": "Toronto",
+          "resolved": "usr/share/zoneinfo/America/Toronto"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Pangnirtung",
+          "target": "Iqaluit",
+          "resolved": "usr/share/zoneinfo/America/Iqaluit"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Porto_Acre",
+          "target": "Rio_Branco",
+          "resolved": "usr/share/zoneinfo/America/Rio_Branco"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Rainy_River",
+          "target": "Winnipeg",
+          "resolved": "usr/share/zoneinfo/America/Winnipeg"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Santa_Isabel",
+          "target": "Tijuana",
+          "resolved": "usr/share/zoneinfo/America/Tijuana"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Shiprock",
+          "target": "Denver",
+          "resolved": "usr/share/zoneinfo/America/Denver"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/St_Barthelemy",
+          "target": "Port_of_Spain",
+          "resolved": "usr/share/zoneinfo/America/Port_of_Spain"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Thunder_Bay",
+          "target": "Toronto",
+          "resolved": "usr/share/zoneinfo/America/Toronto"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Virgin",
+          "target": "St_Thomas",
+          "resolved": "usr/share/zoneinfo/America/St_Thomas"
+        },
+        {
+          "path": "usr/share/zoneinfo/America/Yellowknife",
+          "target": "Edmonton",
+          "resolved": "usr/share/zoneinfo/America/Edmonton"
+        },
+        {
+          "path": "usr/share/zoneinfo/Arctic/Longyearbyen",
+          "target": "../Europe/Oslo",
+          "resolved": "usr/share/zoneinfo/Europe/Oslo"
+        },
+        {
+          "path": "usr/share/zoneinfo/Asia/Chongqing",
+          "target": "Shanghai",
+          "resolved": "usr/share/zoneinfo/Asia/Shanghai"
+        },
+        {
+          "path": "usr/share/zoneinfo/Asia/Harbin",
+          "target": "Shanghai",
+          "resolved": "usr/share/zoneinfo/Asia/Shanghai"
+        },
+        {
+          "path": "usr/share/zoneinfo/Asia/Istanbul",
+          "target": "../Europe/Istanbul",
+          "resolved": "usr/share/zoneinfo/Europe/Istanbul"
+        },
+        {
+          "path": "usr/share/zoneinfo/Asia/Kashgar",
+          "target": "Urumqi",
+          "resolved": "usr/share/zoneinfo/Asia/Urumqi"
+        },
+        {
+          "path": "usr/share/zoneinfo/Asia/Tel_Aviv",
+          "target": "Jerusalem",
+          "resolved": "usr/share/zoneinfo/Asia/Jerusalem"
+        },
+        {
+          "path": "usr/share/zoneinfo/Atlantic/Jan_Mayen",
+          "target": "../Europe/Oslo",
+          "resolved": "usr/share/zoneinfo/Europe/Oslo"
+        },
+        {
+          "path": "usr/share/zoneinfo/Australia/Canberra",
+          "target": "Sydney",
+          "resolved": "usr/share/zoneinfo/Australia/Sydney"
+        },
+        {
+          "path": "usr/share/zoneinfo/Australia/Currie",
+          "target": "Hobart",
+          "resolved": "usr/share/zoneinfo/Australia/Hobart"
+        },
+        {
+          "path": "usr/share/zoneinfo/Australia/Yancowinna",
+          "target": "Broken_Hill",
+          "resolved": "usr/share/zoneinfo/Australia/Broken_Hill"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/GMT+0",
+          "target": "GMT",
+          "resolved": "usr/share/zoneinfo/Etc/GMT"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/GMT-0",
+          "target": "GMT",
+          "resolved": "usr/share/zoneinfo/Etc/GMT"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/GMT0",
+          "target": "GMT",
+          "resolved": "usr/share/zoneinfo/Etc/GMT"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/Greenwich",
+          "target": "GMT",
+          "resolved": "usr/share/zoneinfo/Etc/GMT"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/UCT",
+          "target": "UTC",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/Universal",
+          "target": "UTC",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "usr/share/zoneinfo/Etc/Zulu",
+          "target": "UTC",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Belfast",
+          "target": "London",
+          "resolved": "usr/share/zoneinfo/Europe/London"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Bratislava",
+          "target": "Prague",
+          "resolved": "usr/share/zoneinfo/Europe/Prague"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Busingen",
+          "target": "Zurich",
+          "resolved": "usr/share/zoneinfo/Europe/Zurich"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Mariehamn",
+          "target": "Helsinki",
+          "resolved": "usr/share/zoneinfo/Europe/Helsinki"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Nicosia",
+          "target": "../Asia/Nicosia",
+          "resolved": "usr/share/zoneinfo/Asia/Nicosia"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Podgorica",
+          "target": "Belgrade",
+          "resolved": "usr/share/zoneinfo/Europe/Belgrade"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/San_Marino",
+          "target": "Rome",
+          "resolved": "usr/share/zoneinfo/Europe/Rome"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Tiraspol",
+          "target": "Chisinau",
+          "resolved": "usr/share/zoneinfo/Europe/Chisinau"
+        },
+        {
+          "path": "usr/share/zoneinfo/Europe/Vatican",
+          "target": "Rome",
+          "resolved": "usr/share/zoneinfo/Europe/Rome"
+        },
+        {
+          "path": "usr/share/zoneinfo/GMT",
+          "target": "Etc/GMT",
+          "resolved": "usr/share/zoneinfo/Etc/GMT"
+        },
+        {
+          "path": "usr/share/zoneinfo/Pacific/Johnston",
+          "target": "Honolulu",
+          "resolved": "usr/share/zoneinfo/Pacific/Honolulu"
+        },
+        {
+          "path": "usr/share/zoneinfo/Pacific/Samoa",
+          "target": "Pago_Pago",
+          "resolved": "usr/share/zoneinfo/Pacific/Pago_Pago"
+        },
+        {
+          "path": "usr/share/zoneinfo/Pacific/Yap",
+          "target": "Chuuk",
+          "resolved": "usr/share/zoneinfo/Pacific/Chuuk"
+        },
+        {
+          "path": "usr/share/zoneinfo/UTC",
+          "target": "Etc/UTC",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "usr/share/zoneinfo/localtime",
+          "target": "/etc/localtime",
+          "resolved": "usr/share/zoneinfo/Etc/UTC"
+        },
+        {
+          "path": "usr/share/zoneinfo/posixrules",
+          "target": "America/New_York",
+          "resolved": "usr/share/zoneinfo/America/New_York"
+        }
+      ],
+      "runtime_mount_links": [
+        {
+          "path": "etc/mtab",
+          "target": "/proc/mounts",
+          "resolved": "proc/mounts"
+        }
+      ],
+      "nonroot_regular_file_access": {
+        "uid": 1000,
+        "gid": 1000,
+        "unreadable_files_or_unsearchable_parents": []
+      },
+      "system_packages": [
+        "base-files",
+        "ca-certificates",
+        "gcc-14-base:arm64",
+        "libc-bin",
+        "libc6:arm64",
+        "libgcc-s1:arm64",
+        "libstdc++6:arm64",
+        "openssl",
+        "tzdata"
+      ],
+      "dpkg_records": [
+        {
+          "Package": "base-files",
+          "Essential": "yes",
+          "Status": "install ok installed",
+          "Priority": "required",
+          "Section": "admin",
+          "Installed-Size": "498",
+          "Maintainer": "Santiago Vila <sanvila@debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "foreign",
+          "Version": "13.8+deb13u7",
+          "Replaces": "base, dpkg (<= 1.15.0), miscutils",
+          "Provides": "base, usr-is-merged",
+          "Pre-Depends": "awk",
+          "Breaks": "debian-security-support (<< 2019.04.25), initscripts (<< 2.88dsf-13.3), sendfile (<< 2.1b.20080616-5.2~)",
+          "Description": "Debian base system miscellaneous files"
+        },
+        {
+          "Package": "ca-certificates",
+          "Status": "install ok installed",
+          "Priority": "standard",
+          "Section": "misc",
+          "Installed-Size": "387",
+          "Maintainer": "Julien Cristau <jcristau@debian.org>",
+          "Architecture": "all",
+          "Multi-Arch": "foreign",
+          "Version": "20250419+deb13u1",
+          "Depends": "openssl (>= 1.1.1), debconf (>= 0.5) | debconf-2.0",
+          "Breaks": "ca-certificates-java (<< 20121112+nmu1)",
+          "Enhances": "openssl",
+          "Description": "Common CA certificates"
+        },
+        {
+          "Package": "gcc-14-base",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "112",
+          "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "gcc-14",
+          "Version": "14.2.0-19",
+          "Breaks": "gnat (<< 7)",
+          "Description": "GCC, the GNU Compiler Collection (base package)",
+          "Homepage": "http://gcc.gnu.org/"
+        },
+        {
+          "Package": "libc-bin",
+          "Essential": "yes",
+          "Status": "install ok installed",
+          "Priority": "required",
+          "Section": "libs",
+          "Installed-Size": "2249",
+          "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "foreign",
+          "Source": "glibc",
+          "Version": "2.41-12+deb13u4",
+          "Depends": "libc6 (>> 2.41), libc6 (<< 2.42)",
+          "Recommends": "manpages",
+          "Breaks": "dh-lua (<< 27+nmu1~)",
+          "Description": "GNU C Library: Binaries",
+          "Homepage": "https://www.gnu.org/software/libc/libc.html"
+        },
+        {
+          "Package": "libc6",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "23769",
+          "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "glibc",
+          "Version": "2.41-12+deb13u4",
+          "Depends": "libgcc-s1",
+          "Recommends": "libidn2-0 (>= 2.0.5~)",
+          "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+          "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+          "Description": "GNU C Library: Shared libraries",
+          "Homepage": "https://www.gnu.org/software/libc/libc.html"
+        },
+        {
+          "Package": "libgcc-s1",
+          "Protected": "yes",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "148",
+          "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "gcc-14",
+          "Version": "14.2.0-19",
+          "Replaces": "libgcc1 (<< 1:10)",
+          "Provides": "libgcc1 (= 1:14.2.0-19)",
+          "Depends": "gcc-14-base (= 14.2.0-19), libc6 (>= 2.35)",
+          "Breaks": "libgcc-7-dev (<< 7.5.0-4), libgcc-8-dev (<< 8.3.0-27), libgcc-9-dev (<< 9.2.1-26)",
+          "Description": "GCC support library",
+          "Homepage": "http://gcc.gnu.org/",
+          "Important": "yes"
+        },
+        {
+          "Package": "libstdc++6",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "libs",
+          "Installed-Size": "3022",
+          "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+          "Architecture": "arm64",
+          "Multi-Arch": "same",
+          "Source": "gcc-14",
+          "Version": "14.2.0-19",
+          "Replaces": "libstdc++6-14-dbg (<< 4.9.0-3)",
+          "Depends": "gcc-14-base (= 14.2.0-19), libc6 (>= 2.38), libgcc-s1 (>= 4.5)",
+          "Breaks": "gcc-4.3 (<< 4.3.6-1), gcc-4.4 (<< 4.4.6-4), gcc-4.5 (<< 4.5.3-2)",
+          "Conflicts": "scim (<< 1.4.2-1)",
+          "Description": "GNU Standard C++ Library v3",
+          "Homepage": "http://gcc.gnu.org/"
+        },
+        {
+          "Package": "openssl",
+          "Status": "install ok installed",
+          "Priority": "optional",
+          "Section": "utils",
+          "Installed-Size": "2554",
+          "Maintainer": "Debian OpenSSL Team <pkg-openssl-devel@alioth-lists.debian.net>",
+          "Architecture": "arm64",
+          "Multi-Arch": "foreign",
+          "Version": "3.5.7-1~deb13u3",
+          "Depends": "libc6 (>= 2.34), libssl3t64 (>= 3.5.0)",
+          "Suggests": "ca-certificates",
+          "Description": "Secure Sockets Layer toolkit - cryptographic utility",
+          "Homepage": "https://openssl-library.org"
+        },
+        {
+          "Package": "tzdata",
+          "Status": "install ok installed",
+          "Priority": "required",
+          "Section": "localization",
+          "Installed-Size": "1360",
+          "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+          "Architecture": "all",
+          "Multi-Arch": "foreign",
+          "Version": "2026f-0+deb13u1",
+          "Replaces": "tzdata-legacy (= 2023c-8), tzdata-legacy (= 2023c-9)",
+          "Provides": "tzdata-trixie",
+          "Depends": "debconf (>= 0.5) | debconf-2.0",
+          "Breaks": "tzdata-legacy (= 2023c-8), tzdata-legacy (= 2023c-9)",
+          "Description": "time zone and daylight-saving time data",
+          "Homepage": "https://www.iana.org/time-zones"
+        }
+      ],
+      "os_libraries": [
+        {
+          "path": "/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+          "origin": "libc-bin",
+          "package_record": {
+            "Package": "libc-bin",
+            "Essential": "yes",
+            "Status": "install ok installed",
+            "Priority": "required",
+            "Section": "libs",
+            "Installed-Size": "2249",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "foreign",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libc6 (>> 2.41), libc6 (<< 2.42)",
+            "Recommends": "manpages",
+            "Breaks": "dh-lua (<< 27+nmu1~)",
+            "Description": "GNU C Library: Binaries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libc.so.6",
+          "origin": "libc6:arm64",
+          "package_record": {
+            "Package": "libc6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "23769",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libgcc-s1",
+            "Recommends": "libidn2-0 (>= 2.0.5~)",
+            "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+            "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+            "Description": "GNU C Library: Shared libraries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libdl.so.2",
+          "origin": "libc6:arm64",
+          "package_record": {
+            "Package": "libc6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "23769",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libgcc-s1",
+            "Recommends": "libidn2-0 (>= 2.0.5~)",
+            "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+            "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+            "Description": "GNU C Library: Shared libraries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libgcc_s.so.1",
+          "origin": "libgcc-s1:arm64",
+          "package_record": {
+            "Package": "libgcc-s1",
+            "Protected": "yes",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "148",
+            "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "gcc-14",
+            "Version": "14.2.0-19",
+            "Replaces": "libgcc1 (<< 1:10)",
+            "Provides": "libgcc1 (= 1:14.2.0-19)",
+            "Depends": "gcc-14-base (= 14.2.0-19), libc6 (>= 2.35)",
+            "Breaks": "libgcc-7-dev (<< 7.5.0-4), libgcc-8-dev (<< 8.3.0-27), libgcc-9-dev (<< 9.2.1-26)",
+            "Description": "GCC support library",
+            "Homepage": "http://gcc.gnu.org/",
+            "Important": "yes"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libm.so.6",
+          "origin": "libc6:arm64",
+          "package_record": {
+            "Package": "libc6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "23769",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libgcc-s1",
+            "Recommends": "libidn2-0 (>= 2.0.5~)",
+            "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+            "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+            "Description": "GNU C Library: Shared libraries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libpthread.so.0",
+          "origin": "libc6:arm64",
+          "package_record": {
+            "Package": "libc6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "23769",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libgcc-s1",
+            "Recommends": "libidn2-0 (>= 2.0.5~)",
+            "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+            "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+            "Description": "GNU C Library: Shared libraries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libresolv.so.2",
+          "origin": "libc6:arm64",
+          "package_record": {
+            "Package": "libc6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "23769",
+            "Maintainer": "GNU Libc Maintainers <debian-glibc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "glibc",
+            "Version": "2.41-12+deb13u4",
+            "Depends": "libgcc-s1",
+            "Recommends": "libidn2-0 (>= 2.0.5~)",
+            "Suggests": "glibc-doc, debconf | debconf-2.0, libc-l10n, locales, libnss-nis, libnss-nisplus",
+            "Breaks": "base-files (<< 13.3~), chrony (<< 4.2-3~), dhcpcd (<< 1:10.1.0-7~), fakechroot (<< 2.19-3.5), firefox (<< 91~), firefox-esr (<< 91~), gnumach-image-1.8-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-486-dbg (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486 (<< 2:1.8+git20210923~), gnumach-image-1.8-xen-486-dbg (<< 2:1.8+git20210923~), hurd (<< 1:0.9.git20220301-2), libamdhip64-5 (<< 5.7.1-5+b1), libhiprtc-builtins5 (<< 5.7.1-5+b1), librccl1 (<< 5.4.3-3+b1), libswupdate0.1 (<< 2024.12.1+dfsg-1+b3), locales (<< 2.41), locales-all (<< 2.41), lua-swupdate (<< 2024.12.1+dfsg-1+b3), nscd (<< 2.41), pd-scaf (<< 1:0.14.1+darcs20180201-6+b4), postgresql-15-pllua (<< 1:2.0.12-4), postgresql-17-pllua (<< 1:2.0.12-3+b2), python3-iptables (<< 1.0.0-2), python3-mrgingham (<< 1.25-1), python3-onnxruntime (<< 1.20.1+dfsg-2~), sysvinit (<< 3.09-2~), sysvinit-core (<< 3.09-2~), tinydns (<< 1:1.05-14), uwsgi-plugin-pypy3 (<< 0.0.2+b1), valgrind (<< 1:3.19.0-1~)",
+            "Description": "GNU C Library: Shared libraries",
+            "Homepage": "https://www.gnu.org/software/libc/libc.html"
+          }
+        },
+        {
+          "path": "/lib/aarch64-linux-gnu/libstdc++.so.6.0.33",
+          "origin": "libstdc++6:arm64",
+          "package_record": {
+            "Package": "libstdc++6",
+            "Status": "install ok installed",
+            "Priority": "optional",
+            "Section": "libs",
+            "Installed-Size": "3022",
+            "Maintainer": "Debian GCC Maintainers <debian-gcc@lists.debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "same",
+            "Source": "gcc-14",
+            "Version": "14.2.0-19",
+            "Replaces": "libstdc++6-14-dbg (<< 4.9.0-3)",
+            "Depends": "gcc-14-base (= 14.2.0-19), libc6 (>= 2.38), libgcc-s1 (>= 4.5)",
+            "Breaks": "gcc-4.3 (<< 4.3.6-1), gcc-4.4 (<< 4.4.6-4), gcc-4.5 (<< 4.5.3-2)",
+            "Conflicts": "scim (<< 1.4.2-1)",
+            "Description": "GNU Standard C++ Library v3",
+            "Homepage": "http://gcc.gnu.org/"
+          }
+        },
+        {
+          "path": "/usr/lib/os-release",
+          "origin": "base-files",
+          "package_record": {
+            "Package": "base-files",
+            "Essential": "yes",
+            "Status": "install ok installed",
+            "Priority": "required",
+            "Section": "admin",
+            "Installed-Size": "498",
+            "Maintainer": "Santiago Vila <sanvila@debian.org>",
+            "Architecture": "arm64",
+            "Multi-Arch": "foreign",
+            "Version": "13.8+deb13u7",
+            "Replaces": "base, dpkg (<= 1.15.0), miscutils",
+            "Provides": "base, usr-is-merged",
+            "Pre-Depends": "awk",
+            "Breaks": "debian-security-support (<< 2019.04.25), initscripts (<< 2.88dsf-13.3), sendfile (<< 2.1b.20080616-5.2~)",
+            "Description": "Debian base system miscellaneous files"
+          }
+        }
+      ],
+      "required_files": {
+        "etc/ssl/certs/ca-certificates.crt": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 222073
+        },
+        "etc/ssl/openssl.cnf": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 12411
+        },
+        "usr/share/zoneinfo/UTC": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 114
+        },
+        "usr/share/zoneinfo/Etc/UTC": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 114
+        },
+        "etc/nsswitch.conf": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 44
+        },
+        "etc/passwd": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 132
+        },
+        "etc/group": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 43
+        },
+        "usr/local/LICENSE": {
+          "type": "0",
+          "link": "",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "size": 157609
+        }
+      },
+      "permissions": {
+        "tmp": {
+          "type": "5",
+          "link": "",
+          "mode": 1023,
+          "uid": 0,
+          "gid": 0,
+          "size": 0
+        },
+        "var/lib/cargopulse/objects": {
+          "type": "5",
+          "link": "",
+          "mode": 448,
+          "uid": 10001,
+          "gid": 10001,
+          "size": 0
+        }
+      },
+      "merged_usr": {
+        "bin": {
+          "type": "2",
+          "link": "usr/bin",
+          "mode": 511,
+          "uid": 0,
+          "gid": 0,
+          "size": 0
+        },
+        "sbin": {
+          "type": "2",
+          "link": "usr/sbin",
+          "mode": 511,
+          "uid": 0,
+          "gid": 0,
+          "size": 0
+        },
+        "lib": {
+          "type": "2",
+          "link": "usr/lib",
+          "mode": 511,
+          "uid": 0,
+          "gid": 0,
+          "size": 0
+        }
+      },
+      "failures": [],
+      "runtime_manifest_sha256": "9045364e5e4c8ab558831f17daeda47f8b62f7e4a1d81b560cf352f6c7ee1aa0",
+      "dpkg_status_sha256": "d1359629017ba3d74d216de61a3c1245331f28c0f0428f2c71fe1d4e9266364d",
+      "image_id": "sha256:0fa03daf4fefd8cbcd6a4b4223cdddbd52706faed77110c2a03638e0b1eb0952",
+      "config": {
+        "User": "node",
+        "Env": [
+          "PATH=/usr/local/bin:/usr/bin:/bin",
+          "HOME=/tmp",
+          "NODE_ENV=production",
+          "NEXT_TELEMETRY_DISABLED=1",
+          "HOSTNAME=0.0.0.0",
+          "PORT=3000",
+          "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+        ],
+        "Entrypoint": null,
+        "Cmd": [
+          "node",
+          "apps/web/server.js"
+        ]
+      },
+      "unstarted_container_state": {
+        "Status": "created",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "0001-01-01T00:00:00Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "export_path": "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/runtime-postgres/.local/minimal-runtime-review/web-rootfs.tar",
+      "export_sha256": "07ba378b962b199d8357a62666f84564911085b1a215bd407ef2a8b4b942bb4f"
+    }
+  },
+  "commands": [
+    {
+      "args": [
+        "image",
+        "inspect",
+        "sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b"
+      ],
+      "exit_code": 0,
+      "stdout": "[\n    {\n        \"Architecture\": \"arm64\",\n        \"Config\": {\n            \"Cmd\": [\n                \"python\",\n                \"-m\",\n                \"uvicorn\",\n                \"cargopulse_api.main:app\",\n                \"--host\",\n                \"0.0.0.0\",\n                \"--port\",\n                \"8000\",\n                \"--no-access-log\"\n            ],\n            \"Env\": [\n                \"PATH=/usr/local/bin:/usr/bin:/bin\",\n                \"LD_LIBRARY_PATH=/usr/local/lib\",\n                \"HOME=/tmp\",\n                \"SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt\",\n                \"PYTHONDONTWRITEBYTECODE=1\",\n                \"PYTHONUNBUFFERED=1\",\n                \"PYTHONPATH=/app/packages/contracts/python:/app/services/api:/app/services/worker:/app\"\n            ],\n            \"ExposedPorts\": {\n                \"8000/tcp\": {}\n            },\n            \"User\": \"10001:10001\",\n            \"WorkingDir\": \"/app\"\n        },\n        \"Created\": \"2026-11-11T19:22:56.836905916+08:00\",\n        \"Descriptor\": {\n            \"digest\": \"sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b\",\n            \"mediaType\": \"application/vnd.oci.image.manifest.v1+json\",\n            \"size\": 1636\n        },\n        \"Id\": \"sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b\",\n        \"Metadata\": {\n            \"LastTagTime\": \"2026-11-11T11:22:56.874329197Z\"\n        },\n        \"Os\": \"linux\",\n        \"Parent\": \"sha256:88416d1706696a14dd5408e21a15b946f92b354fff9acd97a0cb6ab8e454a899\",\n        \"RepoDigests\": [\n            \"cargopulse-api-remediation@sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b\"\n        ],\n        \"RepoTags\": [\n            \"cargopulse-api-remediation:probe\"\n        ],\n        \"RootFS\": {\n            \"Layers\": [\n                \"sha256:685d675da248bb97086945bad0f63cd561987832f01d46c1c82c19b06036210f\",\n                \"sha256:4928a9025127f4b7547cbe6fbf05884c0c0594426c2233f7eeac05288646277d\",\n                \"sha256:dc43d028f79916e8a2202c50b93bb2646cf73d108010b7c267055a99812a8bf6\",\n                \"sha256:3d425659ce13349f7d0a98137881d3a3521e7b44c09b5817fdf753396126f13e\",\n                \"sha256:84e400c8be8bb93771f24dae8a666eb9719355308b8d27d52082ccdce9ab9b0d\",\n                \"sha256:e54e00d69d18ae04a52773fc88f6655f69833b16fe80d3ec2c7a5b733ea6e85c\"\n            ],\n            \"Type\": \"layers\"\n        },\n        \"Size\": 91737040\n    }\n]\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "create",
+        "--name",
+        "cargopulse-pg-remediation-review-api-66c0b4fe",
+        "--network",
+        "none",
+        "sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b"
+      ],
+      "exit_code": 0,
+      "stdout": "75f1807d31749b1f8e9d14a3b463f921697fbfefdba28fd845e662b8cb5a3527\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "inspect",
+        "cargopulse-pg-remediation-review-api-66c0b4fe"
+      ],
+      "exit_code": 0,
+      "stdout": "[\n    {\n        \"Id\": \"75f1807d31749b1f8e9d14a3b463f921697fbfefdba28fd845e662b8cb5a3527\",\n        \"Created\": \"2026-11-11T11:32:54.125224445Z\",\n        \"Path\": \"python\",\n        \"Args\": [\n            \"-m\",\n            \"uvicorn\",\n            \"cargopulse_api.main:app\",\n            \"--host\",\n            \"0.0.0.0\",\n            \"--port\",\n            \"8000\",\n            \"--no-access-log\"\n        ],\n        \"State\": {\n            \"Status\": \"created\",\n            \"Running\": false,\n            \"Paused\": false,\n            \"Restarting\": false,\n            \"OOMKilled\": false,\n            \"Dead\": false,\n            \"Pid\": 0,\n            \"ExitCode\": 0,\n            \"Error\": \"\",\n            \"StartedAt\": \"0001-01-01T00:00:00Z\",\n            \"FinishedAt\": \"0001-01-01T00:00:00Z\"\n        },\n        \"Image\": \"sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b\",\n        \"ResolvConfPath\": \"\",\n        \"HostnamePath\": \"\",\n        \"HostsPath\": \"\",\n        \"LogPath\": \"\",\n        \"Name\": \"/cargopulse-pg-remediation-review-api-66c0b4fe\",\n        \"RestartCount\": 0,\n        \"Driver\": \"overlayfs\",\n        \"Platform\": \"linux\",\n        \"MountLabel\": \"\",\n        \"ProcessLabel\": \"\",\n        \"AppArmorProfile\": \"\",\n        \"ExecIDs\": null,\n        \"HostConfig\": {\n            \"Binds\": null,\n            \"ContainerIDFile\": \"\",\n            \"LogConfig\": {\n                \"Type\": \"json-file\",\n                \"Config\": {}\n            },\n            \"NetworkMode\": \"none\",\n            \"PortBindings\": {},\n            \"RestartPolicy\": {\n                \"Name\": \"no\",\n                \"MaximumRetryCount\": 0\n            },\n            \"AutoRemove\": false,\n            \"VolumeDriver\": \"\",\n            \"VolumesFrom\": null,\n            \"ConsoleSize\": [\n                0,\n                0\n            ],\n            \"CapAdd\": null,\n            \"CapDrop\": null,\n            \"CgroupnsMode\": \"private\",\n            \"Dns\": null,\n            \"DnsOptions\": [],\n            \"DnsSearch\": [],\n            \"ExtraHosts\": null,\n            \"GroupAdd\": null,\n            \"IpcMode\": \"private\",\n            \"Cgroup\": \"\",\n            \"Links\": null,\n            \"OomScoreAdj\": 0,\n            \"PidMode\": \"\",\n            \"Privileged\": false,\n            \"PublishAllPorts\": false,\n            \"ReadonlyRootfs\": false,\n            \"SecurityOpt\": null,\n            \"UTSMode\": \"\",\n            \"UsernsMode\": \"\",\n            \"ShmSize\": 67108864,\n            \"Runtime\": \"runc\",\n            \"Isolation\": \"\",\n            \"CpuShares\": 0,\n            \"Memory\": 0,\n            \"NanoCpus\": 0,\n            \"CgroupParent\": \"\",\n            \"BlkioWeight\": 0,\n            \"BlkioWeightDevice\": [],\n            \"BlkioDeviceReadBps\": [],\n            \"BlkioDeviceWriteBps\": [],\n            \"BlkioDeviceReadIOps\": [],\n            \"BlkioDeviceWriteIOps\": [],\n            \"CpuPeriod\": 0,\n            \"CpuQuota\": 0,\n            \"CpuRealtimePeriod\": 0,\n            \"CpuRealtimeRuntime\": 0,\n            \"CpusetCpus\": \"\",\n            \"CpusetMems\": \"\",\n            \"Devices\": [],\n            \"DeviceCgroupRules\": null,\n            \"DeviceRequests\": null,\n            \"MemoryReservation\": 0,\n            \"MemorySwap\": 0,\n            \"MemorySwappiness\": null,\n            \"OomKillDisable\": false,\n            \"PidsLimit\": null,\n            \"Ulimits\": null,\n            \"CpuCount\": 0,\n            \"CpuPercent\": 0,\n            \"IOMaximumIOps\": 0,\n            \"IOMaximumBandwidth\": 0,\n            \"MaskedPaths\": [\n                \"/proc/acpi\",\n                \"/proc/asound\",\n                \"/proc/interrupts\",\n                \"/proc/kcore\",\n                \"/proc/keys\",\n                \"/proc/latency_stats\",\n                \"/proc/sched_debug\",\n                \"/proc/scsi\",\n                \"/proc/timer_list\",\n                \"/proc/timer_stats\",\n                \"/sys/devices/virtual/powercap\",\n                \"/sys/firmware\"\n            ],\n            \"ReadonlyPaths\": [\n                \"/proc/bus\",\n                \"/proc/fs\",\n                \"/proc/irq\",\n                \"/proc/sys\",\n                \"/proc/sysrq-trigger\"\n            ]\n        },\n        \"Storage\": {\n            \"RootFS\": {\n                \"Snapshot\": {\n                    \"Name\": \"overlayfs\"\n                }\n            }\n        },\n        \"Mounts\": [],\n        \"Config\": {\n            \"Hostname\": \"75f1807d3174\",\n            \"Domainname\": \"\",\n            \"User\": \"10001:10001\",\n            \"AttachStdin\": false,\n            \"AttachStdout\": true,\n            \"AttachStderr\": true,\n            \"ExposedPorts\": {\n                \"8000/tcp\": {}\n            },\n            \"Tty\": false,\n            \"OpenStdin\": false,\n            \"StdinOnce\": false,\n            \"Env\": [\n                \"PATH=/usr/local/bin:/usr/bin:/bin\",\n                \"LD_LIBRARY_PATH=/usr/local/lib\",\n                \"HOME=/tmp\",\n                \"SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt\",\n                \"PYTHONDONTWRITEBYTECODE=1\",\n                \"PYTHONUNBUFFERED=1\",\n                \"PYTHONPATH=/app/packages/contracts/python:/app/services/api:/app/services/worker:/app\"\n            ],\n            \"Cmd\": [\n                \"python\",\n                \"-m\",\n                \"uvicorn\",\n                \"cargopulse_api.main:app\",\n                \"--host\",\n                \"0.0.0.0\",\n                \"--port\",\n                \"8000\",\n                \"--no-access-log\"\n            ],\n            \"Image\": \"sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b\",\n            \"Volumes\": null,\n            \"WorkingDir\": \"/app\",\n            \"Entrypoint\": null,\n            \"Labels\": {}\n        },\n        \"NetworkSettings\": {\n            \"SandboxID\": \"\",\n            \"SandboxKey\": \"\",\n            \"Ports\": {},\n            \"Networks\": {\n                \"none\": {\n                    \"IPAMConfig\": null,\n                    \"Links\": null,\n                    \"Aliases\": null,\n                    \"DriverOpts\": null,\n                    \"GwPriority\": 0,\n                    \"NetworkID\": \"\",\n                    \"EndpointID\": \"\",\n                    \"Gateway\": \"\",\n                    \"IPAddress\": \"\",\n                    \"MacAddress\": \"\",\n                    \"IPPrefixLen\": 0,\n                    \"IPv6Gateway\": \"\",\n                    \"GlobalIPv6Address\": \"\",\n                    \"GlobalIPv6PrefixLen\": 0,\n                    \"DNSNames\": null\n                }\n            }\n        },\n        \"ImageManifestDescriptor\": {\n            \"mediaType\": \"application/vnd.oci.image.manifest.v1+json\",\n            \"digest\": \"sha256:6965d4eb375c0d1d24b68d040e7cab3b8344d91913ab5e26c8975eb15fd3e62b\",\n            \"size\": 1636,\n            \"platform\": {\n                \"architecture\": \"arm64\",\n                \"os\": \"linux\"\n            }\n        }\n    }\n]\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "export",
+        "--output",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/runtime-postgres/.local/minimal-runtime-review/api-rootfs.tar",
+        "cargopulse-pg-remediation-review-api-66c0b4fe"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "rm",
+        "cargopulse-pg-remediation-review-api-66c0b4fe"
+      ],
+      "exit_code": 0,
+      "stdout": "cargopulse-pg-remediation-review-api-66c0b4fe\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "image",
+        "inspect",
+        "sha256:0fa03daf4fefd8cbcd6a4b4223cdddbd52706faed77110c2a03638e0b1eb0952"
+      ],
+      "exit_code": 0,
+      "stdout": "[\n    {\n        \"Architecture\": \"arm64\",\n        \"Config\": {\n            \"Cmd\": [\n                \"node\",\n                \"apps/web/server.js\"\n            ],\n            \"Env\": [\n                \"PATH=/usr/local/bin:/usr/bin:/bin\",\n                \"HOME=/tmp\",\n                \"NODE_ENV=production\",\n                \"NEXT_TELEMETRY_DISABLED=1\",\n                \"HOSTNAME=0.0.0.0\",\n                \"PORT=3000\",\n                \"SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt\"\n            ],\n            \"ExposedPorts\": {\n                \"3000/tcp\": {}\n            },\n            \"User\": \"node\",\n            \"WorkingDir\": \"/app\"\n        },\n        \"Created\": \"2026-11-11T19:24:16.43082178+08:00\",\n        \"Descriptor\": {\n            \"digest\": \"sha256:0fa03daf4fefd8cbcd6a4b4223cdddbd52706faed77110c2a03638e0b1eb0952\",\n            \"mediaType\": \"application/vnd.oci.image.manifest.v1+json\",\n            \"size\": 538\n        },\n        \"Id\": \"sha256:0fa03daf4fefd8cbcd6a4b4223cdddbd52706faed77110c2a03638e0b1eb0952\",\n        \"Metadata\": {\n            \"LastTagTime\": \"2026-11-11T11:24:16.464478974Z\"\n        },\n        \"Os\": \"linux\",\n        \"Parent\": \"sha256:8c59e68a748e579bc156ef6c1bcb5b0c149ebe776c69f8d3251a6444b28a896a\",\n        \"RepoDigests\": [\n            \"cargopulse-web-remediation@sha256:0fa03daf4fefd8cbcd6a4b4223cdddbd52706faed77110c2a03638e0b1eb0952\"\n        ],\n        \"RepoTags\": [\n            \"cargopulse-web-remediation:probe\"\n        ],\n        \"RootFS\": {\n            \"Layers\": [\n                \"sha256:0676cc2fb58d5bd37d81fdcbb92981d008183efa58faee38755c5dbfa196286e\"\n            ],\n            \"Type\": \"layers\"\n        },\n        \"Size\": 61415483\n    }\n]\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "create",
+        "--name",
+        "cargopulse-pg-remediation-review-web-2c0cca8b",
+        "--network",
+        "none",
+        "sha256:0fa03daf4fefd8cbcd6a4b4223cdddbd52706faed77110c2a03638e0b1eb0952"
+      ],
+      "exit_code": 0,
+      "stdout": "aa244f6826aab359015b678a716a3338234b8049507e8eed21d06d8d89b5fc9d\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "inspect",
+        "cargopulse-pg-remediation-review-web-2c0cca8b"
+      ],
+      "exit_code": 0,
+      "stdout": "[\n    {\n        \"Id\": \"aa244f6826aab359015b678a716a3338234b8049507e8eed21d06d8d89b5fc9d\",\n        \"Created\": \"2026-11-11T11:32:57.373502651Z\",\n        \"Path\": \"node\",\n        \"Args\": [\n            \"apps/web/server.js\"\n        ],\n        \"State\": {\n            \"Status\": \"created\",\n            \"Running\": false,\n            \"Paused\": false,\n            \"Restarting\": false,\n            \"OOMKilled\": false,\n            \"Dead\": false,\n            \"Pid\": 0,\n            \"ExitCode\": 0,\n            \"Error\": \"\",\n            \"StartedAt\": \"0001-01-01T00:00:00Z\",\n            \"FinishedAt\": \"0001-01-01T00:00:00Z\"\n        },\n        \"Image\": \"sha256:0fa03daf4fefd8cbcd6a4b4223cdddbd52706faed77110c2a03638e0b1eb0952\",\n        \"ResolvConfPath\": \"\",\n        \"HostnamePath\": \"\",\n        \"HostsPath\": \"\",\n        \"LogPath\": \"\",\n        \"Name\": \"/cargopulse-pg-remediation-review-web-2c0cca8b\",\n        \"RestartCount\": 0,\n        \"Driver\": \"overlayfs\",\n        \"Platform\": \"linux\",\n        \"MountLabel\": \"\",\n        \"ProcessLabel\": \"\",\n        \"AppArmorProfile\": \"\",\n        \"ExecIDs\": null,\n        \"HostConfig\": {\n            \"Binds\": null,\n            \"ContainerIDFile\": \"\",\n            \"LogConfig\": {\n                \"Type\": \"json-file\",\n                \"Config\": {}\n            },\n            \"NetworkMode\": \"none\",\n            \"PortBindings\": {},\n            \"RestartPolicy\": {\n                \"Name\": \"no\",\n                \"MaximumRetryCount\": 0\n            },\n            \"AutoRemove\": false,\n            \"VolumeDriver\": \"\",\n            \"VolumesFrom\": null,\n            \"ConsoleSize\": [\n                0,\n                0\n            ],\n            \"CapAdd\": null,\n            \"CapDrop\": null,\n            \"CgroupnsMode\": \"private\",\n            \"Dns\": null,\n            \"DnsOptions\": [],\n            \"DnsSearch\": [],\n            \"ExtraHosts\": null,\n            \"GroupAdd\": null,\n            \"IpcMode\": \"private\",\n            \"Cgroup\": \"\",\n            \"Links\": null,\n            \"OomScoreAdj\": 0,\n            \"PidMode\": \"\",\n            \"Privileged\": false,\n            \"PublishAllPorts\": false,\n            \"ReadonlyRootfs\": false,\n            \"SecurityOpt\": null,\n            \"UTSMode\": \"\",\n            \"UsernsMode\": \"\",\n            \"ShmSize\": 67108864,\n            \"Runtime\": \"runc\",\n            \"Isolation\": \"\",\n            \"CpuShares\": 0,\n            \"Memory\": 0,\n            \"NanoCpus\": 0,\n            \"CgroupParent\": \"\",\n            \"BlkioWeight\": 0,\n            \"BlkioWeightDevice\": [],\n            \"BlkioDeviceReadBps\": [],\n            \"BlkioDeviceWriteBps\": [],\n            \"BlkioDeviceReadIOps\": [],\n            \"BlkioDeviceWriteIOps\": [],\n            \"CpuPeriod\": 0,\n            \"CpuQuota\": 0,\n            \"CpuRealtimePeriod\": 0,\n            \"CpuRealtimeRuntime\": 0,\n            \"CpusetCpus\": \"\",\n            \"CpusetMems\": \"\",\n            \"Devices\": [],\n            \"DeviceCgroupRules\": null,\n            \"DeviceRequests\": null,\n            \"MemoryReservation\": 0,\n            \"MemorySwap\": 0,\n            \"MemorySwappiness\": null,\n            \"OomKillDisable\": false,\n            \"PidsLimit\": null,\n            \"Ulimits\": null,\n            \"CpuCount\": 0,\n            \"CpuPercent\": 0,\n            \"IOMaximumIOps\": 0,\n            \"IOMaximumBandwidth\": 0,\n            \"MaskedPaths\": [\n                \"/proc/acpi\",\n                \"/proc/asound\",\n                \"/proc/interrupts\",\n                \"/proc/kcore\",\n                \"/proc/keys\",\n                \"/proc/latency_stats\",\n                \"/proc/sched_debug\",\n                \"/proc/scsi\",\n                \"/proc/timer_list\",\n                \"/proc/timer_stats\",\n                \"/sys/devices/virtual/powercap\",\n                \"/sys/firmware\"\n            ],\n            \"ReadonlyPaths\": [\n                \"/proc/bus\",\n                \"/proc/fs\",\n                \"/proc/irq\",\n                \"/proc/sys\",\n                \"/proc/sysrq-trigger\"\n            ]\n        },\n        \"Storage\": {\n            \"RootFS\": {\n                \"Snapshot\": {\n                    \"Name\": \"overlayfs\"\n                }\n            }\n        },\n        \"Mounts\": [],\n        \"Config\": {\n            \"Hostname\": \"aa244f6826aa\",\n            \"Domainname\": \"\",\n            \"User\": \"node\",\n            \"AttachStdin\": false,\n            \"AttachStdout\": true,\n            \"AttachStderr\": true,\n            \"ExposedPorts\": {\n                \"3000/tcp\": {}\n            },\n            \"Tty\": false,\n            \"OpenStdin\": false,\n            \"StdinOnce\": false,\n            \"Env\": [\n                \"PATH=/usr/local/bin:/usr/bin:/bin\",\n                \"HOME=/tmp\",\n                \"NODE_ENV=production\",\n                \"NEXT_TELEMETRY_DISABLED=1\",\n                \"HOSTNAME=0.0.0.0\",\n                \"PORT=3000\",\n                \"SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt\"\n            ],\n            \"Cmd\": [\n                \"node\",\n                \"apps/web/server.js\"\n            ],\n            \"Image\": \"sha256:0fa03daf4fefd8cbcd6a4b4223cdddbd52706faed77110c2a03638e0b1eb0952\",\n            \"Volumes\": null,\n            \"WorkingDir\": \"/app\",\n            \"Entrypoint\": null,\n            \"Labels\": {}\n        },\n        \"NetworkSettings\": {\n            \"SandboxID\": \"\",\n            \"SandboxKey\": \"\",\n            \"Ports\": {},\n            \"Networks\": {\n                \"none\": {\n                    \"IPAMConfig\": null,\n                    \"Links\": null,\n                    \"Aliases\": null,\n                    \"DriverOpts\": null,\n                    \"GwPriority\": 0,\n                    \"NetworkID\": \"\",\n                    \"EndpointID\": \"\",\n                    \"Gateway\": \"\",\n                    \"IPAddress\": \"\",\n                    \"MacAddress\": \"\",\n                    \"IPPrefixLen\": 0,\n                    \"IPv6Gateway\": \"\",\n                    \"GlobalIPv6Address\": \"\",\n                    \"GlobalIPv6PrefixLen\": 0,\n                    \"DNSNames\": null\n                }\n            }\n        },\n        \"ImageManifestDescriptor\": {\n            \"mediaType\": \"application/vnd.oci.image.manifest.v1+json\",\n            \"digest\": \"sha256:0fa03daf4fefd8cbcd6a4b4223cdddbd52706faed77110c2a03638e0b1eb0952\",\n            \"size\": 538,\n            \"platform\": {\n                \"architecture\": \"arm64\",\n                \"os\": \"linux\"\n            }\n        }\n    }\n]\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "export",
+        "--output",
+        "/Users/pie/CargoPulse_Production_Build_Package/.worktrees/runtime-postgres/.local/minimal-runtime-review/web-rootfs.tar",
+        "cargopulse-pg-remediation-review-web-2c0cca8b"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "rm",
+        "cargopulse-pg-remediation-review-web-2c0cca8b"
+      ],
+      "exit_code": 0,
+      "stdout": "cargopulse-pg-remediation-review-web-2c0cca8b\n",
+      "stderr": ""
+    }
+  ],
+  "failures": [],
+  "finished_utc": "2026-11-11T11:32:58.480804+00:00",
+  "passed": true
+}

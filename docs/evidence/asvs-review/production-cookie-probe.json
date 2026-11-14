@@ -1,0 +1,7 @@
+{
+  "scope": "pure response construction; no server, browser or database",
+  "set_cookie": "cp_session=public-review-placeholder; HttpOnly; Max-Age=3600; Path=/; SameSite=lax; Secure",
+  "secure": true,
+  "httponly": true,
+  "host_or_secure_prefix": false
+}

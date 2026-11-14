@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "actual ASGI TestClient, isolated restored schema0005 PostgreSQL and separate restored-object volume; nonowner role; not external HTTP acceptance",
+  "history_scenarios_read": 11,
+  "stale_plans_blocked": 23,
+  "restored_private_objects_read": true,
+  "fresh_local_login": true,
+  "anonymous_access_status": 401,
+  "both_tenants_exercised": true,
+  "api_image": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+  "restored_database": "cargopulse_restore_drill_20261111_173403",
+  "temporary_restored_object_volume_removed": true,
+  "archive_sha256": "cfbf59e14efead343cbbea587f46cdbb219a3c2faa5b3d65617632b0c85ece2e",
+  "limitations": [
+    "ASGI in-process HTTP transport, not an external browser/network test",
+    "Only restored database receives fresh login/audit writes; main application DB is not modified by this probe",
+    "Source object volume is not mounted by either probe container"
+  ]
+}

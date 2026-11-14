@@ -1,0 +1,72 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+__ test_development_sessions_stop_working_when_adapter_is_disabled[changes0] ___
+
+client = <starlette.testclient.TestClient object at 0x1093f8620>
+changes = {'development_auth': False}
+
+    @pytest.mark.parametrize("changes", [
+        {"development_auth": False},
+        {"environment": "production", "development_auth": False},
+    ])
+    def test_development_sessions_stop_working_when_adapter_is_disabled(client, changes):
+        from dataclasses import replace
+    
+        login(client)
+        assert client.get("/api/v1/me").status_code == 200
+        client.app.state.settings = replace(client.app.state.settings, **changes)
+>       assert client.get("/api/v1/me").status_code == 401
+E       AssertionError: assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+E        +    where <Response [200 OK]> = get('/api/v1/me')
+E        +      where get = <starlette.testclient.TestClient object at 0x1093f8620>.get
+
+tests/backend/test_api.py:358: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "e0759955-8e3e-4d82-af0b-eac2fdc5580d", "elapsed_ms": 6.398, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "cffe5d49ebc23309", "trace_id": "096327920475aa0f055cdfd136d4086b"}
+{"correlation.id": "8a66301d-4be5-4efb-83ad-ed14b7bdfc2c", "elapsed_ms": 2.013, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9ca54a736de6a2f0", "trace_id": "396af66a39e32310c374427ad540e15b"}
+{"correlation.id": "c1bde165-3c60-44da-a41c-6dc411a147e6", "elapsed_ms": 1.094, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4d0b0d25f833ca38", "trace_id": "0b289d48d19ef3600932ed33a9c83d71"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "e0759955-8e3e-4d82-af0b-eac2fdc5580d", "elapsed_ms": 6.398, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "cffe5d49ebc23309", "trace_id": "096327920475aa0f055cdfd136d4086b"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "8a66301d-4be5-4efb-83ad-ed14b7bdfc2c", "elapsed_ms": 2.013, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9ca54a736de6a2f0", "trace_id": "396af66a39e32310c374427ad540e15b"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "c1bde165-3c60-44da-a41c-6dc411a147e6", "elapsed_ms": 1.094, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4d0b0d25f833ca38", "trace_id": "0b289d48d19ef3600932ed33a9c83d71"}
+__ test_development_sessions_stop_working_when_adapter_is_disabled[changes1] ___
+
+client = <starlette.testclient.TestClient object at 0x109740770>
+changes = {'environment': 'production', 'development_auth': False}
+
+    @pytest.mark.parametrize("changes", [
+        {"development_auth": False},
+        {"environment": "production", "development_auth": False},
+    ])
+    def test_development_sessions_stop_working_when_adapter_is_disabled(client, changes):
+        from dataclasses import replace
+    
+        login(client)
+        assert client.get("/api/v1/me").status_code == 200
+        client.app.state.settings = replace(client.app.state.settings, **changes)
+>       assert client.get("/api/v1/me").status_code == 401
+E       AssertionError: assert 200 == 401
+E        +  where 200 = <Response [200 OK]>.status_code
+E        +    where <Response [200 OK]> = get('/api/v1/me')
+E        +      where get = <starlette.testclient.TestClient object at 0x109740770>.get
+
+tests/backend/test_api.py:358: AssertionError
+----------------------------- Captured stderr call -----------------------------
+{"correlation.id": "a2a29ac3-a1bf-43ce-b9eb-9c931a2219cf", "elapsed_ms": 2.504, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9ddf56143f213077", "trace_id": "08fef105c069b212e1918e2a3b173323"}
+{"correlation.id": "797b6b0a-b03c-4a1d-8d54-7389a6d4cc7a", "elapsed_ms": 1.374, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4be2a1fe37f67ff4", "trace_id": "a3958ea3c07231b34ee0a44b352654e4"}
+{"correlation.id": "84611ac6-db86-4cac-b5af-1b8a4a1ab5ee", "elapsed_ms": 0.822, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "aebeb71fd8295c6d", "trace_id": "8edc503b84263006c8e70bab94a47865"}
+------------------------------ Captured log call -------------------------------
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "a2a29ac3-a1bf-43ce-b9eb-9c931a2219cf", "elapsed_ms": 2.504, "event": "operation", "http.request.method": "POST", "http.response.status_code": 200, "http.route": "/api/v1/auth/development", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "9ddf56143f213077", "trace_id": "08fef105c069b212e1918e2a3b173323"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "797b6b0a-b03c-4a1d-8d54-7389a6d4cc7a", "elapsed_ms": 1.374, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "4be2a1fe37f67ff4", "trace_id": "a3958ea3c07231b34ee0a44b352654e4"}
+INFO     cargopulse.telemetry:observability.py:234 {"correlation.id": "84611ac6-db86-4cac-b5af-1b8a4a1ab5ee", "elapsed_ms": 0.822, "event": "operation", "http.request.method": "GET", "http.response.status_code": 200, "http.route": "/api/v1/me", "operation": "http.request", "outcome": "success", "service": "cargopulse-api", "span_id": "aebeb71fd8295c6d", "trace_id": "8edc503b84263006c8e70bab94a47865"}
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/pie/CargoPulse_Production_Build_Package/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/backend/test_api.py::test_development_sessions_stop_working_when_adapter_is_disabled[changes0]
+FAILED tests/backend/test_api.py::test_development_sessions_stop_working_when_adapter_is_disabled[changes1]
+2 failed, 1 warning in 0.85s

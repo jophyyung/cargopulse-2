@@ -1,0 +1,55 @@
+{
+  "scanner": "Trivy 0.76.2",
+  "scope": "actual runtime image package findings; not unique exploit paths",
+  "release_gate": "BLOCKED",
+  "images": {
+    "api": {
+      "image_identity": "sha256:9f098864022455d0f7d9889554a5fe71382ad3a13eef07e5da88906d5f4e3861",
+      "severities": {
+        "LOW": 67,
+        "HIGH": 47,
+        "MEDIUM": 84
+      },
+      "high_or_critical_with_reported_fix": 0,
+      "critical_findings": []
+    },
+    "web": {
+      "image_identity": "sha256:b97897447413901ee7839ac50af7eebbbaa1779a6587b6b4e753bab881bb5214",
+      "severities": {
+        "LOW": 64,
+        "HIGH": 46,
+        "MEDIUM": 74
+      },
+      "high_or_critical_with_reported_fix": 0,
+      "critical_findings": []
+    },
+    "postgres": {
+      "image_identity": "sha256:e833fa4f2aadb8e93fb4c56a7a131abff194d1b142ba99eab73fcef2fc0b218c",
+      "severities": {
+        "LOW": 141,
+        "HIGH": 80,
+        "MEDIUM": 130,
+        "CRITICAL": 1
+      },
+      "high_or_critical_with_reported_fix": 0,
+      "critical_findings": [
+        {
+          "id": "CVE-2026-6653",
+          "package": "libxml2",
+          "installed": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+          "fixed_version": null,
+          "status": "affected",
+          "source": "https://avd.aquasec.com/nvd/cve-2026-6653"
+        }
+      ]
+    },
+    "redis": {
+      "image_identity": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041",
+      "severities": {
+        "MEDIUM": 1
+      },
+      "high_or_critical_with_reported_fix": 0,
+      "critical_findings": []
+    }
+  }
+}

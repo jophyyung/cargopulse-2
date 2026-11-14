@@ -1,0 +1,33 @@
+{
+  "generated_utc": "2026-11-12T05:42:12.307603+00:00",
+  "scope": "second-person finite local install/runbook operator acceptance; frontend authorship disclosed",
+  "status": "PASS",
+  "files": {
+    "docs/evidence/23-final-independent-install.md": "64f5158af3f9845426eb8e9e04ef1a0e7e3e8faba87b29e1993eefe06e3b1a09",
+    "docs/evidence/23-final-independent-install.json": "b1e69dc86995d396882e5d8508f5b83f3d74661ab74df6b7b671039ae99ee4a4",
+    "docs/evidence/23-final-independent-install-initial.json": "4613976f27ab83495e876d933c84bc0bc5e12ef86b047288c46f2d67b3421493",
+    ".local/final-install/accept.py": "f22208b24dc9b6192dcc97f217cc83649fcab62ec3e75ced9a3bbc3110123bc3",
+    ".local/final-install/complete-chrome.py": "ef184979dd3a7865595dfccd74ce1e7671302cf362718b620b0110be9edf899e",
+    ".local/final-install/20261112T053255Z/operations.jsonl": "74938eb37d09bd49a1e2362e8bcf9afc5c00d2cf63bf098fa5ac393af952d432",
+    ".local/final-install/20261112T053255Z/chrome-corrected.txt": "387feda3849b93dca1b4c5b81c643f8c6b659d8b1d34611bb8e79e0ec2a16bfe",
+    ".local/final-install/20261112T053255Z/chrome.txt": "10430d4abdbd108757550247ef54aa526417db51010e4fcac2d0bf16fe54e830",
+    ".local/final-install/20261112T053255Z/before-chrome-correction.json": "7c68bb511df12e301674ac88d0faecd050fbf1d57169cf0a733efde7b019d23a",
+    ".local/final-install/20261112T053255Z/chrome-guard-short-id-failure.json": "55011c92201a67d792941e67be3d9b308a4821ee3a1c1f4acfa437746ce42874",
+    ".local/final-install/20261112T053255Z/chrome-completion-operations.jsonl": "ecef5f9235c718ee3667e729736456a697b2b785a47151172508e1ccb2d27aa7",
+    ".local/final-install/20261111T173945Z/initial-accept-output.txt": "eaa8de4c57ea7f124cf6902cf7e5ab4f758ff782209e53e4f2916c7fd1dfa793",
+    ".local/final-install/20261111T173945Z/accept-initial.py": "5714c224d669c225cd2a4baabc78b22f70c04dd0e39e86e0a6b7dfc1d6177851",
+    ".local/final-install/chrome-corrected-list.txt": "1148200d72b4dd3fb339670c089726620046bd1493a53bba0c53b033afe4e1cf"
+  },
+  "exact_images": {
+    "api": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "worker": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "migrate": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "web": "sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f",
+    "postgres": "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+    "redis": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041"
+  },
+  "source_compose_sha256": "9e5a7bbdaff9bd7ffe4227fe07fe39afdc69d2d50aaf9437179699f4bf60adfb",
+  "active_execution_seconds": 74.957,
+  "real_chrome_cases": 1,
+  "all_six_created_volumes_preserved": true
+}

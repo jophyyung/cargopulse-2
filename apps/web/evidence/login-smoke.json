@@ -1,0 +1,28 @@
+{
+  "scope": "Production standalone login only; no backend was running. Not an authenticated Recover end-to-end test.",
+  "browser": "Chromium / Chrome channel",
+  "sizes": [
+    [
+      1280,
+      720
+    ],
+    [
+      1440,
+      900
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      768,
+      1024
+    ]
+  ],
+  "nonce_unique": true,
+  "script_unsafe_inline": false,
+  "script_unsafe_eval": false,
+  "locale_persistence": true,
+  "arbitrary_proxy_route_rejected": true,
+  "console_csp_or_page_errors": []
+}

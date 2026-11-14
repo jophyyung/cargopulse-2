@@ -1,0 +1,82 @@
+# Provisioned, approved infrastructure and immutable published image digests are
+# prerequisites. This file is never started by the local development instructions.
+name: cargopulse-production
+x-runtime: &runtime
+  image: ${API_IMAGE:?Supply the approved API image at an immutable digest}
+  environment: &runtime-env
+    APP_ENV: production
+    ENABLE_DEVELOPMENT_AUTH: "false"
+    AUTO_CREATE_SCHEMA: "false"
+    ENABLE_EXTERNAL_WRITE: "false"
+    ENABLE_LIVE_CONNECTORS: "false"
+    ENABLE_PROTECT: "false"
+    APP_BASE_URL: https://${CARGOPULSE_DOMAIN:?Supply the approved domain}
+    OIDC_REDIRECT_URI: https://${CARGOPULSE_DOMAIN}/api/v1/auth/callback
+    OIDC_ISSUER: ${OIDC_ISSUER:?Supply the approved HTTPS issuer}
+    OIDC_CLIENT_ID: ${OIDC_CLIENT_ID:?Supply the OIDC client ID}
+    OIDC_CLIENT_SECRET: ${OIDC_CLIENT_SECRET:-}
+    OIDC_REQUIRED_ACR: ${OIDC_REQUIRED_ACR:?Supply the privileged MFA context}
+    OIDC_TENANT_ID: ${OIDC_TENANT_ID:?Supply the provisioned tenant UUID}
+    DATABASE_URL: ${DATABASE_URL:?Inject the non-owner TLS database URL}
+    REDIS_URL: ${REDIS_URL:?Inject the scoped TLS Redis URL}
+    OBJECT_STORE_BUCKET: ${OBJECT_STORE_BUCKET:?Supply the private bucket}
+    OBJECT_STORE_ENDPOINT: ${OBJECT_STORE_ENDPOINT:-}
+    AWS_REGION: ${AWS_REGION:?Supply the approved storage region}
+    OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:?Supply the HTTPS collector}
+    MAX_PENDING_JOBS_PER_TENANT: ${MAX_PENDING_JOBS_PER_TENANT:-8}
+  read_only: true
+  tmpfs: [/tmp]
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  restart: unless-stopped
+
+services:
+  migrate:
+    <<: *runtime
+    profiles: [maintenance]
+    environment:
+      <<: *runtime-env
+      DATABASE_URL: ${DATABASE_ADMIN_URL:-}
+    command: [python, -m, alembic, -c, services/api/alembic.ini, upgrade, head]
+    restart: "no"
+  api:
+    <<: *runtime
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health/ready', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+  worker:
+    <<: *runtime
+    command: [python, -m, cargopulse_api.worker]
+    deploy:
+      resources:
+        limits: {cpus: "2", memory: 2G}
+  web:
+    image: ${WEB_IMAGE:?Supply the approved web image at an immutable digest}
+    environment:
+      APP_ENV: production
+      CARGOPULSE_ENV: production
+      ENABLE_DEVELOPMENT_AUTH: "false"
+      API_INTERNAL_URL: http://api:8000
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    depends_on:
+      api: {condition: service_healthy}
+    restart: unless-stopped
+  edge:
+    image: ${EDGE_IMAGE:?Supply the reviewed Caddy image at an immutable digest}
+    environment:
+      CARGOPULSE_DOMAIN: ${CARGOPULSE_DOMAIN}
+    volumes:
+      - ./infra/Caddyfile:/etc/caddy/Caddyfile:ro
+      - tls-data:/data
+      - tls-config:/config
+    ports: ["80:80", "443:443", "443:443/udp"]
+    depends_on: [web]
+    restart: unless-stopped
+volumes:
+  tls-data:
+  tls-config:

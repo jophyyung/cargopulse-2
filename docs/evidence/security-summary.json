@@ -1,0 +1,77 @@
+{
+  "scanner": "Trivy 0.76.2",
+  "recorded_utc": "2026-11-13T05:51:38.236223+00:00",
+  "scope": "actual runtime image package findings; not unique exploit paths or certification",
+  "image_high_critical_gate": "PASS",
+  "public_release_gate": "BLOCKED_EXTERNAL_AND_REVIEW",
+  "images": {
+    "api": {
+      "image_identity": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+      "os": {
+        "Family": "debian",
+        "Name": "13.7"
+      },
+      "os_package_count": 18,
+      "severities": {
+        "MEDIUM": 54,
+        "LOW": 19,
+        "UNKNOWN": 4
+      },
+      "high_or_critical_findings": 0,
+      "gate_exit_code": 0,
+      "raw_report": "docs/evidence/security-final/api-image-audit.json",
+      "raw_sha256": "51bcb39656b3c8314c1da241a84ab950700ab318bd58dcfdeef52da6fe9e2e74"
+    },
+    "web": {
+      "image_identity": "sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f",
+      "os": {
+        "Family": "debian",
+        "Name": "13.7"
+      },
+      "os_package_count": 9,
+      "severities": {
+        "MEDIUM": 48,
+        "LOW": 19,
+        "UNKNOWN": 4
+      },
+      "high_or_critical_findings": 0,
+      "gate_exit_code": 0,
+      "raw_report": "docs/evidence/security-final/web-image-audit.json",
+      "raw_sha256": "b4eb73ac73b6d41cbeb5ee58ea4461c51d7b007785078500788e3fd7abeeea2f"
+    },
+    "postgres": {
+      "image_identity": "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+      "os": {
+        "Family": "alpine",
+        "Name": "3.24.4"
+      },
+      "os_package_count": 53,
+      "severities": {},
+      "high_or_critical_findings": 0,
+      "gate_exit_code": 0,
+      "raw_report": "docs/evidence/security-final/postgres-image-audit.json",
+      "raw_sha256": "abe1742b4835fc84366366833c846c299949cdb813c347aa4f40c1e258adb163"
+    },
+    "redis": {
+      "image_identity": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041",
+      "os": {
+        "Family": "alpine",
+        "Name": "3.22.8"
+      },
+      "os_package_count": 22,
+      "severities": {
+        "MEDIUM": 1
+      },
+      "high_or_critical_findings": 0,
+      "gate_exit_code": 0,
+      "raw_report": "docs/evidence/security-final/redis-image-audit.json",
+      "raw_sha256": "81b06d99b386c4432a571cbea6d9c3a84d3174ca7589f2cdf572aaaa8d034874"
+    }
+  },
+  "db_metadata": {
+    "Version": 2,
+    "NextUpdate": "2026-11-14T00:58:46.183129905Z",
+    "UpdatedAt": "2026-11-13T00:58:46.183130125Z",
+    "DownloadedAt": "2026-11-13T05:47:21.424621Z"
+  }
+}

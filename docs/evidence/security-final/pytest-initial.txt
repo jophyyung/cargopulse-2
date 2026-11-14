@@ -1,0 +1,505 @@
+........................................................................ [ 27%]
+........................................................................ [ 54%]
+..FFFF.................................................................. [ 82%]
+...............................................                          [100%]
+=================================== FAILURES ===================================
+______________ test_frozen_0001_and_upgrade_existing_0003[False] _______________
+
+database_urls = ('postgresql+psycopg://cargopulse_app@127.0.0.1:55432/cargopulse_observability_backend_test', 'postgresql+psycopg://cargopulse@127.0.0.1:55432/cargopulse_observability_backend_test')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11f1365d0>
+existing = False
+
+    @pytest.mark.parametrize("existing", [False, True])
+    def test_frozen_0001_and_upgrade_existing_0003(database_urls, monkeypatch, existing):
+        _, owner_url = database_urls
+        owner = create_engine(owner_url)
+        with owner.begin() as db:
+            db.execute(text("DROP SCHEMA public CASCADE"))
+            db.execute(text("CREATE SCHEMA public AUTHORIZATION cargopulse"))
+        migrate(owner_url, "0001", monkeypatch)
+        initial = inspect(owner)
+        assert "trace_context" not in {c["name"] for c in initial.get_columns("solve_jobs")}
+        assert "oidc_flows" not in initial.get_table_names()
+        # Every historical column/index/unique key is explicit and remains aligned
+        # with the baseline contract while the current ORM includes the new column.
+        for table in Base.metadata.sorted_tables:
+            if table.name == "oidc_flows":
+                continue
+            expected = set(table.columns.keys()) - (
+                {"trace_context"} if table.name == "solve_jobs" else set()
+            )
+>           assert {c["name"] for c in initial.get_columns(table.name)} == expected
+E           AssertionError: assert {'auth_mode',...nant_id', ...} == {'auth_mode',...tity_id', ...}
+E             
+E             Extra items in the right set:
+E             'authentication_context_hash'
+E             Use -v to get more diff
+
+tests/observability/test_postgres.py:87: AssertionError
+_______________ test_frozen_0001_and_upgrade_existing_0003[True] _______________
+
+database_urls = ('postgresql+psycopg://cargopulse_app@127.0.0.1:55432/cargopulse_observability_backend_test', 'postgresql+psycopg://cargopulse@127.0.0.1:55432/cargopulse_observability_backend_test')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x122038680>
+existing = True
+
+    @pytest.mark.parametrize("existing", [False, True])
+    def test_frozen_0001_and_upgrade_existing_0003(database_urls, monkeypatch, existing):
+        _, owner_url = database_urls
+        owner = create_engine(owner_url)
+        with owner.begin() as db:
+            db.execute(text("DROP SCHEMA public CASCADE"))
+            db.execute(text("CREATE SCHEMA public AUTHORIZATION cargopulse"))
+        migrate(owner_url, "0001", monkeypatch)
+        initial = inspect(owner)
+        assert "trace_context" not in {c["name"] for c in initial.get_columns("solve_jobs")}
+        assert "oidc_flows" not in initial.get_table_names()
+        # Every historical column/index/unique key is explicit and remains aligned
+        # with the baseline contract while the current ORM includes the new column.
+        for table in Base.metadata.sorted_tables:
+            if table.name == "oidc_flows":
+                continue
+            expected = set(table.columns.keys()) - (
+                {"trace_context"} if table.name == "solve_jobs" else set()
+            )
+>           assert {c["name"] for c in initial.get_columns(table.name)} == expected
+E           AssertionError: assert {'auth_mode',...nant_id', ...} == {'auth_mode',...tity_id', ...}
+E             
+E             Extra items in the right set:
+E             'authentication_context_hash'
+E             Use -v to get more diff
+
+tests/observability/test_postgres.py:87: AssertionError
+__________ test_real_api_worker_process_trace_and_actual_queue[False] __________
+
+self = <sqlalchemy.engine.base.Connection object at 0x11e5ef7a0>
+dialect = <sqlalchemy.dialects.postgresql.psycopg.PGDialect_psycopg object at 0x11e5efbf0>
+context = <sqlalchemy.dialects.postgresql.psycopg.PGExecutionContext_psycopg object at 0x11e5ed8e0>
+statement = <sqlalchemy.dialects.postgresql.psycopg.PGCompiler_psycopg object at 0x11e5ef4d0>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Unpack[TupleAny]]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        evt_handled: bool = False
+        try:
+            if self._has_events or self.engine._has_events:
+                for fn in self.dispatch.before_cursor_execute:
+                    str_statement, effective_parameters = fn(
+                        self,
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                        context.executemany,
+                    )
+    
+            if self._echo:
+                self._log_info(str_statement)
+    
+                stats = context._get_cache_stats()
+    
+                self._log_parameters(
+                    effective_parameters, stats, ismulti=context.executemany
+                )
+    
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1977: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py:1192: in do_execute
+    cursor.execute(statement, parameters)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.Cursor [closed] [IDLE] (host=127.0.0.1 port=55432 user=cargopulse database=cargopulse_observability_backend_test) at 0x12443da90>
+query = 'TRUNCATE tenants, oidc_flows CASCADE', params = {}, prepare = None
+binary = None
+
+    def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            with self._conn.lock:
+                self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.UndefinedTable: relation "oidc_flows" does not exist
+
+.venv/lib/python3.12/site-packages/psycopg/cursor.py:117: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+database_urls = ('postgresql+psycopg://cargopulse_app@127.0.0.1:55432/cargopulse_observability_backend_test', 'postgresql+psycopg://cargopulse@127.0.0.1:55432/cargopulse_observability_backend_test')
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-79/test_real_api_worker_process_t0')
+collector = ('http://127.0.0.1:59043', []), legacy_context = False
+
+    @pytest.mark.parametrize("legacy_context", [False, True])
+    def test_real_api_worker_process_trace_and_actual_queue(
+        database_urls, tmp_path, collector, legacy_context
+    ):
+        app_url, owner_url = database_urls
+        owner = create_engine(owner_url)
+        with owner.begin() as db:
+>           db.execute(text("TRUNCATE tenants, oidc_flows CASCADE"))
+
+tests/observability/test_postgres.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1494: in execute
+    return meth(
+.venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py:534: in _execute_on_connection
+    return connection._execute_clauseelement(
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1714: in _execute_clauseelement
+    ret = self._execute_context(
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1868: in _execute_context
+    return self._exec_single_context(
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1996: in _exec_single_context
+    self._handle_dbapi_exception(
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:2351: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1977: in _exec_single_context
+    self.dialect.do_execute(
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py:1192: in do_execute
+    cursor.execute(statement, parameters)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.Cursor [closed] [IDLE] (host=127.0.0.1 port=55432 user=cargopulse database=cargopulse_observability_backend_test) at 0x12443da90>
+query = 'TRUNCATE tenants, oidc_flows CASCADE', params = {}, prepare = None
+binary = None
+
+    def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            with self._conn.lock:
+                self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           sqlalchemy.exc.ProgrammingError: (psycopg.errors.UndefinedTable) relation "oidc_flows" does not exist
+E           [SQL: TRUNCATE tenants, oidc_flows CASCADE]
+E           (Background on this error at: https://sqlalche.me/e/21/f405)
+
+.venv/lib/python3.12/site-packages/psycopg/cursor.py:117: ProgrammingError
+__________ test_real_api_worker_process_trace_and_actual_queue[True] ___________
+
+self = <sqlalchemy.engine.base.Connection object at 0x11f093e30>
+dialect = <sqlalchemy.dialects.postgresql.psycopg.PGDialect_psycopg object at 0x11f093320>
+context = <sqlalchemy.dialects.postgresql.psycopg.PGExecutionContext_psycopg object at 0x11e5eca40>
+statement = <sqlalchemy.dialects.postgresql.psycopg.PGCompiler_psycopg object at 0x11e5edaf0>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Unpack[TupleAny]]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        evt_handled: bool = False
+        try:
+            if self._has_events or self.engine._has_events:
+                for fn in self.dispatch.before_cursor_execute:
+                    str_statement, effective_parameters = fn(
+                        self,
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                        context.executemany,
+                    )
+    
+            if self._echo:
+                self._log_info(str_statement)
+    
+                stats = context._get_cache_stats()
+    
+                self._log_parameters(
+                    effective_parameters, stats, ismulti=context.executemany
+                )
+    
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1977: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py:1192: in do_execute
+    cursor.execute(statement, parameters)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.Cursor [closed] [IDLE] (host=127.0.0.1 port=55432 user=cargopulse database=cargopulse_observability_backend_test) at 0x12443c1d0>
+query = 'TRUNCATE tenants, oidc_flows CASCADE', params = {}, prepare = None
+binary = None
+
+    def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            with self._conn.lock:
+                self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.UndefinedTable: relation "oidc_flows" does not exist
+
+.venv/lib/python3.12/site-packages/psycopg/cursor.py:117: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+database_urls = ('postgresql+psycopg://cargopulse_app@127.0.0.1:55432/cargopulse_observability_backend_test', 'postgresql+psycopg://cargopulse@127.0.0.1:55432/cargopulse_observability_backend_test')
+tmp_path = PosixPath('/private/var/folders/d_/1p32pjt93s353ysyftw5745c0000gn/T/pytest-of-pie/pytest-79/test_real_api_worker_process_t1')
+collector = ('http://127.0.0.1:59045', []), legacy_context = True
+
+    @pytest.mark.parametrize("legacy_context", [False, True])
+    def test_real_api_worker_process_trace_and_actual_queue(
+        database_urls, tmp_path, collector, legacy_context
+    ):
+        app_url, owner_url = database_urls
+        owner = create_engine(owner_url)
+        with owner.begin() as db:
+>           db.execute(text("TRUNCATE tenants, oidc_flows CASCADE"))
+
+tests/observability/test_postgres.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1494: in execute
+    return meth(
+.venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py:534: in _execute_on_connection
+    return connection._execute_clauseelement(
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1714: in _execute_clauseelement
+    ret = self._execute_context(
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1868: in _execute_context
+    return self._exec_single_context(
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1996: in _exec_single_context
+    self._handle_dbapi_exception(
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:2351: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py:1977: in _exec_single_context
+    self.dialect.do_execute(
+.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py:1192: in do_execute
+    cursor.execute(statement, parameters)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.Cursor [closed] [IDLE] (host=127.0.0.1 port=55432 user=cargopulse database=cargopulse_observability_backend_test) at 0x12443c1d0>
+query = 'TRUNCATE tenants, oidc_flows CASCADE', params = {}, prepare = None
+binary = None
+
+    def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            with self._conn.lock:
+                self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           sqlalchemy.exc.ProgrammingError: (psycopg.errors.UndefinedTable) relation "oidc_flows" does not exist
+E           [SQL: TRUNCATE tenants, oidc_flows CASCADE]
+E           (Background on this error at: https://sqlalche.me/e/21/f405)
+
+.venv/lib/python3.12/site-packages/psycopg/cursor.py:117: ProgrammingError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/pie/CargoPulse_Production_Build_Package/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/observability/test_postgres.py::test_frozen_0001_and_upgrade_existing_0003[False]
+FAILED tests/observability/test_postgres.py::test_frozen_0001_and_upgrade_existing_0003[True]
+FAILED tests/observability/test_postgres.py::test_real_api_worker_process_trace_and_actual_queue[False]
+FAILED tests/observability/test_postgres.py::test_real_api_worker_process_trace_and_actual_queue[True]
+4 failed, 259 passed, 1 warning in 87.55s (0:01:27)

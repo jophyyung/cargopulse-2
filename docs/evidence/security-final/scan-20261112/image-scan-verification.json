@@ -1,0 +1,54 @@
+{
+  "recorded_utc": "2026-11-12T05:30:57.743189+00:00",
+  "scanner": "Trivy0.76.2",
+  "db_metadata": {
+    "Version": 2,
+    "NextUpdate": "2026-11-13T01:03:48.608294356Z",
+    "UpdatedAt": "2026-11-12T01:03:48.608294617Z",
+    "DownloadedAt": "2026-11-12T05:30:02.936664Z"
+  },
+  "images": {
+    "api": {
+      "image_id": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+      "exit_codes": {
+        "audit": 0,
+        "gate": 0,
+        "sbom": 0
+      },
+      "os_packages": 18,
+      "report_sha256": "c8b8bad1abe252ffb33f897e7fdabb85c243c4452b6fbfae24c342504b44cf00"
+    },
+    "web": {
+      "image_id": "sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f",
+      "exit_codes": {
+        "audit": 0,
+        "gate": 0,
+        "sbom": 0
+      },
+      "os_packages": 9,
+      "report_sha256": "9d0eb6240529b191dbeb4f690f0783c061657942f3dc51b2add66981b61fbb4e"
+    },
+    "postgres": {
+      "image_id": "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+      "exit_codes": {
+        "audit": 0,
+        "gate": 0,
+        "sbom": 0
+      },
+      "os_packages": 53,
+      "report_sha256": "d053291b86b2e13224ee6c60c014d42b32923efc8890e83063a06f4ffd1f96dc"
+    },
+    "redis": {
+      "image_id": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041",
+      "exit_codes": {
+        "audit": 0,
+        "gate": 0,
+        "sbom": 0
+      },
+      "os_packages": 22,
+      "report_sha256": "7d0fda95f466e5879d850953be4bcc6ebdc0df0d7043705778a7fb610f225184"
+    }
+  },
+  "policy": "full severities plus separate HIGH/CRITICAL exit1 gates; ignorefile /dev/null; no ignore-unfixed/VEX/suppression",
+  "status": "PASS"
+}

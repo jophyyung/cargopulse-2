@@ -1,0 +1,10 @@
+{
+  "python": "3.12.16 (main, Oct 26 2026, 13:59:40) [Clang 23.1.3 ]",
+  "boto3": "1.43.127",
+  "botocore": "1.43.127",
+  "inspected_installed_sources_sha256": {
+    "handlers": "504f9fd31a56a197dd63ee46796f86de471c02e550b2813a5fbcfacf3bcd6819",
+    "hooks": "a484c295983cf1e8905f73ec435ff7db0c9d8b9d8b24321a9c5d18bdfd81e312",
+    "parsers": "2367dc4b9f07e495185c65ea6e9d37014133968de19f860822f48b1a7e1f26ea"
+  }
+}

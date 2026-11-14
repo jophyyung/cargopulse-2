@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/pie/CargoPulse_Production_Build_Package/.local/security-final/restored_api_probe.py", line 71, in <module>
+    output=run(['run','--rm','-i','--network','cargopulse-local_default','--cap-drop','ALL','--security-opt','no-new-privileges','--read-only','--tmpfs','/tmp','--mount',f'type=volume,source={volume},target=/var/lib/cargopulse/objects','--env-file',str(envfile),image,'python','-c',script])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pie/CargoPulse_Production_Build_Package/.local/security-final/restored_api_probe.py", line 18, in run
+    raise RuntimeError('Restored application probe failed; inspect private diagnostics')
+RuntimeError: Restored application probe failed; inspect private diagnostics

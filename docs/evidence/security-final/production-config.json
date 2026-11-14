@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "scope": "reserved-placeholder all-profile configuration parsing/assertions only; no services started or network/provider checked",
+  "exit_code": 0,
+  "maintenance_profile_explicitly_included": true,
+  "api_worker_migrate_production_auth_and_write_flags": true,
+  "only_edge_publishes_ports": true,
+  "real_image_identity_or_credentials_used": false,
+  "initial_harness_error": "Checking omitted maintenance service without --profile maintenance raised KeyError; corrected assertion target includes that profile."
+}

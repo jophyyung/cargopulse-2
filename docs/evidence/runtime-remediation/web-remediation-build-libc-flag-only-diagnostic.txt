@@ -1,0 +1,14 @@
+[91mTraceback (most recent call last):
+[0m[91m  File "/assemble_runtime.py", line 110, in <module>
+    raise RuntimeError(f"Unresolved ELF dependency for {path}: {output}")
+RuntimeError: Unresolved ELF dependency for /app/node_modules/@img/sharp-linuxmusl-arm64/lib/sharp-linuxmusl-arm64-0.35.5.node: 	linux-vdso.so.1 (0x0000eb99dce7f000)
+	libvips-cpp.so.8.18.7 => /app/node_modules/@img/sharp-linuxmusl-arm64/lib/../../sharp-libvips-linuxmusl-arm64/lib/libvips-cpp.so.8.18.7 (0x0000eb99db9e0000)
+	libstdc++.so.6 => /lib/aarch64-linux-gnu/libstdc++.so.6 (0x0000eb99db770000)
+	libgcc_s.so.1 => /lib/aarch64-linux-gnu/libgcc_s.so.1 (0x0000eb99db730000)
+	libc.musl-aarch64.so.1 => not found
+	libc.musl-aarch64.so.1 => not found
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000eb99db680000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000eb99db4c0000)
+	/lib/ld-linux-aarch64.so.1 (0x0000eb99dce30000)
+
+[0mThe command '/bin/sh -c python3 /assemble_runtime.py node /runtime-root' returned a non-zero code: 1

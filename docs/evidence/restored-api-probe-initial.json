@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scope": "restored isolated API using real PostgreSQL and application role",
+  "history_scenarios_read": 3,
+  "stale_plans_blocked": 2,
+  "fresh_local_login": true,
+  "anonymous_access_status": 401
+}

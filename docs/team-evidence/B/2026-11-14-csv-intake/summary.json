@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-14",
+  "job": "CP-C05 / B1 increment",
+  "base_commit": "08733f67d49394879f4438644c7ecd29a773f617",
+  "branch": "codex/team-b-backend-01",
+  "state": "local uncommitted working-tree changes; no push or deployment",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "uv": "0.12.19",
+  "pinned_python_3_12_16": "No Windows download available through pinned uv; used bundled 3.12.14",
+  "clock": "namespace(implementation='GetTickCount64()', monotonic=True, adjustable=False, resolution=0.015625)",
+  "public_schema_changes": false,
+  "migration_changes": false,
+  "lock_changes": false,
+  "python_regression": {
+    "command": ".venv/Scripts/python.exe -m pytest -q --ignore=tests/release_qa/test_durable_races.py --tb=short --show-capture=no --junitxml=../work/python-final.xml",
+    "exit_code": 0,
+    "passed": 292,
+    "skipped": 20,
+    "failed": 0,
+    "new_csv_tests": 41,
+    "new_numeric_tests": 9,
+    "excluded_postgres_tests": [
+      "tests/release_qa/test_durable_races.py::test_reclaimed_worker_cannot_persist_after_losing_fence",
+      "tests/release_qa/test_durable_races.py::test_exhausted_lease_retries_leave_scenario_recoverable"
+    ],
+    "skip_reasons": {
+      "POSIX owner-only modes are not Windows ACL evidence": 1,
+      "Real PostgreSQL test database is not configured": 12,
+      "Isolated observability PostgreSQL database is not configured": 4,
+      "Standalone web URL not configured": 3
+    }
+  },
+  "other_checks": {
+    "ruff": {
+      "exit_code": 0,
+      "command": ".venv/Scripts/python.exe -m ruff check services packages scripts tests infra"
+    },
+    "security_lint": {
+      "exit_code": 0,
+      "command": ".venv/Scripts/python.exe -m ruff check services packages scripts infra/assemble_runtime.py --select S --ignore S101"
+    },
+    "repository_patterns": {
+      "exit_code": 0,
+      "command": ".venv/Scripts/python.exe scripts/check_repository.py",
+      "scope": "tracked files only"
+    },
+    "openapi": {
+      "exit_code": 0,
+      "method": "create_app OpenAPI equals packages/contracts/openapi.json; no generation or canonical file writes"
+    }
+  },
+  "prior_results": {
+    "backend_baseline": "132 passed, 12 skipped, 2 failed: POSIX permission assertion on Windows and in-memory SQLite concurrent transaction collision",
+    "initial_csv_fixture": "25 failed, 11 passed; invalid unpublished fixture policy. Corrected before the actual CSV baseline; not security proof",
+    "corrected_csv_baseline": "24 failed, 12 passed before implementation. Regression cases, not a count of distinct vulnerabilities",
+    "csv_first_fix": "39 passed before adding two further privacy parameter cases",
+    "backend_intermediate": "173 passed, 13 skipped before adding two further privacy parameter cases",
+    "python_first_wide_run": "280 passed, 20 skipped, 3 failed: two host-clock assumptions and CRLF source bytes",
+    "python_before_numeric_correction": "283 passed, 20 skipped; shared malformed-number gap subsequently reproduced and corrected",
+    "numeric_baseline": "9 failed before the shared converter correction; direct contract and JSON API cases"
+  },
+  "not_exercised": [
+    "Docker, real PostgreSQL/RLS/Redis and complete web/browser stack",
+    "Python 3.12.16/Linux intended runtime",
+    "POSIX permission modes on this Windows host; Windows ACL acceptance",
+    "live enterprise IdP, provider data, malware scanner, cloud/image or independent release acceptance"
+  ],
+  "release_verdict": "BLOCKED; this is a locally tested increment",
+  "source_sha256": {
+    ".gitattributes": "a1ea4ed2450054aa5636ad409ee4abefcdd985d264047515c715dd1527a11da8",
+    "packages/contracts/python/cargopulse_contracts/models.py": "1fe062883b988299ea702b1b8c236ac06ac3591543a53496533ed7a16ca88aa9",
+    "services/api/README.md": "1542183eee8aa5e7de5d71618c8c6fc8afb74f24747619f6749c4ae6b213166b",
+    "services/api/cargopulse_api/controlled_csv.py": "b24865386c0a055903689c40049d60dc8059a4af342c4dbe6f1255656f708d62",
+    "services/api/cargopulse_api/main.py": "8a55a9355b99e8fe7ca60cb704f6b78af756eaa9ad1ad9caed1bd67a0d5d7919",
+    "tests/backend/conftest.py": "624d78694d8dffb335e260f94679bc2acdebcfbaee5c3a093951d2482dc974d7",
+    "tests/backend/test_api.py": "9befaac3753b46c4a9f0e25ffec26cf2d8525ad25dfca1f4912bde35c28d9bd3",
+    "tests/backend/test_csv_security.py": "75ef969d126a9c82a9f0dcd90549c26f9349e647537c980c8de461d770c6151e",
+    "tests/backend/test_numeric_input.py": "66f4d65c3ae2874ccf0a3bdcf2efe33af4c3389ef78e4db931677aaa95f1c939",
+    "tests/observability/test_telemetry.py": "a9f529808ae257f22a9cc3dff596636cea09e838ee2fd8d6e8027963f366b702",
+    "tests/optimizer/test_recover.py": "7fdea31135510aa73cca9495a78c081194e8b33cd7dd27b3389ccc0da836cc74",
+    "docs/team-notes/B/2026-11-14-csv-intake.md": "d29cc57193c9166b238db3ec63d407fe38897ba351912afe1c4d06ae510f8818"
+  },
+  "evidence_sanitization": "Absolute user/runtime/temp paths replaced; raw originals retained under workspace work/"
+}

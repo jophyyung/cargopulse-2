@@ -1,0 +1,42 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 792 612] /Resources << /Font << /F1 7 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 2436 >>
+stream
+BT /F1 9 Tf 35 575 Td 12 TL (CargoPulse - SYNTHETIC / NOT CONNECTED - No external write) Tj T* (Decision evidence | Page 1 of 2) Tj T* () Tj T* (CargoPulse SYNTHETIC decision report) Tj T* (TEAM_SYNTHETIC_UNVERIFIED - no external write) Tj T* (Plan: 6446d49b-6418-49f3-a445-39437e53caba) Tj T* (State: PROPOSED; external write: NO) Tj T* (Plan SHA-256: f6d937ad1260611176f60a526afb4b5a6f43fbe8c6613731fa8d04bb83568180) Tj T* (Proposal metrics describe proposed first departure, not approved or booked capacity.) Tj T* (Snapshot: b4e23f892b4446a22eda09f71076dc6efc133bd0137152a10432239348973593) Tj T* (Policy: e131bf1ec921989fdc0aa97d9cee8c4988d8ecdf450499860c1c9c3c2c93722c) Tj T* (Assigned whole ULDs: 123) Tj T* (Unassigned whole ULDs: 17) Tj T* (Model: synthetic conservative envelope) Tj T* (Source: seeded-synthetic-generator-v1; event as-of UTC: 2026-11-11T17:29:55+00:00) Tj T* (Metric: proposed_departure_48h_eligible_uld_rate; value: 0.960938; status: COMPUTED) Tj T* (Numerator: 123; denominator: 128; unit: ratio) Tj T* (Method: metrics-v1; statistic: proposed_first_departure_within_48h_not_approved_capacity) Tj T* (Scenario: RECOVER; cohort: synthetic-recover-101-20261111T172955; tier: TEAM_SYNTHETIC_UNVERIFIED) Tj T* (UTC window: 2026-11-11T17:29:55+00:00 to 2026-11-13T17:29:55+00:00) Tj T* (Event as-of UTC: 2026-11-11T17:29:55+00:00; baseline: HiGHS-v1; matched candidates and resources) Tj T* (Source IDs: ["seeded-synthetic-generator-v1"]) Tj T* (Snapshot SHA-256: b4e23f892b4446a22eda09f71076dc6efc133bd0137152a10432239348973593) Tj T* (Policy SHA-256: e131bf1ec921989fdc0aa97d9cee8c4988d8ecdf450499860c1c9c3c2c93722c) Tj T* () Tj T* (Metric: proposed_departure_48h_all_affected_uld_rate; value: 0.878571; status: COMPUTED) Tj T* (Numerator: 123; denominator: 140; unit: ratio) Tj T* (Method: metrics-v1; statistic: proposed_first_departure_within_48h_not_approved_capacity) Tj T* (Scenario: RECOVER; cohort: synthetic-recover-101-20261111T172955; tier: TEAM_SYNTHETIC_UNVERIFIED) Tj T* (UTC window: 2026-11-11T17:29:55+00:00 to 2026-11-13T17:29:55+00:00) Tj T* (Event as-of UTC: 2026-11-11T17:29:55+00:00; baseline: HiGHS-v1; matched candidates and resources) Tj T* (Source IDs: ["seeded-synthetic-generator-v1"]) Tj T* (Snapshot SHA-256: b4e23f892b4446a22eda09f71076dc6efc133bd0137152a10432239348973593) Tj T* (Policy SHA-256: e131bf1ec921989fdc0aa97d9cee8c4988d8ecdf450499860c1c9c3c2c93722c) Tj T* () Tj T* ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 792 612] /Resources << /Font << /F1 7 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 1622 >>
+stream
+BT /F1 9 Tf 35 575 Td 12 TL (CargoPulse - SYNTHETIC / NOT CONNECTED - No external write) Tj T* (Decision evidence | Page 2 of 2) Tj T* () Tj T* (Metric: weighted_delay_hours; value: 1680.000000; status: COMPUTED) Tj T* (Numerator: 1680.000000; denominator: 1; unit: weighted_hours) Tj T* (Method: metrics-v1; statistic: proposed_assigned_cargo_weighted_hours) Tj T* (Scenario: RECOVER; cohort: synthetic-recover-101-20261111T172955; tier: TEAM_SYNTHETIC_UNVERIFIED) Tj T* (UTC window: 2026-11-11T17:29:55+00:00 to 2026-11-13T17:29:55+00:00) Tj T* (Event as-of UTC: 2026-11-11T17:29:55+00:00; baseline: HiGHS-v1; matched candidates and resources) Tj T* (Source IDs: ["seeded-synthetic-generator-v1"]) Tj T* (Snapshot SHA-256: b4e23f892b4446a22eda09f71076dc6efc133bd0137152a10432239348973593) Tj T* (Policy SHA-256: e131bf1ec921989fdc0aa97d9cee8c4988d8ecdf450499860c1c9c3c2c93722c) Tj T* () Tj T* (Metric: unassigned_uld_count; value: 17.000000; status: COMPUTED) Tj T* (Numerator: 17; denominator: 1; unit: ULD) Tj T* (Method: metrics-v1; statistic: explicit_escalated_whole_uld_count) Tj T* (Scenario: RECOVER; cohort: synthetic-recover-101-20261111T172955; tier: TEAM_SYNTHETIC_UNVERIFIED) Tj T* (UTC window: 2026-11-11T17:29:55+00:00 to 2026-11-13T17:29:55+00:00) Tj T* (Event as-of UTC: 2026-11-11T17:29:55+00:00; baseline: HiGHS-v1; matched candidates and resources) Tj T* (Source IDs: ["seeded-synthetic-generator-v1"]) Tj T* (Snapshot SHA-256: b4e23f892b4446a22eda09f71076dc6efc133bd0137152a10432239348973593) Tj T* (Policy SHA-256: e131bf1ec921989fdc0aa97d9cee8c4988d8ecdf450499860c1c9c3c2c93722c) Tj T* () Tj T* ET
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000247 00000 n 
+0000002735 00000 n 
+0000002861 00000 n 
+0000004535 00000 n 
+trailer << /Size 8 /Root 1 0 R >>
+startxref
+4603
+%%EOF

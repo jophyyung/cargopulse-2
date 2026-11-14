@@ -1,0 +1,12 @@
+{
+  "audited_baseline_revision": "069c9d43e7c271ac351dd35829e0fb7a5a52206f",
+  "scope": "Historical benchmark sources, not current runtime performance",
+  "source_sha256": {
+    "benchmark.py": "2f744d7e9f1c6b849885fa04bc5ef902affcae96050bcb1e0994cdfaa8acdb85",
+    "solver.py": "6440caba4b622941ace1712ca7e48c9d4ecaa8b94fc955aaf9c99dc0f69e7870",
+    "__init__.py": "aff79e8dbfcd447e578a5fdda298341a017bda08f5852801c60c76b61312ba82",
+    "candidates.py": "9254e033bd00206813e5835c49170af5feb5d64dac2afff373ad471c0b3a335a",
+    "independent_validator": "035c620c52bcdf962a7141d5c6a17b718b2ba61339a22dbb3827427565caf5b8",
+    "domain_generator": "8c5073288564ef04bce1fcd725c99237991441e1705c5baf17c18118ed6a0cbd"
+  }
+}

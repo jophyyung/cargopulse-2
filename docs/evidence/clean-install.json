@@ -1,0 +1,163 @@
+{
+  "scope": "local synthetic container durability drill",
+  "started_utc": "2026-11-10T12:53:58.845671+00:00",
+  "status": "PASS",
+  "scenario_id": "ee84c4b4-b0dc-4eab-9340-1babadad5b3a",
+  "job_id": "bc2ba380-3601-4cec-9ab8-348ee12c0940",
+  "plan_id": "61cbb7fc-d44f-4657-b89b-f6d7ec4f6f60",
+  "decision_id": "f36d3b32-16c8-4d70-9d79-8f3ab9f345a0",
+  "snapshot_hash": "ab964729dc3ee1626d28cf5815351537b8836568d2736e17393e152c69856540",
+  "plan_hash": "e9a5cf78d3b97796fab11f1b683e0d53ceb58235f80273cc3e4c306ab365fc12",
+  "external_write_performed": false,
+  "seconds": 27.205,
+  "assertions": [
+    "durable queue without Redis",
+    "API restart preserves session and queued command",
+    "idempotent solve returns original job",
+    "worker resumes durable job",
+    "independent validator PASS",
+    "exact-hash decision persists across restart",
+    "idempotent decision returns original receipt",
+    "Redis recovers"
+  ],
+  "role_tenant_checks": {
+    "scenario": 404,
+    "job": 404,
+    "plan": 404,
+    "json_export": 404,
+    "csv_export": 404,
+    "pdf_export": 404,
+    "auditor_solve": 403,
+    "auditor_audit": 200
+  },
+  "reviewer": "lead fallback; independent agent did not execute due usage limit",
+  "containers": [
+    {
+      "Service": "api",
+      "State": "running",
+      "Health": "healthy",
+      "Publishers": [
+        {
+          "URL": "",
+          "TargetPort": 8000,
+          "PublishedPort": 0,
+          "Protocol": "tcp"
+        }
+      ]
+    },
+    {
+      "Service": "postgres",
+      "State": "running",
+      "Health": "healthy",
+      "Publishers": [
+        {
+          "URL": "",
+          "TargetPort": 5432,
+          "PublishedPort": 0,
+          "Protocol": "tcp"
+        }
+      ]
+    },
+    {
+      "Service": "redis",
+      "State": "running",
+      "Health": "healthy",
+      "Publishers": [
+        {
+          "URL": "",
+          "TargetPort": 6379,
+          "PublishedPort": 0,
+          "Protocol": "tcp"
+        }
+      ]
+    },
+    {
+      "Service": "web",
+      "State": "running",
+      "Health": "",
+      "Publishers": [
+        {
+          "URL": "127.0.0.1",
+          "TargetPort": 3000,
+          "PublishedPort": 3111,
+          "Protocol": "tcp"
+        }
+      ]
+    },
+    {
+      "Service": "worker",
+      "State": "running",
+      "Health": "",
+      "Publishers": [
+        {
+          "URL": "",
+          "TargetPort": 8000,
+          "PublishedPort": 0,
+          "Protocol": "tcp"
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "ID": "sha256:f1ea2a1a4fb7b68d4836be1fdcb8a6466a89b072158bf9d97663600538c294c5",
+      "ContainerName": "cargopulse-clean-install-postgres-1",
+      "Repository": "postgres",
+      "Tag": "",
+      "Platform": "linux/arm64/v8",
+      "Size": 155277984,
+      "Created": "2026-11-05T07:33:12.258953041Z",
+      "LastTagTime": "2026-11-10T08:36:57.340834638Z"
+    },
+    {
+      "ID": "sha256:65e2866f6a595caff4d500c26c1ce55311a2fbae77cf1fa3a771b9b8df47c593",
+      "ContainerName": "cargopulse-clean-install-web-1",
+      "Repository": "cargopulse-clean-install-web",
+      "Tag": "latest",
+      "Platform": "linux/arm64",
+      "Size": 104521498,
+      "Created": "2026-11-10T20:52:42.908209876+08:00",
+      "LastTagTime": "2026-11-10T12:52:42.939885801Z"
+    },
+    {
+      "ID": "sha256:6b74104cb4f26f263968be9ea2a3ba83418c8e98464fc61b9ef6c22d7cccefde",
+      "ContainerName": "cargopulse-clean-install-migrate-1",
+      "Repository": "cargopulse-clean-install-migrate",
+      "Tag": "latest",
+      "Platform": "linux/arm64",
+      "Size": 119212381,
+      "Created": "2026-11-10T20:51:44.912205308+08:00",
+      "LastTagTime": "2026-11-10T12:52:28.833925495Z"
+    },
+    {
+      "ID": "sha256:6b74104cb4f26f263968be9ea2a3ba83418c8e98464fc61b9ef6c22d7cccefde",
+      "ContainerName": "cargopulse-clean-install-worker-1",
+      "Repository": "cargopulse-clean-install-worker",
+      "Tag": "latest",
+      "Platform": "linux/arm64",
+      "Size": 119212381,
+      "Created": "2026-11-10T20:51:44.912205308+08:00",
+      "LastTagTime": "2026-11-10T12:52:28.833925495Z"
+    },
+    {
+      "ID": "sha256:6b74104cb4f26f263968be9ea2a3ba83418c8e98464fc61b9ef6c22d7cccefde",
+      "ContainerName": "cargopulse-clean-install-api-1",
+      "Repository": "cargopulse-clean-install-api",
+      "Tag": "latest",
+      "Platform": "linux/arm64",
+      "Size": 119212381,
+      "Created": "2026-11-10T20:51:44.912205308+08:00",
+      "LastTagTime": "2026-11-10T12:52:28.833925495Z"
+    },
+    {
+      "ID": "sha256:08ad0b1d280850169a790dba1393ff7a90aef951fc19632cf4d3ce4f78e679ba",
+      "ContainerName": "cargopulse-clean-install-redis-1",
+      "Repository": "redis",
+      "Tag": "",
+      "Platform": "linux/arm64/v8",
+      "Size": 27546824,
+      "Created": "2026-01-28T02:43:29.768269975Z",
+      "LastTagTime": "2026-11-10T08:36:45.873798921Z"
+    }
+  ]
+}

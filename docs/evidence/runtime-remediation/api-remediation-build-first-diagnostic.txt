@@ -1,0 +1,10 @@
+[91mTraceback (most recent call last):
+  File "/assemble_runtime.py", line 103, in <module>
+[0m[91m    raise RuntimeError(f"Unresolved ELF dependency for {path}: {output}")
+[0m[91mRuntimeError: Unresolved ELF dependency for /usr/local/lib/python3.12/lib-dynload/_tkinter.cpython-312-aarch64-linux-gnu.so: 	linux-vdso.so.1 (0x0000fafbd30dd000)
+	libtk8.6.so => not found
+	libtcl8.6.so => not found
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000fafbd2eb0000)
+	/lib/ld-linux-aarch64.so.1 (0x0000fafbd30a0000)
+[0m[91m
+[0mThe command '/bin/sh -c python /assemble_runtime.py python /runtime-root' returned a non-zero code: 1

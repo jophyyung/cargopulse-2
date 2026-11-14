@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-11-11T17:20:38.711613+00:00",
+  "source_base": "1b003eb22427c784fe1b59fff6bfe650be120909",
+  "branch": "codex/browser-session-hardening",
+  "functional_scope": "FROZEN_PENDING_ROOT_INTEGRATION",
+  "checks": {
+    "typecheck": "PASS",
+    "production_turbopack_build": "PASS",
+    "diff_check": "PASS",
+    "playwright_tests_discovered": 8,
+    "playwright_tests_executed": false,
+    "matching_stack_e2e": "PENDING",
+    "live_oidc_callback": "NOT_VERIFIED",
+    "native_bfcache": "NOT_VERIFIED",
+    "patch_reverse_apply_check": "PASS"
+  },
+  "integration_dependencies": [
+    "Stable per-session JSON CSRF from matching backend",
+    "Non-renewing valid X-Session-Expires-In header forwarded by root-owned Next API proxy"
+  ],
+  "node": "v24.22.2",
+  "patch_sha256": "a2b7779bf3b1b5b10e14d7ed67f95a8f5d5055463a0db436e0a88b91e9708c42",
+  "patch_file": "browser-session.patch",
+  "source_hashes": {
+    "apps/web/src/components/login.tsx": "9cb225ddeb49f23963a6b617cc62eaed360344eff5ec033528747d35653632d4",
+    "apps/web/src/components/report-export.tsx": "4e8d284ddd4bb0496f87e7e0775ac56037c494df66fe57f0f37e6a47efdfbca7",
+    "apps/web/src/components/shell.tsx": "1240b2806e295a5b3d718f44d1078f2138fb5812950f0a1a3024b7dfeae79031",
+    "apps/web/src/lib/api.ts": "5ae60f4c5c3e23210b128e2868b9c225365835e9b3246c00a58c2c11b01e93cd",
+    "apps/web/src/lib/session-boundary.ts": "39809298920e4dec55e633ede7a2264a8d7f952fea5a0ba1c00943f2e0506149",
+    "apps/web/tests/session-boundary.spec.ts": "c54a7b1eae009d53cd34099faf002c10b94ed4c279faf1325e9f6946fe4d5a74",
+    "docs/evidence/19-client-session-boundary.md": "f64c3a88d3acbb4d7fec87e93a6f56d21a989d2421d579fb84e5015cf9c2ddd7"
+  },
+  "evidence_hashes": {
+    "typecheck.txt": "daaa5a3606e308c96ac0dbb57b2ba2c101d9f6fac2bd515f54684ceee5535a1f",
+    "build.txt": "165280827588b96997b7a867894879414d55cd207bd8f6c62a76367046347f86",
+    "test-list.txt": "9bac00844fe71a430564f605dad68a3e3d14fa06fe38cca19ac6c858a6e20d3f",
+    "build-symlink-initial.txt": "a0a95cc45468a999144daa546cc986d854158eacf03908537e75f2c7c620bfd5",
+    "build-dependency-copy-initial.txt": "a6055048bccec790549966c8d50223f21b468ca836b1fef9b64007464fc3aeed"
+  }
+}

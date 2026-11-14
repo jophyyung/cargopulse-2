@@ -1,0 +1,140 @@
+
+> cargopulse@0.1.0 e2e
+> playwright test --config apps/web/playwright.config.ts
+
+
+Running 5 tests using 1 worker
+
+(node:56954) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 apps/web/tests/recover.spec.ts:19:1 › real service: import, solve, review and record an in-app decision (0ms)
+(node:56961) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 apps/web/tests/recover.spec.ts:136:1 › real service: unauthenticated access is redirected and production controls stay explicit (1ms)
+(node:56973) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 apps/web/tests/recover.spec.ts:151:1 › real service: authenticated workspace fits supported viewports (0ms)
+(node:56975) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 apps/web/tests/recover.spec.ts:166:1 › real service: keyboard skip link, focus order and text filter are usable (1ms)
+(node:56988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  5 apps/web/tests/recover.spec.ts:192:1 › real service: evaluation notices are readable before sign-in (1ms)
+
+
+  1) apps/web/tests/recover.spec.ts:19:1 › real service: import, solve, review and record an in-app decision 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/pie/Library/Caches/ms-playwright/chromium_headless_shell-1254/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: apps/web/test-results/recover-real-service-impor-3fd41-d-record-an-in-app-decision/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    apps/web/test-results/recover-real-service-impor-3fd41-d-record-an-in-app-decision/trace.zip
+    Usage:
+
+        npx playwright show-trace apps/web/test-results/recover-real-service-impor-3fd41-d-record-an-in-app-decision/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) apps/web/tests/recover.spec.ts:136:1 › real service: unauthenticated access is redirected and production controls stay explicit 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/pie/Library/Caches/ms-playwright/chromium_headless_shell-1254/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: apps/web/test-results/recover-real-service-unaut-5f4f6-tion-controls-stay-explicit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    apps/web/test-results/recover-real-service-unaut-5f4f6-tion-controls-stay-explicit/trace.zip
+    Usage:
+
+        npx playwright show-trace apps/web/test-results/recover-real-service-unaut-5f4f6-tion-controls-stay-explicit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) apps/web/tests/recover.spec.ts:151:1 › real service: authenticated workspace fits supported viewports 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/pie/Library/Caches/ms-playwright/chromium_headless_shell-1254/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: apps/web/test-results/recover-real-service-authe-00e9a-ce-fits-supported-viewports/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    apps/web/test-results/recover-real-service-authe-00e9a-ce-fits-supported-viewports/trace.zip
+    Usage:
+
+        npx playwright show-trace apps/web/test-results/recover-real-service-authe-00e9a-ce-fits-supported-viewports/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) apps/web/tests/recover.spec.ts:166:1 › real service: keyboard skip link, focus order and text filter are usable 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/pie/Library/Caches/ms-playwright/chromium_headless_shell-1254/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: apps/web/test-results/recover-real-service-keybo-485b7--and-text-filter-are-usable/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    apps/web/test-results/recover-real-service-keybo-485b7--and-text-filter-are-usable/trace.zip
+    Usage:
+
+        npx playwright show-trace apps/web/test-results/recover-real-service-keybo-485b7--and-text-filter-are-usable/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) apps/web/tests/recover.spec.ts:192:1 › real service: evaluation notices are readable before sign-in 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/pie/Library/Caches/ms-playwright/chromium_headless_shell-1254/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: apps/web/test-results/recover-real-service-evalu-ef260-are-readable-before-sign-in/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    apps/web/test-results/recover-real-service-evalu-ef260-are-readable-before-sign-in/trace.zip
+    Usage:
+
+        npx playwright show-trace apps/web/test-results/recover-real-service-evalu-ef260-are-readable-before-sign-in/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    apps/web/tests/recover.spec.ts:19:1 › real service: import, solve, review and record an in-app decision 
+    apps/web/tests/recover.spec.ts:136:1 › real service: unauthenticated access is redirected and production controls stay explicit 
+    apps/web/tests/recover.spec.ts:151:1 › real service: authenticated workspace fits supported viewports 
+    apps/web/tests/recover.spec.ts:166:1 › real service: keyboard skip link, focus order and text filter are usable 
+    apps/web/tests/recover.spec.ts:192:1 › real service: evaluation notices are readable before sign-in 

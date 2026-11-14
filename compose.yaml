@@ -1,0 +1,103 @@
+name: cargopulse-local
+
+x-api: &api
+  build:
+    context: .
+    dockerfile: infra/Dockerfile.api
+  environment: &api-env
+    APP_ENV: development
+    ENABLE_DEVELOPMENT_AUTH: "true"
+    DATABASE_URL: postgresql+psycopg://cargopulse_app:${POSTGRES_PASSWORD:?Run scripts/configure_local.py}@postgres:5432/cargopulse
+    REDIS_URL: redis://:${REDIS_PASSWORD:?Run scripts/configure_local.py}@redis:6379/0
+    APP_BASE_URL: http://localhost:${CARGOPULSE_PORT:-3000}
+    OBJECT_STORE_ROOT: /var/lib/cargopulse/objects
+    ENABLE_EXTERNAL_WRITE: "false"
+    ENABLE_LIVE_CONNECTORS: "false"
+    ENABLE_PROTECT: "false"
+  read_only: true
+  tmpfs: [/tmp]
+  volumes: [objects:/var/lib/cargopulse/objects]
+  security_opt: [no-new-privileges:true]
+  cap_drop: [ALL]
+  restart: unless-stopped
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: infra/Dockerfile.postgres
+    environment:
+      POSTGRES_USER: cargopulse
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run scripts/configure_local.py}
+      POSTGRES_DB: cargopulse
+    # A new volume prevents accidental glibc-to-musl physical cluster reuse.
+    volumes: [postgres_alpine:/var/lib/postgresql]
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U cargopulse -d cargopulse"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  redis:
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?Run scripts/configure_local.py}
+    image: redis:8.2.11-alpine@sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041
+    command: [redis-server, --bind, "0.0.0.0", --save, "", --appendonly, "no", --protected-mode, "yes", --requirepass, "${REDIS_PASSWORD:?Run scripts/configure_local.py}"]
+    healthcheck:
+      test: [CMD-SHELL, 'REDISCLI_AUTH="$$REDIS_PASSWORD" redis-cli ping']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  migrate:
+    <<: *api
+    environment:
+      <<: *api-env
+      DATABASE_URL: postgresql+psycopg://cargopulse:${POSTGRES_PASSWORD}@postgres:5432/cargopulse
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    command: [python, /app/infra/bootstrap.py]
+    depends_on:
+      postgres: {condition: service_healthy}
+    restart: "no"
+  api:
+    <<: *api
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      redis: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health/ready', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 20
+  worker:
+    <<: *api
+    command: [python, -m, cargopulse_api.worker]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      redis: {condition: service_healthy}
+    deploy:
+      resources:
+        limits: {cpus: "2", memory: 2G}
+  web:
+    build:
+      context: .
+      dockerfile: infra/Dockerfile.web
+    environment:
+      API_INTERNAL_URL: http://api:8000
+      APP_ENV: development
+      CARGOPULSE_ENV: development
+      ENABLE_DEVELOPMENT_AUTH: "true"
+    ports: ["127.0.0.1:${CARGOPULSE_PORT:-3000}:3000"]
+    depends_on:
+      api: {condition: service_healthy}
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: unless-stopped
+
+volumes:
+  postgres_alpine:
+  objects:

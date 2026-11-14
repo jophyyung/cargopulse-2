@@ -1,0 +1,55 @@
+
+> cargopulse@0.1.0 e2e
+> playwright test --config apps/web/playwright.config.ts
+
+
+Running 14 tests using 1 worker
+
+(node:67300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 apps/web/tests/recover.spec.ts:19:1 › real service: import, solve, review and record an in-app decision (42.4s)
+  ✓   2 apps/web/tests/recover.spec.ts:136:1 › real service: unauthenticated access is redirected and production controls stay explicit (597ms)
+  ✓   3 apps/web/tests/recover.spec.ts:151:1 › real service: authenticated workspace fits supported viewports (2.0s)
+  ✓   4 apps/web/tests/recover.spec.ts:166:1 › real service: keyboard skip link, focus order and text filter are usable (1.2s)
+  ✓   5 apps/web/tests/recover.spec.ts:192:1 › real service: evaluation notices are readable before sign-in (779ms)
+  ✘   6 apps/web/tests/security-headers.spec.ts:3:1 › real browser: CSP blocks same-origin base changes and fetch sends no referrer (208ms)
+(node:67492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 apps/web/tests/session-boundary.spec.ts:22:1 › real service: logout unmounts both tabs and preserves unrelated storage (2.7s)
+  ✓   8 apps/web/tests/session-boundary.spec.ts:58:1 › real login with injected logout transport failure: DOM clears without claiming revocation (1.5s)
+  ✓   9 apps/web/tests/session-boundary.spec.ts:81:1 › real service: a received session 401 unmounts the console (1.1s)
+  ✓  10 apps/web/tests/session-boundary.spec.ts:96:1 › expiry-header injection: foreground DOM clears on its timer without another request (5.7s)
+  ✓  11 apps/web/tests/session-boundary.spec.ts:130:1 › real service: offline redaction stays closed after reconnect/reload until fresh login (2.1s)
+  ✓  12 apps/web/tests/session-boundary.spec.ts:152:1 › browser event coverage: persisted pagehide/pageshow redact the restored subtree (1.1s)
+  ✓  13 apps/web/tests/session-boundary.spec.ts:166:1 › real service: authenticated POST reads JSON CSRF even when a cookie value is wrong (512ms)
+  ✓  14 apps/web/tests/session-boundary.spec.ts:185:1 › SSO preflight branch: abandoned flow stays closed; callback-equivalent fresh session can reopen (2.4s)
+
+
+  1) apps/web/tests/security-headers.spec.ts:3:1 › real browser: CSP blocks same-origin base changes and fetch sends no referrer 
+
+    Error: expect(received).toBeUndefined()
+
+    Received: ""
+
+      24 |   const sent = page.waitForRequest((request) => request.url().includes("/api/v1/health/live"));
+      25 |   await page.evaluate(async () => { await fetch("/api/v1/health/live"); });
+    > 26 |   expect((await sent).headers()["referer"]).toBeUndefined();
+         |                                             ^
+      27 |   const callback = await page.request.get("/api/v1/auth/callback?code=synthetic-private-code&state=synthetic-state");
+      28 |   expect(callback.status()).toBeGreaterThanOrEqual(400);
+      29 |   expect(callback.headers()["referrer-policy"]).toBe("no-referrer");
+        at /Users/pie/CargoPulse_Production_Build_Package/apps/web/tests/security-headers.spec.ts:26:45
+
+    Error Context: apps/web/test-results/security-headers-real-brow-a8c3d-and-fetch-sends-no-referrer/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    apps/web/test-results/security-headers-real-brow-a8c3d-and-fetch-sends-no-referrer/trace.zip
+    Usage:
+
+        npx playwright show-trace apps/web/test-results/security-headers-real-brow-a8c3d-and-fetch-sends-no-referrer/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    apps/web/tests/security-headers.spec.ts:3:1 › real browser: CSP blocks same-origin base changes and fetch sends no referrer 
+  13 passed (1.2m)

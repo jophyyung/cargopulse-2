@@ -1,0 +1,3 @@
+Listing tests:
+  session-boundary.spec.ts:22:1 › real service: logout unmounts both tabs and preserves unrelated storage
+Total: 1 test in 1 file

@@ -1,0 +1,634 @@
+[
+  {
+    "size": 50,
+    "profile": "low-density",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 278.42041599978984,
+    "p95_ms": 4420.12340409874,
+    "p99_ms": 4788.274780818647,
+    "max_ms": 4880.3126249986235,
+    "validator_failures": 0,
+    "statuses": {
+      "OPTIMAL": 3
+    }
+  },
+  {
+    "size": 50,
+    "profile": "low-density",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 45.69491700021899,
+    "p95_ms": 60.16399200034357,
+    "p99_ms": 61.45013200035464,
+    "max_ms": 61.77166700035741,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 50,
+    "profile": "low-density",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 43.34495799957949,
+    "p95_ms": 56.70842080071452,
+    "p99_ms": 57.89628416081541,
+    "max_ms": 58.193250000840635,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 50,
+    "profile": "capacity-shortage",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 46.42824999973527,
+    "p95_ms": 66.24921279981208,
+    "p99_ms": 68.01107615981891,
+    "max_ms": 68.45154199982062,
+    "validator_failures": 0,
+    "statuses": {
+      "OPTIMAL": 3
+    }
+  },
+  {
+    "size": 50,
+    "profile": "capacity-shortage",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 39.72745800092525,
+    "p95_ms": 72.12082049954915,
+    "p99_ms": 75.00023049942683,
+    "max_ms": 75.72008299939625,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 50,
+    "profile": "capacity-shortage",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 42.0308329994441,
+    "p95_ms": 47.76709549896623,
+    "p99_ms": 48.27698549892375,
+    "max_ms": 48.40445799891313,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 50,
+    "profile": "cold-dg-blocked",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 168.1662499995582,
+    "p95_ms": 298.3325003011487,
+    "p99_ms": 309.90283366129006,
+    "max_ms": 312.7954170013254,
+    "validator_failures": 0,
+    "statuses": {
+      "OPTIMAL": 3
+    }
+  },
+  {
+    "size": 50,
+    "profile": "cold-dg-blocked",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 70.21383299979789,
+    "p95_ms": 74.83394520004367,
+    "p99_ms": 75.24462184006552,
+    "max_ms": 75.34729100007098,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 50,
+    "profile": "cold-dg-blocked",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 57.46012500094366,
+    "p95_ms": 69.88923750050162,
+    "p99_ms": 70.99404750046233,
+    "max_ms": 71.2702500004525,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 140,
+    "profile": "low-density",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 1310.4024579988618,
+    "p95_ms": 9181.498070800262,
+    "p99_ms": 9881.151014160387,
+    "max_ms": 10056.064250000418,
+    "validator_failures": 0,
+    "statuses": {
+      "OPTIMAL": 2,
+      "TIME_LIMIT_WITH_FEASIBLE": 1
+    }
+  },
+  {
+    "size": 140,
+    "profile": "low-density",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 136.23212499987858,
+    "p95_ms": 139.25833719913498,
+    "p99_ms": 139.5273338390689,
+    "max_ms": 139.59458299905236,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 140,
+    "profile": "low-density",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 121.11220800034062,
+    "p95_ms": 142.56453330017393,
+    "p99_ms": 144.47140666015912,
+    "max_ms": 144.94812500015541,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 140,
+    "profile": "capacity-shortage",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 10067.267833001097,
+    "p95_ms": 10074.781295799403,
+    "p99_ms": 10075.449159159252,
+    "max_ms": 10075.616124999215,
+    "validator_failures": 0,
+    "statuses": {
+      "TIME_LIMIT_WITH_FEASIBLE": 3
+    }
+  },
+  {
+    "size": 140,
+    "profile": "capacity-shortage",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 185.42558399894915,
+    "p95_ms": 200.04975869960617,
+    "p99_ms": 201.34968533966457,
+    "max_ms": 201.67466699967918,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 140,
+    "profile": "capacity-shortage",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 185.0029999986873,
+    "p95_ms": 187.18771309995645,
+    "p99_ms": 187.38190982006927,
+    "max_ms": 187.43045900009747,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 140,
+    "profile": "cold-dg-blocked",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 1962.460792001366,
+    "p95_ms": 9264.965391999795,
+    "p99_ms": 9914.076911999655,
+    "max_ms": 10076.35479199962,
+    "validator_failures": 0,
+    "statuses": {
+      "OPTIMAL": 2,
+      "TIME_LIMIT_WITH_FEASIBLE": 1
+    }
+  },
+  {
+    "size": 140,
+    "profile": "cold-dg-blocked",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 174.9939159999485,
+    "p95_ms": 196.96767880031985,
+    "p99_ms": 198.92090216035285,
+    "max_ms": 199.4092080003611,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 140,
+    "profile": "cold-dg-blocked",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 178.58125000020664,
+    "p95_ms": 193.81562559992744,
+    "p99_ms": 195.16979231990263,
+    "max_ms": 195.50833399989642,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 400,
+    "profile": "low-density",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 977.0284579990403,
+    "p95_ms": 3130.0694330002443,
+    "p99_ms": 3321.4508530003513,
+    "max_ms": 3369.296208000378,
+    "validator_failures": 0,
+    "statuses": {
+      "OPTIMAL": 3
+    }
+  },
+  {
+    "size": 400,
+    "profile": "low-density",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 445.7110419989476,
+    "p95_ms": 459.51209199884033,
+    "p99_ms": 460.7388519988308,
+    "max_ms": 461.0455419988284,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 400,
+    "profile": "low-density",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 466.1205410011462,
+    "p95_ms": 481.2379165989114,
+    "p99_ms": 482.58168331871275,
+    "max_ms": 482.9176249986631,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 400,
+    "profile": "capacity-shortage",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 10245.530167001561,
+    "p95_ms": 10259.06976699971,
+    "p99_ms": 10260.273286999545,
+    "max_ms": 10260.574166999504,
+    "validator_failures": 0,
+    "statuses": {
+      "TIME_LIMIT_WITH_FEASIBLE": 3
+    }
+  },
+  {
+    "size": 400,
+    "profile": "capacity-shortage",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 737.699416000396,
+    "p95_ms": 745.3058793998935,
+    "p99_ms": 745.9820094798488,
+    "max_ms": 746.1510419998376,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 400,
+    "profile": "capacity-shortage",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 731.533958,
+    "p95_ms": 786.3289954993888,
+    "p99_ms": 791.1996654993345,
+    "max_ms": 792.4173329993209,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 400,
+    "profile": "cold-dg-blocked",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 2988.3893330006686,
+    "p95_ms": 9321.240608299195,
+    "p99_ms": 9884.160721659064,
+    "max_ms": 10024.890749999031,
+    "validator_failures": 0,
+    "statuses": {
+      "OPTIMAL": 3
+    }
+  },
+  {
+    "size": 400,
+    "profile": "cold-dg-blocked",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 601.2752910010022,
+    "p95_ms": 613.9696416003062,
+    "p99_ms": 615.0980283202443,
+    "max_ms": 615.3801250002289,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 400,
+    "profile": "cold-dg-blocked",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 617.1315000010509,
+    "p95_ms": 625.4683125001975,
+    "p99_ms": 626.2093625001216,
+    "max_ms": 626.3946250001027,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 800,
+    "profile": "low-density",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 2139.326041999084,
+    "p95_ms": 2166.5276788991832,
+    "p99_ms": 2168.945602179192,
+    "max_ms": 2169.5500829991943,
+    "validator_failures": 0,
+    "statuses": {
+      "OPTIMAL": 3
+    }
+  },
+  {
+    "size": 800,
+    "profile": "low-density",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 1108.131458000571,
+    "p95_ms": 1232.7505952003776,
+    "p99_ms": 1243.8278518403604,
+    "max_ms": 1246.597166000356,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 800,
+    "profile": "low-density",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 1157.9483749992505,
+    "p95_ms": 1173.7799753002037,
+    "p99_ms": 1175.1872286602884,
+    "max_ms": 1175.5390420003096,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 800,
+    "profile": "capacity-shortage",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 10633.072708998952,
+    "p95_ms": 10692.495208999026,
+    "p99_ms": 10697.777208999032,
+    "max_ms": 10699.097708999034,
+    "validator_failures": 0,
+    "statuses": {
+      "TIME_LIMIT_WITH_FEASIBLE": 3
+    }
+  },
+  {
+    "size": 800,
+    "profile": "capacity-shortage",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 1948.5863339996286,
+    "p95_ms": 2020.1382464993003,
+    "p99_ms": 2026.4984164992711,
+    "max_ms": 2028.0884589992638,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 800,
+    "profile": "capacity-shortage",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 1974.055665999913,
+    "p95_ms": 2019.4495671999903,
+    "p99_ms": 2023.4845806399971,
+    "max_ms": 2024.4933339999989,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 800,
+    "profile": "cold-dg-blocked",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 2455.6117079991964,
+    "p95_ms": 2998.3805588992254,
+    "p99_ms": 3046.626678979228,
+    "max_ms": 3058.6882089992287,
+    "validator_failures": 0,
+    "statuses": {
+      "OPTIMAL": 3
+    }
+  },
+  {
+    "size": 800,
+    "profile": "cold-dg-blocked",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 1502.152125000066,
+    "p95_ms": 1512.6047618992743,
+    "p99_ms": 1513.533885179204,
+    "max_ms": 1513.7661659991863,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 800,
+    "profile": "cold-dg-blocked",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 1531.2781669999822,
+    "p95_ms": 1616.8040041995482,
+    "p99_ms": 1624.4063008395096,
+    "max_ms": 1626.3068749995,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 1200,
+    "profile": "low-density",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 3928.3968749987253,
+    "p95_ms": 3947.677874701003,
+    "p99_ms": 3949.3917413412055,
+    "max_ms": 3949.820208001256,
+    "validator_failures": 0,
+    "statuses": {
+      "OPTIMAL": 3
+    }
+  },
+  {
+    "size": 1200,
+    "profile": "low-density",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 2280.492290999973,
+    "p95_ms": 2506.5337034997356,
+    "p99_ms": 2526.6262734997144,
+    "max_ms": 2531.649415999709,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 1200,
+    "profile": "low-density",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 2091.776999999638,
+    "p95_ms": 2333.8762872008374,
+    "p99_ms": 2355.396223840944,
+    "max_ms": 2360.7762080009707,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 1200,
+    "profile": "capacity-shortage",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 11501.052000001437,
+    "p95_ms": 11606.604449998667,
+    "p99_ms": 11615.986889998421,
+    "max_ms": 11618.33249999836,
+    "validator_failures": 0,
+    "statuses": {
+      "TIME_LIMIT_WITH_FEASIBLE": 3
+    }
+  },
+  {
+    "size": 1200,
+    "profile": "capacity-shortage",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 3509.313000000475,
+    "p95_ms": 3898.733099999845,
+    "p99_ms": 3933.348219999789,
+    "max_ms": 3942.001999999775,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 1200,
+    "profile": "capacity-shortage",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 3621.230041000672,
+    "p95_ms": 3646.1895538001045,
+    "p99_ms": 3648.408177160054,
+    "max_ms": 3648.9628330000414,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 1200,
+    "profile": "cold-dg-blocked",
+    "policy": "highs",
+    "sample_count": 3,
+    "p50_ms": 4201.942624998992,
+    "p95_ms": 4555.957661899265,
+    "p99_ms": 4587.425665179289,
+    "max_ms": 4595.292665999295,
+    "validator_failures": 0,
+    "statuses": {
+      "OPTIMAL": 3
+    }
+  },
+  {
+    "size": 1200,
+    "profile": "cold-dg-blocked",
+    "policy": "earliest",
+    "sample_count": 3,
+    "p50_ms": 2703.111374999935,
+    "p95_ms": 2830.435799699626,
+    "p99_ms": 2841.7535263395985,
+    "max_ms": 2844.5829579995916,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  },
+  {
+    "size": 1200,
+    "profile": "cold-dg-blocked",
+    "policy": "priority",
+    "sample_count": 3,
+    "p50_ms": 2902.9420410006423,
+    "p95_ms": 2929.854704101126,
+    "p99_ms": 2932.246940821169,
+    "max_ms": 2932.84500000118,
+    "validator_failures": 0,
+    "statuses": {
+      "FEASIBLE": 3
+    }
+  }
+]

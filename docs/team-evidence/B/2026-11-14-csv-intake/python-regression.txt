@@ -1,0 +1,51 @@
+...................s.................................................... [ 23%]
+...................................................................sssss [ 47%]
+sssssss.....................................ssss........F............... [ 71%]
+.............F.................................Fsss..................... [ 95%]
+...............                                                          [100%]
+================================== FAILURES ===================================
+____________ test_real_spans_redact_errors_attributes_and_baggage _____________
+tests\observability\test_telemetry.py:103: in test_real_spans_redact_errors_attributes_and_baggage
+    assert histogram.count == 1 and histogram.sum > 0
+E   AssertionError: assert (1 == 1 and 0.0 > 0)
+E    +  where 1 = HistogramDataPoint(attributes={'operation': 'solve', 'outcome': 'failure'}, start_time_unix_nano=1794635030683579100, ...25.0, 50.0, 75.0, 100.0, 250.0, 500.0, 750.0, 1000.0, 2500.0, 5000.0, 7500.0, 10000.0), min=0.0, max=0.0, exemplars=[]).count
+E    +  and   0.0 = HistogramDataPoint(attributes={'operation': 'solve', 'outcome': 'failure'}, start_time_unix_nano=1794635030683579100, ...25.0, 50.0, 75.0, 100.0, 250.0, 500.0, 750.0, 1000.0, 2500.0, 5000.0, 7500.0, 10000.0), min=0.0, max=0.0, exemplars=[]).sum
+____________________ test_stage2_timeout_budget_is_shared _____________________
+tests\optimizer\test_recover.py:288: in test_stage2_timeout_budget_is_shared
+    assert 0 < budgets[1] < budgets[0] <= 2
+E   assert 2.0 < 2.0
+____ test_all_90_archived_runs_match_raw_rows_plans_metrics_and_summaries _____
+tests\release_math_qa\test_benchmark_archive.py:81: in test_all_90_archived_runs_match_raw_rows_plans_metrics_and_summaries
+    assert (
+E   AssertionError: assert '92d14844a83f...8ce0e799b930a' == '8c5073288564...18118ed6a0cbd'
+E     
+E     - 8c5073288564ef04bce1fcd725c99237991441e1705c5baf17c18118ed6a0cbd
+E     + 92d14844a83f3590c0b82904887a247d381ff8d14986003c6168ce0e799b930a
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  <checkout>\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] tests\backend\test_api.py:307: POSIX owner-only modes are not Windows ACL evidence
+SKIPPED [1] tests\backend\test_postgres.py:68: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:102: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:129: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:171: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:193: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:287: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres.py:314: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres_session_security.py:64: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres_session_security.py:94: Real PostgreSQL test database is not configured
+SKIPPED [1] tests\backend\test_postgres_session_security.py:126: Real PostgreSQL test database is not configured
+SKIPPED [2] tests\backend\test_postgres_session_security.py:162: Real PostgreSQL test database is not configured
+SKIPPED [2] tests\observability\test_postgres.py:68: Isolated observability PostgreSQL database is not configured
+SKIPPED [2] tests\observability\test_postgres.py:176: Isolated observability PostgreSQL database is not configured
+SKIPPED [1] tests\release_qa\test_live_web_boundaries.py:21: Standalone web URL not configured
+SKIPPED [1] tests\release_qa\test_live_web_boundaries.py:44: Standalone web URL not configured
+SKIPPED [1] tests\release_qa\test_live_web_boundaries.py:60: Standalone web URL not configured
+FAILED tests/observability/test_telemetry.py::test_real_spans_redact_errors_attributes_and_baggage
+FAILED tests/optimizer/test_recover.py::test_stage2_timeout_budget_is_shared
+FAILED tests/release_math_qa/test_benchmark_archive.py::test_all_90_archived_runs_match_raw_rows_plans_metrics_and_summaries
+3 failed, 280 passed, 20 skipped, 1 warning in 74.15s (0:01:14)

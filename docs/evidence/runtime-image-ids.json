@@ -1,0 +1,32 @@
+{
+  "api": {
+    "image_config_id": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "configured_user": "10001:10001",
+    "read_only_root": "true"
+  },
+  "worker": {
+    "image_config_id": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "configured_user": "10001:10001",
+    "read_only_root": "true"
+  },
+  "migrate": {
+    "image_config_id": "sha256:9cf0c09fa13a647693567599f5451ca519cf2047efe104c0c753d4ef3693be34",
+    "configured_user": "10001:10001",
+    "read_only_root": "true"
+  },
+  "web": {
+    "image_config_id": "sha256:863d7eced8da07b5970629c6dbcad1c466ae456b985af5abc122d09e99139d8f",
+    "configured_user": "node",
+    "read_only_root": "true"
+  },
+  "postgres": {
+    "image_config_id": "sha256:07b174247e8b27ee2c6e66c8edd418b3f1d3de6907c27634f3e8ffb12bb1e1d3",
+    "configured_user": "postgres",
+    "read_only_root": "false"
+  },
+  "redis": {
+    "image_config_id": "sha256:fe9daae35cd4fd6ec22416aa4fe0cf6b3e36741e06ff45b9986253fe2a81c041",
+    "configured_user": "",
+    "read_only_root": "false"
+  }
+}
