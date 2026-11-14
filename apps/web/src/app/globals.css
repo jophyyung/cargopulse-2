@@ -27,6 +27,18 @@
   --gold: #e3c985;
   --gold-deep: #c9a655;
   --gold-sheen: linear-gradient(135deg, #f6e9be 0%, #e3c985 35%, #c9a655 65%, #f3e2ae 100%);
+  --gold-pale: #f6e9be;
+
+  /* Hub chart: celadon sea, white land, fine jade-tinted lines */
+  --chart-sea: var(--celadon);
+  --chart-land: var(--paper);
+  --chart-line: color-mix(in srgb, var(--jade) 12%, var(--celadon));
+  --chart-coast: color-mix(in srgb, var(--jade) 38%, var(--celadon));
+  --chart-shallows: color-mix(in srgb, var(--paper) 50%, var(--celadon));
+  --chart-dot: color-mix(in srgb, var(--jade) 22%, var(--paper));
+  --chart-ink: #3f5650; /* labels on the chart (AA on sea and land) */
+  --chart-halo: color-mix(in srgb, var(--paper) 80%, transparent);
+  --mask-on: #ffffff; /* SVG mask luminance, not a colour on screen */
 
   /* Text */
   --ink: var(--pine);
@@ -1599,13 +1611,321 @@
     animation-delay: calc(var(--flap-order, 0) * 45ms + 0.16s);
   }
 
-  /* ── Sign-in (restyled in place; the hub chart arrives in the next phase) ── */
+  /* ── Hub chart: an engraved azimuthal chart centred on HKG ── */
+  .hub-chart {
+    position: relative;
+    overflow: hidden;
+    background: var(--chart-sea);
+    view-transition-name: hub-chart;
+  }
+  .hub-chart svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .hub-chart[data-variant="backdrop"] {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hub-chart[data-variant="band"] {
+    width: 100%;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-hero);
+    box-shadow: var(--shadow-panel);
+  }
+  .hub-sea {
+    fill: var(--chart-sea);
+  }
+  .hub-graticule {
+    fill: none;
+    stroke: var(--chart-line);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .hub-shallows {
+    fill: none;
+    stroke: var(--chart-shallows);
+    stroke-width: 7;
+    stroke-linejoin: round;
+  }
+  .hub-land {
+    fill: var(--chart-land);
+    stroke: var(--chart-coast);
+    stroke-width: 0.8;
+    stroke-linejoin: round;
+  }
+  .hub-land-texture {
+    pointer-events: none;
+  }
+  .hub-dot {
+    fill: var(--chart-dot);
+  }
+  .hub-gold-pale {
+    stop-color: var(--gold-pale);
+  }
+  .hub-gold-mid {
+    stop-color: var(--gold);
+  }
+  .hub-gold-deep {
+    stop-color: var(--gold-deep);
+  }
+  .hub-ring {
+    fill: none;
+    stroke-width: 1.2;
+    stroke-dasharray: 1;
+  }
+  .hub-text {
+    font-family: var(--font-sans);
+    paint-order: stroke;
+    stroke: var(--chart-halo);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+  }
+  .hub-ring-label {
+    fill: var(--chart-ink);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .hub-compass line {
+    stroke: var(--chart-ink);
+    stroke-width: 1;
+    opacity: 0.45;
+  }
+  .hub-compass-label {
+    fill: var(--chart-ink);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .hub-waypoints circle {
+    fill: var(--chart-land);
+    stroke: var(--chart-ink);
+    stroke-width: 1.1;
+  }
+  .hub-waypoints text {
+    fill: var(--chart-ink);
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .hub-home-ring {
+    fill: var(--paper);
+    stroke-width: 1.6;
+  }
+  .hub-home-dot {
+    fill: var(--jade);
+  }
+  .hub-home-label {
+    fill: var(--ink);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  /* Routes: jade great-circle lines; status is the line style plus a labelled marker */
+  .hub-route {
+    --mark: var(--unknown);
+    cursor: pointer;
+    outline: none;
+  }
+  .hub-route[data-status="passed"] {
+    --mark: var(--pass);
+  }
+  .hub-route[data-status="verify"] {
+    --mark: var(--verify);
+  }
+  .hub-route[data-status="blocked"] {
+    --mark: var(--block);
+  }
+  .hub-route-hit {
+    fill: none;
+    stroke: transparent;
+    stroke-width: 16;
+  }
+  .hub-route-line {
+    fill: none;
+    stroke: var(--route);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    transition: stroke-width 0.2s var(--ease);
+  }
+  .hub-route[data-status="verify"] .hub-route-line {
+    stroke-dasharray: 7 5;
+  }
+  .hub-route[data-status="blocked"] .hub-route-line {
+    stroke-width: 1.8;
+    stroke-dasharray: 1 6;
+  }
+  .hub-route[data-status="unknown"] .hub-route-line {
+    stroke: var(--unknown);
+    stroke-dasharray: 3 7;
+  }
+  .hub-route[data-active] .hub-route-line,
+  .hub-route:focus-visible .hub-route-line {
+    stroke-width: 3;
+  }
+  .hub-ink {
+    fill: none;
+    stroke: var(--mask-on);
+    stroke-width: 10;
+    stroke-dasharray: 1;
+  }
+  .hub-route-marker {
+    fill: var(--paper);
+    stroke: var(--mark);
+    stroke-width: 1.5;
+    transition: stroke-width 0.2s var(--ease);
+  }
+  .hub-route[data-active] .hub-route-marker,
+  .hub-route:focus-visible .hub-route-marker {
+    stroke-width: 2.6;
+  }
+  .hub-route-glyph {
+    fill: none;
+    stroke: var(--mark);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .hub-route-label {
+    fill: var(--ink);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  /* One load moment: land settles, rings draw outward, routes ink in one by one */
+  .hub-chart[data-intro="play"] .hub-landmass {
+    animation: hub-fade 0.4s var(--ease) backwards;
+  }
+  .hub-chart[data-intro="play"] .hub-ring {
+    animation: hub-draw 0.6s var(--ease) var(--d, 0ms) backwards;
+  }
+  .hub-chart[data-intro="play"] .hub-ink {
+    animation: hub-draw 0.45s var(--ease) var(--d, 0ms) backwards;
+  }
+  .hub-chart[data-intro="play"] .hub-ring-label,
+  .hub-chart[data-intro="play"] .hub-route-end {
+    animation: hub-fade 0.2s linear var(--d, 0ms) backwards;
+  }
+  .hub-chart[data-intro="play"] .hub-compass,
+  .hub-chart[data-intro="play"] .hub-waypoints {
+    animation: hub-fade 0.3s linear 0.6s backwards;
+  }
+
+  /* Hover card for a route */
+  .hub-card {
+    --tx: -50%;
+    --ty: calc(-100% - 18px);
+    position: absolute;
+    z-index: 2;
+    width: max-content;
+    max-width: 280px;
+    padding: 14px 16px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-panel);
+    background: var(--paper);
+    box-shadow: var(--shadow-float);
+    font-size: 13px;
+    pointer-events: none;
+    transform: translate(var(--tx), var(--ty));
+    animation: hub-fade 0.15s linear backwards;
+  }
+  .hub-card[data-below] {
+    --ty: 18px;
+  }
+  .hub-card[data-align="start"] {
+    --tx: -16px;
+  }
+  .hub-card[data-align="end"] {
+    --tx: calc(-100% + 16px);
+  }
+  .hub-card strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .hub-card strong span {
+    margin-left: 4px;
+    color: var(--ink-dim);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .hub-card p {
+    margin: 6px 0;
+    color: var(--ink-dim);
+  }
+  .hub-card ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 6px 0 0;
+  }
+  .hub-card li {
+    margin: 0;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: var(--mist);
+    color: var(--ink);
+    font-size: 12.5px;
+    font-variant-numeric: tabular-nums;
+  }
+  .hub-card small {
+    margin-top: 10px;
+  }
+  .hub-empty,
+  .hub-note {
+    position: absolute;
+    margin: 0;
+    max-width: calc(100% - 32px);
+    border-radius: 999px;
+    background: var(--chart-halo);
+  }
+  .hub-empty {
+    left: 50%;
+    bottom: 48px;
+    padding: 8px 18px;
+    border: 1px solid var(--hairline);
+    color: var(--ink);
+    font-size: 14px;
+    transform: translateX(-50%);
+  }
+  .hub-note {
+    left: 14px;
+    bottom: 10px;
+    padding: 2px 10px;
+    color: var(--chart-ink);
+    font-size: 13px;
+  }
+
+  /* ── Sign-in: the hub chart full-bleed, one calm card ── */
   .login {
+    position: relative;
+    isolation: isolate;
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(420px, 0.85fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     max-width: none;
     min-height: 100vh;
     padding: 0;
+  }
+  /* A porcelain margin on the left, like the border of a paper chart, keeps the words clear */
+  .login::after {
+    content: "";
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 0;
+    width: 54%;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--porcelain) 95%, transparent) 0%,
+      color-mix(in srgb, var(--porcelain) 82%, transparent) 40%,
+      transparent 100%
+    );
+    pointer-events: none;
   }
   .brand {
     display: inline-flex;
@@ -1618,33 +1938,41 @@
     line-height: 1;
   }
   .login-story {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
-    padding: 48px 64px;
+    justify-content: space-between;
+    gap: 48px;
+    min-width: 0;
+    padding: 40px 56px 72px;
+    animation: hub-fade 0.5s linear backwards;
   }
   .login-story .brand {
     font-size: 22px;
-    margin-bottom: auto;
   }
-  .login-story h1 {
-    margin-top: 80px;
+  .login-hero {
+    max-width: 600px;
+  }
+  .login-hero h1 {
+    padding-bottom: 20px;
+    background: var(--gold-sheen) left bottom / 96px 1px no-repeat;
     font-size: 56px;
     line-height: 1.05;
     white-space: pre-line;
   }
-  :lang(zh-Hant) .login-story h1 {
+  :lang(zh-Hant) .login-hero h1 {
     font-size: 46px;
     line-height: 1.2;
   }
-  .login-story > p:not(.brand):not(.eyebrow) {
+  .login-hero > p {
     max-width: 46ch;
-    margin-top: 20px;
+    margin: 20px 0 0;
     font-size: 16px;
-    color: var(--ink-dim);
+    color: var(--chart-ink);
   }
   .login-boundary {
-    margin-top: auto;
-    padding-top: 64px;
+    margin-top: 32px;
   }
   .login-boundary > span {
     display: inline-flex;
@@ -1675,52 +2003,91 @@
     max-width: 52ch;
     margin: 10px 0 0;
     font-size: 13px;
-    color: var(--ink-dim);
+    color: var(--chart-ink);
   }
   .login-form {
+    position: relative;
+    z-index: 1;
     align-self: center;
-    justify-self: center;
-    width: min(100% - 64px, 480px);
-    margin: 32px 0;
-    padding: 32px 32px 28px;
+    width: min(440px, 100vw - 32px);
+    margin: 28px 72px 28px 0;
+    padding: 28px 32px 24px;
     border: 1px solid var(--hairline);
     border-radius: var(--r-hero);
-    background: var(--paper);
-    box-shadow: var(--shadow-panel);
+    background:
+      var(--gold-sheen) top / 100% 3px no-repeat border-box,
+      var(--paper);
+    box-shadow: var(--shadow-float);
+    animation: login-rise 0.45s var(--ease) 0.08s backwards;
   }
   .login-form > .quiet {
     display: flex;
-    margin: -8px 0 12px auto;
+    margin: -4px 0 8px auto;
   }
   .login-form h2 {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-family: var(--font-display);
     font-size: 28px;
     font-weight: 400;
     line-height: 1.15;
   }
-  .login-form > p:not(.eyebrow):not(.fine) {
+  :lang(zh-Hant) .login-form h2 {
+    font-size: 26px;
+    font-weight: 500;
+  }
+  .login-form > p:not(.fine):not(.login-or) {
     color: var(--ink-dim);
   }
-  .login-form > .button {
-    margin: 8px 0 16px;
+  .login-form .notice {
+    margin: 16px 0 0;
   }
   .dev-login {
-    margin-top: 8px;
+    margin-top: 16px;
     padding: 20px;
-    border: 1px dashed var(--line-strong);
-    border-radius: var(--r-control);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-panel);
     background: var(--porcelain);
   }
   .dev-login h3 {
     margin-top: 12px;
   }
   .dev-login p {
+    margin: 12px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink-dim);
+  }
+  .login-or {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: none;
+    margin: 16px 0 14px;
     font-size: 13px;
     color: var(--ink-dim);
   }
-  .dev-login .button {
-    width: 100%;
+  .login-or::before,
+  .login-or::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--hairline);
+  }
+  .login-assurance {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline);
+  }
+  .login-assurance svg {
+    flex: none;
+    margin-top: 2px;
+    color: var(--jade);
+  }
+  .legal-links {
+    margin-bottom: 0;
   }
   .legal-links a {
     text-decoration: underline;
@@ -1728,6 +2095,29 @@
   }
   .legal-links a:hover {
     color: var(--ink);
+  }
+  .login-chart-note {
+    position: fixed;
+    left: 56px;
+    bottom: 20px;
+    z-index: 1;
+    max-width: none;
+    margin: 0;
+    font-size: 13px;
+    color: var(--chart-ink);
+  }
+  /* Signed in: the words and the card fade, the chart stays and carries across */
+  .login[data-leaving] .login-story,
+  .login[data-leaving] .login-form,
+  .login[data-leaving] .login-chart-note,
+  .login[data-leaving]::after {
+    opacity: 0;
+    transition:
+      opacity 0.26s var(--ease),
+      transform 0.26s var(--ease);
+  }
+  .login[data-leaving] .login-form {
+    transform: translateY(-8px);
   }
 
   /* ── Session boundary and service errors ── */
@@ -1836,6 +2226,30 @@
   }
 }
 
+/* Sign-in to workspace is a full page load: the chart carries across it. */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-group(hub-chart) {
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+@keyframes hub-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes hub-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes login-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
 @keyframes sweep {
   from {
     transform: translateX(-100%);
@@ -1897,10 +2311,32 @@
     min-height: 0;
   }
   .login-story {
-    padding: 40px;
+    padding: 32px 40px 72px;
   }
-  .login-story h1 {
-    font-size: 52px;
+  .login-hero h1 {
+    font-size: 48px;
+  }
+  .login-form {
+    margin-right: 40px;
+  }
+  .login-chart-note {
+    left: 40px;
+  }
+}
+@media (max-width: 900px) {
+  .login {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .login::after {
+    width: 100%;
+    background: color-mix(in srgb, var(--porcelain) 80%, transparent);
+  }
+  .login-story {
+    padding-bottom: 32px;
+  }
+  .login-form {
+    justify-self: center;
+    margin: 0 16px 72px;
   }
 }
 @media (max-width: 1050px) {
@@ -1966,23 +2402,19 @@
     min-width: 0;
     max-width: none;
   }
-  .login {
-    grid-template-columns: 1fr;
-  }
   .login-story {
-    padding: 28px 24px;
+    padding: 24px 20px 28px;
   }
-  .login-story h1 {
-    margin-top: 48px;
-    font-size: 44px;
-  }
-  .login-boundary {
-    padding-top: 32px;
+  .login-hero h1 {
+    font-size: 40px;
   }
   .login-form {
-    width: calc(100% - 32px);
-    margin: 0 0 24px;
     padding: 24px 20px;
+  }
+  .login-chart-note {
+    position: static;
+    grid-row: 3;
+    padding: 0 20px 20px;
   }
   .facts {
     grid-template-columns: 1fr;
@@ -2052,6 +2484,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
   *,
   *::before,
   *::after {
