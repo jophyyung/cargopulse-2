@@ -9,15 +9,21 @@ import {
   hideSession, verifyWorkspaceSession,
   SESSION_BOUNDARY_EVENT, SESSION_BOUNDARY_KEY, type BoundaryReason,
 } from "@/lib/session-boundary";
+import {
+  BookOpen, Cable, FileCheck2, Lock, LogOut, Scale, ScrollText, TowerControl, UserRound,
+} from "lucide-react";
 import { LocaleSwitch, useLocale } from "./locale";
+import { BrandMark } from "./kit/brand-mark";
+import { FlapNumber } from "./kit/flap-number";
+import { UldIcon } from "./kit/uld-icon";
 const navigation = [
-  ["/operations", "Recovery desk", "復原作業台", "01"],
-  ["/protect", "Protect sandbox", "Protect 沙盒", "02"],
-  ["/evidence", "Evidence", "證據", "03"],
-  ["/policies", "Policies", "政策", "04"],
-  ["/integrations", "Integrations", "整合", "05"],
-  ["/audit", "Audit trail", "稽核紀錄", "06"],
-  ["/help", "Operator guide", "操作指引", "07"],
+  ["/operations", "Recovery desk", "復原作業台", TowerControl],
+  ["/protect", "Protect sandbox", "Protect 沙盒", UldIcon],
+  ["/evidence", "Evidence", "證據", FileCheck2],
+  ["/policies", "Policies", "政策", Scale],
+  ["/integrations", "Integrations", "整合", Cable],
+  ["/audit", "Audit trail", "稽核紀錄", ScrollText],
+  ["/help", "Operator guide", "操作指引", BookOpen],
 ] as const;
 export function Shell({
   user,
@@ -113,8 +119,13 @@ export function Shell({
   if (phase !== "ready") {
     return (
       <main className="service-error" data-testid="session-boundary">
-        <LocaleSwitch />
-        <p className="eyebrow">CargoPulse</p>
+        <div className="service-error-top">
+          <p className="brand">
+            <BrandMark />
+            CargoPulse
+          </p>
+          <LocaleSwitch />
+        </div>
         <h1>{phase === "checking"
           ? t("Verifying your session…", "正在驗證您的登入……")
           : outcome === "confirmed" ? t("Signed out", "已登出")
@@ -130,13 +141,13 @@ export function Shell({
                 : reason === "offline"
                   ? t("You are offline. Server sign-out is not confirmed. Reconnect and sign in again.", "您目前離線。尚未確認伺服器登出，請重新連線後登入。")
                   : t("Server sign-out is not confirmed. Sign in again before opening private records.", "尚未確認伺服器登出。請先重新登入，才再次開啟私人紀錄。")}</p>
-        {phase === "hidden" ? <>
+        {phase === "hidden" ? <div className="actions">
           <a className="button primary" href="/login">{t("Sign in again", "重新登入")}</a>
-          {outcome !== "confirmed" ? <button className="quiet" disabled={outcome === "pending"} onClick={logout}>
+          {outcome !== "confirmed" ? <button className="button" disabled={outcome === "pending"} onClick={logout}>
             {t("Retry sign out", "重試登出")}
           </button> : null}
-        </> : null}
-        <p>SYNTHETIC / NOT CONNECTED</p>
+        </div> : null}
+        <p className="placard">SYNTHETIC / NOT CONNECTED</p>
       </main>
     );
   }
@@ -145,103 +156,124 @@ export function Shell({
       <a className="skip" href="#main">
         {t("Skip to content", "跳至主要內容")}
       </a>
-      <aside className="sidebar">
-        <Link href="/operations" className="brand">
-          <span className="brand-symbol" aria-hidden="true">
-            C<span>↗</span>
-          </span>
-          <span>
-            CargoPulse<small>{t("OPERATIONS WORKSPACE", "作業工作區")}</small>
-          </span>
+      <aside className="rail">
+        <Link href="/operations" className="rail-brand" aria-label="CargoPulse">
+          <BrandMark />
         </Link>
-        <p className="nav-label">{t("WORKSPACE", "工作區")}</p>
         <nav aria-label={t("Main navigation", "主要導覽")}>
-          {navigation.map(([href, en, zh, n]) => (
+          {navigation.map(([href, en, zh, Icon]) => (
             <Link
               key={href}
               href={href}
+              className="rail-link"
               aria-current={pathname.startsWith(href) ? "page" : undefined}
             >
-              <span>{n}</span>
-              {t(en, zh)}
+              <Icon size={20} strokeWidth={1.75} aria-hidden="true" />
+              <span>{t(en, zh)}</span>
             </Link>
           ))}
         </nav>
-        <div className="sidebar-bottom">
-          <p className="nav-label">{t("OPERATING BOUNDARY", "作業範圍")}</p>
+      </aside>
+      <div className="workspace">
+        <header className="topbar">
+          <p className="wordmark">CargoPulse</p>
+          <div className="tenant">
+            <span>{t("Tenant", "租戶")}</span>
+            <code title={user.tenant_id}>{user.tenant_id}</code>
+          </div>
+          <p className="placard">SYNTHETIC / NOT CONNECTED</p>
+          <HubClock />
+          <LocaleSwitch />
+          <div className="account">
+            <UserRound size={18} strokeWidth={1.75} aria-hidden="true" />
+            <span>
+              <strong>{user.roles.map(roleName).join(", ")}</strong>
+              <small>
+                {user.auth_mode === "development"
+                  ? t("Development identity", "開發身分")
+                  : "OIDC"}
+                {", "}
+                {user.subject}
+              </small>
+            </span>
+          </div>
+          {user.auth_mode === "development" ? (
+            <button
+              className="quiet"
+              onClick={() => {
+                hideSession("signin");
+                window.location.assign(`/login?switch=1&next=${encodeURIComponent(pathname + location.search)}`);
+              }}
+            >
+              {t("Switch role", "切換角色")}
+            </button>
+          ) : null}
+          <button className="quiet" onClick={logout}>
+            <LogOut size={16} strokeWidth={1.75} aria-hidden="true" />
+            {t("Sign out", "登出")}
+          </button>
+        </header>
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
+        <footer className="boundary">
+          <p>
+            <Lock size={14} strokeWidth={2} aria-hidden="true" />
+            {t("External writes disabled", "外部寫入已停用")}
+          </p>
           <p>
             {t(
               "Decision support. Human authority.",
               "決策支援。由人員掌握決策權。",
             )}
           </p>
-          <span className="badge">
-            {t("EXTERNAL WRITES DISABLED", "外部寫入已停用")}
-          </span>
-          <Link href="/protect" className="muted-link">
-            {t("Protect · synthetic sandbox", "Protect · 合成沙盒")}
-          </Link>
-        </div>
-      </aside>
-      <div className="workspace">
-        <div className="topbar">
-          <div className="tenant">
-            <span className="tenant-dot" aria-hidden="true" />
-            <div>
-              <strong>{t("Tenant workspace", "租戶工作區")}</strong>
-              <code>{user.tenant_id}</code>
-            </div>
-          </div>
-          <div className="account">
-            <LocaleSwitch />
-            <span>
-              {user.roles.join(" · ")}
-              <small>
-                {user.auth_mode === "development"
-                  ? t("DEVELOPMENT IDENTITY", "開發身分")
-                  : "OIDC"}{" "}
-                · {user.subject}
-              </small>
-            </span>
-            {user.auth_mode === "development" ? (
-              <button
-                className="quiet"
-                onClick={() => {
-                  hideSession("signin");
-                  window.location.assign(`/login?switch=1&next=${encodeURIComponent(pathname + location.search)}`);
-                }}
-              >
-                {t("Switch role", "切換角色")}
-              </button>
-            ) : null}
-            <button className="quiet" onClick={logout}>
-              {t("Sign out", "登出")}
-            </button>
-          </div>
-        </div>
-        <div className="evidence-strip">
-          <span>SYNTHETIC / NOT CONNECTED</span>
-          <span>
+          <p>
             {t(
               "Proposals and decisions remain inside CargoPulse.",
               "建議方案及決策僅記錄於 CargoPulse。",
             )}
-          </span>
-        </div>
-        <main id="main" tabIndex={-1}>
-          {children}
-        </main>
-        <footer>
-          <span>
-            CargoPulse ·{" "}
-            {t("Synthetic recovery evaluation", "合成資料復原評估")}
-          </span>
-          <div>
+          </p>
+          <nav aria-label={t("Notices", "聲明")}>
             <Link href="/privacy">{t("Privacy", "私隱")}</Link>
             <Link href="/terms">{t("Terms", "使用條款")}</Link>
-          </div>
+          </nav>
         </footer>
       </div>
+    </div>
+  );
+}
+/** "data_steward" → "Data steward". Role identifiers come from the service. */
+function roleName(role: string) {
+  const words = role.replaceAll("_", " ");
+  return words.charAt(0).toUpperCase() + words.slice(1);
+}
+const hktTime = new Intl.DateTimeFormat("en-GB", {
+  timeZone: "Asia/Hong_Kong", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+});
+const utcTime = new Intl.DateTimeFormat("en-GB", {
+  timeZone: "UTC", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+});
+/** The device clock, shown in Hong Kong time and UTC. Tiles flip when a minute passes. */
+function HubClock() {
+  const { t } = useLocale();
+  const [now, setNow] = useState<Date | null>(null);
+  useEffect(() => {
+    setNow(new Date());
+    const timer = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+  const hkt = now ? hktTime.format(now) : null;
+  const utc = now ? utcTime.format(now) : null;
+  return (
+    <div className="hub-clock" role="group" aria-label={t("Current time", "目前時間")}>
+      <span>
+        <abbr title={t("Hong Kong Time", "香港時間")}>HKT</abbr>
+        <FlapNumber value={hkt} minLength={5} size="sm" label={hkt ?? ""} />
+      </span>
+      <span>
+        <abbr title={t("Coordinated Universal Time", "協調世界時")}>UTC</abbr>
+        <FlapNumber value={utc} minLength={5} size="sm" label={utc ?? ""} />
+      </span>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { api, ApiError } from "@/lib/api";
 import { hideSession, confirmDevelopmentSignIn, prepareOrganisationSignIn } from "@/lib/session-boundary";
 import { LocaleSwitch, useLocale } from "./locale";
 import { ErrorNotice } from "./ui";
+import { BrandMark } from "./kit/brand-mark";
 export function Login({ development }: { development: boolean }) {
   const { t } = useLocale();
   const [identity, setIdentity] = useState("controller");
@@ -55,8 +56,10 @@ export function Login({ development }: { development: boolean }) {
   return (
     <main className="login">
       <div className="login-story">
-        <p className="brand">CargoPulse</p>
-        <p className="eyebrow">{t("RECOVERY OPERATIONS", "復原作業")}</p>
+        <p className="brand">
+          <BrandMark size={34} />
+          CargoPulse
+        </p>
         <h1>
           {t(
             "A clear path.\nAn accountable decision.",
@@ -81,7 +84,6 @@ export function Login({ development }: { development: boolean }) {
       </div>
       <section className="login-form">
         <LocaleSwitch />
-        <p className="eyebrow">{t("SECURE WORKSPACE", "安全工作區")}</p>
         <h2>{t("Sign in to CargoPulse", "登入 CargoPulse")}</h2>
         <p>
           {t(
@@ -96,7 +98,7 @@ export function Login({ development }: { development: boolean }) {
         <ErrorNotice error={error} />
         {development ? (
           <form onSubmit={signin} className="dev-login">
-            <span className="badge">{t("DEVELOPMENT ONLY", "僅供開發")}</span>
+            <span className="badge">{t("Development only", "僅供開發")}</span>
             <h3>{t("Synthetic evaluation identity", "合成資料評估身分")}</h3>
             <p>
               {t(

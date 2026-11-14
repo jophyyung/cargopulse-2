@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { api } from "@/lib/api";
 import type { Model, Snapshot, Principal } from "@/lib/types";
 import { useLocale } from "./locale";
+import { FlapNumber } from "./kit/flap-number";
 import {
   Badge,
   Empty,
@@ -165,8 +166,13 @@ export function Operations() {
       <Section
         title={t("Incident queue", "事件佇列")}
         aside={
-          <span className="muted">
-            {t("Up to 50 records · UTC", "最多 50 筆紀錄 · UTC")}
+          <span className="queue-count">
+            <FlapNumber
+              value={records.loading ? null : (items?.length ?? null)}
+              minLength={2}
+              size="sm"
+            />
+            {t("shown, up to 50 per page, times in UTC", "筆顯示，每頁最多 50 筆，時間為 UTC")}
           </span>
         }
       >
@@ -362,7 +368,7 @@ export function Operations() {
                 value={source}
                 onChange={(e) => setSource(e.target.value)}
                 placeholder="UUID"
-                pattern="[a-fA-F0-9-]{36}"
+                pattern="[a-fA-F0-9\-]{36}"
               />
             </label>
             <label>

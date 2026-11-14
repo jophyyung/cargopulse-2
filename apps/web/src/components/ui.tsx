@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { api, ApiError } from "@/lib/api";
 import { useLocale } from "./locale";
+import { Panel } from "./kit/panel";
+import { StatusChip, humanise, statusOf } from "./kit/status-chip";
 export function useResource<T>(path: string | null) {
   const [state, setState] = useState<{
     data?: T;
@@ -61,7 +63,7 @@ export function ErrorNotice({ error }: { error: unknown }) {
 export function Loading() {
   const { t } = useLocale();
   return (
-    <p role="status" className="empty">
+    <p role="status" className="empty loading">
       {t("Loading operational records…", "正在載入作業紀錄……")}
     </p>
   );
@@ -70,21 +72,15 @@ export function Empty({ children }: { children: React.ReactNode }) {
   return <div className="empty">{children}</div>;
 }
 export function Badge({ value }: { value: string }) {
-  const good = ["PASS", "READY", "COMPLETED", "APPROVED"].includes(value);
-  const bad = /FAIL|BLOCK|QUARANTIN|STALE|ERROR|NO_FEASIBLE/.test(value);
-  return (
-    <span className={`badge ${good ? "good" : bad ? "bad" : ""}`}>
-      {value.replaceAll("_", " ")}
-    </span>
-  );
+  return <StatusChip status={statusOf(value)}>{humanise(value)}</StatusChip>;
 }
 export function PageHeader({
-  eyebrow,
   title,
   description,
   action,
 }: {
-  eyebrow: string;
+  /** Kept for callers; the rail and the title already say where you are. */
+  eyebrow?: string;
   title: string;
   description: string;
   action?: React.ReactNode;
@@ -92,11 +88,10 @@ export function PageHeader({
   return (
     <header className="page-header">
       <div>
-        <p className="eyebrow">{eyebrow}</p>
         <h1>{title}</h1>
         <p className="lede">{description}</p>
       </div>
-      {action}
+      {action ? <div className="page-header-action">{action}</div> : null}
     </header>
   );
 }
@@ -155,13 +150,9 @@ export function Section({
   aside?: React.ReactNode;
 }) {
   return (
-    <section className="panel">
-      <div className="section-heading">
-        <h2>{title}</h2>
-        {aside}
-      </div>
+    <Panel title={title} aside={aside}>
       {children}
-    </section>
+    </Panel>
   );
 }
 export function Table({
